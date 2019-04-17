@@ -148,6 +148,13 @@ def state_continuing(status, data):
                    'entry': add(contents[2], status['entry']),
                    'entry_type': entry_type(data, status['entry_type'])}}
 
+    contents = re.match(moredent(status['indent']), data)
+    if contents:
+        return {**status,
+                **change_state(status, State.continuing),
+                **{'indent': len(contents[1]),
+                   'entry': add(contents[2], status['entry']),
+                   'entry_type': entry_type(data, status['entry_type'])}}
     return error_out(status)
 
 @is_page_number
@@ -308,8 +315,8 @@ if __name__ == '__main__':
 
                 status = transitions[status['state']](status, l)
 
-                    # for k in status.keys():
-                      # print('%s: %s' % (k, status[k]))
+                # for k in status.keys():
+                #     print('%s: %s' % (k, status[k]))
 
                 # print()
 
