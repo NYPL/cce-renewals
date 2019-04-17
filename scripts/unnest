@@ -52,6 +52,10 @@ def is_prologue(s):
     return re.match(r'^RENEWALS?', s)
 
 
+def is_prologue_7(s):
+    return re.match(r'^(\[\*|material. Information)', s)
+
+
 def output(status, depth=1):
     if status['entry_type'] == 'ENTRY':
         print('\t'.join((str(args.volume),
@@ -79,6 +83,21 @@ def state_header(status, data):
         return status
 
     return error_out(status)
+
+
+@is_page_number
+def state_header_7(status, data):
+    if not data:
+        return status
+
+    if data:
+        if is_prologue_7(data):
+            return {**status,
+                    **change_state(status, State.prologue)}
+        return status
+
+    return error_out(status)
+
 
 @is_page_number
 def state_prologue(status, data):
@@ -282,7 +301,7 @@ TRANSITIONS = {State.header: state_header,
                State.unhandled: state_unhandled}
 
 
-TRANSITIONS2 = {State.header: state_header,
+TRANSITIONS2 = {State.header: state_header_7,
                 State.prologue: state_prologue,
                 State.prologue_blank: state_prologue_blank,
                 State.start: state_start,
