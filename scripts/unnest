@@ -1,0 +1,284 @@
+#!/usr/bin/env python3
+
+import argparse
+from enum import Enum
+import re
+
+class State(Enum):
+    start = 0
+    entry = 1
+    continuing = 2
+    blank = 3
+    unhandled = 4
+
+hardleft = lambda: r'^(\s{0})(\S.+)$'
+moredent = lambda x: r'^(\s{%d})(\S.+)$' % (x+2,)
+nodent = lambda x: r'^(\s{%d})(\S.+)$' % x
+undent = lambda x: r'^(\s{%d})(\S.+)$' % (x-2,)
+doubleundent = lambda x: r'^(\s{%d})(\S.+)$' % (x-4,)
+tripleundent = lambda x: r'^(\s{%d})(\S.+)$' % (x-6,)
+add = lambda data, entry: (entry[0] + ' ' + data,) + entry[1:]
+push = lambda data, entry: (data,) + entry
+
+error_out = lambda s: {**s, **{'state': State.unhandled}}
+
+change_state = lambda c, s: {'state': s, 'previous_state': c['state']}
+
+entry_type = lambda d, s: {True: 'CF',
+                       False: s}[bool(re.search(r'\bSEE\b', d))]
+
+def is_page_number(func):
+    def wrapper(*args, **kwargs):
+        status = args[0]
+        data = args[1]
+
+        # If this line is just a page number, update the page number
+        # in the buffer and continue
+
+        page = re.match(r"^<pb id='(\d+)\.", data)
+        if page:
+            return {**status,
+                    **{'page': int(page[1])}}
+
+        # Otherwise just execute the function
+        return func(status, data)
+    return wrapper
+
+
+def output(status, depth=1):
+    if status['entry_type'] == 'ENTRY':
+        print('\t'.join((str(args.volume),
+                         args.part,
+                         str(args.number),
+                         str(status['page']),
+                         '|'.join(tuple(reversed(status['entry']))))))
+
+    return status['entry'][depth:]
+
+
+def state_unhandled(status, data):
+    raise Exception('UNHANDLED STATE')
+
+
+@is_page_number
+def state_start(status, data):
+
+    if not data:
+        raise StopIteration()
+
+    if re.match(r'\*\*\* END', data):
+        raise StopIteration()
+
+    contents = re.match(hardleft(), data)
+    if contents:
+        return {**status,
+                **change_state(status, State.entry),
+                **{'indent': len(contents[1]),
+                   'part_indent': len(contents[1]),
+                   'entry': (contents[2],),
+                   'entry_type': entry_type(data, status['entry_type'])}}
+
+    return error_out(status)
+
+@is_page_number
+def state_entry(status, data):
+    if not data:
+        return {**status,
+                **change_state(status, State.blank)}
+
+    contents = re.match(moredent(status['indent']), data)
+    if contents:
+        return {**status,
+                **change_state(status, State.continuing),
+                **{'indent': len(contents[1]),
+                   'entry': add(contents[2], status['entry']),
+                   'entry_type': entry_type(data, status['entry_type'])}}
+
+    return error_out(status)
+
+@is_page_number
+def state_continuing(status, data):
+    if not data:
+        return {**status,
+                **change_state(status, State.blank)}
+
+    contents = re.match(nodent(status['indent']), data)
+    if contents:
+        return {**status,
+                **change_state(status, State.continuing),
+                **{'indent': len(contents[1]),
+                   'entry': add(contents[2], status['entry']),
+                   'entry_type': entry_type(data, status['entry_type'])}}
+
+    return error_out(status)
+
+@is_page_number
+def state_continuing2(status, data):
+    if not data:
+        return {**status,
+                **change_state(status, State.blank)}
+
+    contents = data.strip() #re.match(nodent(status['indent']), data)
+    if contents:
+        return {**status,
+                **change_state(status, State.continuing),
+                **{'indent': None,
+                   'entry': add(contents, status['entry']),
+                   'entry_type': 'ENTRY'}}
+
+    return error_out(status)
+
+
+@is_page_number
+def state_blank(status, data):
+    # Second blank line, output previous entry, clear status
+    if not data:
+        output(status)
+        return {**change_state(status, State.start),
+                'indent': 0,
+                'page': status['page'],
+                'entry_type': 'ENTRY'}
+
+    
+    # Same indent level...
+    contents = re.match(nodent(status['indent']), data)
+    if contents:
+        if status['previous_state'] == State.continuing:
+            # ... as previous continuation. Start a new subentry
+            return {**status,
+                    **change_state(status, State.entry),
+                    **{'indent': len(contents[1]),
+                       'part_indent': len(contents[1]),
+                       'entry': push(contents[2], status['entry']),
+                       'entry_type': entry_type(data, status['entry_type'])}}
+
+        if status['previous_state'] == State.entry:
+            # ... as previous (sub-)entry start. Output previous entry
+            # and start a new sub-entry of parent
+            return {**status,
+                    **change_state(status, State.entry),
+                    **{'indent': len(contents[1]),
+                       'part_indent': len(contents[1]),
+                       'entry': push(contents[2], output(status)),
+                       'entry_type': entry_type(data, status['entry_type'])}}
+
+    # Indent level increased. Start a new subentry
+    contents = re.match(moredent(status['indent']), data)
+    if contents:
+        if status['previous_state'] == State.entry:
+            return {**status,
+                    **change_state(status, State.entry),
+                    **{'indent': len(contents[1]),
+                       'part_indent': len(contents[1]),
+                       'entry': push(contents[2], status['entry']),
+                       'entry_type': entry_type(data, status['entry_type'])}}
+    
+
+    # Indent level decreased after blank, output previous entry, start
+    # new subentry of parent
+    contents = re.match(undent(status['indent']), data)
+    if contents:
+        if status['previous_state'] in (State.continuing, State.entry):
+            return {**status,
+                    **change_state(status, State.entry),
+                    **{'indent': len(contents[1]),
+                       'part_indent': len(contents[1]),
+                       'entry': push(contents[2], output(status)),
+                       'entry_type': entry_type(data, status['entry_type'])}}
+
+    contents = re.match(doubleundent(status['indent']), data)
+    if contents:
+        #if status['previous_state'] == State.continuing:
+        return {**status,
+                **change_state(status, State.entry),
+                **{'indent': len(contents[1]),
+                   'part_indent': len(contents[1]),
+                   'entry': push(contents[2], output(status, 2)),
+                   'entry_type': entry_type(data, status['entry_type'])}}
+        
+    contents = re.match(tripleundent(status['indent']), data)
+    if contents:
+        #if status['previous_state'] == State.continuing:
+        return {**status,
+                **change_state(status, State.entry),
+                **{'indent': len(contents[1]),
+                   'part_indent': len(contents[1]),
+                   'entry': push(contents[2], output(status, 3)),
+                   'entry_type': entry_type(data, status['entry_type'])}}
+        
+        
+    return error_out(status)
+    
+    
+    
+parser = argparse.ArgumentParser(description='Load CCE xml into database')
+parser.add_argument('-f', '--file', metavar='FILE', type=str,
+                    help='File to process')
+parser.add_argument('-s', '--start', metavar='LINENUM', type=int,
+                    help='Line number of start of first entry')
+parser.add_argument('-e', '--encoding', metavar='ENCODING', type=str,
+                    default='utf-8', help='Encoding for file')
+parser.add_argument('-v', '--volume', metavar='VOLUME', type=int,
+                    required=True, help='Source volume')
+parser.add_argument('-p', '--part', metavar='PART', type=str,
+                    required=True, help='Source volume part')
+parser.add_argument('-n', '--number', metavar='NUMBER', type=int,
+                    required=True, help='Source volume number')
+parser.add_argument('-7', '--post-1973', action='store_true',
+                    help='Volume is 1973 pt. 2 or later format')
+args = parser.parse_args()
+
+
+TRANSITIONS = {State.start: state_start,
+               State.entry: state_entry,
+               State.blank: state_blank,
+               State.continuing: state_continuing,
+               State.unhandled: state_unhandled}
+
+
+TRANSITIONS2 = {State.start: state_start,
+                State.entry: state_entry,
+                State.blank: state_blank,
+                State.continuing: state_continuing2,
+                State.unhandled: state_unhandled}
+
+if args.post_1973:
+    transitions = TRANSITIONS2
+else:
+    transitions = TRANSITIONS
+
+
+line_no = 0
+
+status = {'state': State.start,
+          'indent': 0,
+          'page': 1,
+          'entry_type': 'ENTRY'}
+
+if __name__ == '__main__':
+    with open(args.file, encoding=args.encoding) as f:
+        try:
+            for line in f:
+                line_no += 1
+
+                l = line.rstrip()
+                # print('|' + l)
+
+                if line_no >= args.start:
+                    status = transitions[status['state']](status, l)
+
+                    # for k in status.keys():
+                    #    print('%s: %s' % (k, status[k]))
+
+                else:
+                    page = re.match(r"^<pb id='(\d+)\.", line)
+                    if page:
+                        status = {**status, **{'page': int(page[1])}}
+                # print()
+
+
+        except StopIteration:
+            pass
+
+        if 'entry' in status:
+            output(status)
