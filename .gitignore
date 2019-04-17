@@ -4,5 +4,6 @@ __pycache__
 *.xml
 *.tsv
 *.txt
+*.zip
 *~
 \#*\#
