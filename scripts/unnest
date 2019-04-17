@@ -5,11 +5,14 @@ from enum import Enum
 import re
 
 class State(Enum):
-    start = 0
-    entry = 1
-    continuing = 2
-    blank = 3
-    unhandled = 4
+    header = 0
+    prologue = 1
+    prologue_blank = 2
+    start = 3
+    entry = 4
+    continuing = 5
+    blank = 6
+    unhandled = 7
 
 hardleft = lambda: r'^(\s{0})(\S.+)$'
 moredent = lambda x: r'^(\s{%d})(\S.+)$' % (x+2,)
@@ -45,6 +48,10 @@ def is_page_number(func):
     return wrapper
 
 
+def is_prologue(s):
+    return re.match(r'^RENEWALS?', s)
+
+
 def output(status, depth=1):
     if status['entry_type'] == 'ENTRY':
         print('\t'.join((str(args.volume),
@@ -61,8 +68,39 @@ def state_unhandled(status, data):
 
 
 @is_page_number
-def state_start(status, data):
+def state_header(status, data):
+    if not data:
+        return status
 
+    if data:
+        if is_prologue(data):
+            return {**status,
+                    **change_state(status, State.prologue)}
+        return status
+
+    return error_out(status)
+
+@is_page_number
+def state_prologue(status, data):
+    if not data:
+        return {**status,
+                **change_state(status, State.prologue_blank)}
+
+    return status
+
+
+@is_page_number
+def state_prologue_blank(status, data):
+    if not data:
+        return {**status,
+                **change_state(status, State.start)}
+
+    return {**status,
+            **change_state(status, State.prologue)}
+
+
+@is_page_number
+def state_start(status, data):
     if not data:
         raise StopIteration()
 
@@ -214,8 +252,6 @@ def state_blank(status, data):
 parser = argparse.ArgumentParser(description='Load CCE xml into database')
 parser.add_argument('-f', '--file', metavar='FILE', type=str,
                     help='File to process')
-parser.add_argument('-s', '--start', metavar='LINENUM', type=int,
-                    help='Line number of start of first entry')
 parser.add_argument('-e', '--encoding', metavar='ENCODING', type=str,
                     default='utf-8', help='Encoding for file')
 parser.add_argument('-v', '--volume', metavar='VOLUME', type=int,
@@ -229,14 +265,20 @@ parser.add_argument('-7', '--post-1973', action='store_true',
 args = parser.parse_args()
 
 
-TRANSITIONS = {State.start: state_start,
+TRANSITIONS = {State.header: state_header,
+               State.prologue: state_prologue,
+               State.prologue_blank: state_prologue_blank,
+               State.start: state_start,
                State.entry: state_entry,
                State.blank: state_blank,
                State.continuing: state_continuing,
                State.unhandled: state_unhandled}
 
 
-TRANSITIONS2 = {State.start: state_start,
+TRANSITIONS2 = {State.header: state_header,
+                State.prologue: state_prologue,
+                State.prologue_blank: state_prologue_blank,
+                State.start: state_start,
                 State.entry: state_entry,
                 State.blank: state_blank,
                 State.continuing: state_continuing2,
@@ -250,7 +292,7 @@ else:
 
 line_no = 0
 
-status = {'state': State.start,
+status = {'state': State.header,
           'indent': 0,
           'page': 1,
           'entry_type': 'ENTRY'}
@@ -264,16 +306,11 @@ if __name__ == '__main__':
                 l = line.rstrip()
                 # print('|' + l)
 
-                if line_no >= args.start:
-                    status = transitions[status['state']](status, l)
+                status = transitions[status['state']](status, l)
 
                     # for k in status.keys():
-                    #    print('%s: %s' % (k, status[k]))
+                      # print('%s: %s' % (k, status[k]))
 
-                else:
-                    page = re.match(r"^<pb id='(\d+)\.", line)
-                    if page:
-                        status = {**status, **{'page': int(page[1])}}
                 # print()
 
 
