@@ -29,7 +29,7 @@ for record in root.findall('./Record'):
         d = defaultdict(list)
         for k, v in fields:
 #            print(type(v))
-            d[k].append(v)
+            d[k.lower()].append(v)
 
         dd = dict([(b[0],'|'.join(b[1])) for b in d.items()])
         recs += [dd]
