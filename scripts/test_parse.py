@@ -293,7 +293,7 @@ class TestShift(object):
     def test_shift_dates(self):
         s = '30Dec22, A695089. R59809, 17Mar50, Breitkopf Publications, inc., successor to Breitkopf & Haertel, inc. (PWH)'
         x =          'A695089. R59809, 17Mar50, Breitkopf Publications, inc., successor to Breitkopf & Haertel, inc. (PWH)'
-        assert parse.shift_dates(s) == (x, ['30Dec22'])
+        assert parse.shift_dates(s) == (x, ['1922-12-30'])
         assert parse.shift_dates('15Nov22, 15Dec22, B551759') == \
             ('B551759', ['1922-11-15', '1922-12-15'])
 
