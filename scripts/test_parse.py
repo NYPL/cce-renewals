@@ -295,7 +295,7 @@ class TestShiftPop(object):
         x =          'A695089. R59809, 17Mar50, Breitkopf Publications, inc., successor to Breitkopf & Haertel, inc. (PWH)'
         assert parse.shift_dates(s) == (x, ['30Dec22'])
         assert parse.shift_dates('15Nov22, 15Dec22, B551759') == \
-            ('B551759', ['15Nov22', '15Dec22'])
+            ('B551759', ['1922-11-15', '1922-12-15'])
 
 
     def test_pop_dates(self):
@@ -352,7 +352,7 @@ class TestShiftPop(object):
         s = '(pub. abroad 15Feb23, AI-4905), A704583. R60233, 28Mar50, Elsie Bambridge (C)'
         assert parse.shift_pub_abroad(s) == \
             ('A704583. R60233, 28Mar50, Elsie Bambridge (C)',
-             'pub. abroad|15Feb23|AI-4905')
+             'pub. abroad|1923-02-15|AI-4905')
 
 
     def test_shift_see_also(self):
@@ -375,10 +375,10 @@ class TestFormat1(object):
         parsed = parse.parse('4', '1', simple)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'A. E. UHE, by Frederick H. Martens. (Little biographies: series 1, Musicians)'
-        assert parsed[0]['odat'] == '30Dec22'
+        assert parsed[0]['odat'] == '1922-12-30'
         assert parsed[0]['oreg'] == 'A695089'
         assert parsed[0]['id'] == 'R59809'
-        assert parsed[0]['rdat'] == '17Mar50'
+        assert parsed[0]['rdat'] == '1950-03-17'
         assert parsed[0]['claimants'] == 'Breitkopf Publications, inc., successor to Breitkopf & Haertel, inc.|PWH'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -389,17 +389,17 @@ class TestFormat1(object):
         parsed = parse.parse('4', '1', f1_reg_pairs)
         assert len(parsed) == 4
         assert parsed[0]['book'] == "ABBOTT'S DIGEST OF ALL THE NEW YORK REPORTS. Apr., July, Oct., Dec. 1922."
-        assert parsed[0]['odat'] == '31May22'
+        assert parsed[0]['odat'] == '1922-05-31'
         assert parsed[0]['oreg'] == 'B528574'
         assert parsed[0]['id'] == 'R61801'
-        assert parsed[0]['rdat'] == '28Apr50'
+        assert parsed[0]['rdat'] == '1950-04-28'
         assert parsed[0]['claimants'] == 'The Lawyers Co-operative Publishing Co.|PCW'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
-        assert parsed[1]['odat'] == '24Aug22'
-        assert parsed[2]['odat'] == '2Dec22'
-        assert parsed[3]['odat'] == '2Mar23'
+        assert parsed[1]['odat'] == '1922-08-24'
+        assert parsed[2]['odat'] == '1922-12-02'
+        assert parsed[3]['odat'] == '1923-03-02'
 
         assert parsed[1]['oreg'] == 'B548911'
         assert parsed[2]['oreg'] == 'B553698'
@@ -409,49 +409,49 @@ class TestFormat1(object):
         assert parsed[2]['id'] == 'R61808'
         assert parsed[3]['id'] == 'R61815'
 
-        assert parsed[1]['rdat'] == '28Apr50'
-        assert parsed[2]['rdat'] == '28Apr50'
-        assert parsed[3]['rdat'] == '28Apr50'
+        assert parsed[1]['rdat'] == '1950-04-28'
+        assert parsed[2]['rdat'] == '1950-04-28'
+        assert parsed[3]['rdat'] == '1950-04-28'
 
 
     def test_one_part_ren_mixed(self, one_part_ren_mixed):
         parsed = parse.parse('4', '1', one_part_ren_mixed)
         assert len(parsed) == 4
         assert parsed[0]['book'] == 'AMERICAN LAW REPORTS ANNOTATED. Cumulative index, v. 16-18, 16-19, 16-20, 22-23. Indexes to cases and notes combined.'
-        assert parsed[0]['odat'] == '13Jul22'
+        assert parsed[0]['odat'] == '1922-07-13'
         assert parsed[0]['oreg'] == 'A683889'
         assert parsed[0]['id'] == 'R61784'
-        assert parsed[0]['rdat'] == '28Apr50'
+        assert parsed[0]['rdat'] == '1950-04-28'
         assert parsed[0]['claimants'] == 'The Lawyers Co-operative Publishing Co.|PCW||Bancroft-Whitney Co.|PCW'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
-        assert parsed[1]['odat'] == '6Sep22'
+        assert parsed[1]['odat'] == '1922-09-06'
         assert parsed[1]['oreg'] == 'A683890'
         assert parsed[1]['id'] == 'R61785'
-        assert parsed[1]['rdat'] == '28Apr50'
+        assert parsed[1]['rdat'] == '1950-04-28'
 
-        assert parsed[2]['odat'] == '23Oct22'
+        assert parsed[2]['odat'] == '1922-10-23'
         assert parsed[2]['oreg'] == 'A683891'
         assert parsed[2]['id'] == 'R61786'
-        assert parsed[2]['rdat'] == '28Apr50'
+        assert parsed[2]['rdat'] == '1950-04-28'
 
-        assert parsed[3]['odat'] == '23Apr23'
+        assert parsed[3]['odat'] == '1923-04-23'
         assert parsed[3]['oreg'] == 'A704483'
         assert parsed[3]['id'] == 'R61796'
-        assert parsed[3]['rdat'] == '28Apr50'
+        assert parsed[3]['rdat'] == '1950-04-28'
     
 
     def test_single_interim(self, single_interim_pub):
         parsed = parse.parse('4', '1', single_interim_pub)
         assert len(parsed) == 1
         assert parsed[0]['book'] == "ADDRESS, by Rudyard Kipling, at the annual dinner of the Royal College of Surgeons, Feb. 14, 1923. Pub. in England in the Morning post, Feb. 15, 1923, as The mystery of man's triumphs of surgery."
-        assert parsed[0]['odat'] == '27Mar23'
+        assert parsed[0]['odat'] == '1923-03-27'
         assert parsed[0]['oreg'] == 'A704583'
         assert parsed[0]['id'] == 'R60233'
-        assert parsed[0]['rdat'] == '28Mar50'
+        assert parsed[0]['rdat'] == '1950-03-28'
         assert parsed[0]['claimants'] == 'Elsie Bambridge|C'
-        assert parsed[0]['previous'] == 'pub. abroad|15Feb23|AI-4905'
+        assert parsed[0]['previous'] == 'pub. abroad|1923-02-15|AI-4905'
         assert parsed[0]['new_matter'] is None
 
 
@@ -459,12 +459,12 @@ class TestFormat1(object):
         parsed = parse.parse('4', '1', interim_pub_date_only)
         assert len(parsed) == 1
         assert parsed[0]['book'] == "THE COOK'S WEDDING AND OTHER STORIES, from the Russian of Anton Chekhov. Constance Garnett, translator."
-        assert parsed[0]['odat'] == '21Mar22'
+        assert parsed[0]['odat'] == '1922-03-21'
         assert parsed[0]['oreg'] == 'A659245'
         assert parsed[0]['id'] == 'R59404'
-        assert parsed[0]['rdat'] == '13Mar50'
+        assert parsed[0]['rdat'] == '1950-03-13'
         assert parsed[0]['claimants'] == 'David Garnett|C'
-        assert parsed[0]['previous'] == 'pub. abroad|2Feb22|'
+        assert parsed[0]['previous'] == 'pub. abroad|1922-02-02|'
         assert parsed[0]['new_matter'] is None
 
     
@@ -472,12 +472,12 @@ class TestFormat1(object):
         parsed = parse.parse('4', '1', multiple_interim_pub)
         assert len(parsed) == 1
         assert parsed[0]['book'] == "AND THE DEAD SPAKE; AND THE HORROR-HORN, by E. F. Benson. Pub. in England in Hutchinson's magazine, Sept.-Oct. 1922, under titles \"The horror-horn\" and \"And the dead spake\"; illustrated by \"Blam.\""
-        assert parsed[0]['odat'] == '1Mar23'
+        assert parsed[0]['odat'] == '1923-03-01'
         assert parsed[0]['oreg'] == 'A696722'
         assert parsed[0]['id'] == 'R59139'
-        assert parsed[0]['rdat'] == '3Mar50'
+        assert parsed[0]['rdat'] == '1950-03-03'
         assert parsed[0]['claimants'] == 'Kenneth Stewart Patrick McDowell|NK'
-        assert parsed[0]['previous'] == 'pub. abroad|24Aug22|AI-4680||pub. abroad|16Sep22|AI-4725'
+        assert parsed[0]['previous'] == 'pub. abroad|1922-08-24|AI-4680||pub. abroad|1922-09-16|AI-4725'
         assert parsed[0]['new_matter'] is None
 
 
@@ -485,10 +485,10 @@ class TestFormat1(object):
         parsed = parse.parse('4', '1', simple_two_parts)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'AN ADVANCED COURSE OF INSTRUCTION IN CHEMICAL PRINCIPLES, by Arthur A. Noyes and Miles S. Sherrill. Complete ed.'
-        assert parsed[0]['odat'] == '16May22'
+        assert parsed[0]['odat'] == '1922-05-16'
         assert parsed[0]['oreg'] == 'A674144'
         assert parsed[0]['id'] == 'R59672'
-        assert parsed[0]['rdat'] == '20Mar50'
+        assert parsed[0]['rdat'] == '1950-03-20'
         assert parsed[0]['claimants'] == 'Clement Gould Noyes|NK'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -498,10 +498,10 @@ class TestFormat1(object):
         parsed = parse.parse('4', '1', two_part_bracket_comment)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'COL. WM. F. CODY, by Robert Lindneux. [Buffalo Bill, astride white horse; horse standing on brow of hill north-west of Cody, overlooking the town; Cedar and Rattlesnake mountains in background]'
-        assert parsed[0]['odat'] == '18Mar22'
+        assert parsed[0]['odat'] == '1922-03-18'
         assert parsed[0]['oreg'] == 'G65236'
         assert parsed[0]['id'] == 'R59553'
-        assert parsed[0]['rdat'] == '9Mar50'
+        assert parsed[0]['rdat'] == '1950-03-09'
         assert parsed[0]['claimants'] == 'Robert Lindneux|A'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -511,10 +511,10 @@ class TestFormat1(object):
         parsed = parse.parse('4', '1', two_part_preceding_info)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'LES THIBAULT, par Roger Martin du Gard. t. 1: Le cahier gris.'
-        assert parsed[0]['odat'] == '1May22'
+        assert parsed[0]['odat'] == '1922-05-01'
         assert parsed[0]['oreg'] == 'AF19918'
         assert parsed[0]['id'] == 'R61349'
-        assert parsed[0]['rdat'] == '24Apr50'
+        assert parsed[0]['rdat'] == '1950-04-24'
         assert parsed[0]['claimants'] == 'Roger Martin du Gard|A'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -524,21 +524,21 @@ class TestFormat1(object):
         parsed = parse.parse('4', '1', renewal_id_range)
         assert len(parsed) == 8
         assert parsed[0]['book'] == "ADVENTURES OF DOCTOR DOLITTLE, by Hugh Lofting. (In the New York tribune, Dec. 24-31, 1922)"
-        assert parsed[0]['odat'] == '24Dec22'
+        assert parsed[0]['odat'] == '1922-12-24'
         assert parsed[0]['oreg'] == 'B542207'
         assert parsed[0]['id'] == 'R63718'
-        assert parsed[0]['rdat'] == '23Jun50'
+        assert parsed[0]['rdat'] == '1950-06-23'
         assert parsed[0]['claimants'] == 'Josephine Lofting|W'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
-        assert parsed[1]['odat'] == '25Dec22'
-        assert parsed[2]['odat'] == '26Dec22'
-        assert parsed[3]['odat'] == '27Dec22'
-        assert parsed[4]['odat'] == '28Dec22'
-        assert parsed[5]['odat'] == '29Dec22'
-        assert parsed[6]['odat'] == '30Dec22'
-        assert parsed[7]['odat'] == '31Dec22'
+        assert parsed[1]['odat'] == '1922-12-25'
+        assert parsed[2]['odat'] == '1922-12-26'
+        assert parsed[3]['odat'] == '1922-12-27'
+        assert parsed[4]['odat'] == '1922-12-28'
+        assert parsed[5]['odat'] == '1922-12-29'
+        assert parsed[6]['odat'] == '1922-12-30'
+        assert parsed[7]['odat'] == '1922-12-31'
 
         assert parsed[1]['oreg'] == 'B542208'
         assert parsed[2]['oreg'] == 'B542209'
@@ -556,48 +556,48 @@ class TestFormat1(object):
         assert parsed[6]['id'] == 'R63724'
         assert parsed[7]['id'] == 'R63725'
 
-        assert parsed[1]['rdat'] == '23Jun50'
-        assert parsed[2]['rdat'] == '23Jun50'
-        assert parsed[3]['rdat'] == '23Jun50'
-        assert parsed[4]['rdat'] == '23Jun50'
-        assert parsed[5]['rdat'] == '23Jun50'
-        assert parsed[6]['rdat'] == '23Jun50'
-        assert parsed[7]['rdat'] == '23Jun50'
+        assert parsed[1]['rdat'] == '1950-06-23'
+        assert parsed[2]['rdat'] == '1950-06-23'
+        assert parsed[3]['rdat'] == '1950-06-23'
+        assert parsed[4]['rdat'] == '1950-06-23'
+        assert parsed[5]['rdat'] == '1950-06-23'
+        assert parsed[6]['rdat'] == '1950-06-23'
+        assert parsed[7]['rdat'] == '1950-06-23'
 
 
     def test_chiastic_id_range(self, chiastic_id_range):
         parsed = parse.parse('4', '1', chiastic_id_range)
         assert len(parsed) == 2
         assert parsed[0]['book'] == "AINSLEE'S. v. 50, nos. 4-5, Dec. 1922-Jan. 1923."
-        assert parsed[0]['odat'] == '15Nov22'
+        assert parsed[0]['odat'] == '1922-11-15'
         assert parsed[0]['oreg'] == 'B551759'
         assert parsed[0]['id'] == 'R56538'
-        assert parsed[0]['rdat'] == '30Dec49'
+        assert parsed[0]['rdat'] == '1949-12-30'
         assert parsed[0]['claimants'] == 'Street & Smith Publications, inc.|PCW'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
-        assert parsed[1]['odat'] == '15Dec22'
+        assert parsed[1]['odat'] == '1922-12-15'
         assert parsed[1]['oreg'] == 'B567153'
         assert parsed[1]['id'] == 'R56539'
-        assert parsed[1]['rdat'] == '30Dec49'
+        assert parsed[1]['rdat'] == '1949-12-30'
 
 
     def test_many_reg_dates_one_reg_num(self, many_reg_dates_one_reg_num):
         parsed = parse.parse('4', '1', many_reg_dates_one_reg_num)
         assert len(parsed) == 4
         assert parsed[0]['book'] == "CATHERINE, comédie en 4. actes de Henri Lavedan. (In Les Annales, nos. 2061-2064)"
-        assert parsed[0]['odat'] == '24Dec22'
+        assert parsed[0]['odat'] == '1922-12-24'
         assert parsed[0]['oreg'] == 'D63725'
         assert parsed[0]['id'] == 'R61029'
-        assert parsed[0]['rdat'] == '17Apr50'
+        assert parsed[0]['rdat'] == '1950-04-17'
         assert parsed[0]['claimants'] == 'Mme veuve Henri Lavedan, née Pauline Auguez|W'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
-        assert parsed[1]['odat'] == '31Dec22'
-        assert parsed[2]['odat'] == '7Jan23'
-        assert parsed[3]['odat'] == '14Jan23'
+        assert parsed[1]['odat'] == '1922-12-31'
+        assert parsed[2]['odat'] == '1923-01-07'
+        assert parsed[3]['odat'] == '1923-01-14'
     
         assert parsed[1]['oreg'] == 'D63725'
         assert parsed[2]['oreg'] == 'D63725'
@@ -607,37 +607,37 @@ class TestFormat1(object):
         assert parsed[2]['id'] == 'R61029'
         assert parsed[3]['id'] == 'R61029'
 
-        assert parsed[1]['rdat'] == '17Apr50'
-        assert parsed[2]['rdat'] == '17Apr50'
-        assert parsed[3]['rdat'] == '17Apr50'
+        assert parsed[1]['rdat'] == '1950-04-17'
+        assert parsed[2]['rdat'] == '1950-04-17'
+        assert parsed[3]['rdat'] == '1950-04-17'
 
 
     def test_one_date_list_of_regnums(self, one_date_list_of_regnums):
         parsed = parse.parse('4', '1', one_date_list_of_regnums)
         assert len(parsed) == 2
         assert parsed[0]['book'] == 'SOUTH CAROLINA DIGEST, 1783-1886. v. 1-2.'
-        assert parsed[0]['odat'] == '2Dec22'
+        assert parsed[0]['odat'] == '1922-12-02'
         assert parsed[0]['oreg'] == 'A698474'
         assert parsed[0]['id'] == 'R57358'
-        assert parsed[0]['rdat'] == '16Jan50'
+        assert parsed[0]['rdat'] == '1950-01-16'
         assert parsed[0]['claimants'] == 'West Publishing Co.|PWH'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         
-        assert parsed[1]['odat'] == '2Dec22'
+        assert parsed[1]['odat'] == '1922-12-02'
         assert parsed[1]['oreg'] == 'A698473'
         assert parsed[1]['id'] == 'R57359'
-        assert parsed[1]['rdat'] == '16Jan50'
+        assert parsed[1]['rdat'] == '1950-01-16'
 
     @pytest.mark.xfail
     def test_date_range_one_regnum(self, date_range_one_regnum):
         parsed = parse.parse('4', '1', date_range_one_regnum)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'REINE DE TANGO, grand roman, inédit par Marcel Priollet. 24 installments. (In Echo du nord, Lille)'
-        assert parsed[0]['odat'] == '10Sep22'
+        assert parsed[0]['odat'] == '1922-11-10'
         assert parsed[0]['oreg'] == 'AF22373'
         assert parsed[0]['id'] == 'R61026'
-        assert parsed[0]['rdat'] == '14Apr50'
+        assert parsed[0]['rdat'] == '1950-04-14'
         assert parsed[0]['claimants'] == 'Marcel Priollet|A'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -648,10 +648,10 @@ class TestFormat1(object):
         parsed = parse.parse('4', '1', new_matter)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'AMERICAN POCKET MEDICAL DICTIONARY; W. A. Newman Dorland, editor. 12th ed., rev.'
-        assert parsed[0]['odat'] == '22May22'
+        assert parsed[0]['odat'] == '1922-05-22'
         assert parsed[0]['oreg'] == 'A661865'
         assert parsed[0]['id'] == 'R59332'
-        assert parsed[0]['rdat'] == '7Mar50'
+        assert parsed[0]['rdat'] == '1950-03-07'
         assert parsed[0]['claimants'] == 'W. B. Saunders Co.|PWH'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] == 'new matter'
@@ -673,10 +673,10 @@ class TestFormat1(object):
         parsed = parse.parse('4', '1', missing_class_code)
         assert len(parsed) == 1
         assert parsed[0]['book'] == "FRANKLIN'S HOMECOMING, High Street wharf, Philadelphia, by Jean Leon Gerome Ferris. [Group picture, ship at center]"
-        assert parsed[0]['odat'] == '28Mar23'
+        assert parsed[0]['odat'] == '1923-03-28'
         assert parsed[0]['oreg'] == 'G68152'
         assert parsed[0]['id'] == 'R63588'
-        assert parsed[0]['rdat'] == '23Jun50'
+        assert parsed[0]['rdat'] == '1950-06-23'
         assert parsed[0]['claimants'] == 'Ernest N. Ryder, administrator d.b.n.c.t.a. estate of author.|'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -686,28 +686,28 @@ class TestFormat1(object):
         parsed = parse.parse('4', '1', ny_herald)
         assert len(parsed) == 31
         assert parsed[0]['book'] == 'NEW YORK HERALD. v. 86, no. 336-v. 87, no. 1, Aug. 1-31, 1922.'
-        assert parsed[0]['odat'] == '1Aug22'
+        assert parsed[0]['odat'] == '1922-08-01'
         assert parsed[0]['oreg'] == 'B541697'
         assert parsed[0]['id'] == 'R65000'
-        assert parsed[0]['rdat'] == '28Jul50'
+        assert parsed[0]['rdat'] == '1950-07-28'
         assert parsed[0]['claimants'] == 'New York Herald Tribune, inc.|PCW'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
-        assert parsed[30]['odat'] == '31Aug22'
+        assert parsed[30]['odat'] == '1922-08-31'
         assert parsed[30]['oreg'] == 'B541727'
         assert parsed[30]['id'] == 'R65030'
-        assert parsed[30]['rdat'] == '28Jul50'
+        assert parsed[30]['rdat'] == '1950-07-28'
 
 
     def test_pub_abroad_at_end(self, pub_abroad_at_end):
         parsed = parse.parse('4', '1', pub_abroad_at_end)
         assert len(parsed) == 1
         assert parsed[0]['book'] == "FRANKLIN'S HOMECOMING, High Street wharf, Philadelphia, by Jean Leon Gerome Ferris. [Group picture, ship at center]"
-        assert parsed[0]['odat'] == '28Mar23'
+        assert parsed[0]['odat'] == '1923-03-28'
         assert parsed[0]['oreg'] == 'G68152'
         assert parsed[0]['id'] == 'R63588'
-        assert parsed[0]['rdat'] == '23Jun50'
+        assert parsed[0]['rdat'] == '1950-06-23'
         assert parsed[0]['claimants'] == 'Ernest N. Ryder, administrator d.b.n.c.t.a. estate of author.|'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -728,10 +728,10 @@ class TestFormat1(object):
         parsed = parse.parse('4', '1', chiastic_three_part)
         assert len(parsed) == 1
         assert parsed[0]['book'] == "DESERT RUBAIYAT, by Arthur C. Train. (In McCall's magazine) June 1923 issue."
-        assert parsed[0]['odat'] == '10May23'
+        assert parsed[0]['odat'] == '1923-05-10'
         assert parsed[0]['oreg'] == 'B576564'
         assert parsed[0]['id'] == 'R69499'
-        assert parsed[0]['rdat'] == '8Nov50'
+        assert parsed[0]['rdat'] == '1950-11-08'
         assert parsed[0]['claimants'] == 'Helen C. Train|W'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -742,10 +742,10 @@ class TestFormat2(object):
         parsed = parse.parse('8', '1', f2_simplest)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'ABBOTT, AUSTIN. Digest of all the New York reports, 1925.'
-        assert parsed[0]['odat'] == '14Aug26'
+        assert parsed[0]['odat'] == '1926-08-14'
         assert parsed[0]['oreg'] == 'A901544'
         assert parsed[0]['id'] == 'R129491'
-        assert parsed[0]['rdat'] == '21Apr54'
+        assert parsed[0]['rdat'] == '1954-04-21'
         assert parsed[0]['claimants'] == 'Lawyers Co-operative Pub. Co.|PCW'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -755,10 +755,10 @@ class TestFormat2(object):
         parsed = parse.parse('8', '1', f2_two_ccs)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'AMERICAN FEDERAL TAX REPORTS. Vol. 5-6, no. 1, Feb. 1927. v. 6, no. 1.'
-        assert parsed[0]['odat'] == '23Feb27'
+        assert parsed[0]['odat'] == '1927-02-23'
         assert parsed[0]['oreg'] == 'A972256'
         assert parsed[0]['id'] == 'R128596'
-        assert parsed[0]['rdat'] == '5Apr54'
+        assert parsed[0]['rdat'] == '1954-04-05'
         assert parsed[0]['claimants'] == 'West Pub. Co.|PWH'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -768,10 +768,10 @@ class TestFormat2(object):
         parsed = parse.parse('8', '1', f2_pub_abroad)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'AMUNDSEN, ROALD ENGELBREGT GRAVNING. First crossing of the Polar Sea, by Roald Amundsen and Lincoln Ellsworth; with additional chapters by other members of the expedition. (Pub. abroad under title: The first flight across the Polar Sea)'
-        assert parsed[0]['odat'] == '15Apr27'
+        assert parsed[0]['odat'] == '1927-04-15'
         assert parsed[0]['oreg'] == 'A972756'
         assert parsed[0]['id'] == 'R129296'
-        assert parsed[0]['rdat'] == '19Apr54'
+        assert parsed[0]['rdat'] == '1954-04-19'
         assert parsed[0]['claimants'] == 'Mary-Louise Ellsworth|W'
         assert parsed[0]['previous'] == 'pub. abroad|25Feb27|AI-9217'
         assert parsed[0]['new_matter'] is None
@@ -780,10 +780,10 @@ class TestFormat2(object):
         parsed = parse.parse('8', '1', f2_on_matter)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'ANDREWS, MARY RAYMOND SHIPMAN. The perfect tribute; illustrated by Wilfred Jones.'
-        assert parsed[0]['odat'] == '8Oct26'
+        assert parsed[0]['odat'] == '1926-10-08'
         assert parsed[0]['oreg'] == 'A950706'
         assert parsed[0]['id'] == 'R132516'
-        assert parsed[0]['rdat'] == '24Jun54'
+        assert parsed[0]['rdat'] == '1954-06-24'
         assert parsed[0]['claimants'] == 'Charles Scribner\'s Sons|PWH'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] == 'front. & decorations'
@@ -793,10 +793,10 @@ class TestFormat2(object):
         parsed = parse.parse('8', '1', f2_date_reg_pairs)
         assert len(parsed) == 6
         assert parsed[0]['book'] == 'BALMER, EDWIN. Flying death. (In Liberty. May 8-June 12, 1926)'
-        assert parsed[0]['odat'] == '8May26'
+        assert parsed[0]['odat'] == '1926-05-08'
         assert parsed[0]['oreg'] == 'B699781'
         assert parsed[0]['id'] == 'R126461'
-        assert parsed[0]['rdat'] == '10Aug53'
+        assert parsed[0]['rdat'] == '1953-08-10'
         assert parsed[0]['claimants'] == 'Edwin Balmer|A'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -806,10 +806,10 @@ class TestFormat2(object):
         parsed = parse.parse('8', '1', f2_three_parts)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'BRAASCH, WILLIAM KARL. Special supplementary bulletin. Nos. 1-7. no. 2.'
-        assert parsed[0]['odat'] == '24May26'
+        assert parsed[0]['odat'] == '1926-05-24'
         assert parsed[0]['oreg'] == 'A896875'
         assert parsed[0]['id'] == 'R130352'
-        assert parsed[0]['rdat'] == '12May54'
+        assert parsed[0]['rdat'] == '1954-05-12'
         assert parsed[0]['claimants'] == 'W. K. Braasch|A'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -820,10 +820,10 @@ class TestFormat2(object):
         parsed = parse.parse('8', '1', f2_three_parts_pub_abroad)
         assert len(parsed) == 4
         assert parsed[0]['book'] == 'PEDLER, MARGARET. Yesterday\'s harvest. (Pub. abroad in installments in the Yellow magazine, July 9-Sept. 3, 1926. Illus. by M. MacMichael)'
-        assert parsed[0]['odat'] == '28Dec26'
+        assert parsed[0]['odat'] == '1926-12-28'
         assert parsed[0]['oreg'] == 'A958935'
         assert parsed[0]['id'] == 'R123834'
-        assert parsed[0]['rdat'] == '4Jan54'
+        assert parsed[0]['rdat'] == '1954-01-04'
         assert parsed[0]['claimants'] == 'Flora Mabel Warhurst & Harold Pincott|E'
         assert parsed[0]['previous'] is '|9Jul26|AI-8495'
         assert parsed[0]['new_matter'] is None
@@ -833,10 +833,10 @@ class TestFormat2(object):
         parsed = parse.parse('8', '1', f2_three_parts_on_matter)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'MORLEY, CHRISTOPHER. The Haverford edition of Christopher Morley. 1. Parnassus on wheels. Kathleen.'
-        assert parsed[0]['odat'] == '29Jul27'
+        assert parsed[0]['odat'] == '1927-07-29'
         assert parsed[0]['oreg'] == 'A999443'
         assert parsed[0]['id'] == 'R136623'
-        assert parsed[0]['rdat'] == '1Oct54'
+        assert parsed[0]['rdat'] == '1954-10-01'
         assert parsed[0]['claimants'] == 'Christopher Morley|A'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] == 'revisions'
@@ -846,28 +846,28 @@ class TestFormat2(object):
         parsed = parse.parse('9', '1', f2_incomplete_reg_ids)
         assert len(parsed) == 4
         assert parsed[0]['book'] == 'AMERICAN DIGEST. Third decennial edition of the American digest, 1926. v.1-4.'
-        assert parsed[0]['odat'] == '30Jan28'
+        assert parsed[0]['odat'] == '1928-01-30'
         assert parsed[0]['oreg'] == 'A1068234'
         assert parsed[0]['id'] == 'R148105'
-        assert parsed[0]['rdat'] == '4Apr55'
+        assert parsed[0]['rdat'] == '1955-04-04'
         assert parsed[0]['claimants'] == 'West Pub. Co.|PWH'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
-        assert parsed[3]['odat'] == '30Mar28'
+        assert parsed[3]['odat'] == '1928-03-30'
         assert parsed[3]['oreg'] == 'A1077175'
         assert parsed[3]['id'] == 'R148129'
-        assert parsed[3]['rdat'] == '4Apr55'
+        assert parsed[3]['rdat'] == '1955-04-04'
         
 
     def test_three_part_two_cc(self, format_two_two_cc):
         parsed = parse.parse('8', '1', format_two_two_cc)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'ABBOTT, AUSTIN. Digest of all the New York reports. Third supplement, 1918-1924. Vol. 4-5. v. 4.'
-        assert parsed[0]['odat'] == '3May26'
+        assert parsed[0]['odat'] == '1926-05-03'
         assert parsed[0]['oreg'] == 'A890950'
         assert parsed[0]['id'] == 'R129485'
-        assert parsed[0]['rdat'] == '21Apr54'
+        assert parsed[0]['rdat'] == '1954-04-21'
         assert parsed[0]['claimants'] == 'Lawyers Co-operative Pub. Co.|PCW'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -877,10 +877,10 @@ class TestFormat2(object):
         parsed = parse.parse('9', '1', f2_three_parts_post_claim)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'COLLINS, DALE. The sentimentalists. (In The Royal magazine, Dec. 1926-Mar. 1927) Chapter 19-24.'
-        assert parsed[0]['odat'] == '22Nov26'
+        assert parsed[0]['odat'] == '1926-11-22'
         assert parsed[0]['oreg'] == 'AI-8848'
         assert parsed[0]['id'] == 'R148665'
-        assert parsed[0]['rdat'] == '19Nov54'
+        assert parsed[0]['rdat'] == '1954-11-19'
         assert parsed[0]['claimants'] == 'Dale Collins|A'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -890,10 +890,10 @@ class TestFormat2(object):
         parsed = parse.parse('9', '1', f2_see_also_renewal)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'BOYKIN, EDWARD C. Everybody\'s look and play piano course, by Edward C. Boykin, pseud. of Osbourne McConathy.'
-        assert parsed[0]['odat'] == '7Oct27'
+        assert parsed[0]['odat'] == '1927-10-07'
         assert parsed[0]['oreg'] == 'A1009237'
         assert parsed[0]['id'] == 'R156196'
-        assert parsed[0]['rdat'] == '23Sep55'
+        assert parsed[0]['rdat'] == '1955-09-23'
         assert parsed[0]['claimants'] == 'Elizabeth Aikens & Osbourne Wm. McConathy|C'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
@@ -905,10 +905,10 @@ class TestFormat2(object):
         parsed = parse.parse('17', '1', f2_rearrange_regnum)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'HUDSON, W. H. Green mansions. Introd. by William Beebe; illus. by Edward A. Wilson.'
-        assert parsed[0]['odat'] == '25Feb35'
+        assert parsed[0]['odat'] == '1935-02-25'
         assert parsed[0]['oreg'] == 'A85086'
         assert parsed[0]['id'] == 'R312848'
-        assert parsed[0]['rdat'] == '25Feb63'
+        assert parsed[0]['rdat'] == '1963-02-25'
         assert parsed[0]['claimants'] == 'George Macy Companies, Inc.|PWH'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] == 'introd., illus. & design'
@@ -921,10 +921,10 @@ class TestFormat3(object):
         parsed = parse.parse('27', '2', f3_simple)
         assert len(parsed) == 1
         assert parsed[0]['book'] == 'War injuries of the extremities. By Paul W. Roder.'
-        assert parsed[0]['odat'] == '20Jul45'
+        assert parsed[0]['odat'] == '1945-07-20'
         assert parsed[0]['oreg'] == 'AA488754'
         assert parsed[0]['id'] == 'R554644'
-        assert parsed[0]['rdat'] == '25Jun73'
+        assert parsed[0]['rdat'] == '1973-06-25'
         assert parsed[0]['claimants'] == 'Ciba Geigy Corporation|PWH'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None

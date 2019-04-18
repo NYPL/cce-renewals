@@ -2,6 +2,7 @@
 
 import argparse
 import csv
+import dateutil.parser
 import re
 import sys
 
@@ -68,7 +69,7 @@ def pop_field(s, r):
 
 shift_dates = lambda s: shift_field(s, SHIFT_DATES, extract_dates)
 
-shift_one_date = lambda s: shift_field(s, SHIFT_ONE_DATE)
+shift_one_date = lambda s: shift_field(s, SHIFT_ONE_DATE, extract_dates)
 
 pop_dates = lambda s: pop_field(s, POP_DATES)
 
@@ -97,8 +98,16 @@ def shift_claims(s):
             '||'.join(format_claims(split_on_codes(CODE_SPLIT.split(m[1])))))
 
 
+def parse_date(d):
+    dt = dateutil.parser.parse(d)
+    if dt.year > 2000:
+        return (dt - dateutil.relativedelta.relativedelta(years=100)).strftime('%Y-%m-%d')
+    
+    return dt.strftime('%Y-%m-%d')
+    
+
 def extract_dates(reg, dates):
-    return (reg, ONE_DATE.findall(dates[0]))
+    return (reg, [parse_date(d) for d in ONE_DATE.findall(dates[0])])
 
 
 def extract_regnums(reg, regnums):
@@ -106,7 +115,9 @@ def extract_regnums(reg, regnums):
 
 
 def extract_date_reg_pairs(reg, pairs):
-    return (reg, ONE_DATE.findall(pairs[0]), ONE_REGNUM.findall(pairs[0]))
+    return (reg,
+            [parse_date(d) for d in ONE_DATE.findall(pairs[0])],
+            ONE_REGNUM.findall(pairs[0]))
 
 
 def extract_rids(reg, rids):
@@ -155,7 +166,7 @@ def extract_see_also(reg, r):
 
     
 def interim_pairs(s, p):
-    dates = ONE_DATE.findall(p)
+    dates = [parse_date(d) for d in ONE_DATE.findall(p)]
     numbers = ONE_AI.findall(p)
 
     if len(dates) == len(numbers):
@@ -367,6 +378,7 @@ def f1_one_part(e):
             reg, dates = shift_dates(reg)
         except TypeError:
             reg, dates = shift_one_date(reg)
+            print(dates)
 
         try:
             reg, regnums = shift_regnums(reg)
