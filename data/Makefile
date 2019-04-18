@@ -15,13 +15,16 @@ PG := 11801 11802 11803 11804 11805 11806 11807 11808 11809 11810	\
 
 #.PHONY: subdirs $(SUBDIRS)
 .PHONY: post-1977 $(POST77) $(YEARFILE) pre-1977 $(PRE1977)
-.PHONY: $(PG) clean
+.PHONY: $(PG) all clean
+
+all: pre-1977 post-1977
 
 pre-1977: $(PRE1977)
 
+post-1977: $(POST77)
 
 $(POST77): google-renewals-all-20080624.xml
-	../scripts/expl-googl-cce -f $< -y $@ > $@.tsv
+	../scripts/expl-googl-cce -f $< -y $@ > unedited/$@-parsed.tsv
 
 google-renewals-all-20080624.xml: |google-renewals-20080516.zip
 	unzip -j google-renewals-20080516.zip google-renewals-20080624/google-renewals-all-20080624.xml
