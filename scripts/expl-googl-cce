@@ -51,7 +51,7 @@ args = parser.parse_args()
 tree = ET.parse(args.file)
 root = tree.getroot()
 
-fieldnames = ('volume', 'part','number', 'page', 'claimants', 'publ', 'id', 'note', 'oreg', 'clna', 'titl', 'name', 'odat', 'ocls', 'auth', 'dreg')
+fieldnames = ('volume', 'part','number', 'page', 'auth', 'titl', 'oreg', 'odat', 'id', 'dreg', 'claimants', 'publ', 'note')
 writer = csv.DictWriter(sys.stdout, fieldnames=fieldnames,
                         delimiter='\t', extrasaction='ignore', restval=None)
 writer.writeheader()
