@@ -296,6 +296,8 @@ class TestShift(object):
         assert parse.shift_dates(s) == (x, ['1922-12-30'])
         assert parse.shift_dates('15Nov22, 15Dec22, B551759') == \
             ('B551759', ['1922-11-15', '1922-12-15'])
+        assert parse.shift_dates('31Jun42; B552877.') == \
+            ('B552877.', [None])
 
 
     def test_shift_regnums(self):

@@ -4,6 +4,7 @@ import argparse
 import csv
 import dateutil.parser
 import re
+import sqlite3
 import sys
 
 DATE_RE = r'\d{1,2}[A-z]{3}\d{1,2}'
@@ -48,11 +49,11 @@ ONE_AI = re.compile(ONE_AI_REGNUM)
 
 
 def record(**kwargs):
-    return {**{'book': None, 'oreg': None, 'odat': None, 'id': None,
-               'rdat': None, 'claimants': None, 'previous': None,
-               'new_matter': None, 'notes': None, 'see_also_ren': None,
-               'see_also_ren': None},
-            **kwargs}
+    return {**{'book': None, 'author': None, 'title': None, 'oreg': None,
+               'odat': None, 'id': None, 'rdat': None,
+               'claimants': None, 'previous': None, 'new_matter': None,
+               'notes': None, 'see_also_ren': None,
+               'see_also_ren': None}, **kwargs}
 
 
 def shift_field(s, r, op=lambda x, y: (x, y)):
@@ -84,11 +85,15 @@ def shift_claims(s):
 
 
 def parse_date(d):
-    dt = dateutil.parser.parse(d)
-    if dt.year > 2000:
-        return (dt - dateutil.relativedelta.relativedelta(years=100)).strftime('%Y-%m-%d')
+    try:
+        dt = dateutil.parser.parse(d)
+        if dt.year > 2000:
+            return (dt - dateutil.relativedelta.relativedelta(years=100)).strftime('%Y-%m-%d')
     
-    return dt.strftime('%Y-%m-%d')
+        return dt.strftime('%Y-%m-%d')
+    except ValueError:
+        # Not all the dates are valid
+        return None
     
 
 def extract_dates(reg, dates):
@@ -240,24 +245,37 @@ def n_1_or_none(n, l):
     return l is None or n_or_1(n, l)
 
 
+def lookup_author_title(rid):
+    if rid:
+        cursor.execute('select author, title from renewals where id=?', (rid,))
+        row = cursor.fetchone()
+        if row:
+            return row
+
+    return (None, None)
+
+
 def format_record(book=None, regdates=None, regnums=None, rids=None,
                   rendates=None, claims=None, notes=None, previous=None,
                   new_matter=None, see_also_ren=None, see_also_reg=None):
 
+    auths_titles = [lookup_author_title(r) for r in rids]
+    authors = [r[0] for r in auths_titles]
+    titles = [r[1] for r in auths_titles]
     if all_singles(regdates, regnums, rids, rendates, previous):
-        return [record(book=book, odat=regdates[0], oreg=regnums[0], id=rids[0],
+        return [record(book=book, author=authors[0], title=titles[0], odat=regdates[0], oreg=regnums[0], id=rids[0],
                        rdat=rendates[0], claimants=claims,
                        new_matter=new_matter, previous=previous, notes=notes,
                        see_also_ren=see_also_ren, see_also_reg=see_also_reg)]
 
     if all_singles_but_interims(regdates, regnums, rids, rendates):
-        return [record(book=book, odat=regdates[0], oreg=regnums[0], id=rids[0],
+        return [record(book=book, author=authors[0], title=titles[0], odat=regdates[0], oreg=regnums[0], id=rids[0],
                 rdat=rendates[0], claimants=claims, new_matter=new_matter,
                        previous=previous, notes=notes,
                        see_also_ren=see_also_ren, see_also_reg=see_also_reg)]
 
     if all_multiples(regdates, regnums, rids, rendates, previous):
-        return pad_and_unroll_records(book=book, regdates=regdates,
+        return pad_and_unroll_records(book=book, authors=authors, titles=titles, regdates=regdates,
                                       regnums=regnums, rids=rids,
                                       rendates=rendates,
                                       claims=claims, new_matter=new_matter,
@@ -267,7 +285,7 @@ def format_record(book=None, regdates=None, regnums=None, rids=None,
                                       see_also_reg=see_also_reg)
 
     if most_multiples(regdates, regnums, rids, rendates, previous):
-        return pad_and_unroll_records(book=book, regdates=regdates,
+        return pad_and_unroll_records(book=book, authors=authors, titles=titles, regdates=regdates,
                                       regnums=regnums, rids=rids,
                                       rendates=rendates,
                                       claims=claims, new_matter=new_matter,
@@ -279,14 +297,16 @@ def format_record(book=None, regdates=None, regnums=None, rids=None,
     return False
 
 
-def pad_and_unroll_records(book=None, regdates=None, regnums=None, rids=None,
+def pad_and_unroll_records(book=None, authors=None, title=None, regdates=None, regnums=None, rids=None,
                   rendates=None, claims=None, notes=None, previous=None,
                   new_matter=None, see_also_ren=None, see_also_reg=None):
     max_len = max([len(l) for l in (regdates, regnums, rids, rendates)])
-    return [record(**dict(zip(('book', 'odat', 'oreg', 'id', 'rdat',
+    return [record(**dict(zip(('book', 'author', 'title', 'odat', 'oreg', 'id', 'rdat',
                                'claimants', 'new_matter', 'previous'),
                               r))) for r in \
             zip([book] * max_len,
+                unroll_to(max_len, authors),
+                unroll_to(max_len, titles),
                 unroll_to(max_len, regdates),
                 unroll_to(max_len, regnums),
                 unroll_to(max_len, rids),
@@ -363,7 +383,6 @@ def f1_one_part(e):
             reg, dates = shift_dates(reg)
         except TypeError:
             reg, dates = shift_one_date(reg)
-            print(dates)
 
         try:
             reg, regnums = shift_regnums(reg)
@@ -636,10 +655,15 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Load CCE xml into database')
     parser.add_argument('-f', '--file', metavar='FILE', type=str,
                     help='TSV file to process')
+    parser.add_argument('-d', '--db', metavar='DB', type=str, required=True,
+                    help='Sqlite database to use for Stanford data')
     args = parser.parse_args()
 
-    fields = ('volume', 'part','number', 'page', 'book', 'oreg',
-              'odat', 'id', 'rdat', 'claimants', 'previous',
+    stanford = sqlite3.connect(args.db)
+    cursor = stanford.cursor()
+    
+    fields = ('volume', 'part','number', 'page', 'author', 'title', 'book',
+              'oreg', 'odat', 'id', 'rdat', 'claimants', 'previous',
               'new_matter', 'see_also_ren', 'see_also_reg', 'notes',
               'full_text')
     
@@ -652,5 +676,4 @@ if __name__ == '__main__':
                 parsed = parse(row[0], row[2], row[-1])
 
                 for p in parsed:
-                    #print(add_metadata(p, row))
                     writer.writerow(add_metadata(p, row))

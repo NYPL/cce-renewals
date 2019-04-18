@@ -32,8 +32,8 @@ google-renewals-all-20080624.xml: |google-renewals-20080516.zip
 google-renewals-20080516.zip:
 	wget -q -N http://dl.google.com/rights/books/renewals/$@
 
-unedited/%-parsed.tsv: temp/%-all.tsv
-	../scripts/parse.py -f $<  > $@
+unedited/%-parsed.tsv: temp/%-all.tsv temp/stanford.db
+	../scripts/parse.py -f $< -d $(word 2,$^) > $@
 
 temp/%-all.tsv: temp/%-1.tsv temp/%-2.tsv
 	cat $^ > $@
@@ -266,6 +266,17 @@ temp/1977-2.tsv: temp/11856-8.txt
 	../scripts/unnest -f $^ -v 31 -p 1A -n 2 -e iso-8859-15 -7 > $@
 temp/11855-8.txt: 11855
 temp/11856-8.txt: 11856
+
+stanford-db: temp/stanford.db
+
+temp/stanford.db: |temp/20170427-copyright-renewals-records.csv
+	cd temp && ../../scripts/makedb
+
+temp/20170427-copyright-renewals-records.csv: temp/20170427-copyright-renewals-records.csv.zip
+	cd temp && unzip -j -n -q $(<F) 
+
+temp/20170427-copyright-renewals-records.csv.zip:
+	cd temp && wget -q -N http://web.stanford.edu/dept/SUL/collections/copyrightrenewals/files/20170427-copyright-renewals-records.csv.zip
 
 clean:
 	cd temp && rm 11*.txt && rm 19*.tsv
