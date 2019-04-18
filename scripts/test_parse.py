@@ -773,7 +773,7 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R129296'
         assert parsed[0]['rdat'] == '1954-04-19'
         assert parsed[0]['claimants'] == 'Mary-Louise Ellsworth|W'
-        assert parsed[0]['previous'] == 'pub. abroad|25Feb27|AI-9217'
+        assert parsed[0]['previous'] == 'pub. abroad|1927-02-25|AI-9217'
         assert parsed[0]['new_matter'] is None
 
     def test_f2_on_matter(self, f2_on_matter):
