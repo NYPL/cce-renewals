@@ -4,10 +4,42 @@ import argparse
 from collections import defaultdict
 import csv
 import lxml.etree as ET
+import re
 import sys
 
-#NS = {'alto': 'http://www.loc.gov/standards/alto/ns-v3#'}
-#ET.register_namespace('alto', 'http://www.loc.gov/standards/alto/ns-v3#')
+
+PARSE_REGNUM = re.compile(r'^([^0]+)(\d+)$')
+
+def hyphenize(c):
+    """Add a hyphen to the regnum class if it ends in a digit, (e.g. B5-)."""
+    return c + '-' if c[-1].isdigit() else c
+
+
+def reg_regnum(r):
+    m = PARSE_REGNUM.match(r)
+    return '{:s}{:d}'.format(hyphenize(m[1]), int(m[2]))
+
+
+def regularize_regnums(regnums, k):
+    return {k: '|'.join([reg_regnum(r) for r in regnums[k].split('|')])}
+
+
+def regularize(d):
+    """Return a new dict with some of the fields regularized."""
+    return {**d,
+            **regularize_regnums(d, 'oreg')}
+
+
+def format_holders(holders):
+    return {'claimants': '||'.join(
+        ['|'.join((h.find('Name').text, h.find('Type').text))
+         for h in holders])}
+
+def get_claimaints(d, rec):
+    """Use claimants from the parsed XML"""
+    return {**d,
+            **format_holders(rec.findall('Holder'))}
+
 
 parser = argparse.ArgumentParser(description='Read Google Renewals')
 parser.add_argument('-f', '--file', metavar='XML', type=argparse.FileType('r'),
@@ -31,10 +63,14 @@ for record in root.findall('./Record'):
 #            print(type(v))
             d[k.lower()].append(v)
 
+        
+        
         dd = dict([(b[0],'|'.join(b[1])) for b in d.items()])
-        recs += [dd]
+        dd = get_claimaints(dd, record)
+        recs += [regularize(dd)]
         fieldnames = fieldnames.union(dd.keys())
 
+        
 writer = csv.DictWriter(sys.stdout, fieldnames=fieldnames, delimiter='\t')
 writer.writeheader()
 for r in recs:
