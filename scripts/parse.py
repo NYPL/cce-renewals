@@ -20,11 +20,9 @@ PUB_ABROAD_RE = r'\(pub\. abroad.+?\)[,;]'
 NEW_MATTER_RE = r'(?:on (?:.+?);)?'
 
 shift_re = lambda r: re.compile(r'^(%s)(.*)$' % r)
-pop_re = lambda r: re.compile(r'^(.*) (%s)$' %r)
 
 SHIFT_DATES = shift_re(r'(?:%s(?:[;,\.]) )+' % DATE_RE)
 SHIFT_ONE_DATE = shift_re(DATE_RE)
-POP_DATES = pop_re(DATE_RE)
 SHIFT_REGNUMS = shift_re(r'(?:%s(?:,|\.) )+' % REGNUM_RE)
 SHIFT_RIDS = shift_re(r'(?:(?:R?\d+(?:\-R?\d+)?(?:(?:, |\.|\b)))+)')
                        
@@ -62,16 +60,9 @@ def shift_field(s, r, op=lambda x, y: (x, y)):
     return op(*(m[2].lstrip(';., '), [m[1]]))
 
 
-def pop_field(s, r):
-    m = r.match(s)
-    return (m[1].rstrip(';., '), [m[2]])
-
-
 shift_dates = lambda s: shift_field(s, SHIFT_DATES, extract_dates)
 
 shift_one_date = lambda s: shift_field(s, SHIFT_ONE_DATE, extract_dates)
-
-pop_dates = lambda s: pop_field(s, POP_DATES)
 
 shift_regnums = lambda s: shift_field(s, SHIFT_REGNUMS, extract_regnums)
 
@@ -85,12 +76,6 @@ shift_new_matter = lambda s: shift_field(s, SHIFT_NEW_MATTER,
                                          extract_new_matter)
 
 shift_see_also = lambda s: shift_field(s, SHIFT_SEE_ALSO, extract_see_also)
-
-def pop_rids(s):
-    m = MIXED_RIDS.search(s)
-    return (s[0:m.start(0)].rstrip(';., '),
-            unroll_rids(RID_OR_RANGE.findall(m[0])))
-
 
 def shift_claims(s):
     m = SHIFT_CLAIMS.match(s)

@@ -289,18 +289,13 @@ def f3_simple():
     return 'R554644. War injuries of the extremities. By Paul W. Roder. © 20Jul45; AA488754. Ciba Geigy Corporation (PWH); 25Jun73; R554644.'
 
 
-class TestShiftPop(object):
+class TestShift(object):
     def test_shift_dates(self):
         s = '30Dec22, A695089. R59809, 17Mar50, Breitkopf Publications, inc., successor to Breitkopf & Haertel, inc. (PWH)'
         x =          'A695089. R59809, 17Mar50, Breitkopf Publications, inc., successor to Breitkopf & Haertel, inc. (PWH)'
         assert parse.shift_dates(s) == (x, ['30Dec22'])
         assert parse.shift_dates('15Nov22, 15Dec22, B551759') == \
             ('B551759', ['1922-11-15', '1922-12-15'])
-
-
-    def test_pop_dates(self):
-        assert parse.pop_dates('Bancroft-Whitney Co. (PWH); 16Mar72') == \
-            ('Bancroft-Whitney Co. (PWH)', ['16Mar72'])
 
 
     def test_shift_regnums(self):
@@ -334,20 +329,6 @@ class TestShiftPop(object):
             parse.shift_rids('(something else) R59809, 17Mar50, Breitkopf Publications, inc., successor to Breitkopf & Haertel, inc. (PWH)')
     
     
-    def test_pop_rids(self):
-        assert parse.pop_rids('26Dec44; AA473529. 20Jan72; R123') == \
-            ('26Dec44; AA473529. 20Jan72; ', ['R123'])
-
-        assert parse.pop_rids('26Dec44; AA473529. 20Jan72; R123-125') == \
-            ('26Dec44; AA473529. 20Jan72; ', ['R123', 'R124', 'R125'])
-
-        assert parse.pop_rids('26Dec44; AA473529. 20Jan72; R123, R124') == \
-            ('26Dec44; AA473529. 20Jan72; ', ['R123', 'R124'])
-
-        assert parse.pop_rids('26Dec44; AA473529. 20Jan72; R123-125, R126') == \
-            ('26Dec44; AA473529. 20Jan72; ', ['R123', 'R124', 'R125', 'R126'])
-
-
     def test_shift_pub_abroad(self):
         s = '(pub. abroad 15Feb23, AI-4905), A704583. R60233, 28Mar50, Elsie Bambridge (C)'
         assert parse.shift_pub_abroad(s) == \
