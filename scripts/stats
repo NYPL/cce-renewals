@@ -5,51 +5,23 @@ import csv
 import os
 import re
 
-CAT = re.compile(r'(?<![12]\-)unnested\.tsv')
-PSD = re.compile(r'(?<!unnested)\.tsv')
-
-def match_file(d, r):
-    return [os.path.join(d, f) for f in os.listdir(d) if r.search(f)][0]
-
-get_parsed_file = lambda d:  match_file(d, PSD)
-get_unnested_cat_file = lambda d: match_file(d, CAT)
-
-
-def parsed_file(d):
+def parsed_file(d, f):
     try:
         lines = 0
         parsed = 0
-        with open(get_parsed_file(d)) as p:
+        with open(os.path.join(d,f)) as p:
             reader = csv.DictReader(p, delimiter='\t')
             for row in reader:
                 lines += 1
                 parsed += 1 if row['oreg'] else 0
         return {'lines out': lines, 'lines parsed': parsed}
     except IndexError:
-        return {'lines out': 0, 'lines parsed': 0}
-
-#def get_unnested_cat_file(d):
-#    return [os.path.join(d, f) for f in os.listdir(d) if CAT.search(f)][0]
-    
-def unnested_cat_file(d):
-    try:
-        with open(get_unnested_cat_file(d)) as tsv:
-            for i, l in enumerate(tsv):
-                pass
-            return {'lines in': i + 1}
-    except (IndexError, UnboundLocalError):
-        return {'lines in': 0}
+        return {'lines': 0, 'lines parsed': 0}
 
 
-def get_stats(d):
-    path = os.path.join(args.data_dir, d)
-    return({**{'year': d},
-            **unnested_cat_file(path),
-            **parsed_file(path)})
-
-
-def get_dirs(p):
-    return [d for d in sorted(os.listdir(p)) if re.match('19\d{2}', d)]
+def get_stats(d, f):
+    return {**{'year': f[0:4]},
+            **parsed_file(d, f)}
 
 
 def to_pct(i, o):
@@ -60,13 +32,14 @@ def to_pct(i, o):
 
 
 def format_row(r):
-    print('{:>4s} {:>4s} {:>4s} {:>5s} {:>4} {:>5s}'.format(
+    print('{:>5s} {:>5s} {:>5} {:>6s}'.format(
         r['year'],
-        str(r['lines in']) if r['lines in'] else 'n/a',
         str(r['lines out']) if r['lines out'] else 'n/a',
-        to_pct(r['lines in'], r['lines out']),
         str(r['lines parsed']) if r['lines parsed'] else 'n/a',
         to_pct(r['lines out'], r['lines parsed']))) 
+
+def get_files(d):
+    return [f for f in os.listdir(d) if re.match(r'\d{4}\-parsed', f)]
 
 
 parser = argparse.ArgumentParser(description='Report stats on renewal files')
@@ -74,5 +47,5 @@ parser.add_argument('-d', '--data-dir', metavar='DIR', type=str,
                     help='Data directory to examine')
 args = parser.parse_args()
 
-for d in get_dirs(args.data_dir):
-    format_row(get_stats(d))
+for f in get_files(args.data_dir):
+    format_row(get_stats(args.data_dir, f))
