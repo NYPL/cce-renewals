@@ -4,7 +4,6 @@ import argparse
 import csv
 import dateutil.parser
 import re
-import sqlite3
 import sys
 
 DATE_RE = r'\d{1,2}[A-z]{3}\d{1,2}'
@@ -47,9 +46,11 @@ CODE_SPLIT = re.compile(r'(?:\(([^\(]+)\))')
 ONE_AI_REGNUM = r'(A(?:I|F)-\d+)'
 ONE_AI = re.compile(ONE_AI_REGNUM)
 
+AUTH_TITLE = re.compile(r'^(.*)([,;] by )((?:[^\(;](?!Pub. ))+)(.*)$')
+AUTH_TITLE_F3 = re.compile(r'^(.+\.)( By )((?:[^\(])+)(.*)$')
 
 def record(**kwargs):
-    return {**{'book': None, 'author': None, 'title': None, 'oreg': None,
+    return {**{'author': None, 'title': None, 'oreg': None,
                'odat': None, 'id': None, 'rdat': None,
                'claimants': None, 'previous': None, 'new_matter': None,
                'notes': None, 'see_also_ren': None,
@@ -154,6 +155,62 @@ def extract_see_also(reg, r):
 
     return (reg, rids, regnums)
 
+
+def join_title_parts(p1, p2):
+    if p2:
+        if p2[1] == ' ':
+            return p1.strip() + p2.strip()
+        return p1.strip() + ' ' + p2.strip()
+    return p1.strip()
+
+
+def find_numbered_eds(author, title):
+    m = re.match(r'^(.+)( [1-9]+(?:d|th).+ed\.(?:, rev\.)?)$', author)
+    if m:
+        return (m[1], title + ', ' + m[2].strip())
+    return (author, title)
+
+
+
+def get_author_title(book):
+    m = AUTH_TITLE.match(book)
+                   
+    if m:
+        if '[' in m[3] or '[' in m[1]:
+            return (None, book)
+        title = join_title_parts(m[1], m[4]).strip()
+        author, title = find_numbered_eds(m[3].strip(), title)
+        if re.search(r'[0-9]', author):
+            return (None, book)
+        return (author, title)
+
+    return (None, book)
+
+
+def find_new_matter(author):
+    m = re.match(r'^(.+)(?:NM: )(.+)$', author)
+    if m:
+        return (m[1].strip(), m[2].strip())
+    return (author, None)
+
+
+def find_post_author(author, title):
+    m = re.match(r'^(.+)(Prev\. pub\. .+)$', author)
+    if m:
+        return (m[1].strip(), title + ' ' + m[2].strip())
+    return (author, title)
+    
+
+def get_f3_author_title(book):
+    m = AUTH_TITLE_F3.match(book)
+    if m:
+        title = join_title_parts(m[1], m[4]).strip()
+        author, title = find_numbered_eds(m[3].strip(), title)
+        author, new_m = find_new_matter(author)
+        author, title = find_post_author(author, title)
+        return (author, title, new_m)
+    return (None, book, None)
+
     
 def interim_pairs(s, p):
     dates = [parse_date(d) for d in ONE_DATE.findall(p)]
@@ -245,68 +302,56 @@ def n_1_or_none(n, l):
     return l is None or n_or_1(n, l)
 
 
-def lookup_author_title(rid):
-    if rid:
-        cursor.execute('select author, title from renewals where id=?', (rid,))
-        row = cursor.fetchone()
-        if row:
-            return row
+def format_record(author=None, title=None, regdates=None, regnums=None,
+                  rids=None, rendates=None, claims=None, notes=None,
+                  previous=None, new_matter=None, see_also_ren=None,
+                  see_also_reg=None):
 
-    return (None, None)
-
-
-def format_record(book=None, regdates=None, regnums=None, rids=None,
-                  rendates=None, claims=None, notes=None, previous=None,
-                  new_matter=None, see_also_ren=None, see_also_reg=None):
-
-    auths_titles = [lookup_author_title(r) for r in rids]
-    authors = [r[0] for r in auths_titles]
-    titles = [r[1] for r in auths_titles]
     if all_singles(regdates, regnums, rids, rendates, previous):
-        return [record(book=book, author=authors[0], title=titles[0], odat=regdates[0], oreg=regnums[0], id=rids[0],
-                       rdat=rendates[0], claimants=claims,
-                       new_matter=new_matter, previous=previous, notes=notes,
+        return [record(author=author, title=title, odat=regdates[0],
+                       oreg=regnums[0], id=rids[0], rdat=rendates[0],
+                       claimants=claims, new_matter=new_matter,
+                       previous=previous, notes=notes,
                        see_also_ren=see_also_ren, see_also_reg=see_also_reg)]
 
     if all_singles_but_interims(regdates, regnums, rids, rendates):
-        return [record(book=book, author=authors[0], title=titles[0], odat=regdates[0], oreg=regnums[0], id=rids[0],
-                rdat=rendates[0], claimants=claims, new_matter=new_matter,
+        return [record(author=author, title=title, odat=regdates[0],
+                       oreg=regnums[0], id=rids[0], rdat=rendates[0],
+                       claimants=claims, new_matter=new_matter,
                        previous=previous, notes=notes,
                        see_also_ren=see_also_ren, see_also_reg=see_also_reg)]
 
     if all_multiples(regdates, regnums, rids, rendates, previous):
-        return pad_and_unroll_records(book=book, authors=authors, titles=titles, regdates=regdates,
-                                      regnums=regnums, rids=rids,
-                                      rendates=rendates,
+        return pad_and_unroll_records(author=author, title=title,
+                                      regdates=regdates, regnums=regnums,
+                                      rids=rids, rendates=rendates,
                                       claims=claims, new_matter=new_matter,
-                                      previous=previous,
-                                      notes=notes,
+                                      previous=previous, notes=notes,
                                       see_also_ren=see_also_ren,
                                       see_also_reg=see_also_reg)
 
     if most_multiples(regdates, regnums, rids, rendates, previous):
-        return pad_and_unroll_records(book=book, authors=authors, titles=titles, regdates=regdates,
-                                      regnums=regnums, rids=rids,
-                                      rendates=rendates,
+        return pad_and_unroll_records(author=author, title=title,
+                                      regdates=regdates, regnums=regnums,
+                                      rids=rids, rendates=rendates,
                                       claims=claims, new_matter=new_matter,
-                                      previous=previous,
-                                      notes=notes,
+                                      previous=previous, notes=notes,
                                       see_also_ren=see_also_ren,
                                       see_also_reg=see_also_reg)
 
     return False
 
 
-def pad_and_unroll_records(book=None, authors=None, title=None, regdates=None, regnums=None, rids=None,
-                  rendates=None, claims=None, notes=None, previous=None,
-                  new_matter=None, see_also_ren=None, see_also_reg=None):
+def pad_and_unroll_records(author=None, title=None, regdates=None, regnums=None,
+                           rids=None, rendates=None, claims=None, notes=None,
+                           previous=None, new_matter=None, see_also_ren=None,
+                           see_also_reg=None):
     max_len = max([len(l) for l in (regdates, regnums, rids, rendates)])
-    return [record(**dict(zip(('book', 'author', 'title', 'odat', 'oreg', 'id', 'rdat',
+    return [record(**dict(zip(('author', 'title', 'odat', 'oreg', 'id', 'rdat',
                                'claimants', 'new_matter', 'previous'),
                               r))) for r in \
-            zip([book] * max_len,
-                unroll_to(max_len, authors),
-                unroll_to(max_len, titles),
+            zip([author] * max_len,
+                [title] * max_len,
                 unroll_to(max_len, regdates),
                 unroll_to(max_len, regnums),
                 unroll_to(max_len, rids),
@@ -378,6 +423,7 @@ def f1_one_part(e):
     try:
     #if 1:
         book, reg = cc_split(e)
+        author, title = get_author_title(book)
         reg, newmatter = shift_new_matter(reg)
         try:
             reg, dates = shift_dates(reg)
@@ -401,9 +447,10 @@ def f1_one_part(e):
         note = reg if len(reg) else None
             #raise Exception('Remaining string: %s' % reg)
 
-        return format_record(book=book, regdates=dates, regnums=regnums,
-                             rids=rids, rendates=rendates, claims=claims,
-                             new_matter=newmatter, previous=prev, notes=note)
+        return format_record(author=author, title=title, regdates=dates,
+                             regnums=regnums, rids=rids, rendates=rendates,
+                             claims=claims, new_matter=newmatter, previous=prev,
+                             notes=note)
     except TypeError:
         return False
 
@@ -416,6 +463,7 @@ def f1_date_reg_pairs(e):
     """F1 format with date/regnum pairs."""
     try:
         book, reg = cc_split(e)
+        author, title = get_author_title(book)
         reg, dates, regnums = shift_date_reg(reg, extract_date_reg_pairs)
         reg, rids = shift_rids(reg)
         reg, rendates = shift_dates(reg)
@@ -423,10 +471,10 @@ def f1_date_reg_pairs(e):
 
         if len(reg):
             return False
-            #raise Exception('Remaining string: %s' % reg)
 
-        return format_record(book=book, regdates=dates, regnums=regnums,
-                         rids=rids, rendates=rendates, claims=claims)
+        return format_record(author=author, title=title, regdates=dates,
+                             regnums=regnums, rids=rids, rendates=rendates,
+                             claims=claims)
     except TypeError:
         return False
 
@@ -447,6 +495,7 @@ def f1_two_parts(p1, p2):
 
 def f1_f2_rearrange_two_parts(p1, p2):
     pre, post = cc_split(p2)
+    
     return (p1.strip() + ' ' + pre.strip()).strip() + ' © ' + post.strip()
 
 
@@ -493,10 +542,16 @@ def f2_parse(e):
     return False
 
 
-def f2_one_part(e):
+def f2_one_part(e, author=None):
     """Simplest version of format 2."""
+
     try:
         book, reg = cc_split(e)
+
+        newmatter2 = None
+        if author is None:
+            author, book, newmatter2 = get_f3_author_title(book)
+
         note = None
         reg, newmatter = shift_new_matter(reg)
         reg, dates = shift_dates(reg)
@@ -525,9 +580,11 @@ def f2_one_part(e):
     except TypeError:
         return False
 
-    return format_record(book=book, regdates=dates, regnums=regnums,
-                         rids=rids, rendates=rendates, claims=claims,
-                         new_matter=newmatter, previous=prev, notes=note,
+    return format_record(author=author, title=book, regdates=dates,
+                         regnums=regnums, rids=rids, rendates=rendates,
+                         claims=claims,
+                         new_matter=(newmatter2 or newmatter),
+                         previous=prev, notes=note,
                          see_also_ren=see_also_ren, see_also_reg=see_also_reg)
 
                   
@@ -537,8 +594,9 @@ def f2_two_parts(p1, p2):
             if '©' in p1:
                 return f2_parse_two_cc(p1, p2)
                 return False
-            return f2_one_part(f1_f2_rearrange_two_parts(p1, p2)) or \
-                f2_date_reg_pairs(f1_f2_rearrange_two_parts(p1, p2)) or \
+            
+            return f2_one_part(p2, author=p1) or \
+                f2_date_reg_pairs(p2, author=p1) or \
                 False
         return False
     except ValueError:
@@ -546,7 +604,7 @@ def f2_two_parts(p1, p2):
         return f2_rearrange_two_ccs(p1, *cc_split(p2))
 
 
-def f2_date_reg_pairs(e):
+def f2_date_reg_pairs(e, author=None):
     #if 1:
     try:
         book, reg = cc_split(e)
@@ -561,21 +619,20 @@ def f2_date_reg_pairs(e):
             return False
             #raise Exception('Remaining string: %s' % reg)
 
-        return format_record(book=book, regdates=dates, regnums=regnums,
-                             rids=rids, rendates=rendates,
-                             claims=claims, new_matter=newmatter,
-                             previous=prev, notes=note)
+        return format_record(author=author, title=book, regdates=dates,
+                             regnums=regnums, rids=rids, rendates=rendates,
+                             claims=claims, new_matter=newmatter, previous=prev,
+                             notes=note)
 
     except TypeError:
         return False
 
 
-def f2_parse_two_cc(p1, p2):
-
+def f2_parse_two_cc(p1, p2, author=None):
     p1a, p1b = cc_split(p1)
     p2a, p2b = cc_split(p2)
 
-    book = p1a + ' ' + p2a
+    title = p1a + ' ' + p2a
 
     try:
         prev = note = None
@@ -587,14 +644,14 @@ def f2_parse_two_cc(p1, p2):
         reg, claims = shift_claims(p1b)
 
         if len(reg):
-            book = p1a + ' ' + reg + ' ' + p2a
+            title = p1a + ' ' + reg + ' ' + p2a
             #return False
             # raise Exception('Remaining string: %s' % reg)
 
-        return format_record(book=book, regdates=dates, regnums=regnums,
-                             rids=rids, rendates=rendates,
-                             claims=claims, new_matter=newmatter,
-                             previous=prev, notes=note)
+        return format_record(author=author, title=title, regdates=dates,
+                             regnums=regnums, rids=rids, rendates=rendates,
+                             claims=claims, new_matter=newmatter, previous=prev,
+                             notes=note)
     except TypeError:
         return False
 
@@ -604,14 +661,13 @@ def f2_three_parts(p1, p2, p3):
         if '©' in p3:
             p2a, p2b = cc_split(p2)
             p3a, p3b = cc_split(p3)
-            return f2_parse_two_cc(p1 + ' ' + p2a + ' © ' + p2b, p3)
+            return f2_parse_two_cc(p2a + ' © ' + p2b, p3, author=p1)
         
     
     return False
 
 
-def f2_rearrange_two_ccs(p1, p2, p3, p4):
-
+def f2_rearrange_two_ccs(author, title, p3, p4):
     prev = note = None
     try:
         reg, dates = shift_dates(p3)
@@ -628,12 +684,10 @@ def f2_rearrange_two_ccs(p1, p2, p3, p4):
         if len(reg):
             return False
 
-        book = p1 + ' ' + p2
-
-        return format_record(book=book, regdates=dates, regnums=regnums,
-                             rids=rids, rendates=rendates,
-                             claims=claims, new_matter=newmatter,
-                             previous=prev, notes=note)
+        return format_record(author=author, title=title,
+                             regdates=dates, regnums=regnums, rids=rids,
+                             rendates=rendates, claims=claims,
+                             new_matter=newmatter, previous=prev, notes=note)
         
     except TypeError:
         return False
@@ -655,13 +709,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Load CCE xml into database')
     parser.add_argument('-f', '--file', metavar='FILE', type=str,
                     help='TSV file to process')
-    parser.add_argument('-d', '--db', metavar='DB', type=str, required=True,
-                    help='Sqlite database to use for Stanford data')
     args = parser.parse_args()
 
-    stanford = sqlite3.connect(args.db)
-    cursor = stanford.cursor()
-    
     fields = ('volume', 'part','number', 'page', 'author', 'title', 'book',
               'oreg', 'odat', 'id', 'rdat', 'claimants', 'previous',
               'new_matter', 'see_also_ren', 'see_also_reg', 'notes',
