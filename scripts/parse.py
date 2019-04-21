@@ -47,7 +47,7 @@ ONE_AI_REGNUM = r'(A(?:I|F)-\d+)'
 ONE_AI = re.compile(ONE_AI_REGNUM)
 
 AUTH_TITLE = re.compile(r'^(.*)([,;] by )((?:[^\(;](?!Pub. ))+)(.*)$')
-AUTH_TITLE_F3 = re.compile(r'^(.+\.)( By )((?:[^\(])+)(.*)$')
+AUTH_TITLE_F3 = re.compile(r'^(.+[\.\)])( By )((?:[^\(])+)(.*)$')
 
 def record(**kwargs):
     return {**{'author': None, 'title': None, 'oreg': None,
@@ -165,7 +165,7 @@ def join_title_parts(p1, p2):
 
 
 def find_numbered_eds(author, title):
-    m = re.match(r'^(.+)( [1-9]+(?:d|th).+ed\.(?:, rev\.)?)$', author)
+    m = re.match(r'^(.+)( [0-9]+(?:[nr]?d|th).+ed\.(?:, rev\.)?)$', author)
     if m:
         return (m[1], title + ', ' + m[2].strip())
     return (author, title)
@@ -187,11 +187,11 @@ def get_author_title(book):
     return (None, book)
 
 
-def find_new_matter(author):
-    m = re.match(r'^(.+)(?:NM: )(.+)$', author)
+def get_f3_new_matter(book):
+    m = re.match(r'^(.+)(?:NM: )(.+)$', book)
     if m:
         return (m[1].strip(), m[2].strip())
-    return (author, None)
+    return (book, None)
 
 
 def find_post_author(author, title):
@@ -206,10 +206,9 @@ def get_f3_author_title(book):
     if m:
         title = join_title_parts(m[1], m[4]).strip()
         author, title = find_numbered_eds(m[3].strip(), title)
-        author, new_m = find_new_matter(author)
         author, title = find_post_author(author, title)
-        return (author, title, new_m)
-    return (None, book, None)
+        return (author, title)
+    return (None, book)
 
     
 def interim_pairs(s, p):
@@ -546,14 +545,15 @@ def f2_one_part(e, author=None):
     """Simplest version of format 2."""
 
     try:
-        book, reg = cc_split(e)
+        title, reg = cc_split(e)
 
         newmatter2 = None
         if author is None:
-            author, book, newmatter2 = get_f3_author_title(book)
+            title, newmatter2 = get_f3_new_matter(title)
+            author, title = get_f3_author_title(title)
 
-        note = None
         reg, newmatter = shift_new_matter(reg)
+        note = None
         reg, dates = shift_dates(reg)
         try:
             reg, regnums = shift_regnums(reg)
@@ -580,10 +580,10 @@ def f2_one_part(e, author=None):
     except TypeError:
         return False
 
-    return format_record(author=author, title=book, regdates=dates,
+    return format_record(author=author, title=title, regdates=dates,
                          regnums=regnums, rids=rids, rendates=rendates,
                          claims=claims,
-                         new_matter=(newmatter2 or newmatter),
+                         new_matter=(newmatter or newmatter2),
                          previous=prev, notes=note,
                          see_also_ren=see_also_ren, see_also_reg=see_also_reg)
 

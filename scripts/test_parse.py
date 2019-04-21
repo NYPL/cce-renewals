@@ -300,6 +300,11 @@ def f3_simple():
 
 
 @pytest.fixture()
+def f3_final_title_parens():
+    return 'R594391. List of parts, machine number 300W201. Form 2936W (147) By The Singer Manufacturing Company. NM: new illus. & plates. © 20Feb47; AA46107. The Singer Company (PWH); 2Jan75; R594391.'
+
+
+@pytest.fixture()
 def f3_extra_title():
     return 'R566183. This bright dream. By Stephen Vincent Benet. (In The Last circle) © 18Nov46; A8670. Thomas C. Benet, Rachel Benet Lewis & Stephenie Benet Mahin (PPW); 20Dec73; R566183.'
 
@@ -308,6 +313,10 @@ def f3_extra_title():
 def f3_new_matter():
     return 'R566276. New guide to recorded music. By Irving Kolodin. © on additions & revisions; 12Dec46; A9336. Irving Kolodin (A); 20Dec73; R566276.'
 
+
+@pytest.fixture()
+def f3_no_matter_no_author():
+    return 'R594483. Advance California appellate reports. Vol.8, no.2. NM: headnotes, summaries, tables & index. © 10Jan47; AA45061. Bancroft-Whitney Company (PWH); 30Dec74; R594483.'
 
 class TestShift(object):
     def test_shift_dates(self):
@@ -415,6 +424,14 @@ class TestTitleParsing(object):
         assert parse.get_author_title(t) == \
             ('Fairfax T. Proudfit.', 'DIETETICS FOR NURSES, 2d ed., rev.')
 
+        t = 'Guide to the study of the anatomy of the shark, necturus, and the cat. By Samuel Eddy & Clarence P. Oliver. 2nd ed.'
+        assert parse.get_f3_author_title(t) == \
+            ('Samuel Eddy & Clarence P. Oliver.', 'Guide to the study of the anatomy of the shark, necturus, and the cat., 2nd ed.')
+
+        t = 'Preparing the research paper. By Robert H. Schmitz. 3rd ed.'
+        assert parse.get_f3_author_title(t) == \
+            ('Robert H. Schmitz.', 'Preparing the research paper., 3rd ed.')
+        
     def test_bail_on_numbers_in_auth(self):
         t = 'ADDRESS, by Rudyard Kipling, at the annual dinner of the Royal College of Surgeons, Feb. 14, 1923. Pub. in England in the Morning post, Feb. 15, 1923, as The mystery of man\'s triumphs of surgery.'
         assert parse.get_author_title(t) == \
@@ -1049,6 +1066,22 @@ class TestFormat3(object):
         assert parsed[0]['see_also_reg'] is None
 
 
+    def test_final_parens(self, f3_final_title_parens):
+        parsed = parse.parse('29', '1', f3_final_title_parens)
+        assert len(parsed) == 1
+        assert parsed[0]['author'] == 'The Singer Manufacturing Company.'
+        assert parsed[0]['title'] == 'List of parts, machine number 300W201. Form 2936W (147)'
+        assert parsed[0]['odat'] == '1947-02-20'
+        assert parsed[0]['oreg'] == 'AA46107'
+        assert parsed[0]['id'] == 'R594391'
+        assert parsed[0]['rdat'] == '1975-01-02'
+        assert parsed[0]['claimants'] == 'The Singer Company|PWH'
+        assert parsed[0]['previous'] is None
+        assert parsed[0]['new_matter'] == 'new illus. & plates.'
+        assert parsed[0]['see_also_ren'] is None 
+        assert parsed[0]['see_also_reg'] is None
+
+
     def test_extra_title(self, f3_extra_title):
         parsed = parse.parse('28', '1', f3_extra_title)
         assert len(parsed) == 1
@@ -1077,6 +1110,22 @@ class TestFormat3(object):
         assert parsed[0]['claimants'] == 'Irving Kolodin|A'
         assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] == 'additions & revisions'
+        assert parsed[0]['see_also_ren'] is None 
+        assert parsed[0]['see_also_reg'] is None
+
+
+    def test_new_matter_no_author(self, f3_no_matter_no_author):
+        parsed = parse.parse('28', '1', f3_no_matter_no_author)
+        assert len(parsed) == 1
+        assert parsed[0]['author'] is None
+        assert parsed[0]['title'] == 'Advance California appellate reports. Vol.8, no.2.'
+        assert parsed[0]['odat'] == '1947-01-10'
+        assert parsed[0]['oreg'] == 'AA45061'
+        assert parsed[0]['id'] == 'R594483'
+        assert parsed[0]['rdat'] == '1974-12-30'
+        assert parsed[0]['claimants'] == 'Bancroft-Whitney Company|PWH'
+        assert parsed[0]['previous'] is None
+        assert parsed[0]['new_matter'] == 'headnotes, summaries, tables & index.'
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
         
