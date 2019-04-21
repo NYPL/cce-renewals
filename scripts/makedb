@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ ! -f stanford.db ]; then
-   sqlite3 stanford.db <<EEE
-.mode csv
-.import 20170427-copyright-renewals-records.csv renewals
-create index rids on renewals(id);
-EEE
-fi

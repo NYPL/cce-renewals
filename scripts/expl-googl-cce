@@ -17,7 +17,9 @@ def hyphenize(c):
 
 def reg_regnum(r):
     m = PARSE_REGNUM.match(r)
-    return '{:s}{:d}'.format(hyphenize(m[1]), int(m[2]))
+    if m:
+        return '{:s}{:d}'.format(hyphenize(m[1]), int(m[2]))
+    return r
 
 
 def regularize_regnums(regnums, k):
