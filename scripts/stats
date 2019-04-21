@@ -39,7 +39,7 @@ def format_row(r):
         to_pct(r['lines out'], r['lines parsed']))) 
 
 def get_files(d):
-    return [f for f in os.listdir(d) if re.match(r'\d{4}\-parsed', f)]
+    return [f for f in os.listdir(d) if re.match(r'.+\.tsv$', f)]
 
 
 parser = argparse.ArgumentParser(description='Report stats on renewal files')
