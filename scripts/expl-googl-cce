@@ -29,7 +29,8 @@ def regularize_regnums(regnums, k):
 def regularize(d):
     """Return a new dict with some of the fields regularized."""
     return {**d,
-            **regularize_regnums(d, 'oreg')}
+            **regularize_regnums(d, 'oreg'),
+            **regularize_regnums(d, 'id')}
 
 
 def format_holders(holders):
