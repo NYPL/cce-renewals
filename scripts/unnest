@@ -3,6 +3,7 @@
 import argparse
 from enum import Enum
 import re
+import uuid
 
 class State(Enum):
     header = 0
@@ -14,6 +15,8 @@ class State(Enum):
     blank = 6
     unhandled = 7
 
+NS = uuid.UUID('569a2de5-d88e-410c-9bec-83887e0d4ee6')
+    
 hardleft = lambda: r'^(\s{0})(\S.+)$'
 moredent = lambda x: r'^(\s{%d})(\S.+)$' % (x+2,)
 nodent = lambda x: r'^(\s{%d})(\S.+)$' % x
@@ -56,9 +59,19 @@ def is_prologue_7(s):
     return re.match(r'^(\[\*|material. Information)', s)
 
 
+def row_id(s):
+    """Create a UUID v5 from the full text of the entry."""
+    return uuid.uuid5(NS, s)
+
+def full_text(status):
+    return '|'.join(tuple(reversed(status['entry'])))
+
+# 9b262cbd-33f0-50fc-bb62-6c2f66567ca7
+
 def output(status, depth=1):
     if status['entry_type'] == 'ENTRY':
-        print('\t'.join((str(args.volume),
+        print('\t'.join((str(row_id(full_text(status))),
+                         str(args.volume),
                          args.part,
                          str(args.number),
                          str(status['page']),

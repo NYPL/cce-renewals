@@ -369,7 +369,7 @@ def unroll_to(n, l):
 def add_metadata(p, r):
     return {**p,
             **{'full_text': ' '.join(r[-1].split('|'))},
-            **dict(zip(('volume', 'part', 'number', 'page'), r[0:4]))}
+            **dict(zip(('entry_id', 'volume', 'part', 'number', 'page'), r[0:5]))}
 
 
 def format1(v):
@@ -711,10 +711,10 @@ if __name__ == '__main__':
                     help='TSV file to process')
     args = parser.parse_args()
 
-    fields = ('volume', 'part','number', 'page', 'author', 'title', 'book',
-              'oreg', 'odat', 'id', 'rdat', 'claimants', 'previous',
-              'new_matter', 'see_also_ren', 'see_also_reg', 'notes',
-              'full_text')
+    fields = ('entry_id', 'volume', 'part','number', 'page', 'author',
+              'title', 'book', 'oreg', 'odat', 'id', 'rdat',
+              'claimants', 'previous', 'new_matter', 'see_also_ren',
+              'see_also_reg', 'notes', 'full_text')
     
     writer = csv.DictWriter(sys.stdout, fieldnames=fields, delimiter='\t')
     writer.writeheader()
@@ -722,7 +722,7 @@ if __name__ == '__main__':
         reader = csv.reader(tsv, delimiter='\t')
         for row in reader:
             if do_parse(row[-1]):
-                parsed = parse(row[0], row[2], row[-1])
+                parsed = parse(row[1], row[3], row[-1])
 
                 for p in parsed:
                     writer.writerow(add_metadata(p, row))

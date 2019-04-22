@@ -7,7 +7,7 @@ import dateutil.parser
 import lxml.etree as ET
 import re
 import sys
-
+import uuid
 
 PARSE_REGNUM = re.compile(r'^([^0]+)(\d+)$')
 DATE_RE = r'\d{1,2}[A-z]{3}\d{1,2}'
@@ -64,6 +64,13 @@ def get_claimaints(d, rec):
     return {**d,
             **format_holders(rec.findall('Holder'))}
 
+
+def add_uuid(d, record):
+    """Use the records MD5Sum element as a UUID."""
+    return {**d,
+            **{'entry_id': str(uuid.UUID(record.find('MD5Sum').text))}}
+    
+
 def handle_prev_pub(d):
     if 'note' in d:
         notes = [d['note']]
@@ -97,7 +104,7 @@ args = parser.parse_args()
 tree = ET.parse(args.file)
 root = tree.getroot()
 
-fieldnames = ('volume', 'part','number', 'page', 'auth', 'titl', 'oreg', 'odat', 'id', 'dreg', 'claimants', 'previous', 'new_matter', 'see_also_ren', 'see_also_reg', 'note', 'full_text')
+fieldnames = ('entry_id', 'volume', 'part','number', 'page', 'auth', 'titl', 'oreg', 'odat', 'id', 'dreg', 'claimants', 'previous', 'new_matter', 'see_also_ren', 'see_also_reg', 'note', 'full_text')
 
 
 writer = csv.DictWriter(sys.stdout, fieldnames=fieldnames,
@@ -119,6 +126,7 @@ for record in root.findall('./Record'):
         dd = dict([(b[0],'|'.join(b[1])) for b in d.items()])
         dd = get_claimaints(dd, record)
         dd = handle_prev_pub(dd)
+        dd = add_uuid(dd, record)
         writer.writerow(regularize(dd))
         
     
