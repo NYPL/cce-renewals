@@ -26,7 +26,7 @@ $(POST77): temp/google-renewals-all-20080624.xml
 	../scripts/expl-googl-cce -f $< -y $@ > $@-from-db.tsv
 
 temp/google-renewals-all-20080624.xml: |temp/google-renewals-20080516.zip
-	cd temp && unzip -j google-renewals-20080516.zip google-renewals-20080624/google-renewals-all-20080624.xml
+	cd temp && unzip -o -j google-renewals-20080516.zip google-renewals-20080624/google-renewals-all-20080624.xml
 
 temp/google-renewals-20080516.zip:
 	cd temp && wget -q -N http://dl.google.com/rights/books/renewals/$(@F)
