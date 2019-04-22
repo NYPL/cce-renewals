@@ -3,17 +3,36 @@
 import argparse
 from collections import defaultdict
 import csv
+import dateutil.parser
 import lxml.etree as ET
 import re
 import sys
 
 
 PARSE_REGNUM = re.compile(r'^([^0]+)(\d+)$')
+DATE_RE = r'\d{1,2}[A-z]{3}\d{1,2}'
+ONE_DATE = re.compile(DATE_RE)
+REGNUM_RE = r'(?:A(?:(?:A|F|IO?\-|5\-|6\-|O-))?|B(?:5\-)?|DP|I(?:U)?|[CDFGJKL]|Label |Print )\d+(?:\-\d+)?'
+ONE_REGNUM = re.compile(REGNUM_RE)
+
+PUB_ABR = re.compile(r'^(.*?)({}), ({})(.*)'.format(DATE_RE, REGNUM_RE))
+
 
 def hyphenize(c):
     """Add a hyphen to the regnum class if it ends in a digit, (e.g. B5-)."""
     return c + '-' if c[-1].isdigit() else c
 
+
+def parse_date(d):
+    try:
+        dt = dateutil.parser.parse(d)
+        if dt.year > 2000:
+            return (dt - dateutil.relativedelta.relativedelta(years=100)).strftime('%Y-%m-%d')
+    
+        return dt.strftime('%Y-%m-%d')
+    except ValueError:
+        # Not all the dates are valid
+        return None
 
 def reg_regnum(r):
     m = PARSE_REGNUM.match(r)
@@ -33,15 +52,39 @@ def regularize(d):
             **regularize_regnums(d, 'id')}
 
 
+
 def format_holders(holders):
     return {'claimants': '||'.join(
         ['|'.join((h.find('Name').text, h.find('Type').text))
          for h in holders])}
 
+
 def get_claimaints(d, rec):
     """Use claimants from the parsed XML"""
     return {**d,
             **format_holders(rec.findall('Holder'))}
+
+def handle_prev_pub(d):
+    if 'note' in d:
+        notes = [d['note']]
+    else:
+        notes = []
+    prev = []
+    if 'publ' in d:
+        for pub in re.split(r';\s*', d['publ']):
+            m = PUB_ABR.search(pub)
+            if m:
+                prev += ['|'.join((m[1].strip(), parse_date(m[2].strip()),
+                                   m[3].strip()))]
+                if m[4].strip(' .,'):
+                    notes += [m[4].strip(' .,')]
+            else:
+                notes += [pub]
+
+        return {**d,
+                **{'previous': '||'.join(prev),
+                   'note': '|'.join(notes)}}
+    return d
 
 
 parser = argparse.ArgumentParser(description='Read Google Renewals')
@@ -54,7 +97,9 @@ args = parser.parse_args()
 tree = ET.parse(args.file)
 root = tree.getroot()
 
-fieldnames = ('volume', 'part','number', 'page', 'auth', 'titl', 'oreg', 'odat', 'id', 'dreg', 'claimants', 'publ', 'note')
+fieldnames = ('volume', 'part','number', 'page', 'auth', 'titl', 'oreg', 'odat', 'id', 'dreg', 'claimants', 'previous', 'new_matter', 'see_also_ren', 'see_also_reg', 'note', 'full_text')
+
+
 writer = csv.DictWriter(sys.stdout, fieldnames=fieldnames,
                         delimiter='\t', extrasaction='ignore', restval=None)
 writer.writeheader()
@@ -73,6 +118,7 @@ for record in root.findall('./Record'):
         
         dd = dict([(b[0],'|'.join(b[1])) for b in d.items()])
         dd = get_claimaints(dd, record)
+        dd = handle_prev_pub(dd)
         writer.writerow(regularize(dd))
         
     
