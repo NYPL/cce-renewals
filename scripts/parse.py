@@ -54,7 +54,7 @@ def record(**kwargs):
                'odat': None, 'id': None, 'rdat': None,
                'claimants': None, 'previous': None, 'new_matter': None,
                'notes': None, 'see_also_ren': None,
-               'see_also_ren': None}, **kwargs}
+               'see_also_reg': None}, **kwargs}
 
 
 def shift_field(s, r, op=lambda x, y: (x, y)):
