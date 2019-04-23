@@ -103,7 +103,7 @@ temp/1956-2.tsv: temp/11814-8.txt
 temp/11813-8.txt: 11813
 temp/11814-8.txt: 11814
 
-1957: 1957-1A.tsv
+1957: 1957-1.tsv
 temp/1957-1.tsv: temp/11815-8.txt
 	../scripts/unnest -f $^ -v 11 -p 1 -n 1 -e iso-8859-15 > $@
 temp/1957-2.tsv: temp/11816-8.txt
@@ -224,7 +224,7 @@ temp/1971-2.tsv: temp/11844-8.txt
 temp/11843-8.txt: 11843
 temp/11844-8.txt: 11844
 
-1972: 1972-1A.tsv
+1972: 1972-1.tsv
 temp/1972-1.tsv: temp/11845-8.txt
 	../scripts/unnest -f $^ -v 26 -p 1 -n 1 -e iso-8859-15 > $@
 temp/1972-2.tsv: temp/11846-8.txt
