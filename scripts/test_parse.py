@@ -318,6 +318,12 @@ def f3_new_matter():
 def f3_no_matter_no_author():
     return 'R594483. Advance California appellate reports. Vol.8, no.2. NM: headnotes, summaries, tables & index. © 10Jan47; AA45061. Bancroft-Whitney Company (PWH); 30Dec74; R594483.'
 
+
+@pytest.fixture()
+def not_parsed():
+    return 'AMERICAN Federal tax reports. © West Pub. Co. (PWH) November, 1923. v. 1. © 28Dec23, A777088. R72760, 8Jan51.'
+
+
 class TestShift(object):
     def test_shift_dates(self):
         s = '30Dec22, A695089. R59809, 17Mar50, Breitkopf Publications, inc., successor to Breitkopf & Haertel, inc. (PWH)'
@@ -1009,7 +1015,7 @@ class TestFormat2(object):
         assert parsed[0]['author'] == 'COLLINS, DALE.'
         assert parsed[0]['title'] == 'The sentimentalists. (In The Royal magazine, Dec. 1926-Mar. 1927) Chapter 19-24.'
         assert parsed[0]['odat'] == '1926-11-22'
-        assert parsed[0]['oreg'] == 'AI-8848'
+        assert parsed[0]['oreg'] == 'AI8848'
         assert parsed[0]['id'] == 'R148665'
         assert parsed[0]['rdat'] == '1954-11-19'
         assert parsed[0]['claimants'] == 'Dale Collins|A'
@@ -1128,6 +1134,21 @@ class TestFormat3(object):
         assert parsed[0]['new_matter'] == 'headnotes, summaries, tables & index.'
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
+
+def test_only_numbers(not_parsed):
+    parsed = parse.parse('5', '1', not_parsed)
+    assert len(parsed) == 1
+    assert parsed[0]['odat'] == '1923-12-28'
+    assert parsed[0]['oreg'] == 'A777088'
+    assert parsed[0]['id'] == 'R72760'
+    assert parsed[0]['rdat'] == '1951-01-08'
+    assert parsed[0]['author'] is None
+    assert parsed[0]['title'] is None
+    assert parsed[0]['claimants'] is None
+    assert parsed[0]['previous'] is None
+    assert parsed[0]['new_matter'] is None
+    assert parsed[0]['see_also_ren'] is None 
+    assert parsed[0]['see_also_reg'] is None
         
         
 def test_f2_simplest(format_two):

@@ -18,6 +18,7 @@ HAS_RID = re.compile(RID_RE)
 
 CLAIMS_RE = r'.+\((?!See).+?\)'
 DATE_REG_PAIR_RE = r'%s, %s' % (DATE_RE, REGNUM_RE)
+RID_DATE_PAIR_RE = r'{}, {}'.format(RID_RE, DATE_RE)
 PUB_ABROAD_RE = r'\(pub\. abroad.+?\)[,;]'
 NEW_MATTER_RE = r'(?:on (?:.+?);)?'
 
@@ -405,11 +406,25 @@ def cc_split(e):
     return [s.strip() for s in e.split('©')]
 
 
+def just_numbers(e):
+    reg_date = re.findall(DATE_REG_PAIR_RE, e)
+    if len(reg_date) == 1:
+        rid_date = re.findall(RID_DATE_PAIR_RE, e)
+        if len(rid_date) == 1:
+            regdate, regnum = reg_date[0].split(', ')
+            rid, rendate = rid_date[0].split(', ')
+            return format_record(regdates=[parse_date(regdate)],
+                                 regnums=[regnum], rids=[rid],
+                                 rendates=[parse_date(rendate)])
+    return False
+
+
 def parse(v, p, e):
     """Dispatch to proper parsing function based on expected format."""
     return format1(v) and f1_parse(e) or \
         format2(v, p) and f2_parse(e) or \
         format3(v, p) and f3_parse(e) or \
+        just_numbers(e) or \
         [record()]
 
 
