@@ -301,11 +301,20 @@ def n_1_or_none(n, l):
     return l is None or n_or_1(n, l)
 
 
+def dehyphen(r):
+    m = re.match(r'^AI\-(\d+)$', r)
+    if m:
+        return 'AI{}'.format(m[1])
+
+    return r
+    
+
 def format_record(author=None, title=None, regdates=None, regnums=None,
                   rids=None, rendates=None, claims=None, notes=None,
                   previous=None, new_matter=None, see_also_ren=None,
                   see_also_reg=None):
 
+    regnums = [dehyphen(r) for r in regnums]
     if all_singles(regdates, regnums, rids, rendates, previous):
         return [record(author=author, title=title, odat=regdates[0],
                        oreg=regnums[0], id=rids[0], rdat=rendates[0],
