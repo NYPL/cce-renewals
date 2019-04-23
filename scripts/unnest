@@ -68,8 +68,11 @@ def full_text(status):
 
 # 9b262cbd-33f0-50fc-bb62-6c2f66567ca7
 
+def is_cf(entry):
+    return bool(sum([len(re.findall(r'\bSEE(?: ALSO)?\b(?! [A-Z]{2,})', e)) for e in entry]))
+    
 def output(status, depth=1):
-    if status['entry_type'] == 'ENTRY':
+    if not is_cf(status['entry']):
         print('\t'.join((str(row_id(full_text(status))),
                          str(args.volume),
                          args.part,
