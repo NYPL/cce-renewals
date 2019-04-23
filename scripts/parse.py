@@ -712,7 +712,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     fields = ('entry_id', 'volume', 'part','number', 'page', 'author',
-              'title', 'book', 'oreg', 'odat', 'id', 'rdat',
+              'title', 'oreg', 'odat', 'id', 'rdat',
               'claimants', 'previous', 'new_matter', 'see_also_ren',
               'see_also_reg', 'notes', 'full_text')
     
