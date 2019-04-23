@@ -94,6 +94,35 @@ def handle_prev_pub(d):
     return d
 
 
+
+def validate_date(d):
+    try:
+        dateutil.parser.parse(d)
+        return d
+    except ValueError:
+        # Not all the dates are valid
+        return None
+    
+
+
+def validate(dd):
+    return {**dd,
+            **{'odat': validate_date(dd['odat'])}}
+
+
+def output(dd, writer):
+
+    reg_nums = dd['oreg'].split('|')
+    reg_dates = dd['odat'].split('|')
+    
+    if len(reg_nums) == len(reg_dates):
+        for reg in zip(reg_nums, dd['odat'].split('|')):
+            writer.writerow(validate({**dd,
+                                      **{'oreg': reg[0], 'odat': reg[1]}}))
+    else:
+        raise Exception('Unbalanced number of reg numbers/dates')
+    
+
 parser = argparse.ArgumentParser(description='Read Google Renewals')
 parser.add_argument('-f', '--file', metavar='XML', type=argparse.FileType('r'),
                     help='XML file to process')
@@ -127,6 +156,6 @@ for record in root.findall('./Record'):
         dd = get_claimaints(dd, record)
         dd = handle_prev_pub(dd)
         dd = add_uuid(dd, record)
-        writer.writerow(regularize(dd))
+        output(regularize(dd), writer)
         
     
