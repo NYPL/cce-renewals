@@ -14,6 +14,8 @@ ONE_REGNUM = re.compile(REGNUM_RE)
 
 
 RID_RE = r'R(?:\d+)'
+HAS_RID = re.compile(RID_RE)
+
 CLAIMS_RE = r'.+\((?!See).+?\)'
 DATE_REG_PAIR_RE = r'%s, %s' % (DATE_RE, REGNUM_RE)
 PUB_ABROAD_RE = r'\(pub\. abroad.+?\)[,;]'
@@ -709,8 +711,9 @@ def f3_parse(e):
     
 def do_parse(e):
     return ('non-renewal entr' not in e) and \
-        ('[*Blank page*]' not in e) and\
-        ('[*Blank Page*]' not in e)
+        ('[*Blank page*]' not in e) and \
+        ('[*Blank Page*]' not in e) and \
+        HAS_RID.search(e) is not None
 
 
 if __name__ == '__main__':
