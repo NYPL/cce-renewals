@@ -2,7 +2,8 @@ entry_id	volume	part	number	page	auth	titl	oreg	odat	id	dreg	claimants	previous	
 a5506323-f3e1-b8c7-3e43-e20389351591					Alfred E. Phelps, ill.: James MacDonald.	Your arthritis: what you can do about it.	A102164	1953-06-03	RE105113	1981-11-09	Mary Harlem|C	Prev. pub.|1943-06-06|A173541				renewed 9Jun71, R507082.	
 b9138494-3b07-e3eb-5324-d9c4f80a8a36					William Sansom.	The Passionate North.	A112753	1953-11-05	RE105083	1981-11-05	Ruth E. Sansom|W||Nicolas Sansom|C	Pub. abroad|1950-10-23|AIO-788					
 8758341e-63e7-8aa0-3772-7479172a7897					Peter Freuchen & Johan Hambro.	Vagrant Viking: my life & adventures.	A114275	1951-11-02	RE105687	1981-11-13	Mrs. Peter Freuchen|W						
-b08947a7-8c0e-100f-e673-075b81a72652					James Ramsey Ullman.	Girl on horseback|Island of the blue macaws.	A90854|AI3708	1953-04-27|1952-11-15	RE104846	1981-11-03	Marion B. Ullman|W	Island of the blue macaws pub. abroad|1952-11-15|AI-3708					
+b08947a7-8c0e-100f-e673-075b81a72652					James Ramsey Ullman.	Girl on horseback|Island of the blue macaws.	A90854	1953-04-27	RE104846	1981-11-03	Marion B. Ullman|W	Island of the blue macaws pub. abroad|1952-11-15|AI-3708					
+b08947a7-8c0e-100f-e673-075b81a72652					James Ramsey Ullman.	Girl on horseback|Island of the blue macaws.	AI3708	1952-11-15	RE104846	1981-11-03	Marion B. Ullman|W	Island of the blue macaws pub. abroad|1952-11-15|AI-3708					
 52f99135-eb4a-5bc3-b827-f3b193d0bb64					L. Ron Hubbard.	The Discovery and increase of life energy.  Scientology 8-8008.	AI3820	1952-12-10	RE124799	1981-12-28	L. Ron Hubbard|A						
 2646a7e9-7876-ea95-8e19-0bbf78a85e6e						Menninger Clinic.  Bulletin.  Vol. 17, no. 1, Jan. 1953.	B395038	1952-12-24	RE78777	1981-01-15	The Menninger Foundation|PCW						
 db2e9c8b-753c-4dca-3186-fc7d22f1807d						Billboard.  Vol. 65, no. 1, Jan. 3, 1953.	B396261	1952-12-29	RE77151	1981-01-05	Billboard Publications, Inc.|PCW						
@@ -475,7 +476,8 @@ b98289b1-6f21-9e80-1bf1-9ba3308e6c56						The Rio Kid western.  Vol. 25, no. 3, 
 3aff90a7-4d63-983b-14ad-c953a34f9a4d						A Terror is born.	B5-23103	1953-01-09	RE83242	1981-02-13	Edgar Rice Burroughs, Inc.|PWH						
 aad55f02-0331-3084-0009-012452f80fde						Tarzan.  No. 1140.	B5-23104	1953-01-09	RE83243	1981-02-13	Edgar Rice Burroughs, Inc.|PWH						
 78036a69-0781-3c3a-8cc6-9b0cfd738535					Margaret Webb (Margaret Webb Sellers)	Inspirational religious poetry and condolences.	A77870	1953-01-10	RE84908	1981-02-03	Margaret Webb Sellers|A						
-735db7e8-8c17-8725-db3c-53f51d337865					Eliot Reed, pseud. of Eric Ambler & Charles Rodda.	The Maras affair.	A83674|AI3727	1953-03-19|1953-01-10	RE91523	1981-02-12	Eric Ambler|A						
+735db7e8-8c17-8725-db3c-53f51d337865					Eliot Reed, pseud. of Eric Ambler & Charles Rodda.	The Maras affair.	A83674	1953-03-19	RE91523	1981-02-12	Eric Ambler|A						
+735db7e8-8c17-8725-db3c-53f51d337865					Eliot Reed, pseud. of Eric Ambler & Charles Rodda.	The Maras affair.	AI3727	1953-01-10	RE91523	1981-02-12	Eric Ambler|A						
 74759ad1-3aaa-cad9-0b48-2dfb8c86bf8d					Enrique L. Ubieta Hernandez.	Fonocromia.	AF27184	1953-01-10	RE98249	1981-07-13	Enrique L. Ubieta|A						
 f45d1670-e2dc-0abb-e383-44e6101bfc00					Alfred Grosser.	L'Allemagne de l'Occident.	AFO10220	1953-01-10	RE88023	1981-04-02	Alfred Grosser|A						
 8ac6f3a1-c568-54ee-0238-9d6c8d6c0dc2					Albert Einstein.	Einleitende Bemerkungen uber Grundbergriffe.	AFO10223	1953-01-10	RE169720	1981-12-30	Otto Nathan|E						
@@ -525,11 +527,13 @@ c41fb497-f58c-f835-3a22-3138eadb1afa					Paul Klee, translator: Sibyl Moholy-Nag
 0d4dd90d-eb5f-f99d-7d8f-1f575d86a8f5					Dietrich VonHildebrand.	Christian ethics.	A83627	1953-01-12	RE83076	1981-02-26	Alice VonHildebrand|W						
 bef64134-4b69-a42f-5546-d9ebd09b767b					Fred Siegfried Hirsch.	Professor Arnold Ehret's Mucusless diet healing system.	A84332	1953-01-12	RE122581	1981-11-12	Medtech Laboratories, Inc.|PWH						
 efefd309-1a18-696b-3370-a6b3409deda5						NEA Service weekly.	A87223	1953-01-12	RE110564	1981-12-22							
-faa3825a-5af8-d924-9e88-ccc0fae37d2f					Kingsley Martin.	Harold Laski (1893-1950)  A biographical memoir.	A91973|AI3737	1953-05-15|1953-01-12	RE91072	1981-03-31	John Valentine Allen|E						
+faa3825a-5af8-d924-9e88-ccc0fae37d2f					Kingsley Martin.	Harold Laski (1893-1950)  A biographical memoir.	A91973	1953-05-15	RE91072	1981-03-31	John Valentine Allen|E						
+faa3825a-5af8-d924-9e88-ccc0fae37d2f					Kingsley Martin.	Harold Laski (1893-1950)  A biographical memoir.	AI3737	1953-01-12	RE91072	1981-03-31	John Valentine Allen|E						
 6e5792cf-865f-e239-47c0-81798f7dd602						Sears, Roebuck and Company--spring and summer 1953--Atlanta.	A94329	1953-01-12	RE78705	1981-01-14	Sears, Roebuck and Company|PWH						
 438f9587-9c59-4117-724c-8bffce4d52b3					Margarita Madrigal.	Spanish is easy.  Lessons 17-32, 25-28, 37-40.	A104693	1953-01-12	RE91376	1981-02-12	Margarita Madrigal|A						
 4936d552-a7c7-5477-901a-5803c21b2194					Luther Hancock Lyon.	Applied penmanship.	A117360	1953-01-12	RE80800	1981-01-09	South-Western Publishing Company|PWH						
-9cbc4973-5d90-661a-faf7-6b699e73ba9f					Henry Wade, pseud. of Henry Lancelot Aubrey-Fletcher.	Too soon to die.	A122031|AI3726	1954-01-19|1953-01-12	RE95974	1981-07-10	John Walford Roome|E||Nancy Cecil|E||Lady Aubrey Fletcher|E					In notice: 1953	
+9cbc4973-5d90-661a-faf7-6b699e73ba9f					Henry Wade, pseud. of Henry Lancelot Aubrey-Fletcher.	Too soon to die.	A122031	1954-01-19	RE95974	1981-07-10	John Walford Roome|E||Nancy Cecil|E||Lady Aubrey Fletcher|E					In notice: 1953	
+9cbc4973-5d90-661a-faf7-6b699e73ba9f					Henry Wade, pseud. of Henry Lancelot Aubrey-Fletcher.	Too soon to die.	AI3726	1953-01-12	RE95974	1981-07-10	John Walford Roome|E||Nancy Cecil|E||Lady Aubrey Fletcher|E					In notice: 1953	
 996aab8a-8cb1-2e52-01e3-5520edace2f0					Bruce Marshall.	The Fair bride.	AIO2923	1953-01-12	RE78639	1981-01-05	Bruce Marshall|A						
 ff454b9b-794f-33a5-6e08-7d3a8e29dc78						Journal of urology.  Vol. 69, no. 1, Jan. 1953.	B394560	1953-01-12	RE109230	1981-12-07	The Williams and Wilkins Company|PCW						
 1d7d4c70-168f-4618-7981-698256fdc3e8						Chicago daily tribune.  Vol. 112, no. 10, Jan. 12, 1953.	B394634	1953-01-12	RE84392	1981-02-12	Chicago Tribune Company|PCW						
@@ -1186,8 +1190,10 @@ cc6340cc-99e8-c199-a083-14708134019e					Frank Gruber.	Fort Starvation.	A78255	1
 28dee1aa-7d4d-980c-3da8-6f5fe19a1bc7					Albro T. Gaul.	The Wonderful world of insects.	A78256	1953-01-26	RE93208	1981-04-20	Albro T. Gaul|A						
 60344f63-4c92-3a83-d0f8-6efe54205dda						Compton's pictured encyclopedia and fact index.  Vols. 1-15 inclusive.  Additions & revisions, new maps & new pictures: F. E. Compton Company.	A78496	1953-01-26	RE99753	1981-08-31	Encyclopedia Britannica, Inc.|PWH						
 8896eba7-f91f-fd36-2f5c-dda72dc65cc2						United States Supreme Court digest, West key number system; 1953 cumulative annual pocket part.  Vol. 1-17 (17 parts)	A78547	1953-01-26	RE87134	1981-04-07	West Publishing Company|PWH						
-deeabc85-1ae1-9b0a-039a-96aac8e8c49f					V. Sackville-West.	The Easter party.	A79453|AIO2829	1953-02-05|1953-01-26	RE91539	1981-02-12	Nigel Nicolson|C						
-1ae58b83-abb3-1ebe-0177-f8666fe6cb14					Julian Sorrell Huxley.	Evolution in action.	A80268|AI3714	1953-02-18|1953-01-26	RE98530	1981-06-30	Juliette Huxley|W						
+deeabc85-1ae1-9b0a-039a-96aac8e8c49f					V. Sackville-West.	The Easter party.	A79453	1953-02-05	RE91539	1981-02-12	Nigel Nicolson|C						
+deeabc85-1ae1-9b0a-039a-96aac8e8c49f					V. Sackville-West.	The Easter party.	AIO2829	1953-01-26	RE91539	1981-02-12	Nigel Nicolson|C						
+1ae58b83-abb3-1ebe-0177-f8666fe6cb14					Julian Sorrell Huxley.	Evolution in action.	A80268	1953-02-18	RE98530	1981-06-30	Juliette Huxley|W						
+1ae58b83-abb3-1ebe-0177-f8666fe6cb14					Julian Sorrell Huxley.	Evolution in action.	AI3714	1953-01-26	RE98530	1981-06-30	Juliette Huxley|W						
 e5edd032-6709-213b-6264-177708600b95					Charles Benton Eavey.	The Art of effective teaching.	A80378	1953-01-26	RE107640	1981-11-30	Harold W. Eavey|C						
 4c864982-ccb6-8bf7-5008-82fb7275919a					Tsung-Lien Shen & Shen-Chi Liu.	Tibet and the Tibetans; book.	A81000	1953-01-26	RE86184	1981-03-06	Marie Shen|W						
 5e3f6465-19df-c1d3-88bb-f85d12743b52					David Easton.	The Political system: an inquiry into the state of political science.	A81251	1953-01-26	RE101309	1981-09-28	David Easton|A						
@@ -1403,7 +1409,8 @@ d6d08df4-e521-aeca-de7e-08a6991ffbb2					John N. Hough.	Scientific terminology.	
 047233ef-d596-4723-7b33-f4297809323a						Advance California appellate reports.  Vol. 14, no. 5.	A80367	1953-01-30	RE83009	1981-02-09	Bancroft-Whitney Company|PWH						
 a6171640-af5c-b248-2438-be6617410fc1					David Karp.	Hardman.	A84186	1953-01-30	RE83806	1981-02-17	David Karp|A						
 11a2eca9-d11f-9235-7d95-06be78fb1168						Sears, Roebuck and Company--spring and summer 1953--Seattle.	A94347	1953-01-30	RE78713	1981-01-14	Sears, Roebuck and Company|PWH						
-b2dbc6e5-d8b6-0211-367b-b6c33071bb05					H. F. M. Prescott.	Mary Tudor.|Spanish Tudor.	A111506|AI3822	1953-10-13|1953-01-30	RE99630	1981-08-25	Patrick Dawney|E						
+b2dbc6e5-d8b6-0211-367b-b6c33071bb05					H. F. M. Prescott.	Mary Tudor.|Spanish Tudor.	A111506	1953-10-13	RE99630	1981-08-25	Patrick Dawney|E						
+b2dbc6e5-d8b6-0211-367b-b6c33071bb05					H. F. M. Prescott.	Mary Tudor.|Spanish Tudor.	AI3822	1953-01-30	RE99630	1981-08-25	Patrick Dawney|E						
 5a376f5e-4b38-74f1-3cbf-17ec6852e9d6					Marguerite Duval.	Je veux maigrir, je veux grossir.	AFO11058	1953-01-30	RE109921	1981-12-21	Marguerite Duval|A						
 fcb6874c-399c-cc11-a38a-a3a73af9b4c7						The Wall Street journal.  Vol. 141, no. 25, Jan. 30, 1953.	B396564	1953-01-30	RE79385	1981-01-12	Dow Jones & Company, Inc.|PCW						
 5d5aaf7b-8a1f-9541-d12c-08290d8db8a5						Chicago daily tribune.  Vol. 112, no. 26, Jan. 30, 1953.	B397324	1953-01-30	RE84371	1981-02-12	Chicago Tribune Company|PCW						
@@ -1508,8 +1515,10 @@ f0bb76e6-7d15-ae31-cc61-f7056d1c69f9						NEA Service weekly.	A87226	1953-02-02	
 2acfc38e-ab61-9ac5-5170-2ccb363a201d					Peter Robert Edwin Viereck.	Shame and glory of the intellectuals; Babbit, Jr. versus the rediscovery of values.	A93142	1953-02-02	RE102442	1981-10-05	Viereck|A						
 a2b6e2a9-962a-8248-9197-30eb2b43a68e						Sears, Roebuck and Company--spring and summer 1953--Minneapolis.	A94330	1953-02-02	RE78706	1981-01-14	Sears, Roebuck and Company|PWH						
 ef831a76-2503-1c43-d72c-3028ea2f8336						Superman.  Release the week of Feb. 23, 1953.	A101240	1953-02-02	RE98763	1981-08-19	Comics, Inc.|PWH						
-60cf8ed7-af01-f5e4-9970-81ecd6100a95					Sean O'Faolain.	An Autumn in Italy.|South to Sicily.	A105325|AIO2967	1953-09-08|1953-02-02	RE92556	1981-05-18	Sean O'Faolain|A						
-6a7d04f5-76be-3ac6-a404-686e4022f257					Nina Bawden.	Eyes of green.|Who calls the tune?	A110992|AIO3055	1953-09-23|1953-02-02	RE105117	1981-11-09	Nina Bawden|A					Pub. in Great Britain with the ti.: Who calls the tune?	
+60cf8ed7-af01-f5e4-9970-81ecd6100a95					Sean O'Faolain.	An Autumn in Italy.|South to Sicily.	A105325	1953-09-08	RE92556	1981-05-18	Sean O'Faolain|A						
+60cf8ed7-af01-f5e4-9970-81ecd6100a95					Sean O'Faolain.	An Autumn in Italy.|South to Sicily.	AIO2967	1953-02-02	RE92556	1981-05-18	Sean O'Faolain|A						
+6a7d04f5-76be-3ac6-a404-686e4022f257					Nina Bawden.	Eyes of green.|Who calls the tune?	A110992	1953-09-23	RE105117	1981-11-09	Nina Bawden|A					Pub. in Great Britain with the ti.: Who calls the tune?	
+6a7d04f5-76be-3ac6-a404-686e4022f257					Nina Bawden.	Eyes of green.|Who calls the tune?	AIO3055	1953-02-02	RE105117	1981-11-09	Nina Bawden|A					Pub. in Great Britain with the ti.: Who calls the tune?	
 b2200779-1702-1dac-595f-7189a58d004b					Pierre Gascar, pseud. of Pierre Fournier.	Les Betes.	AFO10771	1953-02-02	RE88013	1981-04-02							
 cb411926-e449-9943-2dcb-132e06600eae						Fate.  Vol. 6, no. 3, Mar. 1953.	B396391	1953-02-02	RE86422	1981-03-16	Clark Publishing Company|PCW						
 b13adeab-fe1c-9503-795b-71eb27842457						Chicago daily tribune.  Vol. 112, no. 28, Feb. 2, 1953.	B397326	1953-02-02	RE81731	1981-01-19	Chicago Tribune Company|PCW						
@@ -1779,7 +1788,8 @@ d3efdf0a-c36d-c996-4dd1-23891a14b125						Lassie in the meadow; puzzle art.  No.
 7133bf91-9ec1-5ec4-c74c-a27f99295376						Tarzan take aim; puzzle art.  No. 2628.	K35315	1953-02-06	RE86964	1981-03-30	Edgar Rice Burroughs, Inc.|PWH						
 d2da54f9-9b06-ae96-9545-bef6b7c85812						Tom & Jerry sitting pretty; puzzle art.  No. 2628.	K35316	1953-02-06	RE78642	1981-01-05	Metro-Goldwyn-Mayer, Inc.|PWH						
 78e962b5-805f-201e-c154-3ee2f21c681f					Arthur T. Vanderbilt.	The Doctrine of the separation of powers and its present-day significance.	A78744	1953-02-07	RE88954	1981-04-17							
-4f1494c8-83d7-17f9-7049-073a15ce1e2e					Ursula Curtiss.	The Iron cobweb; book.|Toronto star	A81234|AI3718	1953-02-26|1953-02-07	RE108996	1981-12-18	Ursula Curtiss|A					Condensed version of U. S. ed. pub. in Toronto star in 1953.	
+4f1494c8-83d7-17f9-7049-073a15ce1e2e					Ursula Curtiss.	The Iron cobweb; book.|Toronto star	A81234	1953-02-26	RE108996	1981-12-18	Ursula Curtiss|A					Condensed version of U. S. ed. pub. in Toronto star in 1953.	
+4f1494c8-83d7-17f9-7049-073a15ce1e2e					Ursula Curtiss.	The Iron cobweb; book.|Toronto star	AI3718	1953-02-07	RE108996	1981-12-18	Ursula Curtiss|A					Condensed version of U. S. ed. pub. in Toronto star in 1953.	
 a1c54f6a-e06f-b7e1-1eef-8ae08fa28ef7						The Saturday evening post.  Vol. 225, no. 32, Feb. 7, 1953.	B398005	1953-02-07	RE79184	1981-01-08	The Saturday Evening Post Company|PCW						
 941a8c3a-b0d4-746d-d386-6adfb735d104						Barron's; national business & financial weekly.  Vol. 33, no. 6, Feb. 9, 1953.	B398621	1953-02-07	RE83965	1981-03-09	Dow Jones & Company, Inc.|PCW						
 151648f7-b802-a7eb-0abe-e539490f0db8						Chicago daily tribune.  Vol. 112, no. 33, Feb. 7, 1953.	B398701	1953-02-07	RE81737	1981-01-19	Chicago Tribune Company|PCW						
@@ -2065,7 +2075,8 @@ dbc6a97b-85fa-0779-6097-f112bca2d308						Bad judgment.	B5-23449	1953-02-13	RE83
 81044b01-7cb5-d7e1-5c91-013a54bfe62b						Two holes.	B5-23453	1953-02-13	RE83259	1981-02-13	Edgar Rice Burroughs, Inc.|PWH						
 7c936726-d52b-dc6b-0f25-cc94573c94d8					Edgar Tobin Aerial Surveys, Edgar Tobin, sole owner.	North half, Newton County, Tex., ownership & lease map with well data.	F14665	1953-02-13	RE81422	1981-02-05	Tobin Surveys, Inc.|PWH						
 398bacce-bc10-8a1b-2c67-2f8a3f45ad2e					Edgar Tobin Aerial Surveys, Edgar Tobin, sole owner.	South half, Newton County, Tex., ownership & lease map with well data.	F14669	1953-02-13	RE81425	1981-02-05	Tobin Surveys, Inc.|PWH						
-2f20e05d-8bc0-8971-1c8d-93c0f7493aa9					Mark Derby, pseud. of Harry Wilcox.	The Big water.	A91132|AIO2871	1953-05-04|1953-02-14	RE109644	1981-12-14	Mark Derby|A						
+2f20e05d-8bc0-8971-1c8d-93c0f7493aa9					Mark Derby, pseud. of Harry Wilcox.	The Big water.	A91132	1953-05-04	RE109644	1981-12-14	Mark Derby|A						
+2f20e05d-8bc0-8971-1c8d-93c0f7493aa9					Mark Derby, pseud. of Harry Wilcox.	The Big water.	AIO2871	1953-02-14	RE109644	1981-12-14	Mark Derby|A						
 525df9d3-d5a3-c643-36e1-e4ce204340bc						Barron's; national business & financial weekly.  Vol. 33, no. 7, Feb. 16, 1953.	B399634	1953-02-14	RE83955	1981-03-09	Dow Jones & Company, Inc.|PCW						
 0551a41a-c21f-ae3c-7eea-5781307f7cdc						Chicago daily tribune.  Vol. 112, no. 39, Feb. 14, 1953.	B399701	1953-02-14	RE81757	1981-01-19	Chicago Tribune Company|PCW						
 c51b65ee-9800-1066-bdf1-06ddbae471a6						The Christian Science monitor, Boston.  Vol. 45, no. 68, Feb. 14, 1953.	B399710	1953-02-14	RE79669	1981-01-22	The Christian Science Publishing Society|PWH						
@@ -2135,10 +2146,12 @@ dea7a314-17e0-4d3b-1b3f-5be653bdc272					Vera Efron & Mark Keller.	Alcoholism tr
 b6b106f5-54cf-b1f9-76a4-4a1e8c470d61						NEA Service weekly.	A87228	1953-02-16	RE110572	1981-12-22							
 4d8c1f36-e53b-fc7a-fa11-7e3daf200cc9					Maxwell Kanzell.	How to read music.	A88356	1953-02-16	RE96168	1981-06-30	Betty Marie Young|E						
 02d97c74-e03c-e9a1-1798-0a92e2141b74					C. S. Hammond & Company.	Hammond's New home reference world atlas and gazetteer.	A89180	1953-02-16	RE103135	1981-10-15	Hammond, Inc.|PWH						
-8280889c-b2ba-a90a-f600-5ad473f1500c					Margaret Lane Huntingdon & Joan Hassall.	The Bronte story.	A89322|AIO3129	1953-04-29|1953-02-16	RE96805	1981-06-18	Margaret Lane Huntingdon|A						
+8280889c-b2ba-a90a-f600-5ad473f1500c					Margaret Lane Huntingdon & Joan Hassall.	The Bronte story.	A89322	1953-04-29	RE96805	1981-06-18	Margaret Lane Huntingdon|A						
+8280889c-b2ba-a90a-f600-5ad473f1500c					Margaret Lane Huntingdon & Joan Hassall.	The Bronte story.	AIO3129	1953-02-16	RE96805	1981-06-18	Margaret Lane Huntingdon|A						
 2b67f976-a9a0-9c9f-5779-f5c1be9e3683					Fritz Redlich, June R. Bingham & Jacob Levine.	The Inside story.	A100462	1953-02-16	RE85500	1981-03-26	June R. Bingham|A						
 83ebca4d-a599-a78a-7bbf-eaac7967e9cf						Superman.  Release the week of Mar. 9, 1953.	A101238	1953-02-16	RE98761	1981-08-19	Comics, Inc.|PWH						
-f28cd203-e772-9aeb-b7ce-3cbb79d264be					Anthony Gilbert, pseud. of Lucy Malleson.	Black death.|Footsteps behind me.	A101932|AIO2964	1953-06-25|1953-02-16	RE85181	1981-03-06	B. K. Malleson|E||M. U. Malleson|E						
+f28cd203-e772-9aeb-b7ce-3cbb79d264be					Anthony Gilbert, pseud. of Lucy Malleson.	Black death.|Footsteps behind me.	A101932	1953-06-25	RE85181	1981-03-06	B. K. Malleson|E||M. U. Malleson|E						
+f28cd203-e772-9aeb-b7ce-3cbb79d264be					Anthony Gilbert, pseud. of Lucy Malleson.	Black death.|Footsteps behind me.	AIO2964	1953-02-16	RE85181	1981-03-06	B. K. Malleson|E||M. U. Malleson|E						
 e41a0e32-736c-acc9-86c0-e6579012ec0d					Augusta Stevenson.	Zeb Pike: boy traveler.	A103345	1953-02-16	RE97776	1981-08-06	American Fletcher National Bank|E						
 20a0db84-1914-86db-d53b-68587aa5de9c					Jack Kent.	King Aroo.  Release the week of Mar. 2, 1953.	A181787	1953-02-16	RE100546	1981-09-11	Jack Kent|A						
 16b05620-6dfb-c175-3fb8-38894e189bd9						Guideposts.  Vol. 8, no. 1, Mar. 1953.	B399216	1953-02-16	RE93576	1981-04-20	Guideposts Associates, Inc.|PCW						
@@ -2260,7 +2273,8 @@ e53243e8-4a98-5a68-5999-c40cff570284						The Sun.  Text: Herbert S. Zim, ill.: 
 c0095e69-5cdf-8a51-3248-369404b8789b						La Salle of the Mississippi.  Text: Ronald Syme, ill.: William Stobbs.	A87033	1953-02-18	RE105653	1981-11-13	Ronald Syme|A						
 6f89be65-b454-6b08-de2c-3b4b6a911b70						Wu, the gatekeeper's son.  Written & illustrated by Eleanor Frances Lattimore.	A87034	1953-02-18	RE105654	1981-11-13	Eleanor Frances Lattimore|A						
 2f6fd98a-7da6-5395-6bea-36af88fe9e65						The Crow Indians: hunters of the northern plains.  Text: Sonia Bleeker, ill.: Althea Karr.	A87035	1953-02-18	RE105655	1981-11-13	Herbert S. Zim|Wr						
-919f06f2-d09c-a81b-dd13-14676b24b294					Evelyn Anthony, pseud. of Evelyn Ward Thomas.	Imperial highness.|The Rebel princess.	A107989|AIO2913	1953-08-21|1953-02-18	RE101898	1981-07-29							
+919f06f2-d09c-a81b-dd13-14676b24b294					Evelyn Anthony, pseud. of Evelyn Ward Thomas.	Imperial highness.|The Rebel princess.	A107989	1953-08-21	RE101898	1981-07-29							
+919f06f2-d09c-a81b-dd13-14676b24b294					Evelyn Anthony, pseud. of Evelyn Ward Thomas.	Imperial highness.|The Rebel princess.	AIO2913	1953-02-18	RE101898	1981-07-29							
 eecfdc49-583b-ee1d-5e94-f31c96c2e0cc					Romain Rolland.	L'Esprit libre.	AFO10581	1953-02-18	RE90815	1981-04-21	Marie Mikhailova-Cuvillier|PPW						
 ac41b6c3-c098-35b8-e3a9-ab4fdb3ea935					Pierre Benoit.	La Toison d'or.	AFO10844	1953-02-18	RE90814	1981-04-21	Robert Esmenard|E						
 6153e07b-93d0-bc27-3622-94f9a73cc3c0						Chicago daily tribune.  Vol. 112, no. 42, Feb. 18, 1953.	B399704	1953-02-18	RE81756	1981-01-19	Chicago Tribune Company|PCW						
@@ -2322,7 +2336,8 @@ ad95a703-5477-5519-73a9-4a548d1a5f65						Ripley's Believe It Or Not!  Cartoon f
 526f5791-11bb-efc2-af66-f5f3758201e0					Edwin Hill Cooke.	Reports of cases at law and in chancery, argued and determined in the Supreme Court of Illinois.  Vol. 412.	A83729	1953-02-19	RE84166	1981-02-06	Edwin Hill Cooke|A						
 8d683336-7579-68fd-738d-6037824929c6					Howard Whitman.	A Reporter in search of God.	A87571	1953-02-19	RE91704	1981-02-12	Howard Whitman|A						
 1b1b7cf0-199a-6fe2-d868-2c14e72311b1						Red Ryder coloring book.  No. 214925.  Ill. by Stephen Slesinger, employer for hire of Fred Harman.	A92954	1953-02-19	RE95946	1981-07-06	Shirley Lasswell|PWH||Patricia Slesinger|PWH						
-fb69fca2-1b7e-4a05-c5b9-738404d0d99d					Winston Graham.	Fortune is a woman.|Ladies home journal, Nov. 1952	A106523|AIO3140	1953-09-17|1953-02-19	RE84395	1981-02-17	Winston Graham|A					Condensed version prev. pub. in Ladies home journal, Nov. 1952.	
+fb69fca2-1b7e-4a05-c5b9-738404d0d99d					Winston Graham.	Fortune is a woman.|Ladies home journal, Nov. 1952	A106523	1953-09-17	RE84395	1981-02-17	Winston Graham|A					Condensed version prev. pub. in Ladies home journal, Nov. 1952.	
+fb69fca2-1b7e-4a05-c5b9-738404d0d99d					Winston Graham.	Fortune is a woman.|Ladies home journal, Nov. 1952	AIO3140	1953-02-19	RE84395	1981-02-17	Winston Graham|A					Condensed version prev. pub. in Ladies home journal, Nov. 1952.	
 1c27b768-0c51-6676-4a6f-d395638e8e78					Jack Kent.	King Aroo.  Release the week of Mar. 9, 1953.	A181788	1953-02-19	RE100547	1981-09-11	Jack Kent|A						
 5feeee1e-1364-e3f9-cea1-01fc343dedd3					Ursula Joan Keir Simpson.	The Vintage.	AIO2963	1953-02-19	RE78640	1981-01-05	Ursula Joan Keir Simpson|A						
 6d262875-0d3f-5899-9e5c-654ec64dc9cc						The Wall Street journal.  Vol. 141, no. 41, Feb. 19, 1953.	B399744	1953-02-19	RE83941	1981-03-09	Dow Jones & Company, Inc.|PCW						
@@ -2494,9 +2509,11 @@ a7820d8e-942a-fe88-3f79-25e444664961					Frances Frost & Paul Galdone.	Rocket aw
 bf130429-c538-26dc-3a2d-a28312e62769						NEA Service weekly.	A87229	1953-02-23	RE110573	1981-12-22							
 dcb7253f-d7ac-8210-c9f1-bc3c6122b181					Thomas Folds.	Your taste and good design.	A90795	1953-02-23	RE105787	1981-11-13	Science Research Associates, Inc.|PWH						
 b8225235-159a-66ec-eb08-7bbcfd142e1c						Instructor's guide to Your taste and good design.  Editor: Barbara Jipson.	A90796	1953-02-23	RE105788	1981-11-13	Science Research Associates, Inc.|PWH						
-50943d3c-cc41-188c-11ee-1e798f02ec37					Bertrand Russell.	Satan in the suburbs.	A95788|AI3761	1953-06-15|1953-02-23	RE93468	1981-06-03	Christopher Farley|E						
+50943d3c-cc41-188c-11ee-1e798f02ec37					Bertrand Russell.	Satan in the suburbs.	A95788	1953-06-15	RE93468	1981-06-03	Christopher Farley|E						
+50943d3c-cc41-188c-11ee-1e798f02ec37					Bertrand Russell.	Satan in the suburbs.	AI3761	1953-02-23	RE93468	1981-06-03	Christopher Farley|E						
 9c530876-998d-0519-f139-438b9c299dfd					Raymond Bernard Cattell.	The Junior personality quiz.	A119035	1953-02-23	RE88984	1981-04-17	Raymond Bernard Cattell|A						
-62fe0abc-2467-f1b1-c1ec-e19e42ef8f3f					Frederick Spencer Chapman.	Living dangerously.	A131663|AI3889	1954-03-31|1953-02-23	RE89793	1981-04-06	Faith Spencer Chapman|W					In notice: 1953	
+62fe0abc-2467-f1b1-c1ec-e19e42ef8f3f					Frederick Spencer Chapman.	Living dangerously.	A131663	1954-03-31	RE89793	1981-04-06	Faith Spencer Chapman|W					In notice: 1953	
+62fe0abc-2467-f1b1-c1ec-e19e42ef8f3f					Frederick Spencer Chapman.	Living dangerously.	AI3889	1953-02-23	RE89793	1981-04-06	Faith Spencer Chapman|W					In notice: 1953	
 57260b0f-b070-d312-7ccc-a08e8b03cbb7					Marcel Ayme, translated from the French by Norman George Denny.	The Secret stream.	AI3877	1953-02-23	RE110204	1981-12-21	Editions Gallimard|PWH						
 23d61c00-4661-4e32-0cbd-4d4235bfe88e					Sybille Bedford.	The Sudden view.	AIO3012	1953-02-23	RE86132	1981-03-04	Sybille Bedford|A						
 b9cf3483-8bc6-910c-d775-cd29cf0d4545					Richard Gordon.	Doctor at sea.	AIO3077	1953-02-23	RE93571	1981-03-27	Richard Gordon|A	U. S. ed. pub.|1954-01-21|A122792					
@@ -2703,7 +2720,8 @@ eb86891f-ba4b-8616-bdde-8f4d60d3d2d6						Boys' and girls' march of comics.  No.
 4d0e7f47-4085-0e5e-f33f-3b3c685c87ae					Pamela Brown, illustrator: Robert Frankenberg.	Family playbill.|Family troupe.	A88459	1953-02-26	RE112355	1981-12-29	Pamela Brown|A||Robert Frankenberg|A						
 d7c60599-a5ec-5d8e-105a-313e92f2abb5					Simon & Schuster, Inc. & Artists and Writers Guild, Inc., employers for hire of Margaret Wise Brown (text) & Leonard Weisgard (art)	The Golden bunny.	A92967	1953-02-26	RE109084	1981-10-29	Western Publishing Company, Inc.|PWH						
 60bf13d0-ff35-f789-0004-d44564315d1d						Superman.  Release the week of Mar. 23, 1953.	A101236	1953-02-26	RE98759	1981-08-19	Comics, Inc.|PWH						
-58782b97-971d-69a9-46b4-312f17f0f1d3					Peter Towry, pseud. of David Piper.	It's warm inside.|Richard said no.	A104155|AI3827	1953-08-26|1953-02-26	RE107984	1981-12-10						First pub. in Great Britain under the name It's warm inside.	
+58782b97-971d-69a9-46b4-312f17f0f1d3					Peter Towry, pseud. of David Piper.	It's warm inside.|Richard said no.	A104155	1953-08-26	RE107984	1981-12-10						First pub. in Great Britain under the name It's warm inside.	
+58782b97-971d-69a9-46b4-312f17f0f1d3					Peter Towry, pseud. of David Piper.	It's warm inside.|Richard said no.	AI3827	1953-02-26	RE107984	1981-12-10						First pub. in Great Britain under the name It's warm inside.	
 1db4bec2-618f-5589-d6b8-3b48dfc7e72a					Howard Simon.	Primer of drawing for adults.	A114294	1953-02-26	RE111475	1981-12-22	Howard Simon|A						
 85630177-e15c-d273-86f0-52fcb1bfc93f					Marcelle Verite, ill.: Pecnard.	Alerte aux cimes.	AFO10482	1953-02-26	RE91256	1981-04-30	Marcelle Verite|A						
 f4945a78-ce47-2442-ee4c-04f97015eb79					Emile Girard.	Confidences d'un hussier de la Comedie-Francaise.	AFO11104	1953-02-26	RE109922	1981-12-21	Emile Girard|A						
@@ -3066,8 +3084,10 @@ f5d33ca9-1f26-f576-a689-d4735e00a5e2						Ripley's Believe It Or Not!  Cartoon f
 ade7423b-3ba1-506c-2803-df8046c8d31a					David Sinclair Burleson, Laurie Cash & Anna Leigh McCorkle.	Teacher's manual for Adventures in language, grade 4.	A88136	1953-03-05	RE110291	1981-12-21	Laurie Cash|A||Anna Leigh McCorkle|A						
 88e2074b-7f4b-47ef-3610-9eb483c0ede0					Rootie Kazootie, Inc., employer for hire of Steve Carlin & Mel Crawford.	Rootie Kazootie detective.	A92977	1953-03-05	RE126030	1981-11-30	Argosy Company, Inc.|PWH						
 49715364-38d6-9f88-216a-eeafe40424a9					Simon & Schuster, Inc. & Artists & Writers Guild, Inc., employers for hire of Margaret Wise Brown (text) & Garth Williams (art)	The Sailor dog.	A92987	1953-03-05	RE109094	1981-10-29	Western Publishing Company, Inc.|PWH						
-7b07ca06-ab44-1f7a-25a1-0d1ac4248f2d					James S. Stewart.	A Faith to proclaim.	A94697|AI3755	1953-06-08|1953-03-05	RE101475	1981-09-14	James S. Stewart|A						
-fb721742-6cbe-79f6-7d24-e528d59d7235					Molly Clavering (Mary Clavering)	Mrs. Lorimer's family.|Mrs. Lorimer's quiet summer.	A111510|AIO3398	1953-10-28|1953-03-05	RE109642	1981-12-14	Molly Clavering|A						
+7b07ca06-ab44-1f7a-25a1-0d1ac4248f2d					James S. Stewart.	A Faith to proclaim.	A94697	1953-06-08	RE101475	1981-09-14	James S. Stewart|A						
+7b07ca06-ab44-1f7a-25a1-0d1ac4248f2d					James S. Stewart.	A Faith to proclaim.	AI3755	1953-03-05	RE101475	1981-09-14	James S. Stewart|A						
+fb721742-6cbe-79f6-7d24-e528d59d7235					Molly Clavering (Mary Clavering)	Mrs. Lorimer's family.|Mrs. Lorimer's quiet summer.	A111510	1953-10-28	RE109642	1981-12-14	Molly Clavering|A						
+fb721742-6cbe-79f6-7d24-e528d59d7235					Molly Clavering (Mary Clavering)	Mrs. Lorimer's family.|Mrs. Lorimer's quiet summer.	AIO3398	1953-03-05	RE109642	1981-12-14	Molly Clavering|A						
 73f6d346-0c23-08de-2cda-883ce1c8dab8						The New Yorker.  Vol. 29, no. 3, Mar. 7, 1953.	B401791	1953-03-05	RE82246	1981-02-23	The New Yorker Magazine, Inc.|PCW						
 1d7193af-130e-83c9-834d-c544ecbdeff4						The Wall Street journal.  Vol. 141, no. 52, Mar. 5, 1953.	B402449	1953-03-05	RE89886	1981-04-23	Dow Jones & Company, Inc.|PCW						
 3b60c163-081c-0aae-5db5-4e9011e9faf3						Circulation; a journal of the American Heart Association.  Vol. 7, no. 3, Mar. 1953.	B402845	1953-03-05	RE109021	1981-12-18	Grune & Stratton, Inc.|PCW						
@@ -3114,9 +3134,11 @@ d2c6035c-7be5-4ceb-0909-d15be91789a3					Thomas E. French & Charles J. Vierck.	A
 30b82c40-800d-d551-a57f-33bc2807e7ec					Shepard Bancroft Clough.	The American way, the economic basis of our civilization.	A86863	1953-03-06	RE96515	1981-07-20	Shepard B. Clough|A						
 8fe97a01-baa8-6f7c-064b-048280c16b24					Bruce Elwyn Meserve.	Fundamental concepts of algebra.	A89612	1953-03-06	RE101617	1981-10-02	Bruce E. Meserve|A						
 ba0e4ba0-f189-e095-a9ae-283ec3153117					Dagobert D. Runes & Harry Elmer Barnes.	The Soviet impact on society.	A90905	1953-03-06	RE113184	1981-12-31	Philosophical Library, Inc.|PWH						
-9262e3e3-6725-1730-81e5-75e8892bdfa3					Virginia Cowles (Virginia Cowles Crawley)	Winston Churchill: the era and the man.	A93169|AI3775	1953-05-25|1953-03-06	RE104335	1981-10-27	Virginia Cowles|A						
+9262e3e3-6725-1730-81e5-75e8892bdfa3					Virginia Cowles (Virginia Cowles Crawley)	Winston Churchill: the era and the man.	A93169	1953-05-25	RE104335	1981-10-27	Virginia Cowles|A						
+9262e3e3-6725-1730-81e5-75e8892bdfa3					Virginia Cowles (Virginia Cowles Crawley)	Winston Churchill: the era and the man.	AI3775	1953-03-06	RE104335	1981-10-27	Virginia Cowles|A						
 f5499c91-d0f4-d17f-a5be-b12ba5e0afbd						Superman.  Release the week of Mar. 30, 1953.	A101235	1953-03-06	RE100276	1981-09-09	Comics, Inc.|PWH						
-eeff0683-fd7b-833a-5392-670e1e8c451f					Herbert Cecil Hardwick for C. S. Hammond & Company.	Words are important.  4th book of Vocabulary improvement.	A114987|AIO2949	1953-10-05|1953-03-06	RE103152	1981-10-15	Hammond, Inc.|PWH						
+eeff0683-fd7b-833a-5392-670e1e8c451f					Herbert Cecil Hardwick for C. S. Hammond & Company.	Words are important.  4th book of Vocabulary improvement.	A114987	1953-10-05	RE103152	1981-10-15	Hammond, Inc.|PWH						
+eeff0683-fd7b-833a-5392-670e1e8c451f					Herbert Cecil Hardwick for C. S. Hammond & Company.	Words are important.  4th book of Vocabulary improvement.	AIO2949	1953-03-06	RE103152	1981-10-15	Hammond, Inc.|PWH						
 b4f8a758-d87d-88dd-5d7c-a3414446cd9f						Current biography, 1952.  Editors: Anna Rothe & Evelyn Lohr.	A179828	1953-03-06	RE89814	1981-03-31	The H. W. Wilson Company|PWH						
 9893f008-c5cd-da4b-1693-cd1e4db427ae						Chicago daily tribune.  Vol. 112, no. 56, Mar. 6, 1953.	B403576	1953-03-06	RE82473	1981-02-17	Chicago Tribune Company|PCW						
 22d817e2-cb21-ad0a-939d-4de1b3dbec30						The Christian Science monitor, Boston.  Vol. 45, no. 84, Mar. 6, 1953.	B403582	1953-03-06	RE79645	1981-01-22	The Christian Science Publishing Society|PWH						
@@ -3188,7 +3210,8 @@ efa066d2-ee8f-42cb-0684-140d44d66335					Paul Webb.	If you run across ours anywh
 893d2b42-7198-bdb3-539f-73e40b85a2fd					Paul Webb.	Shecks! somethin's wrong, down at the store it was talkin' jest as plain.	K35054	1953-03-06	RE106925	1981-11-20	Brown & Bigelow Division of Saxon Industries, Inc.|PWH						
 5d21ba95-f4a7-a546-abfd-c86c69b5679e					Paul Webb.	They're both plumb tuckered out, spent all mornin' scratchin' each other's fleas.	K35055	1953-03-06	RE106926	1981-11-20	Brown & Bigelow Division of Saxon Industries, Inc.|PWH						
 578e6b07-b4e6-d748-9a51-9abc6e300966					Paul Webb.	Wish you'd waked me the day the young-un was borned, too late to congratulate Maw with a cigar now.	K35056	1953-03-06	RE106927	1981-11-20	Brown & Bigelow Division of Saxon Industries, Inc.|PWH						
-67790524-b92b-d27b-fe0e-2278c7044d4a					Will Ermine, pseud. of Harry Sinclair Drago.	Longhorn empire.	A83673|AI3746	1953-03-19|1953-03-07	RE84444	1981-02-12	Herminne Drago|W						
+67790524-b92b-d27b-fe0e-2278c7044d4a					Will Ermine, pseud. of Harry Sinclair Drago.	Longhorn empire.	A83673	1953-03-19	RE84444	1981-02-12	Herminne Drago|W						
+67790524-b92b-d27b-fe0e-2278c7044d4a					Will Ermine, pseud. of Harry Sinclair Drago.	Longhorn empire.	AI3746	1953-03-07	RE84444	1981-02-12	Herminne Drago|W						
 71c1395a-c4a4-e231-9955-f6fc78eb8dd6						Barron's; national business & financial weekly.  Vol. 33, no. 10, Mar. 9, 1953.	B403487	1953-03-07	RE89887	1981-04-23	Dow Jones & Company, Inc.|PCW						
 6bd54526-3a44-a743-5297-2fe6f12673cd						Chicago daily tribune.  Vol. 112, no. 57, Mar. 7, 1953.	B403577	1953-03-07	RE82474	1981-02-17	Chicago Tribune Company|PCW						
 1fc5578f-66e2-ecfd-b279-9dacd5ef02bf						The Christian Science monitor, Boston.  Vol. 45, no. 85, Mar. 7, 1953.	B403583	1953-03-07	RE79646	1981-01-22	The Christian Science Publishing Society|PWH						
@@ -3222,8 +3245,10 @@ e27c3906-407d-1383-2722-dc28d81c456a					George Santayana.	My host the world.	A8
 baadd7cc-35a0-97da-cee6-4af4a3d59444					Daniel Wit.	Comparative political institutions: a study of modern democratic and dictatorial systems.	A84151	1953-03-09	RE93415	1981-06-03	Holt, Rinehart, and Winston|PWH						
 deddf94b-2ce5-9445-4870-12a88185aad0					Ugo Mochi & T. Donald Carter.	Hoofed animals of the world.	A84160	1953-03-09	RE106386	1981-11-27	Edna Mochi|W||Joanne Mochi Gray|C||Jeanne Mochi Tartaglia|C						
 d1bad65e-830c-89c1-25ff-a5b777a12352					George L. Kehl, Erwin W. Mueller, R. D. Heidenreich, Charles S. Barrett, B. E. Warren, B. L. Averbach, A. H. Geisler, C. G. Shull, Bruce Chalmers, Earl R. Parker, Jack Washburn, G. R. Irwin, C. Wert, H. J. Williams, Michael B. Bever & Sidney Siegel.	Modern research techniques in physical metallurgy.	A84435	1953-03-09	RE106286	1981-11-23	American Society for Metals|PCW						
-ebcb20ac-ce35-9bb0-1572-83a384a6c0c2					John Michael Ward Bingham.	Five roundabouts to heaven.|The Tender poisoner; novel.	A84598|AIO2970	1953-03-24|1953-03-09	RE105285	1981-10-05	John Michael Ward Bingham|A						
-435677a6-fc54-920b-3637-9a6b4b96af81					John Bingham.	Five roundabouts to heaven.|The Tender poisoner.	A84598|AIO2970	1953-03-24|1953-03-09	RE139346	1981-12-17							
+ebcb20ac-ce35-9bb0-1572-83a384a6c0c2					John Michael Ward Bingham.	Five roundabouts to heaven.|The Tender poisoner; novel.	A84598	1953-03-24	RE105285	1981-10-05	John Michael Ward Bingham|A						
+ebcb20ac-ce35-9bb0-1572-83a384a6c0c2					John Michael Ward Bingham.	Five roundabouts to heaven.|The Tender poisoner; novel.	AIO2970	1953-03-09	RE105285	1981-10-05	John Michael Ward Bingham|A						
+435677a6-fc54-920b-3637-9a6b4b96af81					John Bingham.	Five roundabouts to heaven.|The Tender poisoner.	A84598	1953-03-24	RE139346	1981-12-17							
+435677a6-fc54-920b-3637-9a6b4b96af81					John Bingham.	Five roundabouts to heaven.|The Tender poisoner.	AIO2970	1953-03-09	RE139346	1981-12-17							
 8f975bef-1df8-69f1-0cd2-fec1c400b86f					Gertrude Hecker Winders, ill.: Harry H. Lees.	Jim Bowie: boy with a hunting knife.	A85234	1953-03-09	RE98036	1981-08-07	Gertrude Hecker Winders|A						
 fac393d3-513e-39a9-6101-621ce0a5cca1					Florence Greenhoe Robbins.	Educational sociology; a study in child, youth, school, and community.	A85246	1953-03-09	RE86049	1981-03-05	Holt, Rinehart, and Winston|PWH						
 367f4032-1d5d-7da8-2544-933243734ed7					Jefferson Young.	A Good man.|Southwest review	A85449	1953-03-09	RE86941	1981-03-30	Jefferson Young|A					Portion appeared in the Dec. issue of the Southwest review.	
@@ -3232,7 +3257,8 @@ f51cc14f-dadc-200a-329c-c2449d0c7b49					William A. Cocke.	The Companion Bible.	
 82157260-85c5-4f79-41ae-d8251f553e11					Mr. Dick, pseud. of Richard Dunstan Smith.	Minnie-the-Monkey; an animal makeup story.	A85891	1953-03-09	RE102408	1981-10-05	Richard Dunstan Smith|A						
 a829aeb3-0183-e7bd-0726-0f7ffb0bd348						NEA Service weekly.	A87231	1953-03-09	RE110575	1981-12-22							
 25aa8fbf-d0cd-83fe-188d-391c17e07c85						Selected poems of Claude McKay.  Poems: Claude McKay, introd.: John Dewey, biographical note: Max Eastman.	A87543	1953-03-09	RE109567	1981-12-16	G. K. Hall & Company|PPW						
-85c3f050-6b34-fa0a-6e4f-1690e60eb3c8					Percy Harold Newby.	The Retreat.	A87573|AIO3169	1953-03-18|1953-03-09	RE98960	1981-08-14	P. H. Newby|A						
+85c3f050-6b34-fa0a-6e4f-1690e60eb3c8					Percy Harold Newby.	The Retreat.	A87573	1953-03-18	RE98960	1981-08-14	P. H. Newby|A						
+85c3f050-6b34-fa0a-6e4f-1690e60eb3c8					Percy Harold Newby.	The Retreat.	AIO3169	1953-03-09	RE98960	1981-08-14	P. H. Newby|A						
 258584b3-b45c-e984-3284-1ea5d5f316c9					C. S. Hammond Company.	Replogle comprehensive atlas of the world.	A89182	1953-03-09	RE103137	1981-10-15	Hammond, Inc.|PWH						
 0d5164ae-8d61-2042-fc93-4cadca2aee41					Donald H. Ballou & Frederick H. Steen.	Plane and spherical trigonometry with tables.	A90406	1953-03-09	RE93410	1981-06-02	Donald H. Ballou|A						
 9c2ea23b-6805-8546-4e1d-b0585c245827						The Greek poets.  Editor & introd.: Moses Hadas, translators: Charles H. Kahn, Martin Ostwald, Lewis P. Chamberlayne et al.	A92269	1953-03-09	RE98899	1981-07-13	Random House, Inc.|PWH||Charles H. Kahn|A||Martin Ostwald|A||Elizabeth Hadas|PPW						
@@ -3397,7 +3423,8 @@ f720a57f-0d74-fa3a-ae6e-de766d32bd3c					Evelyn Beyer, illustrator: Dellwyn Cunn
 f4be656e-c3f9-7727-0165-77b1f2ea085d					Annette Edwards, illustrator: Irma Wilde.	My first book of farm animals.	A92823	1953-03-12	RE96470	1981-07-20	Grosset & Dunlap, Inc.|PWH						
 50ae50d6-12d7-c81e-14ee-60f3296181b2					Annette Edwards, illustrator: Priscilla Pointer.	Baby's day.	A92824	1953-03-12	RE96471	1981-07-20	Grosset & Dunlap, Inc.|PWH						
 b4c09393-86ed-3136-bcb5-981162f3c1da					John O'Hara.	Appointment in Samarra.	A92838	1953-03-12	RE93132	1981-02-25	Wylie O'Hara Doughty|C						
-d50e64fa-8ea6-71fc-669a-4f753521ba4f					Robin Estridge.	The Olive tree.	A100654|AIO3080	1953-05-20|1953-03-12	RE85161	1981-03-06	Robin Estridge|A						
+d50e64fa-8ea6-71fc-669a-4f753521ba4f					Robin Estridge.	The Olive tree.	A100654	1953-05-20	RE85161	1981-03-06	Robin Estridge|A						
+d50e64fa-8ea6-71fc-669a-4f753521ba4f					Robin Estridge.	The Olive tree.	AIO3080	1953-03-12	RE85161	1981-03-06	Robin Estridge|A						
 cb691358-e7a0-a108-1a32-2452a8a0a111					Simon & Schuster, Inc. & Artists & Writers Guild, Inc., employers for hire of Marion Conger (text) & Harry McNaught (art)	A Golden book of facts about the U. S. A.	A108615	1953-03-12	RE109120	1981-10-29	Western Publishing Company, Inc.|PWH						
 c5b9ab15-8ab5-2a33-38dd-b90fe55a4e57					Elizabeth Coatsworth (Elizabeth Coatsworth Beston)	Night wind in spring.	A410367	1953-03-12	RE112476	1981-12-29	Elizabeth Coatsworth Beston|A						
 d958ad10-eaa8-f3c6-57d5-44d5a3ce72f8					Georges Monmarche.	Provence, Cote D'Azur.	AFO11086	1953-03-12	RE94001	1981-05-18	Georges Monmarche|A						
@@ -3590,7 +3617,8 @@ b0bbf76d-87df-aa85-6162-bec2ad398bf0						Roy Smeck's Complete method for the ja
 e1f92fa1-9306-93fc-3f11-998904c5c9cb					Dale Evans Rogers.	Angel unaware.	A88156	1953-03-16	RE99372	1981-08-21	Dale Evans Rogers|A						
 f72bd6da-6edf-06ca-7399-b9d96e61ef0f					Cornelia Brown Sloop, Mildred Creekmore & Harrell E. Garrison.	All around with Dot and Jim; first grade reader.	A88380	1953-03-16	RE80629	1981-01-26	The Economy Company|PWH						
 e246f20d-6ea5-26c4-9dcb-8913db4654de					Irwin Taylor Sanders.	Societies around the world.  Vols. 1-2.	A92285	1953-03-16	RE102295	1981-10-06	Holt, Rinehart, and Winston|PWH						
-096cd349-e420-c85a-b4e7-09bc5149d969					Robert Henriques.	A Stranger here; a novel.	A93191|AI3797	1953-04-27|1953-03-16	RE148120	1981-09-28	Veronica Gosling|C						
+096cd349-e420-c85a-b4e7-09bc5149d969					Robert Henriques.	A Stranger here; a novel.	A93191	1953-04-27	RE148120	1981-09-28	Veronica Gosling|C						
+096cd349-e420-c85a-b4e7-09bc5149d969					Robert Henriques.	A Stranger here; a novel.	AI3797	1953-03-16	RE148120	1981-09-28	Veronica Gosling|C						
 79cc4938-86d9-3d27-a25b-bde8df46375a					E. O. Harbin.	Phunology.	A148810	1953-03-16	RE324432	1981-06-09	Mary Elizabeth Harbin Standish|C||Thomas Harbin|C						
 d8333777-14ad-16c8-0bbf-4e3a4b89ac70					Henry Williamson.	Tales of moorland & estuary.	AIO3108	1953-03-16	RE108994	1981-12-14	Richard Williamson|C						
 99f9bfce-82bc-14ce-e280-a7216fb42bd9						Barron's; national business & financial weekly.  Vol. 33, no. 11, Mar. 16, 1953.	B404509	1953-03-16	RE89874	1981-04-23	Dow Jones & Company, Inc.|PCW						
@@ -3775,7 +3803,8 @@ b4d4d655-fe2f-f71c-3f76-5bb68841f551					Joseph Wharton Lippincott.	Bun, a wild 
 2cf1aedf-1ace-30c5-e86d-0965ab33be3c					S. Kenneth Skolfield.	Cases on the law of personal property.	A84428	1953-03-19	RE86837	1981-04-07	The Foundation Press, Inc.|PWH						
 a25acbb7-427d-b777-07a4-a2ba8a7f2a03						Southern reporter, second series.  Vol. 61.	A84429	1953-03-19	RE86838	1981-04-07	West Publishing Company|PWH						
 adaa2735-1958-31a1-b370-e4cd7d1ad141						Children of wonder.  Editor: William Tenn, pseud. of Philip Klass.	A84455	1953-03-19	RE115671	1981-12-30							
-a26b7745-6daf-9255-b18f-5762606a328b					Gerard Fairlie.	Winner take all.	A84462|AIO2998	1953-03-20|1953-03-19	RE110665	1981-12-17	Gerard Fairlie|A						
+a26b7745-6daf-9255-b18f-5762606a328b					Gerard Fairlie.	Winner take all.	A84462	1953-03-20	RE110665	1981-12-17	Gerard Fairlie|A						
+a26b7745-6daf-9255-b18f-5762606a328b					Gerard Fairlie.	Winner take all.	AIO2998	1953-03-19	RE110665	1981-12-17	Gerard Fairlie|A						
 dbb219bb-afea-41f8-d166-b547e5bb8061						Michigan reporter, covering cases reported in North Western reporter, second series.	A84471	1953-03-19	RE86843	1981-04-07	West Publishing Company|PWH						
 1c08d4b2-b8b8-6bee-8057-4d9aef9e81ef					Georgette Heyer Rougier.	Cotillion.	A85624	1953-03-19	RE91503	1981-05-07	Richard George Rougier|C						
 82f64922-4cb4-9d21-a238-d01dae4c4457					Vernon Law Book Company, employer for hire.	1953 Vernon's Texas session law service.  No. 1.	A85822	1953-03-19	RE86834	1981-04-07	West Publishing Company|PWH						
@@ -3783,8 +3812,10 @@ d8c06e80-0b09-6012-c34d-19bf910732d0					Ray Bradbury, ill.: Joe Mugnaini.	Cora 
 5a3a3575-c3d5-1a9b-db7a-05e511d6cc19						King Features weekly.	A87064	1953-03-19	RE109706	1981-12-21	King Features Syndicate, Inc.|PCW						
 1a1e2b97-fa5d-6cd5-cd34-e7707a1023c0						King Features illustrated weekly.	A87068	1953-03-19	RE109755	1981-12-21	King Features Syndicate, Inc.|PCW						
 52118c9b-e776-a2fd-4b8d-0bc9f5ea27b0						Ripley's Believe It Or Not!  Cartoon feature.  Cartoon drawing & text: Paul Frehm.	A87068	1953-03-19	RE124707	1981-12-04	Ripley International, Ltd.|PWH						
-e89b89f7-1ab6-a218-5515-e63c89810173					Staff of Adam and Charles Black.	Who's who, 1953.	A99246|AI3871	1953-07-07|1953-03-19	RE112461	1981-12-29							
-8568a0b4-fdd3-a98d-4536-0c4c153349d9						Run away home.  Text by Elinor Lyon (Elinor Bruce Wright), ill. by Christine Price.	A111007|AIO2991	1953-09-11|1953-03-19	RE86341	1981-03-17	Elinor Lyon|E						
+e89b89f7-1ab6-a218-5515-e63c89810173					Staff of Adam and Charles Black.	Who's who, 1953.	A99246	1953-07-07	RE112461	1981-12-29							
+e89b89f7-1ab6-a218-5515-e63c89810173					Staff of Adam and Charles Black.	Who's who, 1953.	AI3871	1953-03-19	RE112461	1981-12-29							
+8568a0b4-fdd3-a98d-4536-0c4c153349d9						Run away home.  Text by Elinor Lyon (Elinor Bruce Wright), ill. by Christine Price.	A111007	1953-09-11	RE86341	1981-03-17	Elinor Lyon|E						
+8568a0b4-fdd3-a98d-4536-0c4c153349d9						Run away home.  Text by Elinor Lyon (Elinor Bruce Wright), ill. by Christine Price.	AIO2991	1953-03-19	RE86341	1981-03-17	Elinor Lyon|E						
 a1aa8742-ea28-4205-96b8-7265468df00a					Sidonie Gabrielle Colette, translation by Stefanie Neumann.	Gigi.	AFO10731	1953-03-19	RE301640	1981-12-31	H.|PWH						
 05ca1af7-c2f5-be36-cb1a-94013ce796bd					Adelbert Muhr.	Und ruhig fliesset der Rhein; das Reisebuch einer grossen Liebe.	AFO10734	1953-03-19	RE301641	1981-12-31	H.|PWH						
 62434881-f501-bb98-75ab-61125e9afcf8					Pierre Probst.	Youpi et Caroline.	AFO11052	1953-03-19	RE91258	1981-04-30	Pierre Probst|A						
@@ -4550,7 +4581,8 @@ f41fe8b2-5232-5b6d-2939-5a426e733624					Marion T. Garretson, Barbara Henderson 
 1617885c-7339-ce88-7733-70b7c386c6fc					Marion T. Garretson.	The Sunshine book; an activity book.	A90904	1953-04-01	RE98895	1981-07-13	Marion T. Garretson|A						
 04e5dbca-24dd-52c9-0e2b-c3db23dc1e92					Katherine F. Rohrbough.	Lift every voice.	A94660	1953-04-01	RE91074	1981-05-04	Nancy Joyner|C						
 c3c28630-b615-6c2a-22c6-12d1764c8683					William Franklin Graham.	Victorious Christian living.	A94903	1953-04-01	RE87019	1981-03-30	The Billy Graham Evangelistic Association|PWH						
-3a265d8a-06fa-1fa4-ce31-f2bd167bbc4f					Lawrence H. Battistini.	Introducing Asia.|The Background of Asia.	A109447|AI3814	1953-08-25|1953-04-01	RE86425	1981-03-19	Lawrence H. Battistini|A					Pub. in U. S. as Introducing Asia.	
+3a265d8a-06fa-1fa4-ce31-f2bd167bbc4f					Lawrence H. Battistini.	Introducing Asia.|The Background of Asia.	A109447	1953-08-25	RE86425	1981-03-19	Lawrence H. Battistini|A					Pub. in U. S. as Introducing Asia.	
+3a265d8a-06fa-1fa4-ce31-f2bd167bbc4f					Lawrence H. Battistini.	Introducing Asia.|The Background of Asia.	AI3814	1953-04-01	RE86425	1981-03-19	Lawrence H. Battistini|A					Pub. in U. S. as Introducing Asia.	
 e43d905e-51ad-1a85-adb1-de42263cfabd					Hildegard Fritzsche-Springer (Hildegard Fritzsche-Springer Schaedler)	Das Schwert auf der Waage.	AFO11375	1953-04-01	RE83511	1981-02-12	Hildegard Fritzsche-Springer Schaedler|A						
 0e0c86a7-a7de-8d7b-2b9c-1379dfc341ec						The Family circle.  Vol. 42, no. 4, Apr. 1953.	B406493	1953-04-01	RE91406	1981-05-04	The Family Circle, Inc.|PCW						
 fcbf45c5-5bd8-5597-4142-22b7dd10ee20						The Kenyon review.  Vol. 15, no. 2, spring 1953.	B407194	1953-04-01	RE77703	1981-01-09	Kenyon College|PCW						
@@ -4823,11 +4855,14 @@ c325f37c-0836-41fb-7b81-5c9632902fb2						Oklahoma decisions reported in Pacific
 3dc9a316-54b6-b481-61a5-a777a453cb54						Uncle Remus.  Released Apr. 19, 1953.	A89766	1953-04-07	RE99558	1981-08-24	Walt Disney Productions|PWH						
 7cfe6971-46cc-f28c-c2d0-88308fd59d64					Robert Patrick Wilmot.	Murder on Monday.	A89939	1953-04-07	RE107937	1981-12-07	Robert Patrick Wilmot|A						
 c2a7e0ae-d4a3-216f-87ae-b1930cdf75d0						Calculus and analytic geometry.	A89964	1953-04-07	RE105211	1981-11-12	George B. Thomas, Jr.|A						
-bf431cd5-5f82-1ad5-4c78-e5072efba0dd					Rosamond Lehmann.	The Echoing grove.	A91113|AIO3102	1953-05-07|1953-04-07	RE86029	1981-02-09	Rosamond Lehmann|A						
+bf431cd5-5f82-1ad5-4c78-e5072efba0dd					Rosamond Lehmann.	The Echoing grove.	A91113	1953-05-07	RE86029	1981-02-09	Rosamond Lehmann|A						
+bf431cd5-5f82-1ad5-4c78-e5072efba0dd					Rosamond Lehmann.	The Echoing grove.	AIO3102	1953-04-07	RE86029	1981-02-09	Rosamond Lehmann|A						
 583be252-9e4a-b0df-fa07-8644e1ae8ef2					Madeleine Parker Grant.	Microbiology and human progress.	A93183	1953-04-07	RE93207	1981-03-30	Madeleine Parker Grant|A						
 3df3c972-87aa-e392-87d5-e06c283fe214					G. Frederic Kuder (G. Frederick Kuder)	Examiners manual for the Kuder preference record vocational form C.|Kuder preference record vocational, form C	A94721	1953-04-07	RE105804	1981-11-13	G. Frederic Kuder|A						
-3353d263-0aa6-3875-b7cf-b938fb361dda					Julian Gustave Symons.	The Broken penny.	A109712|AIO3078	1953-10-14|1953-04-07	RE98529	1981-06-30	Julian Gustave Symons|A						
-7b48de3e-4cce-9c98-f530-77ff9bde4cec					Nicholas Blake, pseud. of Cecil Day Lewis.	The Dreadful hollow.	A111716|AI3779	1953-10-28|1953-04-07	RE101253	1981-09-28	Jill Day Lewis|W						
+3353d263-0aa6-3875-b7cf-b938fb361dda					Julian Gustave Symons.	The Broken penny.	A109712	1953-10-14	RE98529	1981-06-30	Julian Gustave Symons|A						
+3353d263-0aa6-3875-b7cf-b938fb361dda					Julian Gustave Symons.	The Broken penny.	AIO3078	1953-04-07	RE98529	1981-06-30	Julian Gustave Symons|A						
+7b48de3e-4cce-9c98-f530-77ff9bde4cec					Nicholas Blake, pseud. of Cecil Day Lewis.	The Dreadful hollow.	A111716	1953-10-28	RE101253	1981-09-28	Jill Day Lewis|W						
+7b48de3e-4cce-9c98-f530-77ff9bde4cec					Nicholas Blake, pseud. of Cecil Day Lewis.	The Dreadful hollow.	AI3779	1953-04-07	RE101253	1981-09-28	Jill Day Lewis|W						
 6f25f45c-510f-bacd-6230-695cc7dd4aac						Chicago daily tribune.  Vol. 112, no. 83, Apr. 7, 1953.	B408933	1953-04-07	RE84822	1981-03-06	Chicago Tribune Company|PCW						
 3d845d43-7b2b-1ff7-3ecd-0c552550e089						The Christian Science monitor, Boston.  Vol. 45, no. 111, Apr. 7, 1953.	B408940	1953-04-07	RE80443	1981-01-22	The Christian Science Publishing Society|PWH						
 4a936efa-4ec3-49a2-5d83-8ef4176a7d7c						The Wall Street journal.  Vol. 141, no. 80, Apr. 7, 1953.	B408970	1953-04-07	RE94067	1981-05-29	Dow Jones & Company, Inc.|PCW						
@@ -4934,8 +4969,10 @@ fcf00f00-5b89-b4d9-a935-661390b536c5						Ripley's Believe It Or Not!  Cartoon f
 87d8528d-13bb-06bc-636f-492a2674e27e					Thomas C. Angerstein.	The Record of petitions for writ of error in workmen's compensation cases in Illinois.	A91784	1953-04-09	RE99290	1981-07-27	Burdette Smith Company|PWH						
 3304cb2f-a531-927a-f439-39317999b5b3					Laura Lee Hope, pseud. of Harriet S. Adams.	The Bobbsey twins and the horseshoe riddle.	A92511	1953-04-09	RE96780	1981-07-16	Harriet S. Adams|A						
 040629ea-0c0d-24e0-5e6f-a9678f9a9a35					Julie Tatham.	Cherry Ames, dude ranch nurse.	A92830	1953-04-09	RE101632	1981-10-05	Grosset & Dunlap, Inc.|PWH						
-9774b78d-8aa7-e489-95bd-1259f6d00374					Edward Grierson.	The Hastening wind.|The Lillies and the bees.	A95770|AI3795	1953-06-17|1953-04-09	RE106643	1981-09-21	Helen Dagmar Grierson|W					Pub. in England under the ti.: The Lillies and the bees.	
-d6033e96-76c7-56e5-192b-712da164cbaa					Laurens VanDerPost.	The Face beside the fire; a novel.	A100652|AIO3054	1953-05-27|1953-04-09	RE94669	1981-06-15	Laurens VanDerPost|A						
+9774b78d-8aa7-e489-95bd-1259f6d00374					Edward Grierson.	The Hastening wind.|The Lillies and the bees.	A95770	1953-06-17	RE106643	1981-09-21	Helen Dagmar Grierson|W					Pub. in England under the ti.: The Lillies and the bees.	
+9774b78d-8aa7-e489-95bd-1259f6d00374					Edward Grierson.	The Hastening wind.|The Lillies and the bees.	AI3795	1953-04-09	RE106643	1981-09-21	Helen Dagmar Grierson|W					Pub. in England under the ti.: The Lillies and the bees.	
+d6033e96-76c7-56e5-192b-712da164cbaa					Laurens VanDerPost.	The Face beside the fire; a novel.	A100652	1953-05-27	RE94669	1981-06-15	Laurens VanDerPost|A						
+d6033e96-76c7-56e5-192b-712da164cbaa					Laurens VanDerPost.	The Face beside the fire; a novel.	AIO3054	1953-04-09	RE94669	1981-06-15	Laurens VanDerPost|A						
 a8cd7a24-93da-634c-a019-2c549543d24b					Andre Rousseau.	Belgique et Luxembourg.	AFO11129	1953-04-09	RE94002	1981-05-18	Andre Rousseau|A						
 71c21d06-a46b-8f3d-f276-7dc372025c14					Jacques Legros.	Vosges, Lorraine, Alsace.	AFO11261	1953-04-09	RE93993	1981-05-18	Jacques Legros|A						
 f24f20f7-3d79-c12f-4540-e14efce2d0b2						The Wall Street journal.  Vol. 141, no. 82, Apr. 9, 1953.	B408972	1953-04-09	RE94069	1981-05-29	Dow Jones & Company, Inc.|PCW						
@@ -5108,12 +5145,14 @@ c69ff0ee-46bf-f3bb-3403-f91f90080134						Atlantic reporter, second series.  Vol
 038386f6-01a6-e648-5dc7-640f20a7c7c8					Paul Hyde Bonner.	Hotel Talleyrand.	A89280	1953-04-13	RE92580	1981-05-20	Paul H. Bonner, Jr.|C						
 749bb0b8-3303-bebc-2189-2dee2d21a681					Martin Buber, translation of Right and wrong: Ronald Gregor Smith, Images of good and evil translated by Michael Hale Bullock.	Good and evil, two interpretations: Right and wrong, and Images of good and evil.	A91425	1953-04-13	RE113916	1981-09-29	Rafael Buber|PWH						
 32c0564d-622a-b8b8-513e-7314720169a8					Robert J. Dixson.	Everyday dialogues in English for the foreign born.	A91444	1953-04-13	RE101211	1981-09-22	Gulf & Western Corporation|PWH						
-c048c7e7-5aa2-5f58-4f53-58f2bed9e3d2					Reginald Arkell.	Charley Moon.	A92016|AIO3151	1953-04-23|1953-04-13	RE85669	1981-01-26	David Arkell|C						
+c048c7e7-5aa2-5f58-4f53-58f2bed9e3d2					Reginald Arkell.	Charley Moon.	A92016	1953-04-23	RE85669	1981-01-26	David Arkell|C						
+c048c7e7-5aa2-5f58-4f53-58f2bed9e3d2					Reginald Arkell.	Charley Moon.	AIO3151	1953-04-13	RE85669	1981-01-26	David Arkell|C						
 1911e940-82bb-9510-a717-216cf395cdb8					Henry Y. Wilson & Gloria DeLaVega.	Conversacion acerca de la vida cotidiana.	A92282	1953-04-13	RE102293	1981-10-06	Holt, Rinehart, and Winston|PWH						
 d703beae-b923-9b81-ed44-c41b9923c29e					Sholom Aleichem & Tamara Kahana.	Adventures of Mottel.	A95276	1953-04-13	RE112801	1981-12-28	Tamara Kahana|A						
 58295383-029d-6686-4a62-6dd735e1f06f					D. P. Smith, L. W. Eastwood, D. J. Carney & C. E. Sims.	Gases in metals.	A101896	1953-04-13	RE106284	1981-11-23	American Society for Metals|PCW						
 16d5d0c7-dc5d-de5f-1adb-c00a2d0d16de					Fletcher Pratt.	Stanton: Lincoln's Secretary of War.	A103460	1953-04-13	RE85771	1981-03-02	Inga Pratt|W						
-722a52d9-928d-0cb8-b274-074bb982f440					Ian Fleming.	Casino royale.	A130489|AI3863	1954-03-23|1953-04-13	RE108490	1981-12-07	Raymond Arthur Clanaboy Baron O'Neill|E||Martin Michael Charles Baron Charteris|E||Arnold Abraham Baron Goodman|E					In notice: 1953	
+722a52d9-928d-0cb8-b274-074bb982f440					Ian Fleming.	Casino royale.	A130489	1954-03-23	RE108490	1981-12-07	Raymond Arthur Clanaboy Baron O'Neill|E||Martin Michael Charles Baron Charteris|E||Arnold Abraham Baron Goodman|E					In notice: 1953	
+722a52d9-928d-0cb8-b274-074bb982f440					Ian Fleming.	Casino royale.	AI3863	1953-04-13	RE108490	1981-12-07	Raymond Arthur Clanaboy Baron O'Neill|E||Martin Michael Charles Baron Charteris|E||Arnold Abraham Baron Goodman|E					In notice: 1953	
 7324efd1-fae3-5c08-55f8-a5332a94951a					Jack Kent.	King Aroo.  Release the week of Apr. 27, 1953.	A181795	1953-04-13	RE100554	1981-09-11	Jack Kent|A						
 abfca8c6-85a1-ce88-4047-c8aec30ec3a5						Chicago daily tribune.  Vol. 112, no. 88, Apr. 13, 1953.	B409715	1953-04-13	RE84828	1981-03-06	Chicago Tribune Company|PCW						
 3f93e9b4-a92d-af7e-59b0-b3e9428e08e2						The Christian Science monitor, Boston.  Vol. 45, no. 116, Apr. 13, 1953.	B409722	1953-04-13	RE80436	1981-01-22	The Christian Science Publishing Society|PWH						
@@ -5484,7 +5523,8 @@ c80a1adc-f6fe-6f65-2eb2-ab721e7b5c12					Ernest K. Gann.	The High and the mighty
 c3f4ca4d-dd4a-ab22-b3f8-0f33759b4d71					Al Cody, pseud. of Archie Joscelyn.	Powder burns.	A95340	1953-04-20	RE112213	1981-12-29							
 5995027b-a893-1a4f-cd8f-2ff9dc4135da					Ethel Hamill, pseud. of Jean Francis Webb.	Bluegrass doctor.	A95341	1953-04-20	RE112214	1981-12-29							
 221419ec-22a8-3872-7e87-6a29e5e66cc3					Alice Lent Covert, editor: Lucy Mabry.	Redbook magazine, Feb. 1953|Shadow of truth.	A95348	1953-04-20	RE112215	1981-12-29	Alice Lent Covert|A					Appeared in Redbook magazine, Feb. 1953 in slightly condensed form.	
-033c0998-dd16-e47b-53de-287f704a26b0					Joan Haslip.	Lucrezia Borgia.	A130579|AIO3322	1954-03-22|1953-04-20	RE103082	1981-10-13	Joan Haslip|A					In notice: 1953	
+033c0998-dd16-e47b-53de-287f704a26b0					Joan Haslip.	Lucrezia Borgia.	A130579	1954-03-22	RE103082	1981-10-13	Joan Haslip|A					In notice: 1953	
+033c0998-dd16-e47b-53de-287f704a26b0					Joan Haslip.	Lucrezia Borgia.	AIO3322	1953-04-20	RE103082	1981-10-13	Joan Haslip|A					In notice: 1953	
 d7f895c8-0384-d740-991a-1ccb47e14571					Bernard Berelson & Morris Janowitz.	Reader in public opinion and communication.	A174029	1953-04-20	RE99628	1981-08-25	Morris Janowitz|A||Ruth Berelson|W						
 8013ac5b-0b7d-1718-c5c3-1dd4273ad43e					Charles Camproux.	Histoire de la litterature occitane.	AFO11090	1953-04-20	RE83673	1981-02-09	Charles Camproux|A						
 99818003-8485-b7f6-bb19-ff03fb361c1e						Entretiens sur la musique.  De William Furtwaengler, translation: Jacques Gabriel Prod'Homme & Frederic Ernest Goldbeck.	AFO11273	1953-04-20	RE90810	1981-04-21	Jacques Prod'Homme|A||Frederic Ernest Goldbeck|A						
@@ -5749,7 +5789,8 @@ e6031f0b-8a33-39c4-a7d2-70f4b9147a54					Porter Routh.	Meet the presidents.	A987
 65c0b12f-266a-da04-dfc9-a4f128e75bc6					Charles Danville White.	Camps and cottages: how to build them with plans and diagrams by the author.	A100074	1953-04-24	RE100011	1981-09-01	Charles Danville White|A						
 6c08d1d9-50bc-7626-de76-a839636f848c					Howard H. Quint.	The Forging of American socialism: origins of the modern movement.	A102310	1953-04-24	RE83896	1981-02-13	Howard H. Quint|A						
 d19867a8-ecb6-e53d-d049-d76f9ac416f1					Salvatore Sam Fratoni.	IBM electric punched card accounting machines; customer engineering manual of instruction, accumulating reproducer, type 528.	A105317	1953-04-24	RE111333	1981-12-23	International Business Machines Corporation|PWH						
-2b554faa-5c56-c2f5-4410-455b730847a0					Edward Hallett Carr.	The Bolshevik Revolution, 1917-1923.  Vol. 3.	A106617|AI3849	1953-09-22|1953-04-24	RE101843	1981-10-05	Edward Hallett Carr|A						
+2b554faa-5c56-c2f5-4410-455b730847a0					Edward Hallett Carr.	The Bolshevik Revolution, 1917-1923.  Vol. 3.	A106617	1953-09-22	RE101843	1981-10-05	Edward Hallett Carr|A						
+2b554faa-5c56-c2f5-4410-455b730847a0					Edward Hallett Carr.	The Bolshevik Revolution, 1917-1923.  Vol. 3.	AI3849	1953-04-24	RE101843	1981-10-05	Edward Hallett Carr|A						
 c9017afd-1ce5-c4d1-16c4-8649a86d61d9					Howard E. Coolidge, Henry S. Duncan, Phillip J. Kessel et al.	Check chart, Otis form 2902.  Article OMC-1.	A150298	1953-04-24	RE108052	1981-12-04	Otis Elevator Company|PWH						
 4b9f9985-478b-c990-f385-3a56d752266b					Robert Baker Elder.	Whom the gods destroy.	A155716	1953-04-24	RE84246	1981-01-13	Robert Baker Elder|A						
 ac3a534a-64e2-1bf1-9876-dda63a1838ae						Hearst's International cosmopolitan.  Vol. 134, no. 5, May 1953.	B411352	1953-04-24	RE103879	1981-10-20	The Hearst Corporation|PCW						
@@ -6085,12 +6126,14 @@ a03aba54-2992-ef28-8edc-8537fd6eb7c4						My first music workbook.  Text & music
 6cfe2761-d189-e6e6-b577-fd630c12ae46					H. Rider Haggard, order & selection of the novels & for advertising material: Dover Publications.	Lost civilizations; three adventure novels.	A97095	1953-04-30	RE99480	1981-08-21	Dover Publications, Inc.|PWH						
 8fbfc78f-49e4-8cbf-6024-c09ab256cb23					Nevil Shute Norway.	In the wet.	A97364	1953-04-30	RE103857	1981-10-20	Donald C. Mayfield|C||Shirley Norway|C						
 77b228b3-2c58-0440-8b47-5e210003b87a					Paramhansa Yogananda.	Cosmic chants.	A97574	1953-04-30	RE93687	1981-02-26	Self-Realization Fellowship|PWH						
-0fc1990e-6b89-43b3-adb9-07275843ccbd					Earl Jowitt, pseud. of William Allen Jowitt.	The Strange case of Alger Hiss.	A98670|AIO3164	1953-07-09|1953-04-30	RE95573	1981-04-17	Penelope Wynn-Williams|C						
+0fc1990e-6b89-43b3-adb9-07275843ccbd					Earl Jowitt, pseud. of William Allen Jowitt.	The Strange case of Alger Hiss.	A98670	1953-07-09	RE95573	1981-04-17	Penelope Wynn-Williams|C						
+0fc1990e-6b89-43b3-adb9-07275843ccbd					Earl Jowitt, pseud. of William Allen Jowitt.	The Strange case of Alger Hiss.	AIO3164	1953-04-30	RE95573	1981-04-17	Penelope Wynn-Williams|C						
 0e5801dd-1304-240f-ff1f-81b9ca008ef5						Reading and dating Roman imperial coins.  Art & text: Zander H. Klawans, Whtiman [i.e. Whitman Publishing Company] staff.	A99465	1953-04-30	RE105163	1981-11-09	Western Publishing Company, Inc.|PWH						
 30a7388e-9846-1650-9706-3fd6486b4526					Irving Kaplan.	Nuclear physics for engineers.	A102988	1953-04-30	RE104280	1981-10-29	Irving Kaplan|A						
 c4926c63-c050-6bed-c64e-ba59d825bd48						"""Carry me"" busy box.  Editor: Cyrus Porter."	A116217	1953-04-30	RE105161	1981-11-09	Western Publishing Company, Inc.|PWH						
 810d0179-c3aa-d1c6-137b-34d644166f14						"""Carry me"" play school.  Editor: Cyrus Porter."	A116218	1953-04-30	RE105160	1981-11-09	Western Publishing Company, Inc.|PWH						
-37df60d1-0a81-8468-1548-26f5d199b3bb					Boris Watson.	Former people.	A128726|AIO3337	1954-03-04|1953-04-30	RE107242	1981-12-03	Boris Watson|A					In notice: 1953	
+37df60d1-0a81-8468-1548-26f5d199b3bb					Boris Watson.	Former people.	A128726	1954-03-04	RE107242	1981-12-03	Boris Watson|A					In notice: 1953	
+37df60d1-0a81-8468-1548-26f5d199b3bb					Boris Watson.	Former people.	AIO3337	1953-04-30	RE107242	1981-12-03	Boris Watson|A					In notice: 1953	
 8b70e89d-5b8e-6024-1cbf-84e3217e6d79					Royal, pseud. of Kenneth R. Jones.	The Creative system; philosophical treatise.	A161125	1953-04-30	RE82660	1981-02-05	Kenneth R. Jones|A						
 6be57b1c-cfbd-c5f9-20e0-6a107f26b845					Odette Sorensen.	Verite sens interdit.	AF14005	1953-04-30	RE109931	1981-12-21	Odette Sorensen|A						
 a7954fbf-62d7-29b3-290f-d81059764bda					Pierre Probst.	Youpi et vacances.	AFO11234	1953-04-30	RE91259	1981-04-30	Pierre Probst|A						
@@ -6151,14 +6194,16 @@ fa8850dd-691b-3102-53c5-0c12e6ed2ba3					William Franklin Graham.	Mother's Day m
 d483db4a-fcf2-789d-fc1f-7f0f091b4221					Wesley F. Craven & J. L. Cate.	The Army Air Forces in World War II.  Vol. 5.	A96122	1953-05-01	RE101312	1981-09-28	The University of Chicago|PWH						
 46345de3-db42-3bb4-a58e-6320019cbb3b					Alberta Powell Graham.	Thirty-three roads to the White House; 8-page boyhood biography of Dwight D. Eisenhower with one full page illustration.	A100319	1953-05-01	RE82933	1981-01-26	Gordon T. Graham|C||Charles A. Graham|C||Robert S. Graham|C						
 4c9433e6-c7af-aa4a-1585-1a7413337eef						Superman.  Release the week of June 1, 1953.	A101226	1953-05-01	RE100468	1981-09-09	Comics, Inc.|PWH						
-bab69aac-de95-d5de-58a2-b0a5932038d1						Ludwig Wittgenstein's Philosophical investigations.  Translator: G. E. M. Anscombe.	A101299|AI3875	1953-07-28|1953-05-01	RE99633	1981-08-25							
+bab69aac-de95-d5de-58a2-b0a5932038d1						Ludwig Wittgenstein's Philosophical investigations.  Translator: G. E. M. Anscombe.	A101299	1953-07-28	RE99633	1981-08-25							
+bab69aac-de95-d5de-58a2-b0a5932038d1						Ludwig Wittgenstein's Philosophical investigations.  Translator: G. E. M. Anscombe.	AI3875	1953-05-01	RE99633	1981-08-25							
 4f41153f-1d79-e67c-191c-759669629b64					Robert C. Woellner & M. Aurilla Wood.	Requirements for certification of teachers, counselors, librarians, administrators for elementary schools, secondary schools, junior colleges.	A101437	1953-05-01	RE101318	1981-09-28	Mrs. Robert C. Woellner|W						
 0399da5e-f87c-2778-6e41-018ac861df35					Hy Turkin.	Radio and TV baseball; the major league handbook.	A101911	1953-05-01	RE115686	1981-12-28	Hy Turkin|A						
 8f6b5a57-6bd7-fbb8-2c2a-6fd5bbad87f9					Mark Morgan, pseud. of Wayne Overholser.	Fighting man.	A111126	1953-05-01	RE111873	1981-12-28	Cadence Industries Corporation|PWH						
 a70ba36a-4034-8218-08ef-3ecde4b806a3					Richard Matheson.	Someone is bleeding.	A111127	1953-05-01	RE105685	1981-11-13	Richard Matheson|A						
 542ec80d-5967-382d-bd21-464b9e0dd2cd					Libby L. Klaperman.	Adam and the first Sabbath.	A114292	1953-05-01	RE80857	1981-01-29	Libby L. Klaperman|A						
 0a462793-d23d-26f9-d3b7-3c20ff3fba2c					Paul A. Carlson & Hamden L. Forkner.	Instructions and narrative of transactions for professional projects.	A117347	1953-05-01	RE80809	1981-01-09	South-Western Publishing Company|PWH						
-e01e9fe6-21b0-0498-dfa9-e057b03c3262					Alfred Leo Duggan.	The Lady for ransom.	A120321|AIO3281	1953-12-24|1953-05-01	RE93570	1981-03-27	John Duggan|C						
+e01e9fe6-21b0-0498-dfa9-e057b03c3262					Alfred Leo Duggan.	The Lady for ransom.	A120321	1953-12-24	RE93570	1981-03-27	John Duggan|C						
+e01e9fe6-21b0-0498-dfa9-e057b03c3262					Alfred Leo Duggan.	The Lady for ransom.	AIO3281	1953-05-01	RE93570	1981-03-27	John Duggan|C						
 0741c3e7-8e04-f123-7892-ad55c12e8675					Ludwig Wittgenstein.	Philosophische Untersuchungen.	AF13510	1953-05-01	RE99636	1981-08-25							
 a878fd85-f1ff-5bdb-f208-3a9db6d503d4					Rene-Jean Clot.	Le Mat de cocagne.	AFO11271	1953-05-01	RE88007	1981-04-02	Rene-Jean Clot|A						
 a9c7f036-3bcd-f51c-c666-bc7b87fde344						The Family circle.  Vol. 42, no. 5, May 1953.	B412631	1953-05-01	RE91407	1981-05-04	The Family Circle, Inc.|PCW						
@@ -6529,7 +6574,8 @@ f3b90b6b-0703-9103-f4c6-f3311bd82a5b					Edgar Tobin Aerial Surveys, Edgar Tobin
 4f609a80-4242-62d8-97a7-f32820b47c62					Edgar Tobin Aerial Surveys, Edgar Tobin, sole owner.	Township section map, drainage with well data, from lat. N. 36 degrees to N. 37 degrees, from long. W. 106 degrees to W. 107 degrees.	F15879	1953-05-08	RE77727	1981-01-07	Tobin Surveys, Inc.|PWH						
 d95b445c-601f-7c92-6490-2f3282e96808					Edgar Tobin Aerial Surveys, Edgar Tobin, sole owner.	Regional township section map, drainage with well data, from lat. N. 33 degrees to N. 34 degrees, from long. W. 106 degrees to W. 107 degrees.	F15884	1953-05-08	RE77730	1981-01-07	Tobin Surveys, Inc.|PWH						
 79fa9c81-8b9e-0b3b-9ae5-d713e6e9a90a					Leo H. Herman.	The Eternal light.	GU21280	1953-05-08	RE93495	1981-01-05	Leo H. Herman|A						
-3ac53e5b-903c-77e3-0a9c-e70c2e59c009					Edgar Mittelholzer.	The Life and death of Sylvia.	A121584|AIO3297	1953-12-24|1953-05-09	RE84397	1981-02-03	Helen M. Peterson|C						
+3ac53e5b-903c-77e3-0a9c-e70c2e59c009					Edgar Mittelholzer.	The Life and death of Sylvia.	A121584	1953-12-24	RE84397	1981-02-03	Helen M. Peterson|C						
+3ac53e5b-903c-77e3-0a9c-e70c2e59c009					Edgar Mittelholzer.	The Life and death of Sylvia.	AIO3297	1953-05-09	RE84397	1981-02-03	Helen M. Peterson|C						
 65d0e94f-fd72-1f6f-6c7a-d197c883404b						Chicago daily tribune.  Vol. 112, no. 111, May 9, 1953.	B414653	1953-05-09	RE87742	1981-04-06	Chicago Tribune Company|PCW						
 73f22513-5afe-6d26-5844-dbc254fe5c24						The Christian Science monitor, Boston.  Vol. 45, no. 139, May 9, 1953.	B414663	1953-05-09	RE80541	1981-01-22	The Christian Science Publishing Society|PWH						
 8b5e7767-6f70-e104-adee-9033efdcc266						The Wall Street journal.  Vol. 141, no. 108, May 9, 1953.	B414714	1953-05-09	RE94099	1981-05-29	Dow Jones & Company, Inc.|PCW						
@@ -6575,14 +6621,17 @@ bb5b6070-afd0-d16c-0aac-b43679c8bd2c					Besse May Miller.	The Legal secretary's
 339f151b-5d3c-6f82-49a9-13e5b5d233c4					Leslie Aulis Bryan.	Traffic management in industry.	A92281	1953-05-11	RE105264	1981-11-09	Holt, Rinehart, and Winston|PWH						
 f453b091-6736-71a6-3dcc-1a4bad8746f3					George Warren Arms.	The Fields were green.	A92371	1953-05-11	RE92814	1981-05-27	George Warren Arms|A						
 00b680c0-bdd6-047c-2ef5-021953c72336					Lynd Ward & May McNeer (May McNeer Ward)	Martin Luther.	A93262	1953-05-11	RE96621	1981-07-23	May McNeer Ward|A||Lynd Ward|A						
-88ad587f-d8b4-b25e-f9d1-53dc7cdef999					John Sanford.	The Land that touches mine; a novel.	A94221|AI3799	1953-05-28|1953-05-11	RE80654	1981-01-09	John Sanford|A						
+88ad587f-d8b4-b25e-f9d1-53dc7cdef999					John Sanford.	The Land that touches mine; a novel.	A94221	1953-05-28	RE80654	1981-01-09	John Sanford|A						
+88ad587f-d8b4-b25e-f9d1-53dc7cdef999					John Sanford.	The Land that touches mine; a novel.	AI3799	1953-05-11	RE80654	1981-01-09	John Sanford|A						
 652ac2bf-0838-319c-8f06-2befe562e9f3					Marion Franklin Ham.	Songs of a lifetime.	A95329	1953-05-11	RE102444	1981-10-05	Mrs. Brandon G. Rightmire|C						
 8efeb225-927f-d3fb-1204-270fc47b3269					Harold Norse.	The Undersea mountain.	A97474	1953-05-11	RE110399	1981-12-21	Harold Norse|A						
 5c6bec99-89ad-e2a1-fca4-0de4baefe9ff					Simon & Schuster, Inc. & Artists & Writers Guild, Inc., employers for hire of Nancy Nolte (text) & Richard Scarry (art)	The Gingerbread man.	A99469	1953-05-11	RE109104	1981-10-29	Western Publishing Company, Inc.|PWH						
 f786511c-3079-2eae-0cbe-41af8ef229ca						Bugs Bunny at the county fair.	A99470	1953-05-11	RE83492	1981-02-02	Warner Brothers, Inc.|PWH						
 5c1fbd78-0fdb-73f0-81ed-03f377b180a8						Superman.  Release the week of June 8, 1953.	A101225	1953-05-11	RE100467	1981-09-09	Comics, Inc.|PWH						
-81b7e01b-05a4-445a-f5a0-729b03a8f8ac					Andre Maurois, translator: Gerard (Walter Sturgis) Hopkins.	Lelia, the life of George Sand.	A104589|AI3830	1953-09-02|1953-05-11	RE106150	1981-11-16	Gerald Maurois|C						
-434f412e-0a64-f3f6-3225-616bd9a5d5a2					David E. Walker.	Diamonds for Moscow.|Diamonds for danger.	A126674|AIO3278	1954-02-18|1953-05-11	RE87821	1981-04-02	Mrs. R. A. Walker|W					In notice: 1953|Pub. in England as Diamonds for Moscow.	
+81b7e01b-05a4-445a-f5a0-729b03a8f8ac					Andre Maurois, translator: Gerard (Walter Sturgis) Hopkins.	Lelia, the life of George Sand.	A104589	1953-09-02	RE106150	1981-11-16	Gerald Maurois|C						
+81b7e01b-05a4-445a-f5a0-729b03a8f8ac					Andre Maurois, translator: Gerard (Walter Sturgis) Hopkins.	Lelia, the life of George Sand.	AI3830	1953-05-11	RE106150	1981-11-16	Gerald Maurois|C						
+434f412e-0a64-f3f6-3225-616bd9a5d5a2					David E. Walker.	Diamonds for Moscow.|Diamonds for danger.	A126674	1954-02-18	RE87821	1981-04-02	Mrs. R. A. Walker|W					In notice: 1953|Pub. in England as Diamonds for Moscow.	
+434f412e-0a64-f3f6-3225-616bd9a5d5a2					David E. Walker.	Diamonds for Moscow.|Diamonds for danger.	AIO3278	1953-05-11	RE87821	1981-04-02	Mrs. R. A. Walker|W					In notice: 1953|Pub. in England as Diamonds for Moscow.	
 a596a68d-7d2f-b708-02d3-bedec19eb022						NEA Service weekly.	A135662	1953-05-11	RE110580	1981-12-22							
 b2cf3271-335c-8769-fb35-7a856fc90f34						Pep comics.  Vol. 1, no. 97, May 1953.	B412971	1953-05-11	RE109654	1981-12-14	Archie Comic Publications, Inc.|PCW						
 bcfa8f62-2e0b-0117-8edc-b1aca8874cb4						Guideposts.  Vol. 8, no. 4, June 1953.	B414473	1953-05-11	RE93579	1981-04-20	Guideposts Associates, Inc.|PCW						
@@ -6938,7 +6987,8 @@ f10fbe80-bfd8-a447-821a-bf9163273224						Advances in genetics.  Vol. 5.  Edited
 1146a848-5ed5-a472-d50d-7478af1ad533						Delta Oxygen Company, Inc., oxygen, acetylene, carbide, welding & cutting equipment.	A94379	1953-05-18	RE104747	1981-11-02	Jaqua-McKee, Inc.|PWH						
 2f96f99a-89e3-4180-b12a-088871ebd308					Gerald Duane Hiatt.	Safe-t-gram.	A96357	1953-05-18	RE85846	1981-02-09	Gerald Duane Hiatt|A						
 7bec1241-fc0a-3533-5e30-ccc2481d2311					Daniel R. Fitzpatrick.	As I saw it.	A97080	1953-05-18	RE90791	1981-04-29	Beulah Fitzpatrick|W						
-ab7e7f67-a020-5b05-04aa-97d71eb73d73					John Coates.	Patience.	A131571|AIO3309	1954-03-30|1953-05-18	RE101822	1981-10-05	John Coates|A					In notice: 1953	
+ab7e7f67-a020-5b05-04aa-97d71eb73d73					John Coates.	Patience.	A131571	1954-03-30	RE101822	1981-10-05	John Coates|A					In notice: 1953	
+ab7e7f67-a020-5b05-04aa-97d71eb73d73					John Coates.	Patience.	AIO3309	1953-05-18	RE101822	1981-10-05	John Coates|A					In notice: 1953	
 84f6fb52-2688-cbe6-ef05-af1897bca4d8						NEA Service weekly.	A135663	1953-05-18	RE110581	1981-12-22							
 0d71fb83-6347-f3a7-e129-f224044f6cff						The Wall Street journal.  Vol. 141, no. 115, May 18, 1953.	B414721	1953-05-18	RE94106	1981-05-29	Dow Jones & Company, Inc.|PCW						
 305a756e-1f88-6c90-f08e-3a629eb8c1b2						Chicago daily tribune.  Vol. 112, no. 118, May 18, 1953.	B415804	1953-05-18	RE87732	1981-04-06	Chicago Tribune Company|PCW						
@@ -7147,7 +7197,8 @@ eff1343e-ccea-3b8c-f678-05dceb07fe44						On contradiction.  Editor's notes, exp
 c1d0a576-237e-366e-f019-4a1085e8952d					John Ives Sewall.	A History of western art.	A94279	1953-05-20	RE93223	1981-04-27	John Ives Sewall|A						
 f340c21c-dba7-bfa8-3a62-012a8b7e7584						"The Story of the ""Romance.""  By William E. Rively."	A94784	1953-05-20	RE96680	1981-07-20	William E. Rively|A						
 ac94fb1f-c8c2-2251-6e1f-71606bf95ff5					Harold Rosen.	Hypnotherapy in clinical psychiatry.	A94924	1953-05-20	RE109001	1981-12-21	Harold Rosen|A						
-d93a9a02-afd1-2b9c-b165-74cb899b8ee2					John Rhode, pseud. of Cecil John Charles Street.	By registered post.|The Mysterious suspect.	A97893|A2-0	1953-05-20|1953-12-17	RE122407	1981-12-17	Michael Edward Vernon Lane|E						
+d93a9a02-afd1-2b9c-b165-74cb899b8ee2					John Rhode, pseud. of Cecil John Charles Street.	By registered post.|The Mysterious suspect.	A97893	1953-05-20	RE122407	1981-12-17	Michael Edward Vernon Lane|E						
+d93a9a02-afd1-2b9c-b165-74cb899b8ee2					John Rhode, pseud. of Cecil John Charles Street.	By registered post.|The Mysterious suspect.	A2-0	1953-12-17	RE122407	1981-12-17	Michael Edward Vernon Lane|E						
 8905c820-eb16-ddc6-25d5-3665ac24bced					Alma C. Anderson.	Poems and verses, Bible inspired.	A99751	1953-05-20	RE84738	1981-03-02	Alma C. Anderson|A						
 aeb94a01-f94b-e635-c7b8-daa9545ad356					William Byron Mowery, editor: Lucy Mabry Fitzpatrick.	Sagas of the mounted police; collection of nine short stories.	A103940	1953-05-20	RE115709	1981-12-29	William Byron Mowery|A						
 795a7214-18e5-3a04-1eaf-0312535d3ff4					Cecile Gilmore, editor: Lucy Mabry Fitzpatrick.	Redbook, Jan. 1953|The Man in the moonlight.	A103941	1953-05-20	RE112226	1981-12-29	Lucy Mabry Fitzpatrick|A					Pub. in Redbook, Jan. 1953.	
@@ -7223,7 +7274,8 @@ f0732258-6d5a-94da-f48d-6425a7aaa07d					Cesare Pavese, English translation of t
 51634e98-5449-6a60-e6ca-7239c7b3ef38						King Features illustrated weekly.	A96635	1953-05-21	RE109767	1981-12-21	King Features Syndicate, Inc.|PCW						
 2fdff94b-3850-2d82-65e7-4a66ca3ca857						Ripley's Believe It Or Not!  Cartoon feature.  Cartoon drawing & text: Paul Frehm.	A96635	1953-05-21	RE124730	1981-12-04	Ripley International, Ltd.|PWH						
 c838f6d3-7f5b-1faa-23ed-616ef635ce47						California jurisprudence.  Vol. 9: bounties to carriers.	A96841	1953-05-21	RE87431	1981-04-01	Bancroft-Whitney Company|PWH						
-48d4ba20-ee14-f4ed-2895-21dd9a810ae5					James B. O'Sullivan.	I die possessed.	A104080|AIO3301	1953-08-26|1953-05-21	RE109554	1981-12-08	James B. O'Sullivan|A						
+48d4ba20-ee14-f4ed-2895-21dd9a810ae5					James B. O'Sullivan.	I die possessed.	A104080	1953-08-26	RE109554	1981-12-08	James B. O'Sullivan|A						
+48d4ba20-ee14-f4ed-2895-21dd9a810ae5					James B. O'Sullivan.	I die possessed.	AIO3301	1953-05-21	RE109554	1981-12-08	James B. O'Sullivan|A						
 1076459f-9a91-04d0-e4b9-7e6e668fa3ac						Wave propagation in periodic structures.  Appendix, corrections & additions: Leon Brillouin.	A111618	1953-05-21	RE102014	1981-10-07	Marcelle Brillouin|W						
 fa3c0d93-cbff-a5fc-d2a1-b66635f92a7a					Maurice Kraitchik.	Mathematical recreations.	A130180	1953-05-21	RE111476	1981-12-22	Dover Publications, Inc.|PWH						
 907836af-d74c-21a1-51d7-c7a10c94fc16					Arthur Milton Huntington.	Collected verse.	A143762	1953-05-21	RE83807	1981-02-17	Morgan Guaranty Trust Company of New York|E						
@@ -8367,7 +8419,8 @@ db160d07-03a2-43b1-da1d-9181843ec781					Edgar Tobin Aerial Surveys, Edgar Tobin
 768ca5d4-a2fe-011d-c8f0-8685926e18d8					Edgar Tobin Aerial Surveys, Edgar Tobin, sole owner.	East half, Hopkins County, Tex., ownership map with well data.	F15302	1953-06-12	RE81353	1981-02-05	Tobin Surveys, Inc.|PWH						
 7e211f37-4ad5-310a-eb55-47c6d3ef74f6					Edgar Tobin Aerial Surveys, Edgar Tobin, sole owner.	West half, Hopkins County, Tex., ownership map with well data.	F15304	1953-06-12	RE81354	1981-02-05	Tobin Surveys, Inc.|PWH						
 2def37fd-8ba8-9aa0-1144-81c465bbfb39					West Publishing Company, employer for hire.	Florida statutes annotated session law service, 1953.  Pamphlet no. 1.	A98830	1953-06-13	RE97219	1981-07-27	The Harrison Company & West Publishing Company|PWH						
-2ff8ebf1-5613-964b-37b1-12f89519071c					John Harris.	The Sea shall not have them.|The Undaunted.	A117574|AIO3399	1953-11-04|1953-06-13	RE85182	1981-03-06	John Harris|A						
+2ff8ebf1-5613-964b-37b1-12f89519071c					John Harris.	The Sea shall not have them.|The Undaunted.	A117574	1953-11-04	RE85182	1981-03-06	John Harris|A						
+2ff8ebf1-5613-964b-37b1-12f89519071c					John Harris.	The Sea shall not have them.|The Undaunted.	AIO3399	1953-06-13	RE85182	1981-03-06	John Harris|A						
 2227b13f-588c-ba49-17e1-d88a21778944						Soviet imperialism: its origins and tactics.  Editor: Waldemar Gurian.	A120629	1953-06-13	RE111388	1981-12-24	Mrs. Waldemar Gurian|W						
 2da51546-67f7-5f34-4666-5696d049413b						Barron's; national business & financial weekly.  Vol. 33, no. 24, June 15, 1953.	B420808	1953-06-13	RE101225	1981-09-24	Dow Jones & Company, Inc.|PCW						
 ec3c9f35-3986-fe7e-9d0d-8404bd785e59						Chicago daily tribune.  Vol. 112, no. 141, June 13, 1953.	B420894	1953-06-13	RE92404	1981-05-07	Chicago Tribune Company|PCW						
@@ -8391,7 +8444,8 @@ db2eb181-7b3e-1b63-1cef-2af82708589f					Karl Marx & Frederick Engels [i.e. Frie
 2ad37db9-a37c-4291-bb9e-effa829c4d3f						Oregon digest annotated.  June 1953 pamphlet.	A96285	1953-06-15	RE97197	1981-07-27	West Publishing Company|PWH						
 dd23d544-ee7b-4c2e-ea9c-3c8aac8a973c					Edward W. Barrett.	Truth is our weapon.	A96420	1953-06-15	RE108763	1981-12-09	Edward W. Barrett|A						
 2cb58d09-d9a6-c5a8-b6b8-dddb4d531d55					Julius King.	Successful fund-raising sermons.	A96676	1953-06-15	RE100012	1981-09-01	Julius King|A						
-2eccdd3b-8e59-43b9-4866-b8abf289b37d					Phyllis Bentley.	The House of Moreys.	A97380|AI3847	1953-06-30|1953-06-15	RE99631	1981-08-25	Trevor Bentley|E						
+2eccdd3b-8e59-43b9-4866-b8abf289b37d					Phyllis Bentley.	The House of Moreys.	A97380	1953-06-30	RE99631	1981-08-25	Trevor Bentley|E						
+2eccdd3b-8e59-43b9-4866-b8abf289b37d					Phyllis Bentley.	The House of Moreys.	AI3847	1953-06-15	RE99631	1981-08-25	Trevor Bentley|E						
 d3333a48-ca7c-046a-9931-639f273e889b					Flora B. Miller, Edith H. Price & Irene Mae Patchin Warner.	Teacher's answer book and reference guide for Individual corrective English.  Book 4.	A97671	1953-06-15	RE104622	1981-10-28	Newbery Award Records, Inc.|PWH						
 7750303a-bb1e-3446-0f13-f88a9977a4d3					Heinz Haber, illustrator Jeffy Milford.	Man in space.	A97979	1953-06-15	RE100199	1981-09-08	Heinz Haber|A						
 b76ed91d-494d-2d67-7816-856783589454					Ray Smith.	Illinois appellate reports advance sheets.  Vol. 350, no. 4, June 15, 1953.	A98808	1953-06-15	RE86116	1981-03-16	Callaghan & Company|PWH						
@@ -8707,7 +8761,8 @@ a490dffa-07e0-dcce-6e22-29e51cf30819					William Faulkner, introd. by Robert Can
 858eab92-3302-f407-ff21-eff26f5aaf2d					Doris Duenewald & Judy Stang.	I learn to color.	A113458	1953-06-22	RE101638	1981-10-05	Grosset & Dunlap, Inc.|PWH						
 57cecf66-e02f-a845-45ca-d97571e5ad54					Annette Edwards, Ruth Dolton Tomlinson & Kenworthy Educational Service, Inc.	I learn to read.	A113459	1953-06-22	RE101639	1981-10-05	Grosset & Dunlap, Inc.|PWH						
 d4083afe-f143-9754-1ec0-624cb560224b					Annette Edwards, illustrator: Anne Fleur.	I learn to stencil and trace; activity box.	A113460	1953-06-22	RE101640	1981-10-05	Grosset & Dunlap, Inc.|PWH						
-694bfa0d-00b6-d69f-32e8-d5599b5c246f					John Clifford Mortimer.	Like new betrayed.	A121591|AIO3505	1954-01-05|1953-06-22	RE109645	1981-12-14	John Mortimer|A					In notice: 1953	
+694bfa0d-00b6-d69f-32e8-d5599b5c246f					John Clifford Mortimer.	Like new betrayed.	A121591	1954-01-05	RE109645	1981-12-14	John Mortimer|A					In notice: 1953	
+694bfa0d-00b6-d69f-32e8-d5599b5c246f					John Clifford Mortimer.	Like new betrayed.	AIO3505	1953-06-22	RE109645	1981-12-14	John Mortimer|A					In notice: 1953	
 76c05521-312b-45c6-edec-7b3b4fe14663						NEA Service weekly.	A135668	1953-06-22	RE110586	1981-12-22							
 9c546155-41fc-b4ee-d573-a938f7f04127					Dinko Tomasic.	The Impact of Russian culture on Soviet communism.	A171469	1953-06-22	RE101859	1981-10-05	Dinko Tomasic|A						
 e8690098-b576-7651-6e68-6b9916bc29e8					Henri Martineau.	Histoire de sa vie et de ses sentiments.	AFO11711	1953-06-22	RE149404	1981-04-21	Marie-Madeleine Martineau|C						
@@ -9440,7 +9495,8 @@ f9262911-b9bd-058b-8356-99f2e340207a					Virginia Jane Myers.	Escape from Morale
 987b733a-8edd-3d10-9d29-82b124b0c1c0						Walt Disney's Mickey Mouse goes Christmas shopping.  Narrator: Annie North Bedford, adaptors: Xavier Atencio & Bob Moore.	A105652	1953-07-06	RE101932	1981-10-05	Walt Disney Productions|PWH						
 7261b0d1-3824-e6da-4595-2787671ff74c					Simon & Schuster, Inc. & Artists & Writers Guild, Inc., employers for hire of Tibor Gergely (artwork) & Georges Duplaix (text)	The Merry shipwreck.	A108168	1953-07-06	RE109114	1981-10-29	Western Publishing Company, Inc.|PWH						
 b3df14c4-c338-1026-9555-723fee4a61cd					Vernon Quinn.	Picture map geography of the United States.	A108853	1953-07-06	RE111330	1981-12-24	Davis Quinn|E						
-1b67fde9-e466-b609-56e0-cb5ca5c83307					Ann Bridge, pseud. of Mary O'Malley.	A Place to stand.	A108867|AI3874	1953-10-06|1953-07-06	RE99632	1981-08-25	Kate Willert|E						
+1b67fde9-e466-b609-56e0-cb5ca5c83307					Ann Bridge, pseud. of Mary O'Malley.	A Place to stand.	A108867	1953-10-06	RE99632	1981-08-25	Kate Willert|E						
+1b67fde9-e466-b609-56e0-cb5ca5c83307					Ann Bridge, pseud. of Mary O'Malley.	A Place to stand.	AI3874	1953-07-06	RE99632	1981-08-25	Kate Willert|E						
 8e4cecb6-0fb0-c72e-384d-21ea9e22caaa					Napoleon Clark Hill.	The Master mind.	A117392	1953-07-06	RE107593	1981-12-04	Annie Lou Hill|W						
 66dbc87b-52fc-ec3c-e288-630f5431eb14					W. Clement Stone d.b.a. Napoleon Hill Associates, employer for hire of Napoleon Clark Hill.	The Master mind.	A117392	1953-07-06	RE107574	1981-12-04	Napoleon Hill Foundation|PWH						
 7edcaffb-5920-5281-b9cd-b4887c27bda4						NEA Service weekly.	A135670	1953-07-06	RE110588	1981-12-22							
@@ -9603,7 +9659,8 @@ b33ba4b8-8215-b123-edfa-558f65cb9319						Oklahoma decisions reported in Pacific
 69c79fb4-5dc6-1a3b-5f1a-66c486f2a933					Sidney Dillick.	Community organization for neighborhood development, past and present.	A102146	1953-07-09	RE103858	1981-10-20	Sidney Dillick|A						
 240df1fe-a2c3-1700-bb73-4bfce913e5bc					Jerome S. Meyer.	Mind your p's and q's.|The Handwriting analyzer.	A102543	1953-07-09	RE89921	1981-04-20	Dorothy Tyroler Meyer|W						
 5fe663f7-7e6f-7cb4-36c7-aac03333782f					Peg Hall (Margaret Billings Hall)	Decorating designs.  Vol. 2.	A105622	1953-07-09	RE96626	1981-07-21	David B. Hall|C						
-b43c21e9-9e07-2db1-6d42-4bbe7f68d23f					Phyllis Shand Allfrey a.k.a. Phyllis Byam Allfrey.	The Orchid house.	A128512|AIO3549	1954-03-12|1953-07-09	RE88766	1981-04-09	Phyllis Shand Allfrey|A					In notice: 1953	
+b43c21e9-9e07-2db1-6d42-4bbe7f68d23f					Phyllis Shand Allfrey a.k.a. Phyllis Byam Allfrey.	The Orchid house.	A128512	1954-03-12	RE88766	1981-04-09	Phyllis Shand Allfrey|A					In notice: 1953	
+b43c21e9-9e07-2db1-6d42-4bbe7f68d23f					Phyllis Shand Allfrey a.k.a. Phyllis Byam Allfrey.	The Orchid house.	AIO3549	1953-07-09	RE88766	1981-04-09	Phyllis Shand Allfrey|A					In notice: 1953	
 b9746e34-77cf-2c9b-ea37-6d38b86ff916						Christmas is a-comin'.  Words & music: Frank Luther & Frank Loesser.	A323028	1953-07-09	RE97596	1981-07-30	Frank Luther|A						
 7a81262d-051d-1d3a-b9d6-499558d78e46						The Wall Street journal.  Vol. 142, no. 7, July 9, 1953.	B424081	1953-07-09	RE101024	1981-09-18	Dow Jones & Company, Inc.|PCW						
 8431b871-6884-6df9-76ec-889ee25fa5da						The New York times.  Vol. 102, no. 34865, July 9, 1953.	B424112	1953-07-09	RE94536	1981-06-19	The New York Times Company|PCW						
@@ -9901,7 +9958,8 @@ dea65dc2-1fab-7343-0f40-d9d3bbced8fe					Justin McCortney O'Brien.	Portrait of A
 19f7ec90-1f2d-81a1-b679-0dd6810f1077						Ripley's Believe It Or Not!  Cartoon feature.  Cartoon drawing & text: Paul Frehm.	A101295	1953-07-16	RE124716	1981-12-04	Ripley International, Ltd.|PWH						
 2dcf3d0c-615b-6dab-d84b-074db748ced3						Edgar Rice Burroughs' Tarzan's jungle annual.  No. 2.	A105704	1953-07-16	RE86966	1981-03-30	Edgar Rice Burroughs, Inc.|PWH						
 476861c0-8ca2-48ec-abc0-fb6f41145b82					J. Lewis Peyton, containing a rev. & enlarged index by Charles Robert Carrier.	History of Augusta County, Virginia.	A105813	1953-07-16	RE104023	1981-10-23	C. J. Carrier Company|NK						
-9b10d372-2e01-e4d2-dd42-0bc994971985					Norah Burke.	Hazelwood.|The Splendour falls.	A112209|AIO3534	1953-10-07|1953-07-16	RE105650	1981-11-13	Norah Burke|A						
+9b10d372-2e01-e4d2-dd42-0bc994971985					Norah Burke.	Hazelwood.|The Splendour falls.	A112209	1953-10-07	RE105650	1981-11-13	Norah Burke|A						
+9b10d372-2e01-e4d2-dd42-0bc994971985					Norah Burke.	Hazelwood.|The Splendour falls.	AIO3534	1953-07-16	RE105650	1981-11-13	Norah Burke|A						
 6c639459-7612-9fc1-d3e0-ac0693a9f4c7					Andreas Feininger.	Feininger on photography.	A123813	1953-07-16	RE105974	1981-11-16	Andreas Feininger|A						
 08cf07e4-630c-a161-9928-0d53993817ed						The Wall Street journal.  Vol. 142, no. 12, July 16, 1953.	B424827	1953-07-16	RE101029	1981-09-18	Dow Jones & Company, Inc.|PCW						
 d10ba304-6671-c02b-2d45-da31da72929d						The New York times.  Vol. 102, no. 34872, July 16, 1953.	B424858	1953-07-16	RE94543	1981-06-19	The New York Times Company|PCW						
@@ -10172,7 +10230,8 @@ f3fe8e2d-5d91-1d64-34ac-dd4fe15b2082						King Features illustrated weekly.	A101
 c0e62aed-bad5-7b2f-e756-f6feca95dba8					George Sweeting.	How to be a chalk artist.	A107336	1953-07-23	RE107651	1981-11-30	George Sweeting|A						
 48f1d1c6-0c64-67c3-883c-03e754153081						Sears, Roebuck and Company--fall and winter 1953--Atlanta.	A107456	1953-07-23	RE78720	1981-01-14	Sears, Roebuck and Company|PWH						
 27fa6654-df1e-baa9-f0f4-813a3260c518						Sears, Roebuck and Company--fall and winter 1953--Greensboro.	A107457	1953-07-23	RE78721	1981-01-14	Sears, Roebuck and Company|PWH						
-4e70ca3d-24db-84a3-4796-e50359d8496b					Derrick Nabarro.	The Rod of anger.	A119742|AIO3418	1953-11-10|1953-07-23	RE107982	1981-12-10	Derrick Nabarro|A						
+4e70ca3d-24db-84a3-4796-e50359d8496b					Derrick Nabarro.	The Rod of anger.	A119742	1953-11-10	RE107982	1981-12-10	Derrick Nabarro|A						
+4e70ca3d-24db-84a3-4796-e50359d8496b					Derrick Nabarro.	The Rod of anger.	AIO3418	1953-07-23	RE107982	1981-12-10	Derrick Nabarro|A						
 d4cd598f-f235-2f7c-4258-2f9b9b0f979a					Charles Dranker, pseud. of P. Cooney.	Faraway hills are green.	A119930	1953-07-23	RE91847	1981-01-26	P. Cooney|A						
 441e96d2-12ab-feae-2ab7-aeb8938fb572						Fables of LaFontaine, Le Corbeau et le renard.  Ill.: Romain Simon.	AFO12080	1953-07-23	RE91249	1981-04-30	Romain Simon|A						
 ac24c68d-688d-b8df-c07f-fecae65b93aa					Gilbert Houlet.	Auvergne et centre.	AFO12082	1953-07-23	RE93995	1981-05-18	Gilbert Houlet|A						
@@ -10221,7 +10280,8 @@ a5a9c8db-cf35-0b63-0cdb-e5a23fae7e0d						Advance California appellate reports. 
 b2196389-87c7-4e68-89a4-b19b1736d089					Susan H. Kubie & Gertrude Landau.	Group work with the aged.	A102595	1953-07-24	RE112658	1981-12-31	Susan Kubie|A||Gertrude Landau|A						
 15663163-1793-70af-b48b-48b02f0432e5					Frank Grace.	The Concept of property in modern Christian thought.	A104264	1953-07-24	RE85789	1981-03-02	Frank Grace|A						
 ffaf32f0-b688-6fd4-3436-ba0812718179					W. Boyd Hunt.	Sixteen to one.	A105840	1953-07-24	RE110277	1981-12-14	W. Boyd Hunt|A						
-d868a6eb-11bc-2448-9909-9403906081b0					Philip Toynbee.	The Garden to the sea.	A132930|AIO3545	1954-04-08|1953-07-24	RE84474	1981-02-12	Philip Toynbee|A						
+d868a6eb-11bc-2448-9909-9403906081b0					Philip Toynbee.	The Garden to the sea.	A132930	1954-04-08	RE84474	1981-02-12	Philip Toynbee|A						
+d868a6eb-11bc-2448-9909-9403906081b0					Philip Toynbee.	The Garden to the sea.	AIO3545	1953-07-24	RE84474	1981-02-12	Philip Toynbee|A						
 0c61a518-da4d-f7ba-ed65-283c2463d82e					Jack Kent.	King Aroo.  Release the week of Aug. 3, 1953.	A181809	1953-07-24	RE100568	1981-09-11	Jack Kent|A						
 f7f4a05e-56be-258c-5552-27f4b8f5efa0						The Reader's Digest.  Vol. 63, no. 376, Aug. 1953.	B425949	1953-07-24	RE93926	1981-05-22	The Reader's Digest Association, Inc.|PCW						
 b7d3c1d1-1b03-80a6-ff12-6a889c494a86						Daily Variety.  Vol. 80, no. 35, July 24, 1953.	B426258	1953-07-24	RE125864	1981-11-16	Daily Variety, Ltd.|PWH						
@@ -10318,8 +10378,10 @@ cb73ee8f-8e13-709f-a2fc-221d501bf760					Scott Corbett.	We chose Cape Cod.	A1047
 e6237e7f-09a9-654c-c81d-0b52a9431842					Scott Corbett.	We chose Cape Cod.	A104789	1953-07-27	RE135280	1981-10-23	Scott Corbett|A						
 1c91189e-118c-90c8-32bb-40280c9edf5e						MGM's Tom and Jerry meet Little Quack.	A105649	1953-07-27	RE78650	1981-01-05	Metro-Goldwyn-Mayer Film Company|PWH						
 0a23fe51-8fbc-0f06-93f6-4b87c64002ff					Simon & Schuster, Inc. & Artists & Writers Guild, Inc., employers for hire of Jane Werner (text) & Steffie Lerch (art)	The Little golden cut-out Christmas manger.	A105651	1953-07-27	RE109110	1981-10-29	Western Publishing Company, Inc.|PWH						
-e9e2948f-da9c-e194-60a5-bd07ce086a16						The Honey seige.|The Innocent knights.  Translated from the original French text by Gil Buhet, English translation by Geoffrey Sainsbury.	A106533|AIO3410	1953-09-14|1953-07-27	RE100208	1981-09-08	Gil Buhet|PWH						
-c087d3d2-e844-90df-97c6-19671443a91b					Nigel Heseltine.	Inconstant lady.|The Mysterious pregnancy.	A133830|AI3962	1953-07-27|1953-07-27	RE124130	1981-12-28	Nigel Heseltine|A						
+e9e2948f-da9c-e194-60a5-bd07ce086a16						The Honey seige.|The Innocent knights.  Translated from the original French text by Gil Buhet, English translation by Geoffrey Sainsbury.	A106533	1953-09-14	RE100208	1981-09-08	Gil Buhet|PWH						
+e9e2948f-da9c-e194-60a5-bd07ce086a16						The Honey seige.|The Innocent knights.  Translated from the original French text by Gil Buhet, English translation by Geoffrey Sainsbury.	AIO3410	1953-07-27	RE100208	1981-09-08	Gil Buhet|PWH						
+c087d3d2-e844-90df-97c6-19671443a91b					Nigel Heseltine.	Inconstant lady.|The Mysterious pregnancy.	A133830	1953-07-27	RE124130	1981-12-28	Nigel Heseltine|A						
+c087d3d2-e844-90df-97c6-19671443a91b					Nigel Heseltine.	Inconstant lady.|The Mysterious pregnancy.	AI3962	1953-07-27	RE124130	1981-12-28	Nigel Heseltine|A						
 5d4a9882-7236-fba2-641c-1f4a526ff7ae						NEA Service weekly.	A135673	1953-07-27	RE110591	1981-12-22							
 f2efce18-907c-ede3-cd72-1814cd9c4037					Jack Kent.	King Aroo.  Release the week of Aug. 10, 1953.	A181810	1953-07-27	RE100569	1981-09-11	Jack Kent|A						
 c215aec0-829e-8df6-056a-073f0f5397b6					Donald R. Cressey.	Other people's money; a study in the social psychology of embezzlement.	A185702	1953-07-27	RE107623	1981-11-30	Donald R. Cressey|A						
@@ -10686,7 +10748,8 @@ d79b25f0-4b0c-f606-ea49-847acbe55f30						Donald Duck.  Aug. 16, 1953.	A102880	1
 3fc7be68-e6c1-6e45-e62d-da2ad3465240						MGM's Spike and Tyke.  No. 499.	A105851	1953-08-04	RE78651	1981-01-05	Metro-Goldwyn-Mayer Film Company|PWH						
 c567d918-7d80-5933-0dcf-77e248f8bacc						Bugs Bunny's album.  No. 498.	A105853	1953-08-04	RE83499	1981-02-02	Warner Brothers, Inc.|PWH						
 e163f148-ad40-686a-2a3c-259493de290c					Frank M. Morgan & Burnham L. Paige.	Algebra.  Vol. 2.	A107570	1953-08-04	RE93423	1981-06-03	Holt, Rinehart, and Winston|PWH						
-5951cc7b-4ccd-f337-3e64-1e4abf92d074					Michel Durafour, translator: Michael Legat.	Bettina Colonna.	A114919|AI3926	1953-11-23|1953-08-04	RE116280	1981-12-14	Michel Durafour|A						
+5951cc7b-4ccd-f337-3e64-1e4abf92d074					Michel Durafour, translator: Michael Legat.	Bettina Colonna.	A114919	1953-11-23	RE116280	1981-12-14	Michel Durafour|A						
+5951cc7b-4ccd-f337-3e64-1e4abf92d074					Michel Durafour, translator: Michael Legat.	Bettina Colonna.	AI3926	1953-08-04	RE116280	1981-12-14	Michel Durafour|A						
 45c03dd3-7832-dea7-5915-6a57ac31d466						Chicago daily tribune.  Vol. 112, no. 185, Aug. 4, 1953.	B427394	1953-08-04	RE95542	1981-07-06	Chicago Tribune Company|PCW						
 6c24d3c1-dcde-0ff9-6d1f-772591bbce94						The Christian Science monitor, Boston.  Vol. 45, no. 211, Aug. 4, 1953.	B427400	1953-08-04	RE80453	1981-01-22	The Christian Science Publishing Society|PWH						
 9d8ea0ab-5143-39c2-96d4-34285a758441						Grit, Williamsport, Pa.  Vol. 71, no. 35, Aug. 9, 1953.	B427430	1953-08-04	RE116353	1981-12-28	Grit Publishing Company|PCW						
@@ -11458,7 +11521,8 @@ e88c2354-fe41-4808-415f-1f9b07766dbd						Tennessee digest.  1953 cumulative ann
 93b84058-6ce8-6435-9c1f-0c0275f0f6a7					Don M. Wolfe, Ellen M. Geyer & Lela T. Hamilton.	Enjoying English 8.	A109065	1953-08-21	RE98727	1981-08-17	Mary S. Wolfe|W						
 a57ff8c9-28e8-ab94-500d-56adb4625127						David Hume's Political essays.  Original introductory essay & appendix notes: Charles William Hendel, editor.	A109317	1953-08-21	RE94487	1981-06-15	Charles William Hendel|A						
 cd65e6b4-67fc-5bbd-981b-be35a1aed930					Paul Elbogen, translator: Ruth Lachenbruch.	Dram.|The Jealous mistress.	A110396	1953-08-21	RE98902	1981-07-13	Paul Elbogen|PWH						
-77de13eb-5058-10b9-03ca-ec55ee9a2f93					Angela Thirkell.	Jutland cottage.	A111334|AI3914	1953-10-19|1953-08-21	RE98720	1981-08-17	Lancelot Thirkell|C						
+77de13eb-5058-10b9-03ca-ec55ee9a2f93					Angela Thirkell.	Jutland cottage.	A111334	1953-10-19	RE98720	1981-08-17	Lancelot Thirkell|C						
+77de13eb-5058-10b9-03ca-ec55ee9a2f93					Angela Thirkell.	Jutland cottage.	AI3914	1953-08-21	RE98720	1981-08-17	Lancelot Thirkell|C						
 408bd9f8-ac39-04f8-9b65-a0ef8262e431					Howard DeForest Parish.	IBM electric punched card accounting machines customer engineering manual of instruction interpreters types 550, 551 and 552.	A115033	1953-08-21	RE78406	1981-01-07	International Business Machines Corporation|PWH						
 edd20eeb-2ff6-7243-4615-de92b4d3265f					Harold C. Thompson & Minnie L. Smith, changes in text, rev. vocabulary, new ill. throughout: Charles Jenney, Jr.	Smith and Thompson's First year Latin.	A116769	1953-08-21	RE110320	1981-12-21	Charles Jenney, Jr.|A						
 a805ddd6-9319-75b6-7d9b-281ef66c904e					Emma Bertha Peters & Harold C. Thompson, changes throughout to correspond to rev. accompanying textbook, Smith and Thompson First year Latin: Charles Jenney, Jr.	Smith and Thompson First year Latin|Thompson and Peters' Latin workbook for First year Latin.	A116772	1953-08-21	RE110322	1981-12-21	Charles Jenney, Jr.|A						
@@ -11551,7 +11615,8 @@ dc0c3c7c-1585-e2d3-08bf-d095a5e66be5						Southern reporter, second series.  Vol
 cec2fa14-9971-f344-59b8-a97da2ff36bd					Ludwig Bemelmans.	Father, dear Father.	A106581	1953-08-24	RE82687	1981-01-09	Madeleine Bemelmans|W||Barbara Bemelmans Marciano|C						
 dc5bb625-4b5a-065b-d1ca-ba9effe9991e					Phyllis A. Whitney Jahnke.	Step to the music.	A107988	1953-08-24	RE98538	1981-02-26	Phyllis A. Whitney Jahnke|A						
 40841b97-3faa-b13f-d002-2d2c7fc21009					William John MacMillan.	The Reluctant healer; a remarkable autobiography.	A107991	1953-08-24	RE106450	1981-11-27	William John MacMillan|A						
-8254fc98-7a64-fd57-b14f-3bdc114701a1					Michael Innes, pseud. of John Innes MacIntosh Stewart.	Christmas at Candleshoe.	A108749|AIO3515	1953-10-05|1953-08-24	RE139345	1981-12-17							
+8254fc98-7a64-fd57-b14f-3bdc114701a1					Michael Innes, pseud. of John Innes MacIntosh Stewart.	Christmas at Candleshoe.	A108749	1953-10-05	RE139345	1981-12-17							
+8254fc98-7a64-fd57-b14f-3bdc114701a1					Michael Innes, pseud. of John Innes MacIntosh Stewart.	Christmas at Candleshoe.	AIO3515	1953-08-24	RE139345	1981-12-17							
 a18bcadb-a75e-cef5-dc7d-429b7cc85708					Edwin Hill Cooke.	Reports of cases at law and in chancery, argued and determined in the Supreme Court of Illinois.  Vol. 413.	A109116	1953-08-24	RE99727	1981-08-27	Edwin Hill Cooke|A						
 f79c2136-f55a-a0ec-6cde-b41f3422daa0						The Philosophy of Santayana; selections from all the works of George Santayana.  Edited, pref. & introductory essay: Irwin Edman.	A109809	1953-08-24	RE101086	1981-09-14	Meta Markel|E						
 7bde84c8-91a3-b9c7-92d6-2785fea26dab					Solomon Colodner.	Likute Torah.|Selections from the Torah	A113155	1953-08-24	RE92843	1981-05-22	Solomon Colodner|A						
@@ -11562,7 +11627,8 @@ c6e65aa8-be04-6624-7527-09331ad7075e						Cats engagement calendar, 1954.  Selec
 f48b974b-6a90-6f6e-7c7c-c36d86db41d6					Lorrain E. Watters, Lilla Belle Pitts, Mabelle Glenn et al.	Singing juniors; songs for youth.	A115585	1953-08-24	RE94319	1981-06-02	Lorrain E. Watters|A						
 618ebf45-6330-a847-262e-8136e4e30cb4						Contributions to the theory of Riemann surfaces.  Editors: L. Ahlfors, E. Calabi, D. Spencer et al.	A117054	1953-08-24	RE105648	1981-11-02	L. Ahlfors|A						
 f6880ef6-c014-94f9-5a3b-9f51f8fc163b					John R. Crawford & Fred Karpin.	Crawford's Contract bridge.	A121168	1953-08-24	RE101650	1981-10-05	Arrco Playing Card Company|PWH						
-7e4c4331-c4ce-6b1a-72f1-6f33d85ce9a9					Roy Campbell.	The Mamba's precipice.	A125762|AIO3520	1954-02-08|1953-08-24	RE109424	1981-12-15	Mary Campbell|W					In notice: 1953	
+7e4c4331-c4ce-6b1a-72f1-6f33d85ce9a9					Roy Campbell.	The Mamba's precipice.	A125762	1954-02-08	RE109424	1981-12-15	Mary Campbell|W					In notice: 1953	
+7e4c4331-c4ce-6b1a-72f1-6f33d85ce9a9					Roy Campbell.	The Mamba's precipice.	AIO3520	1953-08-24	RE109424	1981-12-15	Mary Campbell|W					In notice: 1953	
 ec76dd8d-357b-ba5a-d66a-f75d3f4f6d6a						Three classics of Italian calligraphy.  Introd., selection & bibliography: Oscar Ogg.	A130178	1953-08-24	RE102048	1981-10-07	Dover Publications, Inc.|PWH						
 a7a13749-aaa3-de1d-2f4f-88b8d620586a						NEA Service weekly.	A135678	1953-08-24	RE110596	1981-12-22							
 c74bb5e1-0d1b-0259-0740-ea99782011fa					Ilse Aichinger.	Der Gefesselte.	AF13837	1953-08-24	RE108861	1981-12-08	Ilse Aichinger|A						
@@ -11824,7 +11890,8 @@ e67e2db6-ffae-3d24-9e77-a9c11f2d6da3					Harold C. Thompson & Charles Jenney, Jr
 6271945e-5daa-0420-cd89-dfe7dea37352						Teacher's manual, Thompson-Peters' Latin workbook.  Revisions throughout to correspond to rev. Thompson and Peters' Latin workbook for First year Latin: Charles Jenney, Jr.	A116768	1953-08-28	RE110319	1981-12-21	Charles Jenney, Jr.|A						
 5e9af3e5-6d46-6874-3a03-574c95e2a623					Delos Wheeler Lovelace.	"""Ike"" Eisenhower, statesman and soldier of peace.|General ""Ike"" Eisenhower."	A119273	1953-08-28	RE105251	1981-11-13	Merian L. Kirchner|C					"Originally pub. under the title General ""Ike"" Eisenhower."	
 4be18213-762d-265d-ffaa-56222d3a6ff5					Jeannie Elizabeth Lowdon.	Material for the pupil for a course in General business.  1st & 2d semester.	A119549	1953-08-28	RE80806	1981-01-09	South-Western Publishing Company|PWH						
-0217f9e2-14dd-8a04-d91a-2bc7cfa3d9bc					J. H. Williams, ill. by Henry C. Pitz.	Bandoola.	A127001|AIO3491	1954-02-18|1953-08-28	RE84473	1981-02-12	Susan Williams|W						
+0217f9e2-14dd-8a04-d91a-2bc7cfa3d9bc					J. H. Williams, ill. by Henry C. Pitz.	Bandoola.	A127001	1954-02-18	RE84473	1981-02-12	Susan Williams|W						
+0217f9e2-14dd-8a04-d91a-2bc7cfa3d9bc					J. H. Williams, ill. by Henry C. Pitz.	Bandoola.	AIO3491	1953-08-28	RE84473	1981-02-12	Susan Williams|W						
 60cc812e-77e0-5dee-b639-41a0e0fb9de5					Gilbert Phelps.	The Dry stone.	AIO3531	1953-08-28	RE112804	1981-12-30	Gilbert Phelps|A						
 f0487e0d-67cf-e949-7b9b-160183fb555d						The Wall Street journal.  Vol. 142, no. 43, Aug. 28, 1953.	B430861	1953-08-28	RE101393	1981-09-25	Dow Jones & Company, Inc.|PCW						
 00fa407d-2cfd-aec0-62fe-1bf33db5b94a						Daily Variety.  Vol. 80, no. 60, Aug. 28, 1953.	B431896	1953-08-28	RE125889	1981-11-16	Daily Variety, Ltd.|PWH						
@@ -11903,11 +11970,13 @@ bb8bbf6e-993a-c7c9-10b1-12821b8eab81					Donald Holmes Wallace.	Economic control
 60f97415-5f1f-9b27-130f-ca4518263a0f						Mississippi digest.  Aug. 1953 pamphlet.	A105178	1953-08-31	RE102727	1981-10-13	West Publishing Company|PWH						
 14116ac7-d4ec-37fe-616e-09cf7f374cba					A. S. Levens & A. E. Edstrom.	Problems in engineering drawing.  Ser. 4.	A105278	1953-08-31	RE106339	1981-11-20	A. S. Levens|A						
 a23bcda3-4c1c-7e5e-dccf-04c9716006c6						West's Indiana digest, 1817 to date.  Vols. 13-14.	A105337	1953-08-31	RE102717	1981-10-13	West Publishing Company|PWH						
-6aec4f63-fbc0-5898-fdb5-f7be67d18d10					Berta Ruck Oliver.	Fantastic holiday.	A105615|AIO3513	1953-09-11|1953-08-31	RE110642	1981-12-17	W. R. Oliver|C||A. Oliver|C						
+6aec4f63-fbc0-5898-fdb5-f7be67d18d10					Berta Ruck Oliver.	Fantastic holiday.	A105615	1953-09-11	RE110642	1981-12-17	W. R. Oliver|C||A. Oliver|C						
+6aec4f63-fbc0-5898-fdb5-f7be67d18d10					Berta Ruck Oliver.	Fantastic holiday.	AIO3513	1953-08-31	RE110642	1981-12-17	W. R. Oliver|C||A. Oliver|C						
 e682cc20-b409-0dce-f29f-af196538216d					Thorstein Veblen, introd. by C. Wright Mills.	The Theory of the leisure class.	A107767	1953-08-31	RE106685	1981-12-01	The New American Library, Inc.|PWH						
 91ec0b95-911c-9302-f63c-d46cdf2775d2						Religious objects construction book.  Artist: Joseph Block.	A108013	1953-08-31	RE94666	1981-06-15	Ktav Publishing House, Inc.|PWH						
 622a6c7a-8c9d-b7eb-1487-da32b4e679ca					John Biesanz & Mavis Biesanz.	Culture: the man-made environment.	A108144	1953-08-31	RE85271	1981-03-04	John Biesanz|A||Mavis Biesanz|A						
-cc1a20a8-c2b9-a575-3021-089eb4254b07					E. C. R. Lorac, pseud. of Edith Caroline Rivett.	Crook o'Lune.|Shepherd's crook.	A114805|AI3923	1953-11-19|1953-08-31	RE84445	1981-02-12	Inge Matthews|E						
+cc1a20a8-c2b9-a575-3021-089eb4254b07					E. C. R. Lorac, pseud. of Edith Caroline Rivett.	Crook o'Lune.|Shepherd's crook.	A114805	1953-11-19	RE84445	1981-02-12	Inge Matthews|E						
+cc1a20a8-c2b9-a575-3021-089eb4254b07					E. C. R. Lorac, pseud. of Edith Caroline Rivett.	Crook o'Lune.|Shepherd's crook.	AI3923	1953-08-31	RE84445	1981-02-12	Inge Matthews|E						
 3cf6bf06-d3f4-6a19-8ada-3f31505eda27					Rea Gillespie Walters & John Williams Wingate.	Manual for Fundamentals of selling, sixth edition.	A117350	1953-08-31	RE80812	1981-01-09	South-Western Publishing Company|PWH						
 c882d478-26ff-6557-b42a-3b95fc145ff0						NEA Service weekly.	A135677	1953-08-31	RE110595	1981-12-22							
 583eafee-eccd-46bb-9e87-11007ba94ed8						Daily Variety.  Vol. 80, no. 61, Aug. 31, 1953.	B431897	1953-08-31	RE125890	1981-11-16	Daily Variety, Ltd.|PWH						
@@ -12264,7 +12333,8 @@ e29247ae-6712-3f62-2a7a-3c03979a0c04						Sunday news.  Vol. 33, no. 19, Sept. 6
 e6f589d0-da81-3cbe-f04e-657668efeeaf						Superman.	K36717	1953-09-06	RE100914	1981-09-14	Comics, Inc.|PWH						
 6b5dc294-d99b-50a3-74d1-718b273ebffa					Jack Kent.	King Aroo, with Yupyop.	K42254	1953-09-06	RE100520	1981-09-11	Jack Kent|A						
 9fffeefa-7c78-1917-7ee9-d87c3daa558e					Daniel Marcus Mendelowitz.	Children are artists.	A106473	1953-09-07	RE91938	1981-02-18	Mildred Mendelowitz|W						
-2ca0229a-8bc6-6c85-f7ae-22f52897cad1					C. S. Lewis [i.e. Clive Staples Lewis], ill.: Pauline Baynes.	The Silver chair.	A108872|AI3897	1953-10-06|1953-09-07	RE99634	1981-08-25	Arthur Owen Barfield|E						
+2ca0229a-8bc6-6c85-f7ae-22f52897cad1					C. S. Lewis [i.e. Clive Staples Lewis], ill.: Pauline Baynes.	The Silver chair.	A108872	1953-10-06	RE99634	1981-08-25	Arthur Owen Barfield|E						
+2ca0229a-8bc6-6c85-f7ae-22f52897cad1					C. S. Lewis [i.e. Clive Staples Lewis], ill.: Pauline Baynes.	The Silver chair.	AI3897	1953-09-07	RE99634	1981-08-25	Arthur Owen Barfield|E						
 e327f049-4989-006c-c23e-73c89316daad						NEA Service weekly.	A135679	1953-09-07	RE110597	1981-12-22							
 0cc3243f-1e71-c5f2-6f9a-0e67ed715d13					Margaret Irwin (Margaret Irwin Monsell)	Bloodstock and other stories.	AIO3582	1953-09-07	RE111525	1981-12-28	William Ballany|E||John Annan|E						
 8f77c454-a81e-c050-06c6-cd3bcb7d7f2e					Margaret Sophie Cardew.	Mere Michel and her cat.	AIO3992	1953-09-07	RE109422	1981-12-15	Margaret Sophie Cardew|A						
@@ -12625,8 +12695,10 @@ d20182ea-4d93-45a9-b83d-5f56de91c376					E. H. Sirich.	Fundamentals of French.	A
 ed5425d5-d342-0022-9ba7-ba87b375181b					Karl Shapiro.	Beyond criticism.	A108834	1953-09-14	RE82967	1981-01-30	Karl Shapiro|A						
 1572d27e-89f7-8e24-a552-d2661619b694					Madeline DeFrees.	The Springs of silence.	A109124	1953-09-14	RE107273	1981-12-03	Madeline DeFrees|A						
 d81fc080-1abd-17e4-c502-14f5366a66ec						Superman; 3-D book.	A112158	1953-09-14	RE95271	1981-06-23	Comics, Inc.|PWH						
-0ac913f2-829a-2be1-5bfe-d5bde7e429c3					Cyril Wolf Mankowitz, illustrated by James Boswell.	A Kid for two farthings.	A123304|AIO3563	1954-01-27|1953-09-14	RE87820	1981-04-02	Wolf Mankowitz|A						
-82910a31-05cf-23c1-70ac-52531abdf61e					Paul Pettit.	The Spaniard; a novel.	A133735|AI3965	1954-04-14|1953-09-14	RE88715	1981-04-10	Paul Pettit|A					In notice: 1953	
+0ac913f2-829a-2be1-5bfe-d5bde7e429c3					Cyril Wolf Mankowitz, illustrated by James Boswell.	A Kid for two farthings.	A123304	1954-01-27	RE87820	1981-04-02	Wolf Mankowitz|A						
+0ac913f2-829a-2be1-5bfe-d5bde7e429c3					Cyril Wolf Mankowitz, illustrated by James Boswell.	A Kid for two farthings.	AIO3563	1953-09-14	RE87820	1981-04-02	Wolf Mankowitz|A						
+82910a31-05cf-23c1-70ac-52531abdf61e					Paul Pettit.	The Spaniard; a novel.	A133735	1954-04-14	RE88715	1981-04-10	Paul Pettit|A					In notice: 1953	
+82910a31-05cf-23c1-70ac-52531abdf61e					Paul Pettit.	The Spaniard; a novel.	AI3965	1953-09-14	RE88715	1981-04-10	Paul Pettit|A					In notice: 1953	
 2fa014dd-3ada-433d-48e2-90a08944b86c						NEA Service weekly.	A135680	1953-09-14	RE110598	1981-12-22							
 e447526c-32ae-ce92-bf30-0723682b5f20						The Wall Street journal.  Vol. 142, no. 53, Sept. 14, 1953.	B433294	1953-09-14	RE101383	1981-09-25	Dow Jones & Company, Inc.|PCW						
 3392aa22-e767-804c-d67e-488a30f041e5						The Washington post.  No. 28214, Sept. 14, 1953.	B433401	1953-09-14	RE108321	1981-12-04	The Washington Post Company|PCW						
@@ -12707,7 +12779,8 @@ df475b71-2efd-0fe3-10e0-5021f9e4d099					James Murdock.	Ketti Shalom.	A110397	19
 b3383687-08bf-010c-7b64-cf051ec7a902						Advance California reports.  Vol. 14, no. 36.	A110928	1953-09-15	RE97435	1981-07-24	Bancroft-Whitney Company|PWH						
 27a22c14-1f1c-9600-a49c-64c4f8778a27					Fredric Brown.	Madball.|The Pickled punks.	A116900	1953-09-15	RE84736	1981-03-02	Elizabeth C. Brown|W					Prev. pub. in condensed version under title, The Pickled punks.	
 ce667968-d12a-4378-6c20-4d65941c5c0a						Superman.  Release the week of Oct. 19, 1953.	A117223	1953-09-15	RE100893	1981-09-14	Comics, Inc.|PWH						
-10f44de2-0c01-d811-66d0-69dc99faa58e						Dietrich Bonhoeffer's Letters and papers from prison.  Translator: Reginald H. Fuller.	A122030|AI3913	1954-01-19|1953-09-15	RE99635	1981-08-25						In notice: 1953	
+10f44de2-0c01-d811-66d0-69dc99faa58e						Dietrich Bonhoeffer's Letters and papers from prison.  Translator: Reginald H. Fuller.	A122030	1954-01-19	RE99635	1981-08-25						In notice: 1953	
+10f44de2-0c01-d811-66d0-69dc99faa58e						Dietrich Bonhoeffer's Letters and papers from prison.  Translator: Reginald H. Fuller.	AI3913	1953-09-15	RE99635	1981-08-25						In notice: 1953	
 15f413a8-8395-6f0f-8182-4c37a573e832						Hopalong Cassidy.  Release Sept. 27, 1953.	A122056	1953-09-15	RE104985	1981-10-30							
 1981d1ab-9b8d-150b-012b-65b6b9bfa8eb						Hopalong Cassidy.  Release Sept. 28-Oct. 3, 1953.	A122057	1953-09-15	RE104964	1981-10-30							
 6aeb046b-269f-f134-5efa-b8ef72ae5001						Donald Duck.  Sept. 27, 1953.	A122091	1953-09-15	RE102270	1981-10-13	Walt Disney Productions|PWH						
@@ -12875,7 +12948,8 @@ ea0eb032-cb0a-25a6-ad9b-03bd3131fc72						King Features illustrated weekly.	A110
 bf405dfb-ff73-7817-832c-3c4e13eeec51						Texas jurisprudence forms of pleading & practice annotated.  Vol. 1.	A110958	1953-09-17	RE97431	1981-07-24	Bancroft-Whitney Company|PWH						
 fbde9899-2afa-d91d-3bc2-4a5c426d0b08						Texas jurisprudence forms of pleading & practice annotated.  Vol. 2.	A110959	1953-09-17	RE97430	1981-07-24	Bancroft-Whitney Company|PWH						
 a6f24d63-f52f-4e41-0097-86ad90828074					Herbert Spencer Davis.	Culture and diseases of game fishes.	A114936	1953-09-17	RE94594	1981-06-18	Muriel G. Davis|C						
-8c07f91e-6ea2-f631-82da-c2c7ed4720ef					Anthony Eldred Clifford Wilson, ill.: Kurt Rudolf Werth.	Norman and Henry Bones investigate.|Norman and Henry investigate.	A123674|AI3941	1954-01-14|1953-09-17	RE127974	1981-12-28	Anthony C. Wilson|A					In notice: 1953	
+8c07f91e-6ea2-f631-82da-c2c7ed4720ef					Anthony Eldred Clifford Wilson, ill.: Kurt Rudolf Werth.	Norman and Henry Bones investigate.|Norman and Henry investigate.	A123674	1954-01-14	RE127974	1981-12-28	Anthony C. Wilson|A					In notice: 1953	
+8c07f91e-6ea2-f631-82da-c2c7ed4720ef					Anthony Eldred Clifford Wilson, ill.: Kurt Rudolf Werth.	Norman and Henry Bones investigate.|Norman and Henry investigate.	AI3941	1953-09-17	RE127974	1981-12-28	Anthony C. Wilson|A					In notice: 1953	
 1b3ee219-ca95-3c16-03c0-c06633076cee					Fritz Habeck.	Das Zerbrochene Dreieck; Roman.	AFO12180	1953-09-17	RE301647	1981-12-31	H.|PWH						
 ff3a835c-316b-947d-1cf8-68cd1b112680					Simon Vestdijk, translation by Rolf Italiaander.	Der Arzt und das leichte Maedchen; Roman.	AFO13534	1953-09-17	RE301655	1981-12-31	H.|PWH						
 b2ea2f70-c938-9674-11ed-66d3b0f4f831						The Wall Street journal.  Vol. 142, no. 56, Sept. 17, 1953.	B434163	1953-09-17	RE101381	1981-09-25	Dow Jones & Company, Inc.|PCW						
@@ -13259,7 +13333,8 @@ f369b171-b3d9-c473-896b-00ca9778e3e0					Mary K. Winters.	Teach me numbers.	A112
 a61ab5bc-2d93-cbc4-a8d5-b7c3deb45f8c					Alice Cobb.	War's unconquered children speak.	A113137	1953-09-24	RE102451	1981-10-05	Alice Cobb|A						
 fa39f514-0daa-26d8-6469-8c23296f5c74					David Rousset, edited by Jerzy G. Gliksman, translation: Charles R. Joy.	Coercion of the worker in the Soviet Union.|La Condition ouvriere en U. R. S. S.	A113139	1953-09-24	RE102448	1981-10-05	Alice P. Joy|C						
 214da267-40b7-7a8f-c765-e48b3f521460					David Rousset, edited by Jerzy G. Gliksman, translation: Charles R. Joy.	Les Conditions de la liberte en U. R. S. S.|Police-state methods in the Soviet Union.	A113140	1953-09-24	RE102449	1981-10-05	Alice P. Joy|C						
-e18b07ad-fd9f-8d2f-ef1f-671f8a4f384a					Constantine FitzGibbon.	The Holiday.	A115600|AI3932	1953-11-18|1953-09-24	RE89254	1981-04-15	Constantine FitzGibbon|A						
+e18b07ad-fd9f-8d2f-ef1f-671f8a4f384a					Constantine FitzGibbon.	The Holiday.	A115600	1953-11-18	RE89254	1981-04-15	Constantine FitzGibbon|A						
+e18b07ad-fd9f-8d2f-ef1f-671f8a4f384a					Constantine FitzGibbon.	The Holiday.	AI3932	1953-09-24	RE89254	1981-04-15	Constantine FitzGibbon|A						
 063135f7-48ed-9be8-f784-447614d68bf7					R. S. Yeoman, Lee F. Hewitt, Charles E. Green et al.	Handbook of United States coins.  No. 9050, 1954.	A116450	1953-09-24	RE105155	1981-11-09	Western Publishing Company, Inc.|PWH						
 7f475cd8-3638-aa2a-5f17-4b8956d3f7c7					H. H. Remmers.	Technical supplement for the S R A youth inventory, form A.	A116980	1953-09-24	RE105730	1981-11-13	Purdue Research Foundation|PWH						
 1f485034-ae63-8ef4-4aba-393ce883962b						Sears 1953 Christmas book--Philadelphia.	A119239	1953-09-24	RE78735	1981-01-14	Sears, Roebuck and Company|PWH						
@@ -13448,7 +13523,8 @@ f94e5b23-a55c-7fa3-5e7e-dfd64d5ade7d						Kentucky decisions reported in South W
 cb3afad0-987b-e7e1-82bb-3b77ea798785					Donald E. Cooke.	Powder keg.	A111162	1953-09-28	RE93889	1981-06-08	Donald E. Cooke|A						
 9d425d3d-23bb-47e7-c3c1-22ff9085ef1b					G. Evelyn Hutchinson.	The Itinerant ivory tower; scientific and literary essays.	A113406	1953-09-28	RE103861	1981-10-15	G. Evelyn Hutchinson|A						
 56cce5f2-a58f-83d9-c72f-d48032329e0e					Mickey Klar Marks, artwork: Charles Bracker.	Little Peter what's my name.	A116749	1953-09-28	RE108891	1981-11-16	Mickey Klar Marks|A						
-6309a749-bf9c-349f-e147-6aaacc973c64					Eric Williams.	The Book of famous escapes.|The Escapers.	A125399|AI3930	1954-02-11|1953-09-28	RE110082	1981-12-11	Eric Williams|A					In notice: 1953|U.S. title: The Book of famous escapes.	
+6309a749-bf9c-349f-e147-6aaacc973c64					Eric Williams.	The Book of famous escapes.|The Escapers.	A125399	1954-02-11	RE110082	1981-12-11	Eric Williams|A					In notice: 1953|U.S. title: The Book of famous escapes.	
+6309a749-bf9c-349f-e147-6aaacc973c64					Eric Williams.	The Book of famous escapes.|The Escapers.	AI3930	1953-09-28	RE110082	1981-12-11	Eric Williams|A					In notice: 1953|U.S. title: The Book of famous escapes.	
 ade10e4a-d612-002f-35ce-6476f096f23e						NEA Service weekly.	A135682	1953-09-28	RE110600	1981-12-22							
 e2597ba5-bf35-57be-bd8e-02578a8dbc8b					Jack Kent.	King Aroo.  Release the week of Oct. 5, 1953.	A181818	1953-09-28	RE100577	1981-09-11	Jack Kent|A						
 bc32afdc-3eed-78e6-0ca9-e27097585183						Lorenzo Perosi.  Di Matteo Glinski, con prefazione di Guido Anichini.	AFO12451	1953-09-28	RE110432	1981-12-22							
@@ -14266,9 +14342,11 @@ a18e4f04-c50f-d670-ab9b-176c13b5da0c					Philip Wylie.	Denizens of the deep; tru
 b0ed291c-5859-2f07-9675-78e5c43fea40					James Brunot.	Scrabble; rules for playing Scrabble, booklet.	A114713	1953-10-12	RE104306	1981-10-23	Selchow & Righter Company|PWH						
 31e8b136-4c39-9a32-e6b8-0f3d00653ee7					Raymond John Spottiswoode & Nigel Lawrence Spottiswoode.	The Theory of stereoscopic transmission & its application to the motion picture.	A116394	1953-10-12	RE96633	1981-07-23	Trustee Department Coutts & Company|E||Nigel Lawrence Spottiswoode|A						
 98f56601-1601-d964-dd28-6a4225063d08						Sears 1953 Christmas book--Boston.	A119232	1953-10-12	RE78729	1981-01-14	Sears, Roebuck and Company|PWH						
-b264293b-6938-8fe8-bbb9-c28039113e40						The Noel Coward songbook.  Introd. & annotations: Noel Coward.	A123319|AI3952	1953-12-02|1953-10-12	RE93469	1981-06-04	Graham Payne & Barclays Bank Trust Company, Ltd.|E						
+b264293b-6938-8fe8-bbb9-c28039113e40						The Noel Coward songbook.  Introd. & annotations: Noel Coward.	A123319	1953-12-02	RE93469	1981-06-04	Graham Payne & Barclays Bank Trust Company, Ltd.|E						
+b264293b-6938-8fe8-bbb9-c28039113e40						The Noel Coward songbook.  Introd. & annotations: Noel Coward.	AI3952	1953-10-12	RE93469	1981-06-04	Graham Payne & Barclays Bank Trust Company, Ltd.|E						
 df0ac45e-ac21-2743-f6b8-4a1279b7de9d						NEA Service weekly.	A135684	1953-10-12	RE110602	1981-12-22							
-3c0f55e6-e7f0-d15e-6919-b89d3bf1e68a					Elizabeth Montagu.	Waiting for Camilla.	A142309|AIO3980	1954-06-15|1953-10-12	RE109643	1981-12-14	Elizabeth Montagu|A					In notice: 1953	
+3c0f55e6-e7f0-d15e-6919-b89d3bf1e68a					Elizabeth Montagu.	Waiting for Camilla.	A142309	1954-06-15	RE109643	1981-12-14	Elizabeth Montagu|A					In notice: 1953	
+3c0f55e6-e7f0-d15e-6919-b89d3bf1e68a					Elizabeth Montagu.	Waiting for Camilla.	AIO3980	1953-10-12	RE109643	1981-12-14	Elizabeth Montagu|A					In notice: 1953	
 543f2133-6297-13ee-bb70-09e887a3de07					Dennis Yates Wheatley.	Curtain of fear.	AIO3682	1953-10-12	RE110358	1981-12-21	Joan Gwendoline Wheatley|W||Dennis Anthony Marius Thomas Wheatley|C						
 3a5d64d3-9106-5ace-e81d-5f861877f3a5						Vogue; incorporating Vanity fair.  Vol. 122, no. 7, Oct. 15, 1953.	B438616	1953-10-12	RE97333	1981-07-29	The Conde Nast Publications, Inc.|PCW						
 8d840982-dfdd-f2cb-81c9-0c535843f1cf						Moody's bond survey.  Vol. 45, no. 41.	B438833	1953-10-12	RE111603	1981-12-28	Moody's Investors Service, Inc.|PWH						
@@ -14466,7 +14544,8 @@ dcf7d85f-8df6-022b-0356-d8067b7bea3f					William Brownlee Owens.	Owens' Forms su
 16f1ca64-4a77-0389-4c61-7bc1776d4309					James T. Farrell.	The Face of time.	A111424	1953-10-15	RE78802	1981-01-15	Edgar Branch|E||Cleo Parturis|E						
 27478239-9d2b-613b-a393-6c5206bf2d0b					James T. Farrell.	The Face of time.	A111424	1953-10-15	RE102482	1981-10-07	Dorothy Farrell|W						
 817632f3-db87-2c40-a02c-5c947dc854b0					King Vidor.	A Tree is a tree.	A111606	1953-10-15	RE91021	1981-04-01	King Vidor|A						
-954e72d9-36dc-ef17-395e-2908a955155b					Edward Morgan Forster.	The Hill of Devi; being letters from Dewas State Senior.	A111709|AIO3625	1953-10-22|1953-10-15	RE84054	1981-02-06	Donald Parry|E						
+954e72d9-36dc-ef17-395e-2908a955155b					Edward Morgan Forster.	The Hill of Devi; being letters from Dewas State Senior.	A111709	1953-10-22	RE84054	1981-02-06	Donald Parry|E						
+954e72d9-36dc-ef17-395e-2908a955155b					Edward Morgan Forster.	The Hill of Devi; being letters from Dewas State Senior.	AIO3625	1953-10-15	RE84054	1981-02-06	Donald Parry|E						
 c7ff0b23-1f96-6381-223a-990226fe08a0					Felix Wittmer.	The Yalta betrayal.	A111763	1953-10-15	RE78243	1981-01-12	Felix Wittmer|A						
 b3fb6a6a-78c9-1ee7-c896-d0461e217dfe					Edith S. McCall.	Bucky Button.	A112193	1953-10-15	RE110154	1981-12-21	Edith S. McCall|A						
 abc855d8-80a8-79b1-3a6b-0d90bff0c45c					Barbara Ann Scott & Michael Kirby, illustrator: Eleanor Nussio.	Skating for beginners.	A112468	1953-10-15	RE98721	1981-08-17	Barbara Ann Scott|A||Michael Kirby|A||Alfred A. Knopf, Inc.|PWH						
@@ -14544,7 +14623,8 @@ fa3ab07f-ab12-839d-cb80-4b9f3c4965b9						Rand McNally Bankers directory, the ba
 d68dfa45-f01b-e806-e909-86da78d91853					Ewald Martin Plass.	The First epistle general of Saint Peter.	A115894	1953-10-16	RE107210	1981-12-02	Concordia Publishing House|PWH						
 033b9c31-749d-22a5-b049-cf815791cf74					Roland Herbert Bainton.	Hunted heretic.	A116148	1953-10-16	RE102455	1981-10-05	Roland Herbert Bainton|A						
 43d216db-223b-3d4e-5752-aad4e01cf5e5						Advance California appellate reports.  Vol. 14, no. 42.	A118754	1953-10-16	RE103447	1981-10-16	Bancroft-Whitney Company|PWH						
-61772bcc-4fd8-c4ef-8f10-0f75824f8748					Eca DeQueiroz, introd.: Frederico DeOnis, translator: Ray Campbell.	Cousin Bazilio.	A122873|AI3942	1953-11-09|1953-10-16	RE99070	1981-04-20	Farrar, Straus & Giroux, Inc.|PWH						
+61772bcc-4fd8-c4ef-8f10-0f75824f8748					Eca DeQueiroz, introd.: Frederico DeOnis, translator: Ray Campbell.	Cousin Bazilio.	A122873	1953-11-09	RE99070	1981-04-20	Farrar, Straus & Giroux, Inc.|PWH						
+61772bcc-4fd8-c4ef-8f10-0f75824f8748					Eca DeQueiroz, introd.: Frederico DeOnis, translator: Ray Campbell.	Cousin Bazilio.	AI3942	1953-10-16	RE99070	1981-04-20	Farrar, Straus & Giroux, Inc.|PWH						
 2b6909bc-7197-adb7-970a-ac455d8b15f5					Emily Lutyens.	A Blessed girl.	AI3997	1953-10-16	RE108766	1981-12-08	Emily Lutyens|A						
 8a4d6875-a166-d973-b8b6-919b6c3f1769						Daily Variety.  Vol. 81, no. 29, Oct. 16, 1953.	B439646	1953-10-16	RE125817	1981-11-16	Daily Variety, Ltd.|PWH						
 ca573ba2-4298-14c4-643f-8e4bf57ec662						Chicago daily tribune.  Vol. 112, no. 248, Oct. 16, 1953.	B439742	1953-10-16	RE102031	1981-10-07	Chicago Tribune Company|PCW						
@@ -14656,7 +14736,8 @@ bf278505-f2ec-1985-3e93-56fde7b3253d					John C. Flanagan.	Aptitude classificati
 4cb6d5fe-7fa2-9d72-4425-d49b50a6848f					John C. Flanagan.	Aptitude classification tests|Your fact scores and what they mean.	A121721	1953-10-19	RE105751	1981-11-13	Science Research Associates, Inc.|PWH						
 1de704f0-47a3-e7a4-af5e-1030ae284ebb					Calvin Smith Brown.	Tones into words; musical compositions as subjects of poetry.	A122448	1953-10-19	RE88101	1981-04-07	Calvin S. Brown|A						
 ae3d1cef-91cf-0888-a2ca-fc6bebafd676					H. W. Rickett.	Wild flowers of America.	A122876	1953-10-19	RE102917	1981-10-13	Crown Publishers, Inc.|PWH						
-b2949e3c-3a2c-cb88-371e-61378140cb3d					Frank Swinnerton.	A Month in Gordon Square.	A126996|AIO3898	1954-02-18|1953-10-19	RE84479	1981-02-12	Frank Swinnerton|A					In notice: 1953	
+b2949e3c-3a2c-cb88-371e-61378140cb3d					Frank Swinnerton.	A Month in Gordon Square.	A126996	1954-02-18	RE84479	1981-02-12	Frank Swinnerton|A					In notice: 1953	
+b2949e3c-3a2c-cb88-371e-61378140cb3d					Frank Swinnerton.	A Month in Gordon Square.	AIO3898	1953-10-19	RE84479	1981-02-12	Frank Swinnerton|A					In notice: 1953	
 ba007e20-cac7-711a-b501-f48467bfdd8a						NEA Service weekly.	A135685	1953-10-19	RE110603	1981-12-22							
 87fbfea3-d187-f98b-a3c6-b034203ad205						Daily Variety.  Vol. 81, no. 30, Oct. 19, 1953.	B439647	1953-10-19	RE125818	1981-11-16	Daily Variety, Ltd.|PWH						
 575506d8-6d9f-5192-37b4-a249e40392ea						Chicago daily tribune.  Vol. 112, no. 250, Oct. 19, 1953.	B439744	1953-10-19	RE102033	1981-10-07	Chicago Tribune Company|PCW						
@@ -14878,9 +14959,12 @@ d342c2d5-da19-2959-9b12-60e89f352924						The Merry mailman coloring book.	A1162
 3ea4b005-7f06-b7bd-8465-491d2a2a322c						Superman.  Release the week of Nov. 16, 1953.	A117227	1953-10-22	RE100897	1981-09-14	Comics, Inc.|PWH						
 6ef5a14b-85fb-ff08-9d83-08b0756ce71c					Sally DeFrehn Ogg.	The Dress-up doll book.	A117969	1953-10-22	RE96507	1981-07-20	Grosset & Dunlap, Inc.|PWH						
 d501b2c9-d7d0-b798-25ef-5b6f5e471e4e					Morris D. Waldman.	Nor by power.	A127081	1953-10-22	RE112656	1981-12-31	Morris D. Waldman|A						
-3df18da6-b220-7212-7810-81a30ac0a2e2					Jack Harvey.	Salt in our wounds.	A136486|AI3968	1954-05-03|1953-10-22	RE105502	1981-11-06	Jack Harvey|A					In notice: 1953	
-a574326f-b9cd-4145-8fba-1e932151e421						Cassell's Encyclopedia of literature.|Cassell's Encyclopedia of world literature.  Vols. 1 & 2.  Editor: Siegfried Henry Steinberg.	A141245|AIO3947	1954-04-05|1953-10-22	RE113128	1981-12-30	Eric Steinberg|C					In notice: 1953	
-9a7bc007-b1f3-d36e-71c6-6751aef9e8c3					Robert Graves & Joshua Podro.	The Nazarene gospel restored.	A145978|AIO3831	1954-07-15|1953-10-22	RE84477	1981-02-12	Robert Graves|A					In notice: 1953	
+3df18da6-b220-7212-7810-81a30ac0a2e2					Jack Harvey.	Salt in our wounds.	A136486	1954-05-03	RE105502	1981-11-06	Jack Harvey|A					In notice: 1953	
+3df18da6-b220-7212-7810-81a30ac0a2e2					Jack Harvey.	Salt in our wounds.	AI3968	1953-10-22	RE105502	1981-11-06	Jack Harvey|A					In notice: 1953	
+a574326f-b9cd-4145-8fba-1e932151e421						Cassell's Encyclopedia of literature.|Cassell's Encyclopedia of world literature.  Vols. 1 & 2.  Editor: Siegfried Henry Steinberg.	A141245	1954-04-05	RE113128	1981-12-30	Eric Steinberg|C					In notice: 1953	
+a574326f-b9cd-4145-8fba-1e932151e421						Cassell's Encyclopedia of literature.|Cassell's Encyclopedia of world literature.  Vols. 1 & 2.  Editor: Siegfried Henry Steinberg.	AIO3947	1953-10-22	RE113128	1981-12-30	Eric Steinberg|C					In notice: 1953	
+9a7bc007-b1f3-d36e-71c6-6751aef9e8c3					Robert Graves & Joshua Podro.	The Nazarene gospel restored.	A145978	1954-07-15	RE84477	1981-02-12	Robert Graves|A					In notice: 1953	
+9a7bc007-b1f3-d36e-71c6-6751aef9e8c3					Robert Graves & Joshua Podro.	The Nazarene gospel restored.	AIO3831	1953-10-22	RE84477	1981-02-12	Robert Graves|A					In notice: 1953	
 e2ad010e-d35c-a514-0dad-d717993587d0					Eleanor Graham, translation by Kaethe Braun-Prager and Edmund Th. Kauer.	Charles Dickens, eine Lebensgeschichte fuer junge Menschen.	AFO12430	1953-10-22	RE301653	1981-12-31	H.|PWH						
 131d6bc3-8220-6faa-6d63-82cda81f72af						Fables.  De LaFontaine [i.e. Jean De LaFontaine], ill.: Romain Simon.	AFO12518	1953-10-22	RE91254	1981-04-30	Romain Simon|A						
 612aacfc-46b3-0195-4bf0-48150bce3860					Clara Malraux-Goldschmidt.	Par de plus longs chemins.	AFO13450	1953-10-22	RE86630	1981-03-09	Clara Malraux-Goldschmidt|A						
@@ -15050,8 +15134,10 @@ a1f7df55-e2b4-fc40-995a-1b741fbf82d9					Anna Eleanor Roosevelt & William A. DeW
 fcd019eb-005c-eb5b-6036-9dc05259deb2					Sasha Siemel.	Tigrero!	A111730	1953-10-26	RE108011	1981-12-03	Edith B. Siemel|W						
 d8f3d7db-ca58-1461-21d0-2a0c962e7b2e					Clyde Brion Davis.	Eyes of boyhood.	A112637	1953-10-26	RE113132	1981-12-18	David Brion Davis|C						
 88002e36-2362-4bff-24ab-5206709112ec					Guy R. Lyle & Kevin Guinagh.	I am happy to present: a book of introductions.	A112641	1953-10-26	RE87180	1981-03-27	The H. W. Wilson Company|PWH						
-6ff6c430-1990-e3df-4c60-1613d32d2a48					Margot Neville.	Murder of the well-beloved.	A112751|AIO3672	1953-11-05|1953-10-26	RE84475	1981-02-12	Margaret Arrowsmith|E						
-65175806-413f-2048-ed14-b0eb0def7c35					Olle Strandberg, translator: Maurice Albert Michael.	Tigerland and South Sea.	A112754|AIO3675	1953-11-05|1953-10-26	RE112361	1981-12-29	Maurice Albert Michael|A						
+6ff6c430-1990-e3df-4c60-1613d32d2a48					Margot Neville.	Murder of the well-beloved.	A112751	1953-11-05	RE84475	1981-02-12	Margaret Arrowsmith|E						
+6ff6c430-1990-e3df-4c60-1613d32d2a48					Margot Neville.	Murder of the well-beloved.	AIO3672	1953-10-26	RE84475	1981-02-12	Margaret Arrowsmith|E						
+65175806-413f-2048-ed14-b0eb0def7c35					Olle Strandberg, translator: Maurice Albert Michael.	Tigerland and South Sea.	A112754	1953-11-05	RE112361	1981-12-29	Maurice Albert Michael|A						
+65175806-413f-2048-ed14-b0eb0def7c35					Olle Strandberg, translator: Maurice Albert Michael.	Tigerland and South Sea.	AIO3675	1953-10-26	RE112361	1981-12-29	Maurice Albert Michael|A						
 48441fea-313f-6a44-488c-c1077593e776					Gerald W. Stob.	Sketching a store front.	A112994	1953-10-26	RE98882	1981-08-13	Gerald W. Stob|A						
 733a4418-2915-5984-405b-c2b66fcc21d1					Samuel Chamberlain.	Soft skies of France.	A113129	1953-10-26	RE90523	1981-04-30	Narcissa Chamberlain|W						
 6f36e8f0-1609-95b0-8b2e-fa4fe33127a0					Caroline Horowitz.	A Child's first playbook.	A113535	1953-10-26	RE84442	1981-02-12	Doubleday & Company, Inc.|PWH						
@@ -15256,7 +15342,8 @@ dc73fd50-2549-4858-97f0-0aff25b17baa					Gustaf Munthe & Gudrun Uexkull, transla
 03402338-1481-14d9-1222-50bacb3da4b5					Gilbert David McEwen.	How to be a better speller.	A115334	1953-10-29	RE105933	1981-11-18	Gilbert D. McEwen|A						
 ff80c439-32fc-06d0-50d7-e4f4c8f62241						Sing & give praise.  For unison voices.  Words: Sister Mary Noreen, OSF.	A118340	1953-10-29	RE102262	1981-10-05	Sister Mary Noreen|A||OSF|A						
 795525e7-5c1f-ea96-72f2-1c3997de973d						What is modern interior design?	A126476	1953-10-29	RE111383	1981-12-23	The Museum of Modern Art|PWH						
-8afbb106-7f97-3903-3d24-a8d978394398					Dominque Gilbert Cesbron, translated from the French by John Russell.	Saints in hell.	A132933|AIO3869	1954-04-08|1953-10-29	RE84478	1981-02-12						In notice: 1953	
+8afbb106-7f97-3903-3d24-a8d978394398					Dominque Gilbert Cesbron, translated from the French by John Russell.	Saints in hell.	A132933	1954-04-08	RE84478	1981-02-12						In notice: 1953	
+8afbb106-7f97-3903-3d24-a8d978394398					Dominque Gilbert Cesbron, translated from the French by John Russell.	Saints in hell.	AIO3869	1953-10-29	RE84478	1981-02-12						In notice: 1953	
 826ef8ee-5ce5-14b0-f3dc-d96466e8ecdb					Jack Kent.	King Aroo.  Release the week of Nov. 9, 1953.	A181823	1953-10-29	RE100582	1981-09-11	Jack Kent|A						
 59b7c76f-e0a6-7257-cb16-274d02c058e2					Albert Lamorisse & Denys Colomb DeDaunant.	Crin blanc.	AFO12793	1953-10-29	RE91238	1981-04-30	Claude Duparc|W||Pascal Lamorisse|C||Sabine Lamorisse|C||Fanny Lamorisse|C						
 a4b6a56c-f58d-c9ff-d5e2-f58bdca3cf52						The Principal Upanisads.  Edited with introd., text, translation & notes by Sarvepalli Radhakrishnan.|Upanishads	AI4359	1953-10-29	RE100112	1981-09-02	S. Gopal|C					U. S. ed. pub. 14Jun54|A157488.	
@@ -15306,8 +15393,10 @@ c5e190b1-5bd3-bbfe-d6fb-fb6c655fbd3f					Frederick H. Pough, illustrator: Kurt W
 a096ec82-c378-c81d-aed0-74397df850db						Walt Disney's treasury.  Arranger: Steffi Fletcher & Jane Werner, adaptor: Dick Kelsey.	A116459	1953-10-30	RE102848	1981-10-13	Walt Disney Productions|PWH						
 39f6850b-de65-2405-8178-b40362333e8f						Advance California appellate reports.  Vol. 14, no. 44.	A118756	1953-10-30	RE103449	1981-10-16	Bancroft-Whitney Company|PWH						
 c5b08ae8-a1fd-4ffa-28f5-68d5438c3b16						Batman.  3-D book.	A123967	1953-10-30	RE91013	1981-04-30	Comics, Inc.|PWH						
-74e81e19-14fd-d165-0b05-18ee06e43563					Robert Donald William Romanis.	The Holy foot.	A128729|AI3991	1954-03-08|1953-10-30	RE105504	1981-11-06	Robert Donald William Romanis|A					In notice: 1953	
-67744ef8-8904-2593-8d34-c11bda3a6675					W. H. Lewis.	The Splendid country: some aspects of French life in the reign of Louis XIV.	A131687|AIO3958	1954-03-17|1953-10-30	RE111599	1981-12-17	W. H. Lewis|A					In notice: 1953	
+74e81e19-14fd-d165-0b05-18ee06e43563					Robert Donald William Romanis.	The Holy foot.	A128729	1954-03-08	RE105504	1981-11-06	Robert Donald William Romanis|A					In notice: 1953	
+74e81e19-14fd-d165-0b05-18ee06e43563					Robert Donald William Romanis.	The Holy foot.	AI3991	1953-10-30	RE105504	1981-11-06	Robert Donald William Romanis|A					In notice: 1953	
+67744ef8-8904-2593-8d34-c11bda3a6675					W. H. Lewis.	The Splendid country: some aspects of French life in the reign of Louis XIV.	A131687	1954-03-17	RE111599	1981-12-17	W. H. Lewis|A					In notice: 1953	
+67744ef8-8904-2593-8d34-c11bda3a6675					W. H. Lewis.	The Splendid country: some aspects of French life in the reign of Louis XIV.	AIO3958	1953-10-30	RE111599	1981-12-17	W. H. Lewis|A					In notice: 1953	
 6cb7c493-6109-69d9-24c3-2230ca3cc35e					Maurice Raphael.	Feu et flammes.	AF13999	1953-10-30	RE109928	1981-12-21	Maurice Raphael|A						
 48af69cb-513f-d35d-50d1-8d90445fa63c					Jean-Paul Clebert, pseud. of P. Jeannin.	La Vie sauvage.	AF14017	1953-10-30	RE109932	1981-12-21	Jean-Paul Clebert|A						
 f1e2a187-4951-cf08-60c0-3917598d2f54					Roger Nimier.	Histoire d'un amour.	AFO12870	1953-10-30	RE90094	1981-04-21	Nadine Raoul-Duval|W||Martin Nimier|C||Marie Nimier|C						
@@ -15371,7 +15460,8 @@ dbf70580-e045-193c-9eb0-5e32f6c0bba1						LosAngeles times.  Vol. 72, Nov. 1, 19
 2758c9d9-d975-6e8d-a62f-d05814eb503f					Nat Schachner.	Space lawyer.	A123111	1953-11-01	RE86085	1981-03-16	Helen Schachner|W						
 d5c2cb74-4749-2401-5455-8486868ccc64					William Franklin Graham.	The Answer to teen-age delinquency.	A124149	1953-11-01	RE89787	1981-03-30	The Billy Graham Evangelistic Association|PWH						
 8c015a14-ce37-c3fd-0971-f8720ad1c3eb					Fray Bernardino DeSahagun, translators: Arthur J. O. Anderson & Charles E. Dibble.	Florentine codex.  Book 7: The Sun, moon, and stars, and the binding of the years.|General history of the things of New Spain.	A125708	1953-11-01	RE123725	1981-10-23	School of American Research|PWH						
-e9390527-0daf-8b22-b753-5bc3d040206d					Lawrence Henry Battistini.	Japan and America: from earliest times to the present.	A127150|AI3960	1954-02-15|1953-11-01	RE112802	1981-12-30	Lawrence H. Battistini|A					In notice: 1953	
+e9390527-0daf-8b22-b753-5bc3d040206d					Lawrence Henry Battistini.	Japan and America: from earliest times to the present.	A127150	1954-02-15	RE112802	1981-12-30	Lawrence H. Battistini|A					In notice: 1953	
+e9390527-0daf-8b22-b753-5bc3d040206d					Lawrence Henry Battistini.	Japan and America: from earliest times to the present.	AI3960	1953-11-01	RE112802	1981-12-30	Lawrence H. Battistini|A					In notice: 1953	
 775da98c-7b70-3fc2-19c3-b0fee220f07f					Louis Aragon.	L'Homme communiste.  T. 2.	AFO13088	1953-11-01	RE90099	1981-04-21	Louis Aragon|A						
 da1ec03c-fd40-bd32-46bb-4eab492f0790						The Family circle.  Vol. 43, no. 5, Nov. 1953.	B441629	1953-11-01	RE91413	1981-05-04	The Family Circle, Inc.|PCW						
 d3020425-8ff0-ec56-6cd6-a1882cddb956						Family weekly magazine.  Nov. 1, 1953.	B441643	1953-11-01	RE98749	1981-08-25	B. S. Inc|PCW						
@@ -15593,7 +15683,8 @@ eeff1362-60d4-99e5-3a95-57332c23ac4c					Biggie Munn (Clarence Munn)	Michigan St
 36ca2d09-88c8-ed24-872a-a5f40f668346					Edna Bennett.	The Best cartoons from France.	A113082	1953-11-05	RE107951	1981-12-08	Edna Bennett|A						
 482cf645-0116-2f1e-548d-b4455bf7179d					Robert J. Cunningham.	R.J. Cunningham designs.	A113553	1953-11-05	RE110031	1981-12-18	Robert J. Cunningham|A						
 4f75453f-e92f-b933-99ff-d2a73ae91e9a					Arthur Berger.	Aaron Copland.	A114030	1953-11-05	RE97940	1981-08-04	Arthur Berger|A						
-965aecee-65e5-44e2-c212-e5734f1f6716					Dorothy Macardle.	Dark enchantment.	A115581|AIO3796	1953-11-25|1953-11-05	RE84476	1981-02-12	D. F. Macardle|E						
+965aecee-65e5-44e2-c212-e5734f1f6716					Dorothy Macardle.	Dark enchantment.	A115581	1953-11-25	RE84476	1981-02-12	D. F. Macardle|E						
+965aecee-65e5-44e2-c212-e5734f1f6716					Dorothy Macardle.	Dark enchantment.	AIO3796	1953-11-05	RE84476	1981-02-12	D. F. Macardle|E						
 a04dd2af-2ee0-ac42-22f7-a6d1550cfb4c					Alice M. Meeker.	I like children.	A116089	1953-11-05	RE92706	1981-05-11	Alice M. Meeker|A						
 a1e55b9b-91fb-0def-e34d-21260b2df949					Jean J. Seznac, translated by Barbara Foster Sessions.	The Survival of the pagan gods.	A116561	1953-11-05	RE102841	1981-10-02	Princeton University Press|PWH						
 37eafcac-650c-10bb-8065-a3af1716811f						King Features weekly.	A116936	1953-11-05	RE109739	1981-12-21	King Features Syndicate, Inc.|PCW						
@@ -15606,7 +15697,8 @@ b3ff1ed3-4bc3-94a5-d0b4-74e408785473						Boys' and girls' march of comics, feat
 63cda6bf-9e73-a572-9ab0-deb56ad2c417					Willard C. Olson & John Lewellen.	How children grow and develop.	A124694	1953-11-05	RE105765	1981-11-13	Science Research Associates, Inc.|PWH						
 28bdf714-5742-0272-70cf-5cb543640993					Stanley H. Dimond.	Citizenship for boys and girls.	A124697	1953-11-05	RE105768	1981-11-13	Science Research Associates, Inc.|PWH						
 bd27b61b-5d0b-602a-db25-72206a5b9dac					C. D'A. Gerken.	Study your way through school.	A124698	1953-11-05	RE105769	1981-11-13	Science Research Associates, Inc.|PWH						
-edcbbfed-6f46-e4f7-1519-f63a96ccc8d5					Cecil Woodham-Smith.	The Reason why; book.	A131726|AI3946	1954-03-31|1953-11-05	RE101440	1981-09-28	The Trustees of the C. B. Woodham-Smith Settlement|E					In notice: 1953	
+edcbbfed-6f46-e4f7-1519-f63a96ccc8d5					Cecil Woodham-Smith.	The Reason why; book.	A131726	1954-03-31	RE101440	1981-09-28	The Trustees of the C. B. Woodham-Smith Settlement|E					In notice: 1953	
+edcbbfed-6f46-e4f7-1519-f63a96ccc8d5					Cecil Woodham-Smith.	The Reason why; book.	AI3946	1953-11-05	RE101440	1981-09-28	The Trustees of the C. B. Woodham-Smith Settlement|E					In notice: 1953	
 94ca3612-5819-832c-69b9-ba04b6f3b38b					Johannes Mario Simmel.	Ich gestehe alles; Roman.	AFO12561	1953-11-05	RE301654	1981-12-31	H.|PWH						
 fbb401e7-60e7-a33e-1916-20fb78e626cc					Anne Benson Fisher.	The Story of California's constitution and state laws.	B114011	1953-11-05	RE82982	1981-02-09	First National Bank of Oregon|E						
 064d7618-a120-b3f8-1316-bc2dbaf4b1e6						The Wall Street journal.  Vol. 142, no. 91, Nov. 5, 1953.	B441934	1953-11-05	RE103294	1981-10-15	Dow Jones & Company, Inc.|PCW						
@@ -15732,9 +15824,12 @@ bfd7d70d-09cd-c6a7-eaa4-07fc876f72d3					Lee Oras Overholts.	The Polyporaceae of
 cd0d5dad-15e8-a8a5-abb3-8639c5c9c77c					Hank Wieand Bowman, edited by Lucian Gaby.	Antique guns.  Fawcett book no. 209.	A118251	1953-11-09	RE94847	1981-06-24	B. S. Inc|PWH						
 6e32c868-a48c-5915-61a7-17716bc830f1					Richard Cleghorn Overton.	Gulf to Rockies: the heritage of the Fort Worth and Denver--Colorado and Southern railways, 1861-1898.	A118325	1953-11-09	RE86194	1981-03-16	Richard Cleghorn Overton|A						
 5e26613d-729e-6915-3302-729aa349dbb1					Clarence M. Spielman.	Ranco replacement reference.  No. 1544.	A118420	1953-11-09	RE105536	1981-10-19	Ranco, Inc.|PWH						
-e74471a6-11a6-8d10-79a0-69f7ed597608					Macdonald Hastings.	Cork in bottle.	A130130|AIO3857	1954-03-22|1953-11-09	RE85183	1981-03-06	Macdonald Hastings|A					In notice: 1953	
-9b8993b6-5490-c5a9-69cb-7ca49d571642					Norman Lewis.	A Single pilgrim.	A130587|AI3992	1954-03-22|1953-11-09	RE126028	1981-12-01	Norman Lewis|A					In notice: 1953	
-3d0e2c92-8e9a-b719-6ba7-5a53e82dd0e6					Carol Carnac, pseud. of Edith Carolyn Rivett.	A Policeman at the door.	A130795|AI3985	1954-03-25|1953-11-09	RE84471	1981-02-12	Inge Matthews|E						
+e74471a6-11a6-8d10-79a0-69f7ed597608					Macdonald Hastings.	Cork in bottle.	A130130	1954-03-22	RE85183	1981-03-06	Macdonald Hastings|A					In notice: 1953	
+e74471a6-11a6-8d10-79a0-69f7ed597608					Macdonald Hastings.	Cork in bottle.	AIO3857	1953-11-09	RE85183	1981-03-06	Macdonald Hastings|A					In notice: 1953	
+9b8993b6-5490-c5a9-69cb-7ca49d571642					Norman Lewis.	A Single pilgrim.	A130587	1954-03-22	RE126028	1981-12-01	Norman Lewis|A					In notice: 1953	
+9b8993b6-5490-c5a9-69cb-7ca49d571642					Norman Lewis.	A Single pilgrim.	AI3992	1953-11-09	RE126028	1981-12-01	Norman Lewis|A					In notice: 1953	
+3d0e2c92-8e9a-b719-6ba7-5a53e82dd0e6					Carol Carnac, pseud. of Edith Carolyn Rivett.	A Policeman at the door.	A130795	1954-03-25	RE84471	1981-02-12	Inge Matthews|E						
+3d0e2c92-8e9a-b719-6ba7-5a53e82dd0e6					Carol Carnac, pseud. of Edith Carolyn Rivett.	A Policeman at the door.	AI3985	1953-11-09	RE84471	1981-02-12	Inge Matthews|E						
 be6de283-ce46-c9f9-c63f-f5ddc579c162						NEA Service weekly.	A135688	1953-11-09	RE110606	1981-12-22							
 7fc3c24c-1b51-39f7-b8c4-7a67b7731366					Maurice LeGall.	Toute la radiesthesie en neuf lecons.	AFO13457	1953-11-09	RE83686	1981-02-09	Monsieur Libaudiere|E||Madame Octave Libaudiere|E						
 48468e2c-3056-2cee-1268-831fc67551a6					Hugo VonHofmannsthal, edited by Herbert Steiner.	Dramen I.	AFO14292	1953-11-09	RE128468	1981-12-08	Peter Lotz|PPW						
@@ -15883,7 +15978,8 @@ e81ebb66-23d4-ea40-a006-a64fe553fcea						King Features weekly.	A116939	1953-11-
 b2cffd82-290d-c2af-1139-807ba45f4bd8						Ripley's Believe It Or Not!  Cartoon feature.  Cartoon drawing & text: Paul Frehm.	A116940	1953-11-12	RE124742	1981-12-04	Ripley International, Ltd.|PWH						
 4d32c55d-8e05-fba6-1887-663ae1424bd3					Walter Blair, Theodore Hornberger & Randall Stewart.	The Literature of the United States.  Vol. 2.	A117784	1953-11-12	RE95814	1981-05-18	Scott, Foresman, and Company|PWH						
 964cd512-39c8-87a6-b32a-e8de01485e99					William Fred Beck.	He is risen; a program for presentation with the full-color filmstrip, He is risen.	A118513	1953-11-12	RE107214	1981-12-02	Concordia Publishing House|PWH						
-a28a3e4a-8dd0-bb69-ccb8-61782853dabd					John Hunt [i.e. John Hunt, Baron Hunt], with a foreword by H. R. H. The Duke of Edinburgh [i.e. Philip, Duke of Edinburgh], chap. 16 by Edmund Hillary, pen & ink sketches by R. C. Evans.	The Ascent of Everest|The Conquest of Everest.	A120398|AI3934	1954-01-13|1953-11-12	RE115643	1981-12-21	John Hunt|A					In notice: 1953|Title abroad: The Ascent of Everest.	
+a28a3e4a-8dd0-bb69-ccb8-61782853dabd					John Hunt [i.e. John Hunt, Baron Hunt], with a foreword by H. R. H. The Duke of Edinburgh [i.e. Philip, Duke of Edinburgh], chap. 16 by Edmund Hillary, pen & ink sketches by R. C. Evans.	The Ascent of Everest|The Conquest of Everest.	A120398	1954-01-13	RE115643	1981-12-21	John Hunt|A					In notice: 1953|Title abroad: The Ascent of Everest.	
+a28a3e4a-8dd0-bb69-ccb8-61782853dabd					John Hunt [i.e. John Hunt, Baron Hunt], with a foreword by H. R. H. The Duke of Edinburgh [i.e. Philip, Duke of Edinburgh], chap. 16 by Edmund Hillary, pen & ink sketches by R. C. Evans.	The Ascent of Everest|The Conquest of Everest.	AI3934	1953-11-12	RE115643	1981-12-21	John Hunt|A					In notice: 1953|Title abroad: The Ascent of Everest.	
 0d09ae84-8ec6-4b9c-3473-eac173be2868					James Virgil Howe.	The Amateur guncraftsman.	A128370	1953-11-12	RE105707	1981-11-03	James Virgil Howe|A						
 9e7d13bf-7259-08fd-0cd2-3eb675eedc9a						Theater pictorial: a history of world theater as recorded in drawings, paintings, engravings, and photographs  By George Joseph Altman & William W. Melnitz.	A130694	1953-11-12	RE104048	1981-10-16	Felicia Altman Gilbert|C||William W. Melnitz|A						
 8aabf8d8-5db3-25f3-7622-238a7c5a8b2a					Lionel White.	To find a killer.	A162139	1953-11-12	RE94982	1981-05-04	Lionel White|A						
@@ -16361,7 +16457,8 @@ fe1f9374-7a7b-a77e-62bd-641358c42833					Linn Yardley Beers.	Theory of error.	A1
 37cb29e0-facf-945b-f957-0db1246292dd						Advance California appellate reports.  Vol. 14, no. 47.	A118759	1953-11-20	RE103452	1981-10-16	Bancroft-Whitney Company|PWH						
 e6bc5ae4-f3be-7191-e268-22508fd5275d					Kenneth Rexroth.	The Art of worldly wisdom.	A119372	1953-11-20	RE94837	1981-06-22	Kenneth Rexroth|A						
 ed9437bb-ef05-c2b7-f5de-ea19aa39d585					Alfred Stern.	Sartre: his philosophy and psychoanalysis.	A124510	1953-11-20	RE94494	1981-06-15	Alfred Stern|A						
-bc6927d4-7bc1-d761-3604-8dad2bf03589					Margaret Erskine, pseud. of Margaret Wetherby Williams.	Dead by now.	A124730|AI3958	1954-02-04|1953-11-20	RE84470	1981-02-12							
+bc6927d4-7bc1-d761-3604-8dad2bf03589					Margaret Erskine, pseud. of Margaret Wetherby Williams.	Dead by now.	A124730	1954-02-04	RE84470	1981-02-12							
+bc6927d4-7bc1-d761-3604-8dad2bf03589					Margaret Erskine, pseud. of Margaret Wetherby Williams.	Dead by now.	AI3958	1953-11-20	RE84470	1981-02-12							
 bed0a268-c1de-2d3b-1f86-a34caf696c92					Laura Saunders, editor: Lucy Mabry Fitzpatrick.	No place for a woman.|Redbook magazine	A129526	1953-11-20	RE112223	1981-12-29	Laura Saunders|A					Pub. in Redbook magazine, Sept. 1953.	
 ac35dbae-c257-bb62-4328-fc383951d98f						Long ago, far away.  Text: Alice Lent Covert.	A129527	1953-11-20	RE112224	1981-12-29	Alice Lent Covert|A						
 f1d41cc0-d289-3a3f-4681-71765d8fbc2a					Frank Miller, pseud. of Noel M. Loomis.	Tejas country.	A129532	1953-11-20	RE84733	1981-03-02	Dorothy M. Loomis|W						
@@ -16633,7 +16730,8 @@ e612fde2-ae17-a473-2cd3-3fd501d6759e					Richard E. Bishop.	Passing mallards.	GU
 5793cb04-08de-fe9d-e8b3-17e47e290d35						King Features illustrated weekly.	A116943	1953-11-26	RE109799	1981-12-21	King Features Syndicate, Inc.|PCW						
 c2f4b5ca-6fcb-60d8-895c-fd611651a2d9						Ripley's Believe It Or Not!  Cartoon feature.  Cartoon drawing & text: Paul Frehm.	A116943	1953-11-26	RE124744	1981-12-04	Ripley International, Ltd.|PWH						
 8b241949-76ec-5e9b-d4d6-0a35b0652736					Gwendolen Lampshire Hayden.	Mary-Martha's really truly stories.  Book 8.	A120404	1953-11-26	RE103166	1981-10-13	Jess Hayden|Wr						
-90f968a0-50b0-d23b-56cb-9458e0e26cf8					Selvarajan Yesudian & Elisabeth Haich, translated by John P. Robertson.	Sport und Yoga|Yoga and health.	A133736|AI3993	1954-04-14|1953-11-26	RE104345	1981-10-27	Selvarajan Yesudian|A||Elisabeth Haich|A					In notice: 1953|Translation of Sport und Yoga.	
+90f968a0-50b0-d23b-56cb-9458e0e26cf8					Selvarajan Yesudian & Elisabeth Haich, translated by John P. Robertson.	Sport und Yoga|Yoga and health.	A133736	1954-04-14	RE104345	1981-10-27	Selvarajan Yesudian|A||Elisabeth Haich|A					In notice: 1953|Translation of Sport und Yoga.	
+90f968a0-50b0-d23b-56cb-9458e0e26cf8					Selvarajan Yesudian & Elisabeth Haich, translated by John P. Robertson.	Sport und Yoga|Yoga and health.	AI3993	1953-11-26	RE104345	1981-10-27	Selvarajan Yesudian|A||Elisabeth Haich|A					In notice: 1953|Translation of Sport und Yoga.	
 0a761ddc-f504-9620-c9e1-cfd63c4e66e2					Marguerite Thiebold, ill. de A. Chazelle.	Le Maitre de Nordfjord.	AFO13152	1953-11-26	RE98814	1981-08-19	Marguerite Thiebold|A						
 5680e535-1e9b-6f21-8dd0-5bddfa2b1117					Pierre Probst.	Pouf et Noiraud.	AFO13219	1953-11-26	RE91243	1981-04-30	Pierre Probst|A						
 b00f9d9e-c94e-9ef0-585a-e390b8ac85c4					Robert J. Donovan.	The Man who didn't shake hands.|The New Yorker, Nov. 28, 1953	B445022	1953-11-26	RE84182	1981-02-23	Robert J. Donovan|A						
@@ -16658,7 +16756,8 @@ cc0b7401-c895-0718-4c86-25c2324e237d					Craig Ware Massey.	Ol' swayback.	A11962
 64fc5039-a7ce-bee6-6d89-416ab033fbb3					Craig Ware Massey.	Mystery at Trembling T.	A119624	1953-11-27	RE108475	1981-12-07	Craig Ware Massey|A						
 b8275362-532a-edf4-c2a4-d74cc354b051					Craig Ware Massey.	Golden cake by the fire.	A119625	1953-11-27	RE108476	1981-12-07	Craig Massey|A						
 be6d9330-e796-47d5-fd78-f9b199f5191b					Frithjof Schuon, translation: Peter Townsend.	The Transcendent unity of religions.	A124507	1953-11-27	RE93455	1981-05-22	Random House, Inc.|PWH						
-a6e43078-b585-5e97-3beb-5164ebe585df					Raymond Chandler.	The Long good-bye.	A128517|AI3967	1954-03-01|1953-11-27	RE97327	1981-07-27	Helga Greene|E					In notice: 1953	
+a6e43078-b585-5e97-3beb-5164ebe585df					Raymond Chandler.	The Long good-bye.	A128517	1954-03-01	RE97327	1981-07-27	Helga Greene|E					In notice: 1953	
+a6e43078-b585-5e97-3beb-5164ebe585df					Raymond Chandler.	The Long good-bye.	AI3967	1953-11-27	RE97327	1981-07-27	Helga Greene|E					In notice: 1953	
 46c455b2-d4d8-c058-472f-e29cba9e6ae8						The Wall Street journal.  Vol. 142, no. 105, Nov. 27, 1953.	B444777	1953-11-27	RE103311	1981-10-15	Dow Jones & Company, Inc.|PCW						
 118b2fd9-1308-3c36-90b7-a550935f8f38					Faith Baldwin (Faith Baldwin Cuthrell)	Christmas heart.|The American magazine, Dec. 1953	B445012	1953-11-27	RE99018	1981-08-14	Stephen Cuthrell|C||Ann Cuthrell Schubert|C||Hervey Cuthrell Moores|C						
 f3a1658c-e8aa-2778-c078-ee08a3b638e8						Daily Variety.  Vol. 81, no. 58, Nov. 27, 1953.	B445532	1953-11-27	RE125779	1981-11-16	Daily Variety, Ltd.|PWH						
@@ -17267,7 +17366,8 @@ ce134a09-8541-0e79-d299-1f7dab2e171b					The E. Kahn's Sons Company.	Goetta; lab
 0f2f9917-8da3-986d-4259-77007fe4bbf7					Harve Spencer Lewis, additional revisions: Ralph Maxwell Lewis.	The Mystical life of Jesus.	A125155	1953-12-11	RE124797	1981-12-14	Supreme Grand Lodge of A. M. O. R. C., Inc.|PWH						
 bdc98f28-02ab-07e8-aade-ac19d5ac2afb					Austin Crouch.	Is Baptism essential to salvation?	A125789	1953-12-11	RE110272	1981-12-14	Porter Routh|E						
 978117a3-2742-4947-5c49-fb135f072027						Advance California appellate reports.  Vol. 14, no. 50.	A126266	1953-12-11	RE103463	1981-10-16	Bancroft-Whitney Company|PWH						
-3c62b4d6-fc8c-9e2a-c83d-ba396a3fb5cd					Tom Roan.	Outlaw in the saddle.	A130675|AI4002	1954-03-19|1953-12-11	RE139343	1981-12-17	Tom Roan|A					In notice: 1953	
+3c62b4d6-fc8c-9e2a-c83d-ba396a3fb5cd					Tom Roan.	Outlaw in the saddle.	A130675	1954-03-19	RE139343	1981-12-17	Tom Roan|A					In notice: 1953	
+3c62b4d6-fc8c-9e2a-c83d-ba396a3fb5cd					Tom Roan.	Outlaw in the saddle.	AI4002	1953-12-11	RE139343	1981-12-17	Tom Roan|A					In notice: 1953	
 3eabd397-d0e7-9998-cf09-82f5b4c8405d					Leigh Brackett, pseud. of Leigh Brackett Hamilton.	The Sword of Rhiannon.	A131739	1953-12-11	RE96819	1981-07-20	Leigh Brackett Hamilton|A					(With Conan the conqueror)	
 841fc1ac-3015-2e65-8f46-587f4906ce0b					Louis L'Amour.	Outlaw River|Showdown at Yellow Butte; novel.	A131747	1953-12-11	RE125105	1981-12-31	Jim Mayo|A					Pub. with Outlaw River.	
 6e29ff13-5e04-d127-47d1-bcf07e14d9e1					Philip C. Johnson.	Mies VanDerRohe.	A133611	1953-12-11	RE111384	1981-12-23	The Museum of Modern Art|PWH						
@@ -17664,7 +17764,8 @@ a9cf558b-9b98-0472-d04f-57fb71a89cd7						Dumbarton Oaks papers.  No. 7.  Edited
 bde94a35-d0b8-dc9c-7c82-b1d42549af75						Welders Supply Company; manufacturers of Welsco high purity oxygen, nitrogen & acetylene, distributors of welding & cutting equipment & supplies.  Catalog no. 53.	A122537	1953-12-21	RE104792	1981-11-02	Jaqua-McKee, Inc.|PWH						
 e2ce4c40-8320-d160-153b-288b7ef5f889					C. S. Hammond & Company.	Hammond's chalkboard wall atlas.	A123429	1953-12-21	RE103151	1981-10-15	Hammond, Inc.|PWH						
 a010eb4a-06fa-8c2b-9e24-90deda81765d					Manning J. Dauer.	The Adams Federalists.	A124245	1953-12-21	RE86153	1981-03-10	Manning J. Dauer|A						
-2c0478f9-9c37-f5f2-a68e-4c5001f21d55					Kingsley Amis.	Lucky Jim; a novel.	A126571|AI4040	1954-01-21|1953-12-21	RE84472	1981-02-12	Kingsley Amis|A						
+2c0478f9-9c37-f5f2-a68e-4c5001f21d55					Kingsley Amis.	Lucky Jim; a novel.	A126571	1954-01-21	RE84472	1981-02-12	Kingsley Amis|A						
+2c0478f9-9c37-f5f2-a68e-4c5001f21d55					Kingsley Amis.	Lucky Jim; a novel.	AI4040	1953-12-21	RE84472	1981-02-12	Kingsley Amis|A						
 ff972306-7651-ce88-34c3-e23af11ceb26						Carl Anderson's Henry.  Vol. 1, no. 33, Sept.-Oct. 1953.	B434901	1953-12-21	RE109851	1981-12-21	King Features Syndicate, Inc.|PCW						
 05c24888-6c56-de9e-1758-1dec99cb5cb3						Daily Variety.  Vol. 82, no. 11, Dec. 21, 1953.	B449750	1953-12-21	RE125795	1981-11-16	Daily Variety, Ltd.|PWH						
 ed648a63-552c-0e38-16de-cecfc9ec8f23						Chicago daily tribune.  Vol. 112, no. 304, Dec. 21, 1953.	B449991	1953-12-21	RE108731	1981-12-14	Chicago Tribune Company|PCW						
