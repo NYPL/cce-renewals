@@ -15,10 +15,10 @@ ONE_REGNUM = re.compile(REGNUM_RE)
 
 RID_RE = r'R(?:\d+)'
 HAS_RID = re.compile(RID_RE)
+DATE_REG_PAIR_RE = r'%s, %s' % (DATE_RE, REGNUM_RE)
 
 CLAIMS_RE = r'.+\((?!See).+?\)'
-DATE_REG_PAIR_RE = r'%s, %s' % (DATE_RE, REGNUM_RE)
-RID_DATE_PAIR_RE = r'{}, {}'.format(RID_RE, DATE_RE)
+
 PUB_ABROAD_RE = r'\(pub\. abroad.+?\)[,;]'
 NEW_MATTER_RE = r'(?:on (?:.+?);)?'
 
@@ -37,7 +37,9 @@ EXTRACT_RIDS = re.compile(r'(?:(\d+)(?:\-R?(\d+))?)')
 SHIFT_SEE_ALSO = shift_re(r'\(See also .+\)')
 SEE_ALSO_NUMS = re.compile(r'\(See also (.+)\)')
 
-RID_OR_RANGE = re.compile(r'(R\d+(?:(?:\-|, )\d+)?)')
+
+RID_OR_RANGE_RE = r'(R\d+(?:(?:\-|, )\d+)?)'
+RID_OR_RANGE = re.compile(RID_OR_RANGE_RE)
 RID_PARSE = re.compile(r'(?:R?(\d+)(?:(?:\-|, )(\d+))?)')
 MIXED_RIDS_RE = r'((?:(?:R\d+(?:\-\d+)?)(?:,? )?)+)'
 MIXED_RIDS = re.compile(MIXED_RIDS_RE)
@@ -48,6 +50,11 @@ CODE_SPLIT = re.compile(r'(?:\(([^\(]+)\))')
 
 ONE_AI_REGNUM = r'(A(?:I|F)-\d+)'
 ONE_AI = re.compile(ONE_AI_REGNUM)
+
+DATE_REG_PAIR2_RE = r'%s; %s' % (DATE_RE, REGNUM_RE)
+RID_DATE_PAIR_RE = r'{}, {}'.format(RID_OR_RANGE_RE, DATE_RE)
+DATE_RID_PAIR_RE = r'{}; {}'.format(DATE_RE, RID_RE)
+
 
 AUTH_TITLE = re.compile(r'^(.*)([,;] by )((?:[^\(;](?!Pub. ))+)(.*)$')
 AUTH_TITLE_F3 = re.compile(r'^(.+[\.\)])( By )((?:[^\(])+)(.*)$')
@@ -406,13 +413,28 @@ def cc_split(e):
     return [s.strip() for s in e.split('©')]
 
 
-def just_numbers(e):
+def f1_just_numbers(e):
     reg_date = re.findall(DATE_REG_PAIR_RE, e)
-    if len(reg_date) == 1:
-        rid_date = re.findall(RID_DATE_PAIR_RE, e)
-        if len(rid_date) == 1:
-            regdate, regnum = reg_date[0].split(', ')
+    if len(reg_date):
+        rid_date = re.findall(r'(?:R\d+(?:(?:\-|, )\d+)?), \d{1,2}[A-z]{3}\d{1,2}', e)
+        if len(rid_date):
+            regdates = [parse_date(r.split(', ')[0]) for r in reg_date]
+            regnums = [r.split(', ')[1] for r in reg_date]
             rid, rendate = rid_date[0].split(', ')
+            rids = unroll_rids(EXTRACT_RIDS.findall(rid))
+            return format_record(regdates=regdates,
+                                 regnums=regnums, rids=rids,
+                                 rendates=[parse_date(rendate)])
+    return False
+
+
+def f2_just_numbers(e):
+    reg_date = re.findall(DATE_REG_PAIR2_RE, e)
+    if len(reg_date) == 1:
+        rid_date = re.findall(DATE_RID_PAIR_RE, e)
+        if len(rid_date) == 1:
+            regdate, regnum = reg_date[0].split('; ')
+            rendate, rid = rid_date[0].split('; ')
             return format_record(regdates=[parse_date(regdate)],
                                  regnums=[regnum], rids=[rid],
                                  rendates=[parse_date(rendate)])
@@ -424,7 +446,6 @@ def parse(v, p, e):
     return format1(v) and f1_parse(e) or \
         format2(v, p) and f2_parse(e) or \
         format3(v, p) and f3_parse(e) or \
-        just_numbers(e) or \
         [record()]
 
 
@@ -432,13 +453,13 @@ def f1_parse(e):
     """Dispatch to proper f1 parsing function based on number of parts."""
     p = e.split('|')
     if len(p) == 1:
-        return f1_one_part(*p) or f1_date_reg_pairs(*p) or False
+        return f1_one_part(*p) or f1_date_reg_pairs(*p) or f1_just_numbers(e)
 
     if len(p) == 2:
-        return f1_two_parts(*p) or False
+        return f1_two_parts(*p) or f1_just_numbers(e)
 
     if len(p) == 3:
-        return f1_three_parts(*p) or False
+        return f1_three_parts(*p) or f1_just_numbers(e)
 
     return False
     
@@ -556,13 +577,13 @@ def f2_parse(e):
     """Dispatch to proper f2 parsing function based on number of parts."""
     p = e.split('|')
     if len(p) == 1:
-        return f2_one_part(*p) or False #f2_date_reg_pairs(*p) or False
+        return f2_one_part(*p) or f2_just_numbers(e) #False #f2_date_reg_pairs(*p) or False
 
     if len(p) == 2:
-        return f2_two_parts(*p) or False
+        return f2_two_parts(*p) or f2_just_numbers(e) #False
 
     if len(p) == 3:
-        return f2_three_parts(*p) or False
+        return f2_three_parts(*p) or f2_just_numbers(e) #False
 
     return False
 

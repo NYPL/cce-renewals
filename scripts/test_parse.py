@@ -324,6 +324,21 @@ def not_parsed():
     return 'AMERICAN Federal tax reports. © West Pub. Co. (PWH) November, 1923. v. 1. © 28Dec23, A777088. R72760, 8Jan51.'
 
 
+@pytest.fixture()
+def f1_not_parsed_with_range():
+    return 'ADVENTURE. © Popular publications, inc. (PCW) v. 43, nos. 1-6, Oct. 10-Nov. 30, 1923. © 4Sep23, B584848, 8Sep23, B585123; 20Sep23, B586126; 1Oct23, B586826; 8Oct23, B587442; 18Oct23, B588064. R69124-69129, 1Nov50.'
+
+
+@pytest.fixture()
+def f2_not_parsed():
+    return 'HORN, ERNEST, comp. Most-used shorthand forms. © 14Nov27; A1013186. McGraw-Hill Book Co., Inc.; 4Feb55; R144252.'
+
+
+@pytest.fixture()
+def f3_not_parsed():
+    return 'R621591. Late have I loved thee. By Ethel Mannin. U.S. ed. pub. 30Sep48, A25796. © 29Jan48; AI-1804. Ethel Mannin (A); 8Dec75; R621591. (AI reg. entered under British Proclamation of 10Mar44)'
+
+
 class TestShift(object):
     def test_shift_dates(self):
         s = '30Dec22, A695089. R59809, 17Mar50, Breitkopf Publications, inc., successor to Breitkopf & Haertel, inc. (PWH)'
@@ -864,6 +879,50 @@ class TestFormat1(object):
         assert parsed[0]['new_matter'] is None
 
 
+    def test_only_numbers(self, not_parsed):
+        parsed = parse.parse('5', '1', not_parsed)
+        assert len(parsed) == 1
+        assert parsed[0]['odat'] == '1923-12-28'
+        assert parsed[0]['oreg'] == 'A777088'
+        assert parsed[0]['id'] == 'R72760'
+        assert parsed[0]['rdat'] == '1951-01-08'
+        assert parsed[0]['author'] is None
+        assert parsed[0]['title'] is None
+        assert parsed[0]['claimants'] is None
+        assert parsed[0]['previous'] is None
+        assert parsed[0]['new_matter'] is None
+        assert parsed[0]['see_also_ren'] is None 
+        assert parsed[0]['see_also_reg'] is None
+        
+        
+    def test_only_numbers_with_range(self, f1_not_parsed_with_range):
+        parsed = parse.parse('4', '1', f1_not_parsed_with_range)
+        assert len(parsed) == 6
+        assert parsed[0]['odat'] == '1923-09-04'
+        assert parsed[0]['oreg'] == 'B584848'
+        assert parsed[0]['id'] == 'R69124'
+        assert parsed[0]['rdat'] == '1950-11-01'
+        assert parsed[0]['author'] is None
+        assert parsed[0]['title'] is None
+        assert parsed[0]['claimants'] is None
+        assert parsed[0]['previous'] is None
+        assert parsed[0]['new_matter'] is None
+        assert parsed[0]['see_also_ren'] is None 
+        assert parsed[0]['see_also_reg'] is None
+
+        assert parsed[5]['odat'] == '1923-10-18'
+        assert parsed[5]['oreg'] == 'B588064'
+        assert parsed[5]['id'] == 'R69129'
+        assert parsed[5]['rdat'] == '1950-11-01'
+        assert parsed[5]['author'] is None
+        assert parsed[5]['title'] is None
+        assert parsed[5]['claimants'] is None
+        assert parsed[5]['previous'] is None
+        assert parsed[5]['new_matter'] is None
+        assert parsed[5]['see_also_ren'] is None 
+        assert parsed[5]['see_also_reg'] is None
+        
+
 class TestFormat2(object):
     def test_simplest(self, f2_simplest):
         parsed = parse.parse('8', '1', f2_simplest)
@@ -1055,6 +1114,22 @@ class TestFormat2(object):
         assert parsed[0]['see_also_reg'] is None
 
 
+    def test_only_numbers(self, f2_not_parsed):
+        parsed = parse.parse('9', '1', f2_not_parsed)
+        assert len(parsed) == 1
+        assert parsed[0]['odat'] == '1927-11-14'
+        assert parsed[0]['oreg'] == 'A1013186'
+        assert parsed[0]['id'] == 'R144252'
+        assert parsed[0]['rdat'] == '1955-02-04'
+        assert parsed[0]['author'] is None
+        assert parsed[0]['title'] is None
+        assert parsed[0]['claimants'] is None
+        assert parsed[0]['previous'] is None
+        assert parsed[0]['new_matter'] is None
+        assert parsed[0]['see_also_ren'] is None 
+        assert parsed[0]['see_also_reg'] is None
+
+
 class TestFormat3(object):
     def test_simplest(self, f3_simple):
         parsed = parse.parse('27', '2', f3_simple)
@@ -1135,22 +1210,23 @@ class TestFormat3(object):
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
 
-def test_only_numbers(not_parsed):
-    parsed = parse.parse('5', '1', not_parsed)
-    assert len(parsed) == 1
-    assert parsed[0]['odat'] == '1923-12-28'
-    assert parsed[0]['oreg'] == 'A777088'
-    assert parsed[0]['id'] == 'R72760'
-    assert parsed[0]['rdat'] == '1951-01-08'
-    assert parsed[0]['author'] is None
-    assert parsed[0]['title'] is None
-    assert parsed[0]['claimants'] is None
-    assert parsed[0]['previous'] is None
-    assert parsed[0]['new_matter'] is None
-    assert parsed[0]['see_also_ren'] is None 
-    assert parsed[0]['see_also_reg'] is None
-        
-        
+
+    def test_only_numbers(self, f3_not_parsed):
+        parsed = parse.parse('30', '1', f3_not_parsed)
+        assert len(parsed) == 1
+        assert parsed[0]['odat'] == '1948-01-29'
+        assert parsed[0]['oreg'] == 'AI1804'
+        assert parsed[0]['id'] == 'R621591'
+        assert parsed[0]['rdat'] == '1975-12-08'
+        assert parsed[0]['author'] is None
+        assert parsed[0]['title'] is None
+        assert parsed[0]['claimants'] is None
+        assert parsed[0]['previous'] is None
+        assert parsed[0]['new_matter'] is None
+        assert parsed[0]['see_also_ren'] is None 
+        assert parsed[0]['see_also_reg'] is None
+
+
 def test_f2_simplest(format_two):
     parsed = parse.parse('26', format_two)
     assert len(parsed) == 1
