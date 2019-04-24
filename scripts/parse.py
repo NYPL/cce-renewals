@@ -658,6 +658,10 @@ def f2_two_parts(p1, p2):
         return f2_rearrange_two_ccs(p1, *cc_split(p2))
 
 
+def regnums_are_hyphenated(regnums):
+    hy = [re.search(r'(?<!^[A-Z]\d)\-', r) is not None for r in regnums]
+    return len([h for h in hy if h])
+    
 def f2_date_reg_pairs(e, author=None):
     #if 1:
     try:
@@ -665,6 +669,11 @@ def f2_date_reg_pairs(e, author=None):
         prev = note = None
         reg, newmatter = shift_new_matter(reg)
         reg, dates, regnums = shift_date_reg(reg, extract_date_reg_pairs)
+
+        # We might actualy have pairse of ranges, so bail
+        if regnums_are_hyphenated(regnums):
+            return False
+
         reg, claims = shift_claims(reg)
         reg, rendates = shift_dates(reg)
         reg, rids = shift_rids(reg)

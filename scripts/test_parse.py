@@ -154,10 +154,16 @@ def f2_four_parts():
 def f2_multiple_renewals():
     return 'BEMELMANS, LUDWIG.|The blue Danube. (In Town & country, Mar.--Apr. 1945) © 1Mar45, B667185; 1Apr45, B674769. Madeleine Bemelmans (W) & Barbara Marciano (C); 7Apr72; R527187-527188.'
 
+
 @pytest.fixture()
 def f2_on_translation():
     return 'CIANO, GALEAZZO, CONTE.|The Ciano diaries, by Count Galeazzo. (In Chicago daily news) Appl. author: Countess Edda Ciano, employer for hire. © on translation; Countess Edda Mussolini Ciano (PWH)|© 18Jun45; B673449. 22Sep72; R537443.'
 
+
+@pytest.fixture()
+def f2_regnum_ranges():
+    return 'WILLIAM J.|Federal practice, jurisdiction & procedure, civil and criminal, with forms. Assisted by George C. Thorpe. Vol.5-11. © 2Feb31, A35829-35830; 3Feb31, A35831, A35816; 4Feb31, A35817-35818; 5Feb31, A35819. William J. Hughes, Jr. (C); 7May58; R214419-214425.'
+    
 
 @pytest.fixture()
 def label_id():
@@ -1162,6 +1168,23 @@ class TestFormat2(object):
         assert parsed[6]['see_also_reg'] is None
         
 
+    @pytest.mark.xfail
+    def test_regnum_ranges(self, f2_regnum_ranges):
+        parsed = parse.parse('12', '1', f2_regnum_ranges)
+        assert len(parsed) == 7
+        assert parsed[0]['author'] == 'WILLIAM J.'
+        assert parsed[0]['title'] == 'Federal practice, jurisdiction & procedure, civil and criminal, with forms. Assisted by George C. Thorpe. Vol.5-11.'
+        assert parsed[0]['odat'] == '1931-02-02'
+        assert parsed[0]['oreg'] == 'A35829'
+        assert parsed[0]['id'] == 'R214419'
+        assert parsed[0]['rdat'] == '7May58'
+        assert parsed[0]['claimants'] == 'William J. Hughes, Jr.|C'
+        assert parsed[0]['previous'] is None
+        assert parsed[0]['new_matter'] is None
+        assert parsed[0]['see_also_ren'] is None 
+        assert parsed[0]['see_also_reg'] is None
+        
+        
 class TestFormat3(object):
     def test_simplest(self, f3_simple):
         parsed = parse.parse('27', '2', f3_simple)
