@@ -438,6 +438,10 @@ def f2_just_numbers(e):
             regnums = [re.split(r'[;,] ', r)[1] for r in reg_date]
             rids = unroll_rids(EXTRACT_RIDS.findall(rid))
 
+            if len(rids) > 200:
+                # Handle typos like R312280-512281 (that is R312280-312281)
+                return False
+
             return format_record(regdates=regdates,
                                  regnums=regnums, rids=rids,
                                  rendates=[parse_date(rendate)])
