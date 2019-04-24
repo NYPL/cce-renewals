@@ -51,7 +51,7 @@ CODE_SPLIT = re.compile(r'(?:\(([^\(]+)\))')
 ONE_AI_REGNUM = r'(A(?:I|F)-\d+)'
 ONE_AI = re.compile(ONE_AI_REGNUM)
 
-DATE_REG_PAIR2_RE = r'%s; %s' % (DATE_RE, REGNUM_RE)
+DATE_REG_PAIR2_RE = r'%s[,;] %s' % (DATE_RE, REGNUM_RE)
 RID_DATE_PAIR_RE = r'{}, {}'.format(RID_OR_RANGE_RE, DATE_RE)
 DATE_RID_PAIR_RE = r'{}; {}'.format(DATE_RE, RID_RE)
 
@@ -430,13 +430,16 @@ def f1_just_numbers(e):
 
 def f2_just_numbers(e):
     reg_date = re.findall(DATE_REG_PAIR2_RE, e)
-    if len(reg_date) == 1:
-        rid_date = re.findall(DATE_RID_PAIR_RE, e)
-        if len(rid_date) == 1:
-            regdate, regnum = reg_date[0].split('; ')
+    if len(reg_date):
+        rid_date = re.findall(r'\d{1,2}[A-z]{3}\d{1,2}; (?:R\d+(?:(?:\-|, )\d+)*)', e)
+        if len(rid_date):
             rendate, rid = rid_date[0].split('; ')
-            return format_record(regdates=[parse_date(regdate)],
-                                 regnums=[regnum], rids=[rid],
+            regdates = [parse_date(re.split(r'[;,] ', r)[0]) for r in reg_date]
+            regnums = [re.split(r'[;,] ', r)[1] for r in reg_date]
+            rids = unroll_rids(EXTRACT_RIDS.findall(rid))
+
+            return format_record(regdates=regdates,
+                                 regnums=regnums, rids=rids,
                                  rendates=[parse_date(rendate)])
     return False
 

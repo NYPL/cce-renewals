@@ -335,6 +335,10 @@ def f2_not_parsed():
 
 
 @pytest.fixture()
+def f2_not_parsed_with_range():
+    return 'AMERICAN LAW REPORTS ANNOTATED. Vol. 65-71. Editors-in-chief: George H. Parmele and M. Blair Wailes. Consulting editor, William M. McKinney. Managing editors: Charles Porterfield and Edwin Stacey Oakes, assisted by the publishers\' editorial staff of the United States. © 6May30, A23371; 20Jun30, A25264; 22Aug30, A26833; 31Oct30, A29840; 8Dec30, A32190; 2Feb31, A34166; 13Apr31, A36786. Lawyers Cooperative Pub. Co. & Bancroft-Whitney Co. (PCW); 28Apr58; R213945, 213990, 213996, 214003, 214008, 214013, 214016.'
+
+@pytest.fixture()
 def f3_not_parsed():
     return 'R621591. Late have I loved thee. By Ethel Mannin. U.S. ed. pub. 30Sep48, A25796. © 29Jan48; AI-1804. Ethel Mannin (A); 8Dec75; R621591. (AI reg. entered under British Proclamation of 10Mar44)'
 
@@ -1129,6 +1133,34 @@ class TestFormat2(object):
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
 
+
+    def test_only_numbers_with_range(self, f2_not_parsed_with_range):
+        parsed = parse.parse('9', '1', f2_not_parsed_with_range)
+        assert len(parsed) == 7
+        assert parsed[0]['odat'] == '1930-05-06'
+        assert parsed[0]['oreg'] == 'A23371'
+        assert parsed[0]['id'] == 'R213945'
+        assert parsed[0]['rdat'] == '1958-04-28'
+        assert parsed[0]['author'] is None
+        assert parsed[0]['title'] is None
+        assert parsed[0]['claimants'] is None
+        assert parsed[0]['previous'] is None
+        assert parsed[0]['new_matter'] is None
+        assert parsed[0]['see_also_ren'] is None 
+        assert parsed[0]['see_also_reg'] is None
+
+        assert parsed[6]['odat'] == '1931-04-13'
+        assert parsed[6]['oreg'] == 'A36786'
+        assert parsed[6]['id'] == 'R214016'
+        assert parsed[6]['rdat'] == '1958-04-28'
+        assert parsed[6]['author'] is None
+        assert parsed[6]['title'] is None
+        assert parsed[6]['claimants'] is None
+        assert parsed[6]['previous'] is None
+        assert parsed[6]['new_matter'] is None
+        assert parsed[6]['see_also_ren'] is None 
+        assert parsed[6]['see_also_reg'] is None
+        
 
 class TestFormat3(object):
     def test_simplest(self, f3_simple):
