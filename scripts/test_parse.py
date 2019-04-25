@@ -1245,9 +1245,9 @@ class TestFormat3(object):
 
     def test_only_numbers(self, f3_not_parsed):
         parsed = parse.parse('30', '1', f3_not_parsed)
-        assert len(parsed) == 1
-        assert parsed[0]['odat'] == '1948-01-29'
-        assert parsed[0]['oreg'] == 'AI1804'
+        assert len(parsed) == 2
+        assert parsed[0]['odat'] == '1948-09-30'
+        assert parsed[0]['oreg'] == 'A25796'
         assert parsed[0]['id'] == 'R621591'
         assert parsed[0]['rdat'] == '1975-12-08'
         assert parsed[0]['author'] is None
@@ -1258,6 +1258,18 @@ class TestFormat3(object):
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
 
+        assert parsed[1]['odat'] == '1948-01-29'
+        assert parsed[1]['oreg'] == 'AI1804'
+        assert parsed[1]['id'] == 'R621591'
+        assert parsed[1]['rdat'] == '1975-12-08'
+        assert parsed[1]['author'] is None
+        assert parsed[1]['title'] is None
+        assert parsed[1]['claimants'] is None
+        assert parsed[1]['previous'] is None
+        assert parsed[1]['new_matter'] is None
+        assert parsed[1]['see_also_ren'] is None 
+        assert parsed[1]['see_also_reg'] is None
+        
 
 def test_f2_simplest(format_two):
     parsed = parse.parse('26', format_two)
