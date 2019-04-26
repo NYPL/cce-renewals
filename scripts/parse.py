@@ -263,7 +263,7 @@ def unroll_regnums(regs):
     if not regs:
         return []
 
-    m = re.match(r'((?:[A-Z]+|(?:AI|AIO|AF|B5)\-)(?:\-)?)(\d{2,})(?:\-\1?(\d+))?', regs[0])
+    m = re.match(r'((?:[A-Z]+|(?:AI|AIO|AF|AO|A5|B5)\-)(?:\-)?)(\d{2,})(?:\-\1?(\d+))?', regs[0])
 
 #    m = REG_PARSE.match(regs[0])
     if m:
@@ -437,12 +437,14 @@ def f2_just_numbers(e):
         if len(rid_date):
             rendate, rid = rid_date[0].split('; ')
             regdates = [parse_date(re.split(r'[;,] ', r)[0]) for r in reg_date]
-            regnums = [re.split(r'[;,] ', r)[1] for r in reg_date]
+            regnums = unroll_regnums(
+                [re.split(r'[;,] ', r)[1] for r in reg_date])
             rids = unroll_rids(EXTRACT_RIDS.findall(rid))
 
             if len(rids) > 200:
                 # Handle typos like R312280-512281 (that is R312280-312281)
                 return False
+
 
             return format_record(regdates=regdates,
                                  regnums=regnums, rids=rids,
@@ -698,7 +700,8 @@ def f2_parse_two_cc(p1, p2, author=None):
 
     title = p1a + ' ' + p2a
 
-    try:
+    if 1:
+    #try:
         prev = note = None
         reg, newmatter = shift_new_matter(p2b)
         reg, dates = shift_dates(reg)
@@ -716,8 +719,8 @@ def f2_parse_two_cc(p1, p2, author=None):
                              regnums=regnums, rids=rids, rendates=rendates,
                              claims=claims, new_matter=newmatter, previous=prev,
                              notes=note)
-    except TypeError:
-        return False
+    #except TypeError:
+    #    return False
 
 
 def f2_three_parts(p1, p2, p3):

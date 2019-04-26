@@ -163,7 +163,12 @@ def f2_on_translation():
 @pytest.fixture()
 def f2_regnum_ranges():
     return 'WILLIAM J.|Federal practice, jurisdiction & procedure, civil and criminal, with forms. Assisted by George C. Thorpe. Vol.5-11. © 2Feb31, A35829-35830; 3Feb31, A35831, A35816; 4Feb31, A35817-35818; 5Feb31, A35819. William J. Hughes, Jr. (C); 7May58; R214419-214425.'
-    
+
+
+@pytest.fixture()
+def f2_donald_duck():
+    return 'DISNEY (WALT) PRODUCTIONS.|Donald Duck, by Walt Disney. (In Daily news, Los Angeles) © Walt Disney Productions (PWH)|© 7Apr41; A5-118979. 27May68; R435739.'
+
 
 @pytest.fixture()
 def label_id():
@@ -344,6 +349,12 @@ def f2_not_parsed():
 def f2_not_parsed_with_range():
     return 'AMERICAN LAW REPORTS ANNOTATED. Vol. 65-71. Editors-in-chief: George H. Parmele and M. Blair Wailes. Consulting editor, William M. McKinney. Managing editors: Charles Porterfield and Edwin Stacey Oakes, assisted by the publishers\' editorial staff of the United States. © 6May30, A23371; 20Jun30, A25264; 22Aug30, A26833; 31Oct30, A29840; 8Dec30, A32190; 2Feb31, A34166; 13Apr31, A36786. Lawyers Cooperative Pub. Co. & Bancroft-Whitney Co. (PCW); 28Apr58; R213945, 213990, 213996, 214003, 214008, 214013, 214016.'
 
+
+@pytest.fixture()
+def f2_AO_range():
+    return 'BACH, JOHANN SEBASTIAN.|Prelude and fugue; from The well-tempered clavier, rev. ed. with fingering, phrasing, pedaling, general information, and instructive annotation on interpretation by Gottfried Galston; pf.|Book 1, no. 10, 15, 21, 22. © 14Nov28; AO-3330-3333. Art Publication Society (PWH); 19Dec55; R161234-161237.'
+
+
 @pytest.fixture()
 def f3_not_parsed():
     return 'R621591. Late have I loved thee. By Ethel Mannin. U.S. ed. pub. 30Sep48, A25796. © 29Jan48; AI-1804. Ethel Mannin (A); 8Dec75; R621591. (AI reg. entered under British Proclamation of 10Mar44)'
@@ -365,6 +376,8 @@ class TestShift(object):
             ('R59809', ['A695089'])
         assert parse.shift_regnums('B551759, B567153. R56538-56539') == \
             ('R56538-56539', ['B551759', 'B567153'])
+        assert parse.shift_regnums('A5-118979. 27May68; R435739.') == \
+            ('27May68; R435739.', ['A5-118979'])
 
 
     def test_shift_rids(self):
@@ -1166,6 +1179,27 @@ class TestFormat2(object):
         assert parsed[6]['new_matter'] is None
         assert parsed[6]['see_also_ren'] is None 
         assert parsed[6]['see_also_reg'] is None
+
+
+    def test_AO_range(self, f2_AO_range):
+        parsed = parse.parse('9', '1', f2_AO_range)
+        assert len(parsed) == 4
+        assert parsed[0]['odat'] == '1928-11-14'
+        assert parsed[0]['oreg'] == 'AO-3330'
+        assert parsed[0]['id'] == 'R161234'
+        assert parsed[0]['rdat'] == '1955-12-19'
+        assert parsed[0]['author'] is None
+        assert parsed[0]['title'] is None
+        assert parsed[0]['claimants'] is None
+        assert parsed[0]['previous'] is None
+        assert parsed[0]['new_matter'] is None
+        assert parsed[0]['see_also_ren'] is None 
+        assert parsed[0]['see_also_reg'] is None
+
+        assert parsed[3]['odat'] == '1928-11-14'
+        assert parsed[3]['oreg'] == 'AO-3333'
+        assert parsed[3]['id'] == 'R161237'
+        assert parsed[3]['rdat'] == '1955-12-19'
         
 
     @pytest.mark.xfail
@@ -1183,7 +1217,23 @@ class TestFormat2(object):
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
-        
+
+
+    def test_donald_duck(self, f2_donald_duck):
+        parsed = parse.parse('22', '1', f2_donald_duck)
+        assert len(parsed) == 1
+        assert parsed[0]['author'] == 'DISNEY (WALT) PRODUCTIONS.'
+        assert parsed[0]['title'] == 'Donald Duck, by Walt Disney. (In Daily news, Los Angeles) '
+        assert parsed[0]['odat'] == '1941-04-07'
+        assert parsed[0]['oreg'] == 'A5-118979'
+        assert parsed[0]['id'] == 'R435739'
+        assert parsed[0]['rdat'] == '1968-05-27'
+        assert parsed[0]['claimants'] == 'Walt Disney Productions|PWH'
+        assert parsed[0]['previous'] is None
+        assert parsed[0]['new_matter'] is None
+        assert parsed[0]['see_also_ren'] is None 
+        assert parsed[0]['see_also_reg'] is None
+
         
 class TestFormat3(object):
     def test_simplest(self, f3_simple):
