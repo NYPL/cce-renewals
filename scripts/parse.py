@@ -263,7 +263,9 @@ def unroll_regnums(regs):
     if not regs:
         return []
 
-    m = REG_PARSE.match(regs[0])
+    m = re.match(r'((?:[A-Z]+|(?:AI|AIO|AF|B5)\-)(?:\-)?)(\d{2,})(?:\-\1?(\d+))?', regs[0])
+
+#    m = REG_PARSE.match(regs[0])
     if m:
         if m[3]:
             return ['%s%d' % (m[1], r) for r in range(int(m[2]), int(m[3])+1)] + unroll_regnums(regs[1:])
@@ -459,6 +461,7 @@ def parse(v, p, e):
 def f1_parse(e):
     """Dispatch to proper f1 parsing function based on number of parts."""
     p = e.split('|')
+
     if len(p) == 1:
         return f1_one_part(*p) or f1_date_reg_pairs(*p) or f1_just_numbers(e)
 
@@ -474,7 +477,6 @@ def f1_parse(e):
 def f1_one_part(e):
     """Simplest version of f1 format."""
     try:
-    #if 1:
         book, reg = cc_split(e)
         author, title = get_author_title(book)
         reg, newmatter = shift_new_matter(reg)
@@ -597,7 +599,6 @@ def f2_parse(e):
 
 def f2_one_part(e, author=None):
     """Simplest version of format 2."""
-
     try:
         title, reg = cc_split(e)
 
