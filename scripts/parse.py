@@ -700,8 +700,8 @@ def f2_parse_two_cc(p1, p2, author=None):
 
     title = p1a + ' ' + p2a
 
-    if 1:
-    #try:
+    #if 1:
+    try:
         prev = note = None
         reg, newmatter = shift_new_matter(p2b)
         reg, dates = shift_dates(reg)
@@ -719,8 +719,8 @@ def f2_parse_two_cc(p1, p2, author=None):
                              regnums=regnums, rids=rids, rendates=rendates,
                              claims=claims, new_matter=newmatter, previous=prev,
                              notes=note)
-    #except TypeError:
-    #    return False
+    except TypeError:
+        return False
 
 
 def f2_three_parts(p1, p2, p3):
