@@ -32,6 +32,14 @@ change_state = lambda c, s: {'state': s, 'previous_state': c['state']}
 
 entry_type = lambda d, s: {True: 'CF',
                        False: s}[bool(re.search(r'\bSEE\b', d))]
+def level(c):
+    """Calculate entry level from indentation."""
+
+    if len(c[1]) % 2:
+        raise Exception("Number of spaces is not a multiple of 2.")
+
+    return int(len(c[1])/2)
+
 
 def is_page_number(func):
     def wrapper(*args, **kwargs):
@@ -71,7 +79,7 @@ def full_text(status):
 def is_cf(entry):
     return bool(sum([len(re.findall(r'\bSEE(?: ALSO)?\b(?! [A-Z]{2,})', e)) for e in entry]))
     
-def output(status, depth=1):
+def output(status, depth):
     if not is_cf(status['entry']):
         print('\t'.join((str(row_id(full_text(status))),
                          str(status['volume']),
@@ -80,7 +88,7 @@ def output(status, depth=1):
                          str(status['page']),
                          '|'.join(tuple(reversed(status['entry']))))))
 
-    return status['entry'][depth:]
+    return status['entry'][-depth:]
 
 
 def state_unhandled(status, data):
@@ -213,11 +221,11 @@ def state_continuing2(status, data):
 def state_blank(status, data):
     # Second blank line, output previous entry, clear status
     if not data:
-        output(status)
+        output(status, 0)
         return {**status,
                 **change_state(status, State.start),
                 **{'indent': 0,
-                   'entry': None,
+                   'entry': [],
                    'entry_type': 'ENTRY'}}
 
     
@@ -240,7 +248,7 @@ def state_blank(status, data):
                     **change_state(status, State.entry),
                     **{'indent': len(contents[1]),
                        'part_indent': len(contents[1]),
-                       'entry': push(contents[2], output(status)),
+                       'entry': push(contents[2], output(status, level(contents))),
                        'entry_type': entry_type(data, status['entry_type'])}}
 
     # Indent level increased. Start a new subentry
@@ -264,7 +272,7 @@ def state_blank(status, data):
                     **change_state(status, State.entry),
                     **{'indent': len(contents[1]),
                        'part_indent': len(contents[1]),
-                       'entry': push(contents[2], output(status)),
+                       'entry': push(contents[2], output(status, level(contents))),
                        'entry_type': entry_type(data, status['entry_type'])}}
 
     contents = re.match(doubleundent(status['indent']), data)
@@ -274,7 +282,7 @@ def state_blank(status, data):
                 **change_state(status, State.entry),
                 **{'indent': len(contents[1]),
                    'part_indent': len(contents[1]),
-                   'entry': push(contents[2], output(status, 2)),
+                   'entry': push(contents[2], output(status, level(contents))),
                    'entry_type': entry_type(data, status['entry_type'])}}
         
     contents = re.match(tripleundent(status['indent']), data)
@@ -284,7 +292,7 @@ def state_blank(status, data):
                 **change_state(status, State.entry),
                 **{'indent': len(contents[1]),
                    'part_indent': len(contents[1]),
-                   'entry': push(contents[2], output(status, 3)),
+                   'entry': push(contents[2], output(status, level(contents))),
                    'entry_type': entry_type(data, status['entry_type'])}}
         
         
@@ -367,5 +375,5 @@ if __name__ == '__main__':
             pass
 
         if 'entry' in status:
-            output(status)
+            output(status, 0)
 
