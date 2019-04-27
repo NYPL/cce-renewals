@@ -74,9 +74,9 @@ def is_cf(entry):
 def output(status, depth=1):
     if not is_cf(status['entry']):
         print('\t'.join((str(row_id(full_text(status))),
-                         str(args.volume),
-                         args.part,
-                         str(args.number),
+                         str(status['volume']),
+                         status['part'],
+                         str(status['number']),
                          str(status['page']),
                          '|'.join(tuple(reversed(status['entry']))))))
 
@@ -214,10 +214,11 @@ def state_blank(status, data):
     # Second blank line, output previous entry, clear status
     if not data:
         output(status)
-        return {**change_state(status, State.start),
-                'indent': 0,
-                'page': status['page'],
-                'entry_type': 'ENTRY'}
+        return {**status,
+                **change_state(status, State.start),
+                **{'indent': 0,
+                   'entry': None,
+                   'entry_type': 'ENTRY'}}
 
     
     # Same indent level...
@@ -291,22 +292,6 @@ def state_blank(status, data):
     
     
     
-parser = argparse.ArgumentParser(description='Load CCE xml into database')
-parser.add_argument('-f', '--file', metavar='FILE', type=str,
-                    help='File to process')
-parser.add_argument('-e', '--encoding', metavar='ENCODING', type=str,
-                    default='utf-8', help='Encoding for file')
-parser.add_argument('-v', '--volume', metavar='VOLUME', type=int,
-                    required=True, help='Source volume')
-parser.add_argument('-p', '--part', metavar='PART', type=str,
-                    required=True, help='Source volume part')
-parser.add_argument('-n', '--number', metavar='NUMBER', type=int,
-                    required=True, help='Source volume number')
-parser.add_argument('-7', '--post-1973', action='store_true',
-                    help='Volume is 1973 pt. 2 or later format')
-args = parser.parse_args()
-
-
 TRANSITIONS = {State.header: state_header,
                State.prologue: state_prologue,
                State.prologue_blank: state_prologue_blank,
@@ -326,20 +311,42 @@ TRANSITIONS2 = {State.header: state_header_7,
                 State.continuing: state_continuing2,
                 State.unhandled: state_unhandled}
 
-if args.post_1973:
-    transitions = TRANSITIONS2
-else:
-    transitions = TRANSITIONS
+def transition(transitions, status, l):
+    return transitions[status['state']](status, l)
 
-
-line_no = 0
-
-status = {'state': State.header,
-          'indent': 0,
-          'page': 1,
-          'entry_type': 'ENTRY'}
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Load CCE xml into database')
+    parser.add_argument('-f', '--file', metavar='FILE', type=str,
+                        help='File to process')
+    parser.add_argument('-e', '--encoding', metavar='ENCODING', type=str,
+                        default='utf-8', help='Encoding for file')
+    parser.add_argument('-v', '--volume', metavar='VOLUME', type=int,
+                        required=True, help='Source volume')
+    parser.add_argument('-p', '--part', metavar='PART', type=str,
+                        required=True, help='Source volume part')
+    parser.add_argument('-n', '--number', metavar='NUMBER', type=int,
+                        required=True, help='Source volume number')
+    parser.add_argument('-7', '--post-1973', action='store_true',
+                        help='Volume is 1973 pt. 2 or later format')
+    args = parser.parse_args()
+
+
+    if args.post_1973:
+        transitions = TRANSITIONS2
+    else:
+        transitions = TRANSITIONS
+
+        line_no = 0
+
+        status = {'state': State.header,
+                  'indent': 0,
+                  'page': 1,
+                  'entry_type': 'ENTRY',
+                  'volume': args.volume,
+                  'part': args.part,
+                  'number': args.number}
+    
     with open(args.file, encoding=args.encoding) as f:
         try:
             for line in f:
@@ -348,8 +355,8 @@ if __name__ == '__main__':
                 l = line.rstrip()
                 # print('|' + l)
 
-                status = transitions[status['state']](status, l)
-
+                #status = transitions[status['state']](status, l)
+                status = transition(transitions, status, l)
                 # for k in status.keys():
                 #     print('%s: %s' % (k, status[k]))
 
@@ -361,3 +368,4 @@ if __name__ == '__main__':
 
         if 'entry' in status:
             output(status)
+
