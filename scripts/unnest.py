@@ -345,15 +345,15 @@ if __name__ == '__main__':
     else:
         transitions = TRANSITIONS
 
-        line_no = 0
+    line_no = 0
 
-        status = {'state': State.header,
-                  'indent': 0,
-                  'page': 1,
-                  'entry_type': 'ENTRY',
-                  'volume': args.volume,
-                  'part': args.part,
-                  'number': args.number}
+    status = {'state': State.header,
+              'indent': 0,
+              'page': 1,
+              'entry_type': 'ENTRY',
+              'volume': args.volume,
+              'part': args.part,
+              'number': args.number}
     
     with open(args.file, encoding=args.encoding) as f:
         try:
