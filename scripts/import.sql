@@ -73,4 +73,15 @@ create table renewals_temp (
 create index on renewals_temp(oreg);
 create index on renewals_temp(odat);
 
+drop table if exists reg2renewal_temp;
+
+create table reg2renewal_temp as
+    select distinct c.id as reg_id, r.id as renewal_id
+    from cce.cces_without_guids c
+    join renewals_temp r
+        on regexp_replace(c.regnum, '^(A[IF0])\-', '\1') = r.oreg
+        and c.regdate = r.odat;
+
+create unique index on reg2renewal_temp(reg_id, renewal_id);
+
 commit;
