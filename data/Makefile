@@ -66,8 +66,10 @@ temp/11804-8.txt: 11804
 1952: 1952-1A.tsv
 temp/1952-1.tsv: temp/11805-8.txt
 	../scripts/unnest.py -f $^ -v 6 -p 1A -n 1 -e iso-8859-15 > $@
-temp/1952-2.tsv: temp/11806-8.txt
+temp/1952-2.tsv: temp/11806-8.patched.txt
 	../scripts/unnest.py -f $^ -v 6 -p 1A -n 2 -e iso-8859-15 > $@
+temp/11806-8.patched.txt: pre-patches/11806-8.diff temp/11806-8.txt 
+	patch -o $@ < $^
 temp/11805-8.txt: 11805
 temp/11806-8.txt: 11806
 
