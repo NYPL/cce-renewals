@@ -43,7 +43,7 @@ Similar to how multiple registrations are handled, when a renewal records an "in
         Graham Campbell McInnes (C);
         30Mar62; R294052.
 		
-In the Stanford data, `R294052` is linked to the registration id [`A79921`](https://exhibits.stanford.edu/copyrightrenewals/catalog?utf8=%E2%9C%93&exhibit_id=copyrightrenewals&search_field=search&q=A79921) and date `29Oct34`. This is not an issue for the ways in which someone is likely to use this database: to look up by author's name, title, or registration id if they have it.
+In the Stanford data, `R294052` is linked to the registration id [`A79921` and date `29Oct34`](https://exhibits.stanford.edu/copyrightrenewals/catalog?utf8=%E2%9C%93&exhibit_id=copyrightrenewals&search_field=search&q=A79921). This is not an issue for the ways in which someone is likely to use this database: to look up by author's name, title, or registration id if they have it.
 
 However, in the CCE registration data there are two relevant entries but we need to be able to link them to this renewal by the correct number _and_ date pairs: [`AI-19786/1934-10-29`](https://archive.org/stream/catalogueofcopy311libr#page/1790/mode/1up) and [`A79921/1935-03-04`](https://archive.org/stream/catalogofcopyri321libr#page/223/mode/1up). There is no CCE registration with the combination `A79921/1934-10-29` so the Stanford data gives a false negative in this case.  In this dataset there are two rows for `R294052`, one for each of the proper date/number pairs.
 
