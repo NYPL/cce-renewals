@@ -55,7 +55,7 @@ ACTUAL BUSINESS ENGLISH, by P. H. Deffendall.
     assert out == expected
 
     assert s['indent'] == 0
-    assert s['entry'] is None
+    assert s['entry'] == []
 
 
 def test_multiple_cf():
