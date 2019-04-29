@@ -49,10 +49,14 @@ def is_page_number(func):
         # If this line is just a page number, update the page number
         # in the buffer and continue
 
-        page = re.match(r"^<pb id='(\d+)\.", data)
+        
+        page = re.match(r"^<pb id='(\d+)\.(?:.+n=.+\/(\d+))?", data)
         if page:
-            return {**status,
-                    **{'page': int(page[1])}}
+            if page[2]:
+                return {**status,
+                        **{'page': int(page[2])}}
+
+            return status
 
         # Otherwise just execute the function
         return func(status, data)
