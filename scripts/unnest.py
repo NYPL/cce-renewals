@@ -1,11 +1,45 @@
 #!/usr/bin/env python3
 
+# Convert Project Gutenberg transcriptions of Catalog of Copyright
+# Entries renewals to tab delimited files.
+#
+# See https://onlinebooks.library.upenn.edu/cce/
+#
+# This will read a plain text transcription of CCE renewals and
+# "unnest" the entries. That is it will take text blocks with
+# heirarchical indentation like this:
+#
+#   A
+#     B1
+#       C1
+#       C2
+#
+#     B2
+#       C3
+#
+# and generate flattened rows of output:
+#
+#   A|B1|C1
+#   A|B1|C2
+#   A|B2|C3
+#
+# The hierchical levels are indicated with pipe characters (|) in the
+# output as shown
+#
+# In addition, the script adds metadata fields for page (parsed from
+# the text file) and volume, part, and number (with values supplied by
+# command-line parameters).
+
 import argparse
 from enum import Enum
 import re
 import uuid
 
 
+# This script uses a state machine pattern, keeping track of blank
+# lines and indentation to know where entries begin and end.
+#
+# All the possible states:
 class State(Enum):
     header = 0
     prologue = 1
@@ -17,70 +51,99 @@ class State(Enum):
     unhandled = 7
 
 
+# Namespace for UUID. A version-5 UUID is calculated for each row
+# using the text of the entry as the name and this as the namespace
 NS = uuid.UUID('569a2de5-d88e-410c-9bec-83887e0d4ee6')
 
+# Match a line with no indentation
+HARDLEFT = r'^(\s{0})(\S.+)$'
 
-def hardleft():
-    return r'^(\s{0})(\S.+)$'
 
-
+# Match a line with more indentation than the current level
 def moredent(x):
     return r'^(\s{%d})(\S.+)$' % (x+2,)
 
 
+# Match a line with the same indentation as the current level
 def nodent(x):
     return r'^(\s{%d})(\S.+)$' % x
 
 
+# Match a line with one fewer indents
 def undent(x):
     return r'^(\s{%d})(\S.+)$' % (x-2,)
 
 
+# Match a line with two fewer indents
 def doubleundent(x):
     return r'^(\s{%d})(\S.+)$' % (x-4,)
 
 
+# Match a line with three fewer indents
 def tripleundent(x):
     return r'^(\s{%d})(\S.+)$' % (x-6,)
 
 
+# Add a line of text to the current (bottom-most) level of the entry
 def add(data, entry):
     return (entry[0] + ' ' + data,) + entry[1:]
 
 
+# Add a hierarchical level to the entry stack
 def push(data, entry):
     return (data,) + entry
 
 
+# Switch to unhandled state
 def error_out(s):
     return {**s, **{'state': State.unhandled}}
 
 
+# Switch to new state (s) and store the previous state
 def change_state(c, s):
     return {'state': s, 'previous_state': c['state']}
 
 
+# Check whether the entry is a cross reference
 def entry_type(d, s):
     return {True: 'CF',
             False: s}[bool(re.search(r'\bSEE\b', d))]
 
 
+# Calculate entry level from indentation.
+#
+# The level is the number of spaces of indentation divided by
+# two. Raise an error if the indentation is not a multiple of two
 def level(c):
-    """Calculate entry level from indentation."""
-
     if len(c[1]) % 2:
         raise Exception("Number of spaces is not a multiple of 2.")
 
     return int(len(c[1])/2)
 
 
+# Decorator for handling page numbers
+#
+# If the current line is a page number element, parse it for a page
+# number and update the state if necessary, and carry on with the
+# transition. If the current line is not a page number element, just
+# hand off to the transition.
+#
+# Page number elements come in two forms. One that indicates a page
+# break, where the page number is the last part of the 'n' attribute:
+#
+#     <pb id='016.png' n='1950_h1/A/0006' />
+#
+# And one with no 'n' attribute that indicates a column break. These
+# are ignored:
+#
+#     <pb id='017.png' />
 def is_page_number(func):
     def wrapper(*args, **kwargs):
         status = args[0]
         data = args[1]
 
         # If this line is just a page number, update the page number
-        # in the buffer and continue
+        # in the state and continue
 
         page = re.match(r"^<pb id='(\d+)\.(?:.+n=.+\/(\d+))?", data)
         if page:
@@ -95,29 +158,39 @@ def is_page_number(func):
     return wrapper
 
 
+# Check whether we have reached the "prologue." That is the part after
+# the Project Gutenberg file header, but before the first actual
+# renewal entry.
 def is_prologue(s):
     return re.match(r'^RENEWALS?', s)
 
 
+# Check whether we have reached the prologue in files in the format
+# used in 1973 and after
 def is_prologue_7(s):
     return re.match(r'^(\[\*|material. Information)', s)
 
 
+# Create a UUID v5 from the full text of the entry.
 def row_id(s):
-    """Create a UUID v5 from the full text of the entry."""
     return uuid.uuid5(NS, s)
 
 
+# Format the full text of the entry. Hierachical levels join by pipes (|)
 def full_text(status):
     return '|'.join(tuple(reversed(status['entry'])))
 
 
+# Check whether the entry is a cross reference (look for 'SEE' or 'SEE
+# ALSO' in the text)
 def is_cf(entry):
     return bool(sum(
         [len(re.findall(r'\bSEE(?: ALSO)?\b(?! [A-Z]{2,})',
                         e)) for e in entry]))
 
 
+# Output a tab-delimted line with metadata and clear the necessary
+# levels of the entry (depth).
 def output(status, depth):
     if not is_cf(status['entry']):
         print('\t'.join((str(row_id(full_text(status))),
@@ -127,13 +200,20 @@ def output(status, depth):
                          str(status['page']),
                          '|'.join(tuple(reversed(status['entry']))))))
 
+    # Since the levels of the entry are stored in reverse order, for
+    # example [C, B, A], and if the depth is 2, we want the 2 righmost
+    # levels of the entry, that is [B, A]. Since presumable we have a
+    # new entry starting with another 'C' level
     return status['entry'][-depth:]
 
 
+# Handle the unhandled state. Which we do by throwing an error.
 def state_unhandled(status, data):
     raise Exception('UNHANDLED STATE')
 
 
+# Header state. We are in the Project Gutenberg file header and are
+# looking for the start of the transcription prologue
 @is_page_number
 def state_header(status, data):
     if not data:
@@ -148,6 +228,7 @@ def state_header(status, data):
     return error_out(status)
 
 
+# Header state for 1973- files
 @is_page_number
 def state_header_7(status, data):
     if not data:
@@ -162,6 +243,9 @@ def state_header_7(status, data):
     return error_out(status)
 
 
+# Prologue state. We are in the prologue of the transcription (the
+# little bit of text that precedes the entries in the printed volume)
+# and looking for its end, indicated by two blank lines
 @is_page_number
 def state_prologue(status, data):
     if not data:
@@ -171,6 +255,8 @@ def state_prologue(status, data):
     return status
 
 
+# Blank line in the prologue. When a second blank line is encountered,
+# switch the the Start state and game on.
 @is_page_number
 def state_prologue_blank(status, data):
     if not data:
@@ -181,15 +267,18 @@ def state_prologue_blank(status, data):
             **change_state(status, State.prologue)}
 
 
+# Start state. We are expecting a new entry
 @is_page_number
 def state_start(status, data):
+    # Reasons to stop reading the file
     if not data:
         raise StopIteration()
 
     if re.match(r'\*\*\* END', data):
         raise StopIteration()
 
-    contents = re.match(hardleft(), data)
+    # Expect text with NO indentation
+    contents = re.match(HARDLEFT, data)
     if contents:
         return {**status,
                 **change_state(status, State.entry),
@@ -201,6 +290,8 @@ def state_start(status, data):
     return error_out(status)
 
 
+# Entry state. We are reading an entry, looking either for the
+# continuation of the current level or a blank line.
 @is_page_number
 def state_entry(status, data):
     if not data:
@@ -218,6 +309,9 @@ def state_entry(status, data):
     return error_out(status)
 
 
+# Continuing state. We are reading an entry and expecting more of the
+# same (with the same indentation) or the start of a new level with
+# more indentation
 @is_page_number
 def state_continuing(status, data):
     if not data:
@@ -242,6 +336,7 @@ def state_continuing(status, data):
     return error_out(status)
 
 
+# Continuing state for 1973- files
 @is_page_number
 def state_continuing2(status, data):
     if not data:
@@ -259,6 +354,9 @@ def state_continuing2(status, data):
     return error_out(status)
 
 
+# Blank state. We got a blank line. Another blank line will indicate
+# the end of the current entry. Otherwise we expect a new part of the
+# entry which may change the indentation level
 @is_page_number
 def state_blank(status, data):
     # Second blank line, output previous entry, clear status
@@ -338,6 +436,7 @@ def state_blank(status, data):
     return error_out(status)
 
 
+# State and their handlers
 TRANSITIONS = {State.header: state_header,
                State.prologue: state_prologue,
                State.prologue_blank: state_prologue_blank,
@@ -348,6 +447,7 @@ TRANSITIONS = {State.header: state_header,
                State.unhandled: state_unhandled}
 
 
+# States and handlers for 1973- files
 TRANSITIONS2 = {State.header: state_header_7,
                 State.prologue: state_prologue,
                 State.prologue_blank: state_prologue_blank,
@@ -358,6 +458,8 @@ TRANSITIONS2 = {State.header: state_header_7,
                 State.unhandled: state_unhandled}
 
 
+# Take the current state, apply the proper handler, get back and
+# return a new state
 def transition(transitions, status, l):
     return transitions[status['state']](status, l)
 
