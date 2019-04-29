@@ -43,7 +43,7 @@ Similar to how multiple registrations are handled, when a renewal records an "in
         Graham Campbell McInnes (C);
         30Mar62; R294052.
 		
-In the Stanford data, `R294052` is linked to the registration id `A79921` and date `29Oct34`. In the CCE registration data there are two relevant entries but we need to be able to link them to this renewal by the number _and_ date pairs [`AI-19786/1934-10-29`](https://archive.org/stream/catalogueofcopy311libr#page/1790/mode/1up) and [`A79921/1935-03-04`](https://archive.org/stream/catalogofcopyri321libr#page/223/mode/1up). There is not CCE registration with the combination `A79921/1934-10-29`.  In this dataset there are two rows for `R294052`, one for each of the proper date/number pairs.
+In the Stanford data, `R294052` is linked to the registration id `A79921` and date `29Oct34`. In the CCE registration data there are two relevant entries but we need to be able to link them to this renewal by the number _and_ date pairs [`AI-19786/1934-10-29`](https://archive.org/stream/catalogueofcopy311libr#page/1790/mode/1up) and [`A79921/1935-03-04`](https://archive.org/stream/catalogofcopyri321libr#page/223/mode/1up). There is no CCE registration with the combination `A79921/1934-10-29`.  In this dataset there are two rows for `R294052`, one for each of the proper date/number pairs.
 
 Registration entries don't always indicate that there was a previous interim registration, so it is a happy side-effect that we can link the two via their common renewal.
 
