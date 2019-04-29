@@ -5,6 +5,7 @@ from enum import Enum
 import re
 import uuid
 
+
 class State(Enum):
     header = 0
     prologue = 1
@@ -15,23 +16,55 @@ class State(Enum):
     blank = 6
     unhandled = 7
 
+
 NS = uuid.UUID('569a2de5-d88e-410c-9bec-83887e0d4ee6')
-    
-hardleft = lambda: r'^(\s{0})(\S.+)$'
-moredent = lambda x: r'^(\s{%d})(\S.+)$' % (x+2,)
-nodent = lambda x: r'^(\s{%d})(\S.+)$' % x
-undent = lambda x: r'^(\s{%d})(\S.+)$' % (x-2,)
-doubleundent = lambda x: r'^(\s{%d})(\S.+)$' % (x-4,)
-tripleundent = lambda x: r'^(\s{%d})(\S.+)$' % (x-6,)
-add = lambda data, entry: (entry[0] + ' ' + data,) + entry[1:]
-push = lambda data, entry: (data,) + entry
 
-error_out = lambda s: {**s, **{'state': State.unhandled}}
 
-change_state = lambda c, s: {'state': s, 'previous_state': c['state']}
+def hardleft():
+    return r'^(\s{0})(\S.+)$'
 
-entry_type = lambda d, s: {True: 'CF',
-                       False: s}[bool(re.search(r'\bSEE\b', d))]
+
+def moredent(x):
+    return r'^(\s{%d})(\S.+)$' % (x+2,)
+
+
+def nodent(x):
+    return r'^(\s{%d})(\S.+)$' % x
+
+
+def undent(x):
+    return r'^(\s{%d})(\S.+)$' % (x-2,)
+
+
+def doubleundent(x):
+    return r'^(\s{%d})(\S.+)$' % (x-4,)
+
+
+def tripleundent(x):
+    return r'^(\s{%d})(\S.+)$' % (x-6,)
+
+
+def add(data, entry):
+    return (entry[0] + ' ' + data,) + entry[1:]
+
+
+def push(data, entry):
+    return (data,) + entry
+
+
+def error_out(s):
+    return {**s, **{'state': State.unhandled}}
+
+
+def change_state(c, s):
+    return {'state': s, 'previous_state': c['state']}
+
+
+def entry_type(d, s):
+    return {True: 'CF',
+            False: s}[bool(re.search(r'\bSEE\b', d))]
+
+
 def level(c):
     """Calculate entry level from indentation."""
 
@@ -49,7 +82,6 @@ def is_page_number(func):
         # If this line is just a page number, update the page number
         # in the buffer and continue
 
-        
         page = re.match(r"^<pb id='(\d+)\.(?:.+n=.+\/(\d+))?", data)
         if page:
             if page[2]:
@@ -75,14 +107,17 @@ def row_id(s):
     """Create a UUID v5 from the full text of the entry."""
     return uuid.uuid5(NS, s)
 
+
 def full_text(status):
     return '|'.join(tuple(reversed(status['entry'])))
 
-# 9b262cbd-33f0-50fc-bb62-6c2f66567ca7
 
 def is_cf(entry):
-    return bool(sum([len(re.findall(r'\bSEE(?: ALSO)?\b(?! [A-Z]{2,})', e)) for e in entry]))
-    
+    return bool(sum(
+        [len(re.findall(r'\bSEE(?: ALSO)?\b(?! [A-Z]{2,})',
+                        e)) for e in entry]))
+
+
 def output(status, depth):
     if not is_cf(status['entry']):
         print('\t'.join((str(row_id(full_text(status))),
@@ -165,6 +200,7 @@ def state_start(status, data):
 
     return error_out(status)
 
+
 @is_page_number
 def state_entry(status, data):
     if not data:
@@ -180,6 +216,7 @@ def state_entry(status, data):
                    'entry_type': entry_type(data, status['entry_type'])}}
 
     return error_out(status)
+
 
 @is_page_number
 def state_continuing(status, data):
@@ -204,13 +241,14 @@ def state_continuing(status, data):
                    'entry_type': entry_type(data, status['entry_type'])}}
     return error_out(status)
 
+
 @is_page_number
 def state_continuing2(status, data):
     if not data:
         return {**status,
                 **change_state(status, State.blank)}
 
-    contents = data.strip() #re.match(nodent(status['indent']), data)
+    contents = data.strip()
     if contents:
         return {**status,
                 **change_state(status, State.continuing),
@@ -232,7 +270,6 @@ def state_blank(status, data):
                    'entry': [],
                    'entry_type': 'ENTRY'}}
 
-    
     # Same indent level...
     contents = re.match(nodent(status['indent']), data)
     if contents:
@@ -252,7 +289,8 @@ def state_blank(status, data):
                     **change_state(status, State.entry),
                     **{'indent': len(contents[1]),
                        'part_indent': len(contents[1]),
-                       'entry': push(contents[2], output(status, level(contents))),
+                       'entry': push(contents[2],
+                                     output(status, level(contents))),
                        'entry_type': entry_type(data, status['entry_type'])}}
 
     # Indent level increased. Start a new subentry
@@ -265,7 +303,6 @@ def state_blank(status, data):
                        'part_indent': len(contents[1]),
                        'entry': push(contents[2], status['entry']),
                        'entry_type': entry_type(data, status['entry_type'])}}
-    
 
     # Indent level decreased after blank, output previous entry, start
     # new subentry of parent
@@ -276,34 +313,31 @@ def state_blank(status, data):
                     **change_state(status, State.entry),
                     **{'indent': len(contents[1]),
                        'part_indent': len(contents[1]),
-                       'entry': push(contents[2], output(status, level(contents))),
+                       'entry': push(contents[2],
+                                     output(status, level(contents))),
                        'entry_type': entry_type(data, status['entry_type'])}}
 
     contents = re.match(doubleundent(status['indent']), data)
     if contents:
-        #if status['previous_state'] == State.continuing:
         return {**status,
                 **change_state(status, State.entry),
                 **{'indent': len(contents[1]),
                    'part_indent': len(contents[1]),
                    'entry': push(contents[2], output(status, level(contents))),
                    'entry_type': entry_type(data, status['entry_type'])}}
-        
+
     contents = re.match(tripleundent(status['indent']), data)
     if contents:
-        #if status['previous_state'] == State.continuing:
         return {**status,
                 **change_state(status, State.entry),
                 **{'indent': len(contents[1]),
                    'part_indent': len(contents[1]),
                    'entry': push(contents[2], output(status, level(contents))),
                    'entry_type': entry_type(data, status['entry_type'])}}
-        
-        
+
     return error_out(status)
-    
-    
-    
+
+
 TRANSITIONS = {State.header: state_header,
                State.prologue: state_prologue,
                State.prologue_blank: state_prologue_blank,
@@ -322,6 +356,7 @@ TRANSITIONS2 = {State.header: state_header_7,
                 State.blank: state_blank,
                 State.continuing: state_continuing2,
                 State.unhandled: state_unhandled}
+
 
 def transition(transitions, status, l):
     return transitions[status['state']](status, l)
@@ -343,7 +378,6 @@ if __name__ == '__main__':
                         help='Volume is 1973 pt. 2 or later format')
     args = parser.parse_args()
 
-
     if args.post_1973:
         transitions = TRANSITIONS2
     else:
@@ -358,26 +392,18 @@ if __name__ == '__main__':
               'volume': args.volume,
               'part': args.part,
               'number': args.number}
-    
+
     with open(args.file, encoding=args.encoding) as f:
         try:
             for line in f:
                 line_no += 1
 
-                l = line.rstrip()
-                # print('|' + l)
+                line = line.rstrip()
 
-                #status = transitions[status['state']](status, l)
-                status = transition(transitions, status, l)
-                # for k in status.keys():
-                #     print('%s: %s' % (k, status[k]))
-
-                # print()
-
+                status = transition(transitions, status, line)
 
         except StopIteration:
             pass
 
         if 'entry' in status:
             output(status, 0)
-
