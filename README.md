@@ -25,13 +25,15 @@ Many renewal entries actually contain multiple renewals or registrations. These 
       Co. & Bancroft-Whitney Co. (PCW);
       28Apr58; R213954-213981.
 
-Is converted into 28 rows, each with the proper registration and renewal id so that they can all be matched to our registration data entries. In the Stanford data, each renewal id is separate, but they are all assigned to the same registration id, `A23877`.
+Is converted into 28 rows, each with the proper registration and renewal id so that they can all be matched to our registration data entries. A unique ID is assigned to each entry before unrolling, so each of these 28 rows carries an ID tying them back to the original entry.
+
+In the Stanford data, each renewal id is separate, but they are all assigned to the same registration id, `A23877`.
 
 _Conversely_ many records in this dataset do not have authors or titles parsed into the proper fields, so it is less useful for that kind of searching.
 
 ### Registration numbers and dates
 
-Similar to how multiple registrations are handled, when a renewal records an "interim" (class AI) or foreign (class AF) registration followed by a regular, class A, registration, the Stanford data usually has the date from the earlier registration with the id from the later registration. This leads to false negatives when matching registrations because registration numbers are not unique and each entry must be matched by registration id _and_ date. For instance, this renewal ([1962, vol 16.1.1, p. 914](https://archive.org/stream/catalogofcopyrig3161libr#page/914/mode/1up):
+Similar to how multiple registrations are handled, when a renewal records an "interim" (class AI) or foreign (class AF) registration followed by a regular, class A, registration, the Stanford data usually has the date from the earlier registration with the id from the later one. This leads to false negatives when matching registrations because registration numbers are not unique and each entry must be matched by registration id _and_ date. For instance, this renewal ([1962, vol 16.1.1, p. 914](https://archive.org/stream/catalogofcopyrig3161libr#page/914/mode/1up):
 
     THIRKELL, ANGELA.
 
@@ -41,7 +43,7 @@ Similar to how multiple registrations are handled, when a renewal records an "in
         Graham Campbell McInnes (C);
         30Mar62; R294052.
 		
-In the Stanford data, `R294052` is linked to the registration id `A79921` and date `29Oct34`. In the CCE registration data there are two relevant entries but we need to be able to link them to this renewal by the number _and_ date pairs [`AI-19786/1934-10-29`](https://archive.org/stream/catalogueofcopy311libr#page/1790/mode/1up) and [`A79921/1935-03-04`](https://archive.org/stream/catalogofcopyri321libr#page/223/mode/1up) and this dataset preserves both.
+In the Stanford data, `R294052` is linked to the registration id `A79921` and date `29Oct34`. In the CCE registration data there are two relevant entries but we need to be able to link them to this renewal by the number _and_ date pairs [`AI-19786/1934-10-29`](https://archive.org/stream/catalogueofcopy311libr#page/1790/mode/1up) and [`A79921/1935-03-04`](https://archive.org/stream/catalogofcopyri321libr#page/223/mode/1up). There is not CCE registration with the combination `A79921/1934-10-29`.  In this dataset there are two rows for `R294052`, one for each of the proper date/number pairs.
 
 Registration entries don't always indicate that there was a previous interim registration, so it is a happy side-effect that we can link the two via their common renewal.
 
