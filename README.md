@@ -6,11 +6,26 @@ These files contain, in tab-delimited format, copyright renewals from the US Cop
 
 ## Differences from Stanford Copyright Renewals
 
-In 2007 Stanford University Libraries and Academic Information Resources launched a [copyright renewals database](https://exhibits.stanford.edu/copyrightrenewals) covering the same material. You can download a comma-delimited copy of their underlying data ([latest version](http://web.stanford.edu/dept/SUL/collections/copyrightrenewals/files/20170427-copyright-renewals-records.csv.zip)) which contaiins 246,448 renewal records. This database is intended to make it simple to a book by published before 1964 author or title and see whether or not its copyright haf been renewed. While [transcribing and parsing the original book registration entries](https://github.com/NYPL/catalog_of_copyright_entries_project) (CCE Project) at NYPL we have worked extensively with this data, but our task is a little different since we would like to accurately match every registered entry with a renewal _or not_. We decided another version might be useful for two reasons: exclusion of non-book entries, and the handling of some registration numbers and dates.
+In 2007 Stanford University Libraries and Academic Information Resources launched a [copyright renewals database](https://exhibits.stanford.edu/copyrightrenewals) covering the same material. You can download a comma-delimited copy of their underlying data ([latest version](http://web.stanford.edu/dept/SUL/collections/copyrightrenewals/files/20170427-copyright-renewals-records.csv.zip)) which contaiins 246,448 renewal records. The Stanford database is intended to make it simple to a book by published before 1964 author or title and see whether or not its copyright haf been renewed. While [transcribing and parsing the original book registration entries](https://github.com/NYPL/catalog_of_copyright_entries_project) (CCE Project) at NYPL we have worked extensively with this data, but our task is a little different since we would like to accurately match every registered entry with a renewal _or not_. The data in this repository is organized to make it easier to match a registration ID and date with a renewal if it exists, so it differs from the Stanford data in a few areas.
 
-### Exclusion of non-book entries
+### Unrolling of batch renewals
 
-Stanford's data includes only "Book" or "Class A" registrations. In our CCE project we are transcribing the Book volumes (Part 1, Group 1, 1923–1946; Part 1A, 1947–1953; Part 1, 1953–1964) which include some non-book registrations (about 2% of registration entries). If any of these have renewals, they would be exculded from the Stanford data, but possibly included in the Project Gutenberg transcriptions.
+Many renewal entries actually contain multiple renewals or registrations. These might be multiples of both registrations and renewals, or they might be multiple registrations renewed under a single renewal ID (the reverse is also possible). Special effort has been made to "unroll" these entries so that every row contains a unique combination of registration id, registration date and renewal id, and so that every id is accounted for. For example, this entry ([1958, vol. 12.1.1 p. 764](https://archive.org/stream/catalogofcopyrig3121lib#page/764/mode/1up))
+
+    RULING CASE LAW. 1930 supplement,
+      continuing Permanent supplement
+      ed. Vol. 1-28. © 24May30; A23877-23904.
+      Lawyers Co-operative Pub.
+      Co. & Bancroft-Whitney Co. (PCW);
+      28Apr58; R213954-213981.
+
+Is converted into 28 rows, each with the proper registration and renewal id so that they acan all be matched to our registration data entries. In the Stanford data, each renewal id is separate, but they are all assigned to the same registration id, `A23877`.
+
+_Conversely_ many records in this dataset do not have authors or titles parsed into the proper fields, so it is less useful for that kind of searching.
+
+### Non-book entries
+
+Stanford's data includes only "Book" or "Class A" registrations. In our CCE project we are transcribing the Book volumes (Part 1, Group 1, 1923–1946; Part 1A, 1947–1953; Part 1, 1953–1964) which include some non-book registrations (about 2% of registration entries). If any of these have renewals, they would be excluded from the Stanford data, but possibly included in the Project Gutenberg transcriptions.
 
 ### Registration numbers and dates
 
