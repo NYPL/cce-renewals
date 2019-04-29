@@ -9,7 +9,8 @@ import sys
 DATE_RE = r'\d{1,2}[A-z]{3}\d{1,2}'
 ONE_DATE = re.compile(DATE_RE)
 
-REGNUM_RE = r'(?:A(?:(?:A|F|I\-|5\-|6\-|O-))?|B(?:5\-)?|DP|I(?:U)?|[CDFGJKL]|Label |Print )\d+(?:\-\d+)?'
+REGNUM_RE = r'(?:A(?:(?:A|F|I\-|5\-|6\-|O-))?|B(?:5\-)?|DP|I(?:U)?|' + \
+            r'[CDFGJKL]|Label |Print )\d+(?:\-\d+)?'
 ONE_REGNUM = re.compile(REGNUM_RE)
 
 
@@ -22,13 +23,16 @@ CLAIMS_RE = r'.+\((?!See).+?\)'
 PUB_ABROAD_RE = r'\(pub\. abroad.+?\)[,;]'
 NEW_MATTER_RE = r'(?:on (?:.+?);)?'
 
-shift_re = lambda r: re.compile(r'^(%s)(.*)$' % r)
+
+def shift_re(r):
+    return re.compile(r'^(%s)(.*)$' % r)
+
 
 SHIFT_DATES = shift_re(r'(?:%s(?:[;,\.]) )+' % DATE_RE)
 SHIFT_ONE_DATE = shift_re(DATE_RE)
 SHIFT_REGNUMS = shift_re(r'(?:%s(?:,|\.) )+' % REGNUM_RE)
 SHIFT_RIDS = shift_re(r'(?:(?:R?\d+(?:\-R?\d+)?(?:(?:, |\.|\b)))+)')
-                       
+
 SHIFT_CLAIMS = shift_re(CLAIMS_RE)
 SHIFT_DATE_REG_PAIR = shift_re(r'(?:%s(?:;|\.) )+' % DATE_REG_PAIR_RE)
 SHIFT_PUB_ABROAD = shift_re(PUB_ABROAD_RE)
@@ -44,7 +48,9 @@ RID_PARSE = re.compile(r'(?:R?(\d+)(?:(?:\-|, )(\d+))?)')
 MIXED_RIDS_RE = r'((?:(?:R\d+(?:\-\d+)?)(?:,? )?)+)'
 MIXED_RIDS = re.compile(MIXED_RIDS_RE)
 
-REG_PARSE = re.compile(r'(A(?:(?:A|F|I\-|5\-|6\-|O\-))?|B(?:5\-)?|DP|I(?:U)?|[CDFGJKL]|Label |Print )(\d+)(?:\-(\d+))?')
+REG_PARSE = re.compile(r'(A(?:(?:A|F|I\-|5\-|6\-|O\-))?|B(?:5\-)?' +
+                       r'|DP|I(?:U)?|[CDFGJKL]|Label |Print )' +
+                       r'(\d+)(?:\-(\d+))?')
 
 CODE_SPLIT = re.compile(r'(?:\(([^\(]+)\))')
 
@@ -59,6 +65,7 @@ DATE_RID_PAIR_RE = r'{}; {}'.format(DATE_RE, RID_RE)
 AUTH_TITLE = re.compile(r'^(.*)([,;] by )((?:[^\(;](?!Pub. ))+)(.*)$')
 AUTH_TITLE_F3 = re.compile(r'^(.+[\.\)])( By )((?:[^\(])+)(.*)$')
 
+
 def record(**kwargs):
     return {**{'author': None, 'title': None, 'oreg': None,
                'odat': None, 'id': None, 'rdat': None,
@@ -72,22 +79,37 @@ def shift_field(s, r, op=lambda x, y: (x, y)):
     return op(*(m[2].lstrip(';., '), [m[1]]))
 
 
-shift_dates = lambda s: shift_field(s, SHIFT_DATES, extract_dates)
+def shift_dates(s):
+    return shift_field(s, SHIFT_DATES, extract_dates)
 
-shift_one_date = lambda s: shift_field(s, SHIFT_ONE_DATE, extract_dates)
 
-shift_regnums = lambda s: shift_field(s, SHIFT_REGNUMS, extract_regnums)
+def shift_one_date(s):
+    return shift_field(s, SHIFT_ONE_DATE, extract_dates)
 
-shift_date_reg = lambda s, op=lambda x, y: (x, y): shift_field(s, SHIFT_DATE_REG_PAIR, op)
 
-shift_rids = lambda s: shift_field(s, SHIFT_RIDS, extract_rids)
+def shift_regnums(s):
+    return shift_field(s, SHIFT_REGNUMS, extract_regnums)
 
-shift_pub_abroad = lambda s: shift_field(s, SHIFT_PUB_ABROAD, extract_interim)
 
-shift_new_matter = lambda s: shift_field(s, SHIFT_NEW_MATTER,
-                                         extract_new_matter)
+def shift_date_reg(s, op=lambda x, y: (x, y)):
+    return shift_field(s, SHIFT_DATE_REG_PAIR, op)
 
-shift_see_also = lambda s: shift_field(s, SHIFT_SEE_ALSO, extract_see_also)
+
+def shift_rids(s):
+    return shift_field(s, SHIFT_RIDS, extract_rids)
+
+
+def shift_pub_abroad(s):
+    return shift_field(s, SHIFT_PUB_ABROAD, extract_interim)
+
+
+def shift_new_matter(s):
+    return shift_field(s, SHIFT_NEW_MATTER, extract_new_matter)
+
+
+def shift_see_also(s):
+    return shift_field(s, SHIFT_SEE_ALSO, extract_see_also)
+
 
 def shift_claims(s):
     m = SHIFT_CLAIMS.match(s)
@@ -99,13 +121,14 @@ def parse_date(d):
     try:
         dt = dateutil.parser.parse(d)
         if dt.year > 2000:
-            return (dt - dateutil.relativedelta.relativedelta(years=100)).strftime('%Y-%m-%d')
-    
+            minus100 = dateutil.relativedelta.relativedelta(years=100)
+            return (dt - minus100).strftime('%Y-%m-%d')
+
         return dt.strftime('%Y-%m-%d')
     except ValueError:
         # Not all the dates are valid
         return None
-    
+
 
 def extract_dates(reg, dates):
     return (reg, [parse_date(d) for d in ONE_DATE.findall(dates[0])])
@@ -122,7 +145,6 @@ def extract_date_reg_pairs(reg, pairs):
 
 
 def extract_rids(reg, rids):
-    m = EXTRACT_RIDS.findall(rids[0])
     return (reg, unroll_rids(EXTRACT_RIDS.findall(rids[0])))
 
 
@@ -133,7 +155,8 @@ def unroll_rids(rids):
 
     m = rids[0]
     if m[1]:
-        return ['R%d' % r for r in range(int(m[0]), int(m[1])+1)] + unroll_rids(rids[1:])
+        return ['R%d' % r for r in range(int(m[0]),
+                                         int(m[1])+1)] + unroll_rids(rids[1:])
     return ['R%s' % m[0]] + unroll_rids(rids[1:])
 
     return []
@@ -150,11 +173,11 @@ def extract_new_matter(reg, r):
         return (reg, m[1].strip())
     except TypeError:
         return (reg, None)
-                  
+
 
 def extract_see_also(reg, r):
     m = SEE_ALSO_NUMS.match(r[0])
-    try: 
+    try:
         rids = '|'.join(shift_rids(m[1])[1])
     except TypeError:
         rids = None
@@ -181,10 +204,9 @@ def find_numbered_eds(author, title):
     return (author, title)
 
 
-
 def get_author_title(book):
     m = AUTH_TITLE.match(book)
-                   
+
     if m:
         if '[' in m[3] or '[' in m[1]:
             return (None, book)
@@ -209,7 +231,7 @@ def find_post_author(author, title):
     if m:
         return (m[1].strip(), title + ' ' + m[2].strip())
     return (author, title)
-    
+
 
 def get_f3_author_title(book):
     m = AUTH_TITLE_F3.match(book)
@@ -220,7 +242,7 @@ def get_f3_author_title(book):
         return (author, title)
     return (None, book)
 
-    
+
 def interim_pairs(s, p):
     dates = [parse_date(d) for d in ONE_DATE.findall(p)]
     numbers = ONE_AI.findall(p)
@@ -237,7 +259,7 @@ def interim_pairs(s, p):
 
 def one_ai(s, p):
     return '|'.join([s, p[0], p[1]])
-                  
+
 
 def split_on_codes(c):
     """
@@ -249,7 +271,7 @@ def split_on_codes(c):
 
 
 def format_claims(c):
-    return (c and ('|'.join(cleanup_claim(c[0:2])),) + \
+    return (c and ('|'.join(cleanup_claim(c[0:2])),) +
             format_claims(c[2:])) or ()
 
 
@@ -263,12 +285,14 @@ def unroll_regnums(regs):
     if not regs:
         return []
 
-    m = re.match(r'((?:[A-Z]+|(?:AI|AIO|AF|AO|A5|B5)\-)(?:\-)?)(\d{2,})(?:\-\1?(\d+))?', regs[0])
+    unroll_re = r'((?:[A-Z]+|(?:AI|AIO|AF|AO|A5|B5)\-)(?:\-)?)' + \
+                r'(\d{2,})(?:\-\1?(\d+))?'
+    m = re.match(unroll_re, regs[0])
 
-#    m = REG_PARSE.match(regs[0])
     if m:
         if m[3]:
-            return ['%s%d' % (m[1], r) for r in range(int(m[2]), int(m[3])+1)] + unroll_regnums(regs[1:])
+            return ['%s%d' % (m[1], r) for r in
+                    range(int(m[2]), int(m[3])+1)] + unroll_regnums(regs[1:])
 
         return [regs[0]] + unroll_regnums(regs[1:])
 
@@ -319,7 +343,7 @@ def dehyphen(r):
         return 'AI{}'.format(m[1])
 
     return r
-    
+
 
 def format_record(author=None, title=None, regdates=None, regnums=None,
                   rids=None, rendates=None, claims=None, notes=None,
@@ -362,14 +386,15 @@ def format_record(author=None, title=None, regdates=None, regnums=None,
     return False
 
 
-def pad_and_unroll_records(author=None, title=None, regdates=None, regnums=None,
-                           rids=None, rendates=None, claims=None, notes=None,
-                           previous=None, new_matter=None, see_also_ren=None,
+def pad_and_unroll_records(author=None, title=None, regdates=None,
+                           regnums=None, rids=None, rendates=None,
+                           claims=None, notes=None, previous=None,
+                           new_matter=None, see_also_ren=None,
                            see_also_reg=None):
     max_len = max([len(l) for l in (regdates, regnums, rids, rendates)])
     return [record(**dict(zip(('author', 'title', 'odat', 'oreg', 'id', 'rdat',
                                'claimants', 'new_matter', 'previous'),
-                              r))) for r in \
+                              r))) for r in
             zip([author] * max_len,
                 [title] * max_len,
                 unroll_to(max_len, regdates),
@@ -390,7 +415,8 @@ def unroll_to(n, l):
 def add_metadata(p, r):
     return {**p,
             **{'full_text': ' '.join(r[-1].split('|'))},
-            **dict(zip(('entry_id', 'volume', 'part', 'number', 'page'), r[0:5]))}
+            **dict(zip(('entry_id', 'volume', 'part', 'number', 'page'),
+                       r[0:5]))}
 
 
 def format1(v):
@@ -402,7 +428,7 @@ def format2(v, p):
     """Does the volume number correspond to format 2?"""
     return v in ('8', '9', '10', '11', '12', '13', '14', '15', '16', '17',
                  '18', '19', '20', '21', '22', '23', '24', '25', '26') \
-                 or (v == '27' and p == '1')
+        or (v == '27' and p == '1')
 
 
 def format3(v, p):
@@ -418,7 +444,8 @@ def cc_split(e):
 def f1_just_numbers(e):
     reg_date = re.findall(DATE_REG_PAIR_RE, e)
     if len(reg_date):
-        rid_date = re.findall(r'(?:R\d+(?:(?:\-|, )\d+)?), \d{1,2}[A-z]{3}\d{1,2}', e)
+        rid_date = re.findall(
+            r'(?:R\d+(?:(?:\-|, )\d+)?), \d{1,2}[A-z]{3}\d{1,2}', e)
         if len(rid_date):
             regdates = [parse_date(r.split(', ')[0]) for r in reg_date]
             regnums = [r.split(', ')[1] for r in reg_date]
@@ -433,7 +460,8 @@ def f1_just_numbers(e):
 def f2_just_numbers(e):
     reg_date = re.findall(DATE_REG_PAIR2_RE, e)
     if len(reg_date):
-        rid_date = re.findall(r'\d{1,2}[A-z]{3}\d{1,2}; (?:R\d+(?:(?:\-|, )\d+)*)', e)
+        rid_date = re.findall(
+            r'\d{1,2}[A-z]{3}\d{1,2}; (?:R\d+(?:(?:\-|, )\d+)*)', e)
         if len(rid_date):
             rendate, rid = rid_date[0].split('; ')
             regdates = [parse_date(re.split(r'[;,] ', r)[0]) for r in reg_date]
@@ -444,7 +472,6 @@ def f2_just_numbers(e):
             if len(rids) > 200:
                 # Handle typos like R312280-512281 (that is R312280-312281)
                 return False
-
 
             return format_record(regdates=regdates,
                                  regnums=regnums, rids=rids,
@@ -474,7 +501,7 @@ def f1_parse(e):
         return f1_three_parts(*p) or f1_just_numbers(e)
 
     return False
-    
+
 
 def f1_one_part(e):
     """Simplest version of f1 format."""
@@ -494,7 +521,7 @@ def f1_one_part(e):
             try:
                 reg, prev = shift_pub_abroad(reg)
                 reg, regnums = shift_regnums(reg)
-            except:
+            except Exception:
                 return False
 
         reg, rids = shift_rids(reg)
@@ -502,12 +529,12 @@ def f1_one_part(e):
         reg, claims = shift_claims(reg)
 
         note = reg if len(reg) else None
-            #raise Exception('Remaining string: %s' % reg)
 
-        return format_record(author=author, title=title, regdates=dates,
-                             regnums=regnums, rids=rids, rendates=rendates,
-                             claims=claims, new_matter=newmatter, previous=prev,
-                             notes=note)
+        return format_record(author=author, title=title,
+                             regdates=dates, regnums=regnums,
+                             rids=rids, rendates=rendates,
+                             claims=claims, new_matter=newmatter,
+                             previous=prev, notes=note)
     except TypeError:
         return False
 
@@ -539,7 +566,7 @@ def f1_date_reg_pairs(e):
         # Possible no ©
         return False
 
-    
+
 def f1_two_parts(p1, p2):
     if '©' in p2:
         if '©' not in p1:
@@ -552,7 +579,7 @@ def f1_two_parts(p1, p2):
 
 def f1_f2_rearrange_two_parts(p1, p2):
     pre, post = cc_split(p2)
-    
+
     return (p1.strip() + ' ' + pre.strip()).strip() + ' © ' + post.strip()
 
 
@@ -565,14 +592,14 @@ def f1_rearrange_chiastic(p1, p2):
     except ValueError:
         # Maybe too many ©'s because multiple entries have been run together
         return False
-    
 
 
 def f1_three_parts(p1, p2, p3):
     if '©' in p2 and '©' in p3:
         return f1_rearrange_three_parts(p1, p2, p3)
-        
+
     return False
+
 
 def f1_rearrange_three_parts(p1, p2, p3):
     p2a, p2b = cc_split(p2)
@@ -580,21 +607,21 @@ def f1_rearrange_three_parts(p1, p2, p3):
 
     return f1_parse(p1 + ' ' + p2a + ' ' + p3a + ' © ' + p3b + ' ' + p2b)
 
-"""
-Parse Format 2 (vols 8-)
-"""
 
+#
+# Parse Format 2 (vols 8-)
+#
 def f2_parse(e):
     """Dispatch to proper f2 parsing function based on number of parts."""
     p = e.split('|')
     if len(p) == 1:
-        return f2_one_part(*p) or f2_just_numbers(e) #False #f2_date_reg_pairs(*p) or False
+        return f2_one_part(*p) or f2_just_numbers(e)
 
     if len(p) == 2:
-        return f2_two_parts(*p) or f2_just_numbers(e) #False
+        return f2_two_parts(*p) or f2_just_numbers(e)
 
     if len(p) == 3:
-        return f2_three_parts(*p) or f2_just_numbers(e) #False
+        return f2_three_parts(*p) or f2_just_numbers(e)
 
     return False
 
@@ -619,7 +646,7 @@ def f2_one_part(e, author=None):
             try:
                 reg, prev = shift_pub_abroad(reg)
                 reg, regnums = shift_regnums(reg)
-            except:
+            except Exception:
                 return False
 
         reg, claims = shift_claims(reg)
@@ -632,7 +659,6 @@ def f2_one_part(e, author=None):
 
         if len(reg):
             return False
-            #raise Exception('Remaining string: %s' % reg)
 
     except TypeError:
         return False
@@ -644,14 +670,14 @@ def f2_one_part(e, author=None):
                          previous=prev, notes=note,
                          see_also_ren=see_also_ren, see_also_reg=see_also_reg)
 
-                  
+
 def f2_two_parts(p1, p2):
     try:
         if '©' in p2:
             if '©' in p1:
                 return f2_parse_two_cc(p1, p2)
                 return False
-            
+
             return f2_one_part(p2, author=p1) or \
                 f2_date_reg_pairs(p2, author=p1) or \
                 False
@@ -664,9 +690,10 @@ def f2_two_parts(p1, p2):
 def regnums_are_hyphenated(regnums):
     hy = [re.search(r'(?<!^[A-Z]\d)\-', r) is not None for r in regnums]
     return len([h for h in hy if h])
-    
+
+
 def f2_date_reg_pairs(e, author=None):
-    #if 1:
+
     try:
         book, reg = cc_split(e)
         prev = note = None
@@ -683,12 +710,12 @@ def f2_date_reg_pairs(e, author=None):
 
         if len(reg):
             return False
-            #raise Exception('Remaining string: %s' % reg)
 
-        return format_record(author=author, title=book, regdates=dates,
-                             regnums=regnums, rids=rids, rendates=rendates,
-                             claims=claims, new_matter=newmatter, previous=prev,
-                             notes=note)
+        return format_record(author=author, title=book,
+                             regdates=dates, regnums=regnums,
+                             rids=rids, rendates=rendates,
+                             claims=claims, new_matter=newmatter,
+                             previous=prev, notes=note)
 
     except TypeError:
         return False
@@ -700,7 +727,6 @@ def f2_parse_two_cc(p1, p2, author=None):
 
     title = p1a + ' ' + p2a
 
-    #if 1:
     try:
         prev = note = None
         reg, newmatter = shift_new_matter(p2b)
@@ -712,13 +738,12 @@ def f2_parse_two_cc(p1, p2, author=None):
 
         if len(reg):
             title = p1a + ' ' + reg + ' ' + p2a
-            #return False
-            # raise Exception('Remaining string: %s' % reg)
 
-        return format_record(author=author, title=title, regdates=dates,
-                             regnums=regnums, rids=rids, rendates=rendates,
-                             claims=claims, new_matter=newmatter, previous=prev,
-                             notes=note)
+        return format_record(author=author, title=title,
+                             regdates=dates, regnums=regnums,
+                             rids=rids, rendates=rendates,
+                             claims=claims, new_matter=newmatter,
+                             previous=prev, notes=note)
     except TypeError:
         return False
 
@@ -729,8 +754,7 @@ def f2_three_parts(p1, p2, p3):
             p2a, p2b = cc_split(p2)
             p3a, p3b = cc_split(p3)
             return f2_parse_two_cc(p2a + ' © ' + p2b, p3, author=p1)
-        
-    
+
     return False
 
 
@@ -743,7 +767,7 @@ def f2_rearrange_two_ccs(author, title, p3, p4):
         if len(reg):
             return False
 
-        reg, newmatter = shift_new_matter(p4) 
+        reg, newmatter = shift_new_matter(p4)
         reg, claims = shift_claims(reg)
         reg, rendates = shift_dates(reg)
         reg, rids = shift_rids(reg)
@@ -755,7 +779,7 @@ def f2_rearrange_two_ccs(author, title, p3, p4):
                              regdates=dates, regnums=regnums, rids=rids,
                              rendates=rendates, claims=claims,
                              new_matter=newmatter, previous=prev, notes=note)
-        
+
     except TypeError:
         return False
 
@@ -764,7 +788,7 @@ def f3_parse(e):
     """Just dispose of the initial renewal id and treat as format 2."""
     return f2_parse(shift_rids(e)[0])
 
-    
+
 def do_parse(e):
     return ('non-renewal entr' not in e) and \
         ('[*Blank page*]' not in e) and \
@@ -776,14 +800,14 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Load CCE xml into database')
     parser.add_argument('-f', '--file', metavar='FILE', type=str,
-                    help='TSV file to process')
+                        help='TSV file to process')
     args = parser.parse_args()
 
-    fields = ('entry_id', 'volume', 'part','number', 'page', 'author',
+    fields = ('entry_id', 'volume', 'part', 'number', 'page', 'author',
               'title', 'oreg', 'odat', 'id', 'rdat',
               'claimants', 'previous', 'new_matter', 'see_also_ren',
               'see_also_reg', 'notes', 'full_text')
-    
+
     writer = csv.DictWriter(sys.stdout, fieldnames=fields, delimiter='\t')
     writer.writeheader()
     with open(args.file) as tsv:
