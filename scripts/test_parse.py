@@ -408,7 +408,7 @@ class TestShift(object):
         s = '(pub. abroad 15Feb23, AI-4905), A704583. R60233, 28Mar50, Elsie Bambridge (C)'
         assert parse.shift_pub_abroad(s) == \
             ('A704583. R60233, 28Mar50, Elsie Bambridge (C)',
-             'pub. abroad|1923-02-15|AI-4905')
+             [['1923-02-15', 'AI-4905']], '(pub. abroad 15Feb23, AI-4905),')
 
 
     def test_shift_see_also(self):
@@ -494,7 +494,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R59809'
         assert parsed[0]['rdat'] == '1950-03-17'
         assert parsed[0]['claimants'] == 'Breitkopf Publications, inc., successor to Breitkopf & Haertel, inc.|PWH'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['notes'] is None
 
@@ -510,7 +509,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R60449'
         assert parsed[0]['rdat'] == '1950-04-05'
         assert parsed[0]['claimants'] == 'P. H. Deffendall|A'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['notes'] is None
 
@@ -526,7 +524,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R56339'
         assert parsed[0]['rdat'] == '1949-12-23'
         assert parsed[0]['claimants'] == 'Paluel J. Flagg|A'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['notes'] is None
         
@@ -541,7 +538,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R61801'
         assert parsed[0]['rdat'] == '1950-04-28'
         assert parsed[0]['claimants'] == 'The Lawyers Co-operative Publishing Co.|PCW'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
         assert parsed[1]['odat'] == '1922-08-24'
@@ -571,7 +567,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R61784'
         assert parsed[0]['rdat'] == '1950-04-28'
         assert parsed[0]['claimants'] == 'The Lawyers Co-operative Publishing Co.|PCW||Bancroft-Whitney Co.|PCW'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
         assert parsed[1]['odat'] == '1922-09-06'
@@ -600,7 +595,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R60233'
         assert parsed[0]['rdat'] == '1950-03-28'
         assert parsed[0]['claimants'] == 'Elsie Bambridge|C'
-        assert parsed[0]['previous'] == None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['notes'] == 'pub. abroad 15Feb23, AI-4905'
 
@@ -618,7 +612,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R59404'
         assert parsed[0]['rdat'] == '1950-03-13'
         assert parsed[0]['claimants'] == 'David Garnett|C'
-        assert parsed[0]['previous'] is None 
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['notes'] == 'pub. abroad 2Feb22'
 
@@ -638,7 +631,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R59139'
         assert parsed[0]['rdat'] == '1950-03-03'
         assert parsed[0]['claimants'] == 'Kenneth Stewart Patrick McDowell|NK'
-        assert parsed[0]['previous'] is None 
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['notes'] == 'pub. abroad 24Aug22, 16Sep22, AI-4680, AI-4725'
 
@@ -659,7 +651,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R59672'
         assert parsed[0]['rdat'] == '1950-03-20'
         assert parsed[0]['claimants'] == 'Clement Gould Noyes|NK'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
 
@@ -673,7 +664,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R59553'
         assert parsed[0]['rdat'] == '1950-03-09'
         assert parsed[0]['claimants'] == 'Robert Lindneux|A'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
 
@@ -687,7 +677,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R61349'
         assert parsed[0]['rdat'] == '1950-04-24'
         assert parsed[0]['claimants'] == 'Roger Martin du Gard|A'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
 
@@ -701,7 +690,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R63718'
         assert parsed[0]['rdat'] == '1950-06-23'
         assert parsed[0]['claimants'] == 'Josephine Lofting|W'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
         assert parsed[1]['odat'] == '1922-12-25'
@@ -747,7 +735,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R56538'
         assert parsed[0]['rdat'] == '1949-12-30'
         assert parsed[0]['claimants'] == 'Street & Smith Publications, inc.|PCW'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
         assert parsed[1]['odat'] == '1922-12-15'
@@ -766,7 +753,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R61029'
         assert parsed[0]['rdat'] == '1950-04-17'
         assert parsed[0]['claimants'] == 'Mme veuve Henri Lavedan, née Pauline Auguez|W'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
         assert parsed[1]['odat'] == '1922-12-31'
@@ -796,7 +782,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R57358'
         assert parsed[0]['rdat'] == '1950-01-16'
         assert parsed[0]['claimants'] == 'West Publishing Co.|PWH'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         
         assert parsed[1]['odat'] == '1922-12-02'
@@ -814,7 +799,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R61026'
         assert parsed[0]['rdat'] == '1950-04-14'
         assert parsed[0]['claimants'] == 'Marcel Priollet|A'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['notes'] == 'This entry has multiple copyright dates not listed here under one copyright registration number'
     
@@ -829,7 +813,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R59332'
         assert parsed[0]['rdat'] == '1950-03-07'
         assert parsed[0]['claimants'] == 'W. B. Saunders Co.|PWH'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] == 'new matter'
 
 
@@ -855,7 +838,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R63588'
         assert parsed[0]['rdat'] == '1950-06-23'
         assert parsed[0]['claimants'] == 'Ernest N. Ryder, administrator d.b.n.c.t.a. estate of author.|'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
 
@@ -869,7 +851,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R65000'
         assert parsed[0]['rdat'] == '1950-07-28'
         assert parsed[0]['claimants'] == 'New York Herald Tribune, inc.|PCW'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
         assert parsed[30]['odat'] == '1922-08-31'
@@ -888,7 +869,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R63588'
         assert parsed[0]['rdat'] == '1950-06-23'
         assert parsed[0]['claimants'] == 'Ernest N. Ryder, administrator d.b.n.c.t.a. estate of author.|'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
     @pytest.mark.xfail
@@ -915,7 +895,6 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R69499'
         assert parsed[0]['rdat'] == '1950-11-08'
         assert parsed[0]['claimants'] == 'Helen C. Train|W'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
 
@@ -929,7 +908,6 @@ class TestFormat1(object):
         assert parsed[0]['author'] is None
         assert parsed[0]['title'] is None
         assert parsed[0]['claimants'] is None
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -945,7 +923,6 @@ class TestFormat1(object):
         assert parsed[0]['author'] is None
         assert parsed[0]['title'] is None
         assert parsed[0]['claimants'] is None
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -957,7 +934,6 @@ class TestFormat1(object):
         assert parsed[5]['author'] is None
         assert parsed[5]['title'] is None
         assert parsed[5]['claimants'] is None
-        assert parsed[5]['previous'] is None
         assert parsed[5]['new_matter'] is None
         assert parsed[5]['see_also_ren'] is None 
         assert parsed[5]['see_also_reg'] is None
@@ -974,7 +950,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R129491'
         assert parsed[0]['rdat'] == '1954-04-21'
         assert parsed[0]['claimants'] == 'Lawyers Co-operative Pub. Co.|PCW'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
 
@@ -987,7 +962,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R128596'
         assert parsed[0]['rdat'] == '1954-04-05'
         assert parsed[0]['claimants'] == 'West Pub. Co.|PWH'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         
 
@@ -1001,7 +975,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R129296'
         assert parsed[0]['rdat'] == '1954-04-19'
         assert parsed[0]['claimants'] == 'Mary-Louise Ellsworth|W'
-        assert parsed[0]['previous'] is None 
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['notes'] == 'pub. abroad 25Feb27, AI-9217'
 
@@ -1019,7 +992,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R132516'
         assert parsed[0]['rdat'] == '1954-06-24'
         assert parsed[0]['claimants'] == 'Charles Scribner\'s Sons|PWH'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] == 'front. & decorations'
 
 
@@ -1033,7 +1005,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R126461'
         assert parsed[0]['rdat'] == '1953-08-10'
         assert parsed[0]['claimants'] == 'Edwin Balmer|A'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
 
@@ -1047,7 +1018,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R130352'
         assert parsed[0]['rdat'] == '1954-05-12'
         assert parsed[0]['claimants'] == 'W. K. Braasch|A'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
 
@@ -1062,7 +1032,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R123834'
         assert parsed[0]['rdat'] == '1954-01-04'
         assert parsed[0]['claimants'] == 'Flora Mabel Warhurst & Harold Pincott|E'
-        assert parsed[0]['previous'] is '|9Jul26|AI-8495'
         assert parsed[0]['new_matter'] is None
 
 
@@ -1076,7 +1045,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R136623'
         assert parsed[0]['rdat'] == '1954-10-01'
         assert parsed[0]['claimants'] == 'Christopher Morley|A'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] == 'revisions'
 
 
@@ -1090,7 +1058,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R148105'
         assert parsed[0]['rdat'] == '1955-04-04'
         assert parsed[0]['claimants'] == 'West Pub. Co.|PWH'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
         assert parsed[3]['odat'] == '1928-03-30'
@@ -1109,7 +1076,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R129485'
         assert parsed[0]['rdat'] == '1954-04-21'
         assert parsed[0]['claimants'] == 'Lawyers Co-operative Pub. Co.|PCW'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
 
@@ -1123,7 +1089,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R148665'
         assert parsed[0]['rdat'] == '1954-11-19'
         assert parsed[0]['claimants'] == 'Dale Collins|A'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
 
 
@@ -1137,7 +1102,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R156196'
         assert parsed[0]['rdat'] == '1955-09-23'
         assert parsed[0]['claimants'] == 'Elizabeth Aikens & Osbourne Wm. McConathy|C'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['see_also_ren'] == 'R143669'
         assert parsed[0]['see_also_reg'] == None
@@ -1153,7 +1117,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R312848'
         assert parsed[0]['rdat'] == '1963-02-25'
         assert parsed[0]['claimants'] == 'George Macy Companies, Inc.|PWH'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] == 'introd., illus. & design'
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -1169,7 +1132,6 @@ class TestFormat2(object):
         assert parsed[0]['author'] is None
         assert parsed[0]['title'] is None
         assert parsed[0]['claimants'] is None
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -1185,7 +1147,6 @@ class TestFormat2(object):
         assert parsed[0]['author'] is None
         assert parsed[0]['title'] is None
         assert parsed[0]['claimants'] is None
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -1197,7 +1158,6 @@ class TestFormat2(object):
         assert parsed[6]['author'] is None
         assert parsed[6]['title'] is None
         assert parsed[6]['claimants'] is None
-        assert parsed[6]['previous'] is None
         assert parsed[6]['new_matter'] is None
         assert parsed[6]['see_also_ren'] is None 
         assert parsed[6]['see_also_reg'] is None
@@ -1213,7 +1173,6 @@ class TestFormat2(object):
         assert parsed[0]['author'] is None
         assert parsed[0]['title'] is None
         assert parsed[0]['claimants'] is None
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -1235,7 +1194,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R214419'
         assert parsed[0]['rdat'] == '7May58'
         assert parsed[0]['claimants'] == 'William J. Hughes, Jr.|C'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -1251,7 +1209,6 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R435739'
         assert parsed[0]['rdat'] == '1968-05-27'
         assert parsed[0]['claimants'] == 'Walt Disney Productions|PWH'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -1268,7 +1225,6 @@ class TestFormat3(object):
         assert parsed[0]['id'] == 'R554644'
         assert parsed[0]['rdat'] == '1973-06-25'
         assert parsed[0]['claimants'] == 'Ciba Geigy Corporation|PWH'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -1284,7 +1240,6 @@ class TestFormat3(object):
         assert parsed[0]['id'] == 'R594391'
         assert parsed[0]['rdat'] == '1975-01-02'
         assert parsed[0]['claimants'] == 'The Singer Company|PWH'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] == 'new illus. & plates.'
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -1300,7 +1255,6 @@ class TestFormat3(object):
         assert parsed[0]['id'] == 'R566183'
         assert parsed[0]['rdat'] == '1973-12-20'
         assert parsed[0]['claimants'] == 'Thomas C. Benet, Rachel Benet Lewis & Stephenie Benet Mahin|PPW'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -1316,7 +1270,6 @@ class TestFormat3(object):
         assert parsed[0]['id'] == 'R566276'
         assert parsed[0]['rdat'] == '1973-12-20'
         assert parsed[0]['claimants'] == 'Irving Kolodin|A'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] == 'additions & revisions'
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -1332,7 +1285,6 @@ class TestFormat3(object):
         assert parsed[0]['id'] == 'R594483'
         assert parsed[0]['rdat'] == '1974-12-30'
         assert parsed[0]['claimants'] == 'Bancroft-Whitney Company|PWH'
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] == 'headnotes, summaries, tables & index.'
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -1348,7 +1300,6 @@ class TestFormat3(object):
         assert parsed[0]['author'] is None
         assert parsed[0]['title'] is None
         assert parsed[0]['claimants'] is None
-        assert parsed[0]['previous'] is None
         assert parsed[0]['new_matter'] is None
         assert parsed[0]['see_also_ren'] is None 
         assert parsed[0]['see_also_reg'] is None
@@ -1360,7 +1311,6 @@ class TestFormat3(object):
         assert parsed[1]['author'] is None
         assert parsed[1]['title'] is None
         assert parsed[1]['claimants'] is None
-        assert parsed[1]['previous'] is None
         assert parsed[1]['new_matter'] is None
         assert parsed[1]['see_also_ren'] is None 
         assert parsed[1]['see_also_reg'] is None
@@ -1375,7 +1325,6 @@ def test_f2_simplest(format_two):
     assert parsed[0]['id'] == 'R525069'
     assert parsed[0]['rdat'] == '1972-03-16'
     assert parsed[0]['claimants'] == 'Lawyers Co-operative Pub. Co. & Bancroft-Whitney Co.|PWH'
-    assert parsed[0]['previous'] is None
     assert parsed[0]['new_matter'] is None
 
 
@@ -1388,7 +1337,6 @@ def test_two_part_format_two(two_part_format_two):
     assert parsed[0]['id'] == 'R523485'
     assert parsed[0]['rdat'] == '1972-01-17'
     assert parsed[0]['claimants'] == 'Robert W. Abbett|A'
-    assert parsed[0]['previous'] is None
     assert parsed[0]['new_matter'] is None
 
 
@@ -1403,7 +1351,6 @@ def test_format_two_3_part_cc_one_three(format_two_3_part_cc_one_three):
     assert parsed[0]['id'] == 'R522151'
     assert parsed[0]['rdat'] == '26Jan72'
     assert parsed[0]['claimants'] == 'New York Times Co.|PWH'
-    assert parsed[0]['previous'] is None
     assert parsed[0]['new_matter'] is None
 
 
@@ -1416,7 +1363,6 @@ def test_format_two_2_part_2_cc(format_two_2_part_2_cc):
     assert parsed[0]['id'] == 'R524719'
     assert parsed[0]['rdat'] == '1972-03-06'
     assert parsed[0]['claimants'] == 'Lawyers Co-operative Pub. Co. & Bancroft-Whitney Co.|PWH'
-    assert parsed[0]['previous'] is None
     assert parsed[0]['new_matter'] is None
 
 
@@ -1430,7 +1376,6 @@ def test_f2_four_parts(f2_four_parts):
     assert parsed[0]['id'] == 'R530779'
     assert parsed[0]['rdat'] == '14Jun72'
     assert parsed[0]['claimants'] == 'Bancroft-Whitney Co.|PWH'
-    assert parsed[0]['previous'] is None
     assert parsed[0]['new_matter'] is None
 
 
@@ -1443,7 +1388,6 @@ def test_f2_multiple_renewals(f2_multiple_renewals):
     assert parsed[0]['id'] == 'R527187'
     assert parsed[0]['rdat'] == '1972-04-07'
     assert parsed[0]['claimants'] == 'Madeleine Bemelmans|W||Barbara Marciano|C'
-    assert parsed[0]['previous'] is None
     assert parsed[0]['new_matter'] is None
 
 @pytest.mark.xfail
@@ -1456,7 +1400,6 @@ def test_f2_on_translation(f2_on_translation):
     assert parsed[0]['id'] == 'R537443'
     assert parsed[0]['rdat'] == '1972-09-22'
     assert parsed[0]['claimants'] == 'Countess Edda Mussolini Ciano|PWH'
-    assert parsed[0]['previous'] is None
     assert parsed[0]['new_matter'] == 'on translation'
 
 

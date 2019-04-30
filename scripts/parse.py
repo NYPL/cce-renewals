@@ -94,7 +94,7 @@ AUTH_TITLE_F3 = re.compile(r'^(.+[\.\)])( By )((?:[^\(])+)(.*)$')
 def record(**kwargs):
     return {**{'author': None, 'title': None, 'oreg': None,
                'odat': None, 'id': None, 'rdat': None,
-               'claimants': None, 'previous': None, 'new_matter': None,
+               'claimants': None, 'new_matter': None,
                'notes': None, 'see_also_ren': None,
                'see_also_reg': None}, **kwargs}
 
@@ -347,9 +347,9 @@ def unroll_regnums(regs):
 
 
 # Test whether the dates and ids are all single items
-def all_singles(regdates, regnums, rids, rendates, interims):
+def all_singles(regdates, regnums, rids, rendates):
     return len(regdates) == len(regnums) == len(rids) == \
-        len(rendates) == 1 and (interims is None or len(interims) == 1)
+        len(rendates) == 1
 
 
 # Test whether all the dates and ids are single items except for the
@@ -362,30 +362,24 @@ def all_singles_but_interims(regdates, regnums, rids, rendates):
 # Test whether all these are lists of the same length, except for
 # interims which must either have the same length as the others or be
 # None.
-def all_multiples(regdates, regnums, rids, rendates, interims):
+def all_multiples(regdates, regnums, rids, rendates):
     return len(regdates) == len(regnums) == len(rids) == \
-        len(rendates) and (interims is None or len(interims) == len(regdates))
+        len(rendates) 
 
 
 # Test wheter all these lists are as long as the longest or only have
 # 1 item, except for interim registrations which might also be None
-def most_multiples(regdates, regnums, rids, rendates, interims):
+def most_multiples(regdates, regnums, rids, rendates):
     max_len = max([len(l) for l in (regdates, regnums, rids, rendates)])
     return n_or_1(max_len, regdates) and \
         n_or_1(max_len, regnums) and \
         n_or_1(max_len, rids) and \
-        n_or_1(max_len, rendates) and \
-        n_1_or_none(max_len, interims)
+        n_or_1(max_len, rendates)
 
 
 # The length of list is either n or 1
 def n_or_1(n, l):
     return len(l) in (1, n)
-
-
-# The lenght of list l is n, 1, or None
-def n_1_or_none(n, l):
-    return l is None or n_or_1(n, l)
 
 
 # Remove hyphens from class AI regnums
@@ -400,41 +394,37 @@ def dehyphen(r):
 # Format a record for output
 def format_record(author=None, title=None, regdates=None, regnums=None,
                   rids=None, rendates=None, claims=None, notes=None,
-                  previous=None, new_matter=None, see_also_ren=None,
+                  new_matter=None, see_also_ren=None,
                   see_also_reg=None):
 
     regnums = [dehyphen(r) for r in regnums]
     notes = None if notes == '' else notes
-    if all_singles(regdates, regnums, rids, rendates, previous):
+    if all_singles(regdates, regnums, rids, rendates):
         return [record(author=author, title=title, odat=regdates[0],
                        oreg=regnums[0], id=rids[0], rdat=rendates[0],
-                       claimants=claims, new_matter=new_matter,
-                       previous=previous, notes=notes,
+                       claimants=claims, new_matter=new_matter, notes=notes,
                        see_also_ren=see_also_ren, see_also_reg=see_also_reg)]
 
     if all_singles_but_interims(regdates, regnums, rids, rendates):
         return [record(author=author, title=title, odat=regdates[0],
                        oreg=regnums[0], id=rids[0], rdat=rendates[0],
-                       claimants=claims, new_matter=new_matter,
-                       previous=previous, notes=notes,
+                       claimants=claims, new_matter=new_matter, notes=notes,
                        see_also_ren=see_also_ren, see_also_reg=see_also_reg)]
 
-    if all_multiples(regdates, regnums, rids, rendates, previous):
+    if all_multiples(regdates, regnums, rids, rendates):
         return pad_and_unroll_records(author=author, title=title,
                                       regdates=regdates, regnums=regnums,
                                       rids=rids, rendates=rendates,
                                       claims=claims, new_matter=new_matter,
-                                      previous=previous, notes=notes,
-                                      see_also_ren=see_also_ren,
+                                      notes=notes, see_also_ren=see_also_ren,
                                       see_also_reg=see_also_reg)
 
-    if most_multiples(regdates, regnums, rids, rendates, previous):
+    if most_multiples(regdates, regnums, rids, rendates):
         return pad_and_unroll_records(author=author, title=title,
                                       regdates=regdates, regnums=regnums,
                                       rids=rids, rendates=rendates,
                                       claims=claims, new_matter=new_matter,
-                                      previous=previous, notes=notes,
-                                      see_also_ren=see_also_ren,
+                                      notes=notes, see_also_ren=see_also_ren,
                                       see_also_reg=see_also_reg)
 
     return False
@@ -443,14 +433,13 @@ def format_record(author=None, title=None, regdates=None, regnums=None,
 # Our record may in fact be multiple records if the list of regnums,
 # etc. has more than 1 item. Pad multiply one item lists to the length
 # of the multiple item lists and return as many records as necessary
-def pad_and_unroll_records(author=None, title=None, regdates=None,
-                           regnums=None, rids=None, rendates=None,
-                           claims=None, notes=None, previous=None,
+def pad_and_unroll_records(author=None, title=None, regdates=None, regnums=None,
+                           rids=None, rendates=None, claims=None, notes=None,
                            new_matter=None, see_also_ren=None,
                            see_also_reg=None):
     max_len = max([len(l) for l in (regdates, regnums, rids, rendates)])
     return [record(**dict(zip(('author', 'title', 'odat', 'oreg', 'id', 'rdat',
-                               'claimants', 'new_matter', 'previous', 'notes'),
+                               'claimants', 'new_matter', 'notes'),
                               r))) for r in
             zip([author] * max_len,
                 [title] * max_len,
@@ -459,7 +448,6 @@ def pad_and_unroll_records(author=None, title=None, regdates=None,
                 unroll_to(max_len, rids),
                 unroll_to(max_len, rendates),
                 [claims] * max_len, [new_matter] * max_len,
-                [previous] * max_len,
                 [notes] * max_len)]
 
 
@@ -517,8 +505,7 @@ def f1_just_numbers(e):
             regnums = [r.split(', ')[1] for r in reg_date]
             rid, rendate = rid_date[0].split(', ')
             rids = unroll_rids(EXTRACT_RIDS.findall(rid))
-            return format_record(regdates=regdates,
-                                 regnums=regnums, rids=rids,
+            return format_record(regdates=regdates, regnums=regnums, rids=rids,
                                  rendates=[parse_date(rendate)])
     return False
 
@@ -540,8 +527,7 @@ def f2_just_numbers(e):
                 # Handle typos like R312280-512281 (that is R312280-312281)
                 return False
 
-            return format_record(regdates=regdates,
-                                 regnums=regnums, rids=rids,
+            return format_record(regdates=regdates, regnums=regnums, rids=rids,
                                  rendates=[parse_date(rendate)])
     return False
 
@@ -591,7 +577,6 @@ def f1_one_part(e):
         except TypeError:
             try:
                 reg, prev, prev_note = shift_pub_abroad(reg)
-                print(prev)
                 reg, regnums = shift_regnums(reg)
                 dates += [r[0] for r in prev]
                 regnums += [r[1] for r in prev]
@@ -605,11 +590,8 @@ def f1_one_part(e):
 
         note += [reg] if len(reg) else []
 
-        print(note)
-
-        return format_record(author=author, title=title,
-                             regdates=dates, regnums=regnums,
-                             rids=rids, rendates=rendates,
+        return format_record(author=author, title=title, regdates=dates,
+                             regnums=regnums, rids=rids, rendates=rendates,
                              claims=claims, new_matter=newmatter,
                              notes='|'.join(note))
     except TypeError:
@@ -712,7 +694,6 @@ def f2_parse(e):
 
 # Simplest version of format 2.
 def f2_one_part(e, author=None):
-    print('F2 1P')
     try:
         title, reg = cc_split(e)
 
@@ -754,10 +735,9 @@ def f2_one_part(e, author=None):
 
     return format_record(author=author, title=title, regdates=dates,
                          regnums=regnums, rids=rids, rendates=rendates,
-                         claims=claims,
-                         new_matter=(newmatter or newmatter2),
-                         notes='|'.join(note),
-                         see_also_ren=see_also_ren, see_also_reg=see_also_reg)
+                         claims=claims, new_matter=(newmatter or newmatter2),
+                         notes='|'.join(note), see_also_ren=see_also_ren,
+                         see_also_reg=see_also_reg)
 
 
 def f2_two_parts(p1, p2):
@@ -785,7 +765,7 @@ def f2_date_reg_pairs(e, author=None):
 
     try:
         book, reg = cc_split(e)
-        prev = note = None
+        note = None
         reg, newmatter = shift_new_matter(reg)
         reg, dates, regnums = shift_date_reg(reg, extract_date_reg_pairs)
 
@@ -800,11 +780,9 @@ def f2_date_reg_pairs(e, author=None):
         if len(reg):
             return False
 
-        return format_record(author=author, title=book,
-                             regdates=dates, regnums=regnums,
-                             rids=rids, rendates=rendates,
-                             claims=claims, new_matter=newmatter,
-                             previous=prev, notes=note)
+        return format_record(author=author, title=book, regdates=dates,
+                             regnums=regnums, rids=rids, rendates=rendates,
+                             claims=claims, new_matter=newmatter, notes=note)
 
     except TypeError:
         return False
@@ -817,7 +795,7 @@ def f2_parse_two_cc(p1, p2, author=None):
     title = p1a + ' ' + p2a
 
     try:
-        prev = note = None
+        note = None
         reg, newmatter = shift_new_matter(p2b)
         reg, dates = shift_dates(reg)
         reg, regnums = shift_regnums(reg)
@@ -828,11 +806,9 @@ def f2_parse_two_cc(p1, p2, author=None):
         if len(reg):
             title = p1a + ' ' + reg + ' ' + p2a
 
-        return format_record(author=author, title=title,
-                             regdates=dates, regnums=regnums,
-                             rids=rids, rendates=rendates,
-                             claims=claims, new_matter=newmatter,
-                             previous=prev, notes=note)
+        return format_record(author=author, title=title, regdates=dates,
+                             regnums=regnums, rids=rids, rendates=rendates,
+                             claims=claims, new_matter=newmatter, notes=note)
     except TypeError:
         return False
 
@@ -848,7 +824,7 @@ def f2_three_parts(p1, p2, p3):
 
 
 def f2_rearrange_two_ccs(author, title, p3, p4):
-    prev = note = None
+    note = None
     try:
         reg, dates = shift_dates(p3)
         reg, regnums = shift_regnums(reg + ' ')
@@ -864,10 +840,9 @@ def f2_rearrange_two_ccs(author, title, p3, p4):
         if len(reg):
             return False
 
-        return format_record(author=author, title=title,
-                             regdates=dates, regnums=regnums, rids=rids,
-                             rendates=rendates, claims=claims,
-                             new_matter=newmatter, previous=prev, notes=note)
+        return format_record(author=author, title=title, regdates=dates,
+                             regnums=regnums, rids=rids, rendates=rendates,
+                             claims=claims, new_matter=newmatter, notes=note)
 
     except TypeError:
         return False
@@ -894,7 +869,7 @@ if __name__ == '__main__':
 
     fields = ('entry_id', 'volume', 'part', 'number', 'page', 'author',
               'title', 'oreg', 'odat', 'id', 'rdat',
-              'claimants', 'previous', 'new_matter', 'see_also_ren',
+              'claimants', 'new_matter', 'see_also_ren',
               'see_also_reg', 'notes', 'full_text')
 
     writer = csv.DictWriter(sys.stdout, fieldnames=fields, delimiter='\t')
