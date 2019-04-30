@@ -81,17 +81,15 @@ def handle_prev_pub(d):
         for pub in re.split(r';\s*', d['publ']):
             m = PUB_ABR.search(pub)
             if m:
-                prev += ['|'.join((m[1].strip(), parse_date(m[2].strip()),
-                                   m[3].strip()))]
-                if m[4].strip(' .,'):
-                    notes += [m[4].strip(' .,')]
+                prev += [[parse_date(m[2].strip()), m[3].strip()]]
+                notes += [pub]
             else:
                 notes += [pub]
 
-        return {**d,
-                **{'previous': '||'.join(prev),
-                   'note': '|'.join(notes)}}
-    return d
+        return ({**d,
+                 **{'note': '|'.join(notes)}},
+                prev)
+    return (d, [])
 
 
 
@@ -133,7 +131,7 @@ args = parser.parse_args()
 tree = ET.parse(args.file)
 root = tree.getroot()
 
-fieldnames = ('entry_id', 'volume', 'part','number', 'page', 'auth', 'titl', 'oreg', 'odat', 'id', 'dreg', 'claimants', 'previous', 'new_matter', 'see_also_ren', 'see_also_reg', 'note', 'full_text')
+fieldnames = ('entry_id', 'volume', 'part','number', 'page', 'auth', 'titl', 'oreg', 'odat', 'id', 'dreg', 'claimants', 'new_matter', 'see_also_ren', 'see_also_reg', 'note', 'full_text')
 
 
 writer = csv.DictWriter(sys.stdout, fieldnames=fieldnames,
@@ -147,15 +145,17 @@ for record in root.findall('./Record'):
 
         d = defaultdict(list)
         for k, v in fields:
-#            print(type(v))
             d[k.lower()].append(v)
 
         
         
         dd = dict([(b[0],'|'.join(b[1])) for b in d.items()])
         dd = get_claimaints(dd, record)
-        dd = handle_prev_pub(dd)
+        (dd, prev) = handle_prev_pub(dd)
         dd = add_uuid(dd, record)
         output(regularize(dd), writer)
+        for p in prev:
+            output({**regularize(dd), **{'odat': p[0], 'oreg': p[1]}}, writer)
+
         
     
