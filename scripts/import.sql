@@ -14,7 +14,6 @@ create table renewals_temp (
        id text,
        rdat date,
        claimants text,
-       previous text,
        new_matter text,
        see_also_ren text,
        see_also_reg text,
