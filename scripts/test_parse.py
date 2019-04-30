@@ -592,7 +592,7 @@ class TestFormat1(object):
 
     def test_single_interim(self, single_interim_pub):
         parsed = parse.parse('4', '1', single_interim_pub)
-        assert len(parsed) == 1
+        assert len(parsed) == 2
         assert parsed[0]['author'] == None
         assert parsed[0]['title'] == 'ADDRESS, by Rudyard Kipling, at the annual dinner of the Royal College of Surgeons, Feb. 14, 1923. Pub. in England in the Morning post, Feb. 15, 1923, as The mystery of man\'s triumphs of surgery.'
         assert parsed[0]['odat'] == '1923-03-27'
@@ -600,8 +600,12 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R60233'
         assert parsed[0]['rdat'] == '1950-03-28'
         assert parsed[0]['claimants'] == 'Elsie Bambridge|C'
-        assert parsed[0]['previous'] == 'pub. abroad|1923-02-15|AI-4905'
+        assert parsed[0]['previous'] == None
         assert parsed[0]['new_matter'] is None
+        assert parsed[0]['notes'] == 'pub. abroad 15Feb23, AI-4905'
+
+        assert parsed[1]['odat'] == '1923-02-15'
+        assert parsed[1]['oreg'] == 'AI4905'
 
 
     def test_interim_pub_date_only(self, interim_pub_date_only):

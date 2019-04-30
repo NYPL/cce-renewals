@@ -186,7 +186,8 @@ def extract_rids(reg, rids):
 
 def extract_interim(reg, r):
     m = re.search(r'\((pub\. abroad) (.+?)\)', r[0])
-    return (reg, '||'.join(interim_pairs(m[1], m[2])))
+    return (reg, interim_pairs(m[1], m[2]), r[0])
+    # return (reg, '||'.join(interim_pairs(m[1], m[2])))
 
 
 def extract_new_matter(reg, r):
@@ -304,7 +305,9 @@ def interim_pairs(s, p):
 
 # Format one interim registration for output
 def one_ai(s, p):
-    return '|'.join([s, p[0], p[1]])
+    #return '|'.join([s, p[0], p[1]])
+    return [p[0], p[1]]
+
 
 
 # Pad out the list if the code is missing, otherwise trim the last
@@ -401,6 +404,7 @@ def format_record(author=None, title=None, regdates=None, regnums=None,
                   see_also_reg=None):
 
     regnums = [dehyphen(r) for r in regnums]
+    notes = None if notes == '' else notes
     if all_singles(regdates, regnums, rids, rendates, previous):
         return [record(author=author, title=title, odat=regdates[0],
                        oreg=regnums[0], id=rids[0], rdat=rendates[0],
@@ -446,7 +450,7 @@ def pad_and_unroll_records(author=None, title=None, regdates=None,
                            see_also_reg=None):
     max_len = max([len(l) for l in (regdates, regnums, rids, rendates)])
     return [record(**dict(zip(('author', 'title', 'odat', 'oreg', 'id', 'rdat',
-                               'claimants', 'new_matter', 'previous'),
+                               'claimants', 'new_matter', 'previous', 'notes'),
                               r))) for r in
             zip([author] * max_len,
                 [title] * max_len,
@@ -571,7 +575,9 @@ def f1_parse(e):
 
 # Simplest version of f1 format.
 def f1_one_part(e):
-    try:
+    note = []
+    if 1:
+    #try:
         book, reg = cc_split(e)
         author, title = get_author_title(book)
         reg, newmatter = shift_new_matter(reg)
@@ -584,29 +590,36 @@ def f1_one_part(e):
             reg, regnums = shift_regnums(reg)
             prev = None
         except TypeError:
-            try:
-                reg, prev = shift_pub_abroad(reg)
+            if 1:
+            #try:
+                reg, prev, prev_note = shift_pub_abroad(reg)
+                print(prev)
                 reg, regnums = shift_regnums(reg)
-            except Exception:
-                return False
+                dates += [r[0] for r in prev]
+                regnums += [r[1] for r in prev]
+                note += [prev_note.strip(' (),')]
+            # except Exception:
+            #    return False
 
         reg, rids = shift_rids(reg)
         reg, rendates = shift_dates(reg)
         reg, claims = shift_claims(reg)
 
-        note = reg if len(reg) else None
+        note += [reg] if len(reg) else []
+
+        print(note)
 
         return format_record(author=author, title=title,
                              regdates=dates, regnums=regnums,
                              rids=rids, rendates=rendates,
                              claims=claims, new_matter=newmatter,
-                             previous=prev, notes=note)
-    except TypeError:
-        return False
+                             notes='|'.join(note))
+    # except TypeError:
+    #    return False
 
-    except ValueError:
+    #except ValueError:
         # Possible no ©
-        return False
+    #    return False
 
 
 # F1 format with date/regnum pairs.
