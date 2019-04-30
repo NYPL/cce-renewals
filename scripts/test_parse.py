@@ -993,7 +993,7 @@ class TestFormat2(object):
 
     def test_f2_pub_abroad(self, f2_pub_abroad):
         parsed = parse.parse('8', '1', f2_pub_abroad)
-        assert len(parsed) == 1
+        assert len(parsed) == 2
         assert parsed[0]['author'] == 'AMUNDSEN, ROALD ENGELBREGT GRAVNING.'
         assert parsed[0]['title'] == 'First crossing of the Polar Sea, by Roald Amundsen and Lincoln Ellsworth; with additional chapters by other members of the expedition. (Pub. abroad under title: The first flight across the Polar Sea)'
         assert parsed[0]['odat'] == '1927-04-15'
@@ -1001,8 +1001,13 @@ class TestFormat2(object):
         assert parsed[0]['id'] == 'R129296'
         assert parsed[0]['rdat'] == '1954-04-19'
         assert parsed[0]['claimants'] == 'Mary-Louise Ellsworth|W'
-        assert parsed[0]['previous'] == 'pub. abroad|1927-02-25|AI-9217'
+        assert parsed[0]['previous'] is None 
         assert parsed[0]['new_matter'] is None
+        assert parsed[0]['notes'] == 'pub. abroad 25Feb27, AI-9217'
+
+        assert parsed[1]['odat'] == '1927-02-25'
+        assert parsed[1]['oreg'] == 'AI9217'
+
 
     def test_f2_on_matter(self, f2_on_matter):
         parsed = parse.parse('8', '1', f2_on_matter)

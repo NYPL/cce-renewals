@@ -595,7 +595,7 @@ def f1_one_part(e):
                 reg, regnums = shift_regnums(reg)
                 dates += [r[0] for r in prev]
                 regnums += [r[1] for r in prev]
-                note += [prev_note.strip(' (),')]
+                note += [prev_note.strip(' (),;')]
             except Exception:
                 return False
 
@@ -712,6 +712,7 @@ def f2_parse(e):
 
 # Simplest version of format 2.
 def f2_one_part(e, author=None):
+    print('F2 1P')
     try:
         title, reg = cc_split(e)
 
@@ -721,15 +722,19 @@ def f2_one_part(e, author=None):
             author, title = get_f3_author_title(title)
 
         reg, newmatter = shift_new_matter(reg)
-        note = None
+        note = []
         reg, dates = shift_dates(reg)
         try:
             reg, regnums = shift_regnums(reg)
             prev = None
         except TypeError:
             try:
-                reg, prev = shift_pub_abroad(reg)
+                reg, prev, prev_note = shift_pub_abroad(reg)
                 reg, regnums = shift_regnums(reg)
+                dates += [r[0] for r in prev]
+                regnums += [r[1] for r in prev]
+                note += [prev_note.strip(' (),;')]
+
             except Exception:
                 return False
 
@@ -751,7 +756,7 @@ def f2_one_part(e, author=None):
                          regnums=regnums, rids=rids, rendates=rendates,
                          claims=claims,
                          new_matter=(newmatter or newmatter2),
-                         previous=prev, notes=note,
+                         notes='|'.join(note),
                          see_also_ren=see_also_ren, see_also_reg=see_also_reg)
 
 
