@@ -576,8 +576,7 @@ def f1_parse(e):
 # Simplest version of f1 format.
 def f1_one_part(e):
     note = []
-    if 1:
-    #try:
+    try:
         book, reg = cc_split(e)
         author, title = get_author_title(book)
         reg, newmatter = shift_new_matter(reg)
@@ -590,16 +589,15 @@ def f1_one_part(e):
             reg, regnums = shift_regnums(reg)
             prev = None
         except TypeError:
-            if 1:
-            #try:
+            try:
                 reg, prev, prev_note = shift_pub_abroad(reg)
                 print(prev)
                 reg, regnums = shift_regnums(reg)
                 dates += [r[0] for r in prev]
                 regnums += [r[1] for r in prev]
                 note += [prev_note.strip(' (),')]
-            # except Exception:
-            #    return False
+            except Exception:
+                return False
 
         reg, rids = shift_rids(reg)
         reg, rendates = shift_dates(reg)
@@ -614,12 +612,12 @@ def f1_one_part(e):
                              rids=rids, rendates=rendates,
                              claims=claims, new_matter=newmatter,
                              notes='|'.join(note))
-    # except TypeError:
-    #    return False
+    except TypeError:
+        return False
 
-    #except ValueError:
+    except ValueError:
         # Possible no ©
-    #    return False
+        return False
 
 
 # F1 format with date/regnum pairs.

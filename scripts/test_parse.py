@@ -610,7 +610,7 @@ class TestFormat1(object):
 
     def test_interim_pub_date_only(self, interim_pub_date_only):
         parsed = parse.parse('4', '1', interim_pub_date_only)
-        assert len(parsed) == 1
+        assert len(parsed) == 2
         assert parsed[0]['author'] is None
         assert parsed[0]['title'] == "THE COOK'S WEDDING AND OTHER STORIES, from the Russian of Anton Chekhov. Constance Garnett, translator."
         assert parsed[0]['odat'] == '1922-03-21'
@@ -618,13 +618,19 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R59404'
         assert parsed[0]['rdat'] == '1950-03-13'
         assert parsed[0]['claimants'] == 'David Garnett|C'
-        assert parsed[0]['previous'] == 'pub. abroad|1922-02-02|'
+        assert parsed[0]['previous'] is None 
         assert parsed[0]['new_matter'] is None
+        assert parsed[0]['notes'] == 'pub. abroad 2Feb22'
 
+        assert parsed[1]['odat'] == '1922-02-02'
+        # This record is missing an AI
+        assert parsed[1]['oreg'] == '' 
+
+        
     
     def test_multiple_interim(self, multiple_interim_pub):
         parsed = parse.parse('4', '1', multiple_interim_pub)
-        assert len(parsed) == 1
+        assert len(parsed) == 3
         assert parsed[0]['author'] == 'E. F. Benson.'
         assert parsed[0]['title'] == "AND THE DEAD SPAKE; AND THE HORROR-HORN Pub. in England in Hutchinson's magazine, Sept.-Oct. 1922, under titles \"The horror-horn\" and \"And the dead spake\"; illustrated by \"Blam.\""
         assert parsed[0]['odat'] == '1923-03-01'
@@ -632,9 +638,16 @@ class TestFormat1(object):
         assert parsed[0]['id'] == 'R59139'
         assert parsed[0]['rdat'] == '1950-03-03'
         assert parsed[0]['claimants'] == 'Kenneth Stewart Patrick McDowell|NK'
-        assert parsed[0]['previous'] == 'pub. abroad|1922-08-24|AI-4680||pub. abroad|1922-09-16|AI-4725'
+        assert parsed[0]['previous'] is None 
         assert parsed[0]['new_matter'] is None
+        assert parsed[0]['notes'] == 'pub. abroad 24Aug22, 16Sep22, AI-4680, AI-4725'
 
+        assert parsed[1]['odat'] == '1922-08-24'
+        assert parsed[1]['oreg'] == 'AI4680'
+
+        assert parsed[2]['odat'] == '1922-09-16'
+        assert parsed[2]['oreg'] == 'AI4725'
+        
 
     def test_simple_two_parts(self, simple_two_parts):
         parsed = parse.parse('4', '1', simple_two_parts)
