@@ -47,8 +47,7 @@ This renewal refers to both the interim registration, `AI-9217`, and final regis
 | author | title | oreg | odat | rdat | id | claimants |
 | --- | --- | --- | --- | --- | --- | --- |
 | Roald Amundsen and Lincoln Ellsworth | First crossing of the Polar Sea | A972756 | 1927-04-15 | R129296 | 1954-04-19 | Mary-Louise Ellsworth\|W |
-| Roald Amundsen and Lincoln Ellsworth | The first
-  flight across the Polar Sea | AI9217 | 1927-02-25 | R129296 | 1954-04-19 | Mary-Louise Ellsworth\|W |
+| Roald Amundsen and Lincoln Ellsworth | The first flight across the Polar Sea | AI9217 | 1927-02-25 | R129296 | 1954-04-19 | Mary-Louise Ellsworth\|W |
 
 This allows us to easily match the two registrations found in the _Catalog_.
 
