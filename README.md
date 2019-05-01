@@ -25,8 +25,8 @@ Together Registration ids, like `A41904` are not unique because the number start
 
 This would be converted into a row of tab-delimted data (not all fields shown)
 
-author | title | oreg | odat | rdat | id | claimants |
-| --- | --- | --- | --- | --- | --- | ---| --- |
+| author | title | oreg | odat | rdat | id | claimants |
+| ------ | ----- | ---- | ---- | ---- | -- | --- |
 | Mary Patricia Highsmith | Strangers on a train. | A41904 | 1950-03-15 | R663598 | 1977-06-06 | Mary Patricia Highsmith\|A |
 
 
@@ -44,8 +44,8 @@ Often more than one registration is involved, such as when a book is first publi
       
 This renewal refers to both the interim registration, `AI-9217`, and final registration `A972756`. This illustrates the importance of the id numbers, since the two original registrations have two different titles. This would be converted into _two_ rows of data (again, not all fields shown):
 
-author | title | oreg | odat | rdat | id | claimants |
-| --- | --- | --- | --- | --- | --- | ---| --- |
+| author | title | oreg | odat | rdat | id | claimants |
+| --- | --- | --- | --- | --- | --- | --- |
 | Roald Amundsen and Lincoln Ellsworth | First crossing of the Polar Sea | A972756 | 1927-04-15 | R129296 | 1954-04-19 | Mary-Louise Ellsworth\|W |
 | Roald Amundsen and Lincoln Ellsworth | First crossing of the Polar Sea | AI9217 | 1927-02-25 | R129296 | 1954-04-19 | Mary-Louise Ellsworth\|W |
 
