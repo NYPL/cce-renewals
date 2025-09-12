@@ -17,10 +17,10 @@ Most renewal entries simply contain a title and author followed the date and id 
 This renewal corresponds to a registration:
 
     HIGHSMITH, PATRICIA.
-      Strangers on a train. [1st ed.] New 
-      York, Harper. 299 p. © Mary Patricia 
+      Strangers on a train. [1st ed.] New
+      York, Harper. 299 p. © Mary Patricia
       Highsmith; 15Mar50; A41904.
-      
+
 Together, these two entries record that the copyright for this book was registerd on March 15, 1950 and renewed by the author on June 6, 1977.
 
 Registration ids like `A41904` are not unique because the numbering started over in 1947 with the beginning of the 3rd series of the _Catalog_, so in order to match a renewal with a registration it is necessary to match _both_ the id number (`A41904`) _and_ date (`15Mar50`)
@@ -43,7 +43,7 @@ Often more than one registration is involved, such as when a book is first publi
       © 15Apr27; (pub. abroad 25Feb27,
       AI-9217); A972756. Mary-Louise
       Ellsworth (W); 19Apr54; R129296.
-      
+
 This renewal refers to both the interim registration, `AI-9217`, and final registration `A972756`. This illustrates the importance of the id numbers, since the two original registrations have two different titles and wouldn't be clear otherwise that they are the same book. This would be converted into _two_ rows of data (again, not all fields shown):
 
 | author | title | oreg | odat | rdat | id | claimants |
@@ -95,7 +95,7 @@ Similar to how multiple registrations are handled, when a renewal records an "in
         George Thirkell, Colin McInnes &
         Graham Campbell McInnes (C);
         30Mar62; R294052.
-		
+
 This is not an issue for the ways in which someone is likely to use Stanford's database to look up by author's name, title, or registration id if they have it.
 
 However, in the CCE registration data there are two relevant entries and we need to be able to link them to this renewal by the correct number _and_ date pairs: [`AI-19786/1934-10-29`](https://archive.org/stream/catalogueofcopy311libr#page/1790/mode/1up) and [`A79921/1935-03-04`](https://archive.org/stream/catalogofcopyri321libr#page/223/mode/1up). There is no CCE registration with the combination `A79921/1934-10-29` so the Stanford data gives a false negative in this case (actually two).  In this dataset there are two rows for `R294052`, one for each of the proper date/number pairs.
@@ -142,8 +142,6 @@ In the database derived data (1978-) ids are padded internally with 0's, which a
 
 ## Corrections
 
-Some errors in the transcription become apparent either because they cause the parsing to fail or because they are easy to detect once the data can be queried. Where errors have been found in the Project Gutenberg transcriptions, these are fixed by applying patches (found in the `data/pre-patches` directory) before processing the files. Using patches means there is a clear record of what is being changed and we don't have to maintain a separate, corrected copy of the files. It will be apparent if the source files are ever updated because applying the patches will fail.
-
 Some rows are simply difficult to parse automatically. Rather than adding complexity to the parsing code to a handle a small number of cases, another set of patches (from the `data/post-patches` directory) are applied _after_ processing to the generated TSV files. This is a very fidgety process, however, and it kept to a minimum.
 
 ## Building the dataset yourself
@@ -152,7 +150,6 @@ It should be possible to rebuild the dataset on any sufficiently Unix-like syste
 
 - For Gutenberg files
   - Download the Gutenberg source files
-  - Apply patches in the `data/pre-patch` directory to the Gutenberg files to correct errors and typos
   - "Unnest" the Guteberg files (by running them through `unnest.py`
   - Concatenate parts into one file for each volume
   - Parse each volume file (by running them through `parse.py`) to generate tab-delimited files
@@ -161,7 +158,7 @@ It should be possible to rebuild the dataset on any sufficiently Unix-like syste
   - Download and unzip the Google data
   - Generate a tab-delimited file for each year, starting with 1978, from the XML (by running `expl-google-cce` once for each year)
 
-This pipline requires:
+This pipeline requires:
 
 - `make`
 - `wget`
