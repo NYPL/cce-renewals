@@ -50,10 +50,8 @@ $(PG):
 1950: 1950-14A.tsv
 temp/1950-1.tsv: temp/11801-0.txt
 	../scripts/unnest.py -f $^ -v 4 -p 14A -n 1 > $@
-temp/1950-2.tsv: temp/11802-0.patched.txt
+temp/1950-2.tsv: temp/11802-0.txt
 	../scripts/unnest.py -f $^ -v 4 -p 14A -n 2 > $@
-temp/11802-0.patched.txt: pre-patches/11802-0.diff temp/11802-0.txt 
-	patch -o $@ < $^
 temp/11801-0.txt: 11801
 temp/11802-0.txt: 11802
 
@@ -68,42 +66,32 @@ temp/11804-0.txt: 11804
 1952: 1952-1A.tsv
 temp/1952-1.tsv: temp/11805-0.txt
 	../scripts/unnest.py -f $^ -v 6 -p 1A -n 1 > $@
-temp/1952-2.tsv: temp/11806-0.patched.txt
+temp/1952-2.tsv: temp/11806-0.txt
 	../scripts/unnest.py -f $^ -v 6 -p 1A -n 2 > $@
-temp/11806-0.patched.txt: pre-patches/11806-0.diff temp/11806-0.txt 
-	patch -o $@ < $^
 temp/11805-0.txt: 11805
 temp/11806-0.txt: 11806
 
 1953: 1953-1A.tsv
-temp/1953-1.tsv: temp/11807-0.patched.txt
+temp/1953-1.tsv: temp/11807-0.txt
 	../scripts/unnest.py -f $^ -v 7 -p 1A -n 1 > $@
-temp/1953-2.tsv: temp/11808-0.patched.txt
+temp/1953-2.tsv: temp/11808-0.txt
 	../scripts/unnest.py -f $^ -v 7 -p 1 -n 2 > $@
-temp/11807-0.patched.txt: pre-patches/11807-0.diff temp/11807-0.txt 
-	patch -o $@ < $^
-temp/11808-0.patched.txt: pre-patches/11808-0.diff temp/11808-0.txt 
-	patch -o $@ < $^
 temp/11807-0.txt: 11807
 temp/11808-0.txt: 11808
 
 1954: 1954-1.tsv
 temp/1954-1.tsv: temp/11809-0.txt
 	../scripts/unnest.py -f $^ -v 8 -p 1 -n 1 > $@
-temp/1954-2.tsv: temp/11810-0.patched.txt
+temp/1954-2.tsv: temp/11810-0.txt
 	../scripts/unnest.py -f $^ -v 8 -p 1 -n 2 > $@
-temp/11810-0.patched.txt: pre-patches/11810-0.diff temp/11810-0.txt 
-	patch -o $@ < $^
 temp/11809-0.txt: 11809
 temp/11810-0.txt: 11810
 
 1955: 1955-1.tsv
-temp/1955-1.tsv: temp/11811-0.patched.txt
+temp/1955-1.tsv: temp/11811-0.txt
 	../scripts/unnest.py -f $^ -v 9 -p 1 -n 1 > $@
 temp/1955-2.tsv: temp/11812-0.txt
 	../scripts/unnest.py -f $^ -v 9 -p 1 -n 2 > $@
-temp/11811-0.patched.txt: pre-patches/11811-0.diff temp/11811-0.txt 
-	patch -o $@ < $^
 temp/11811-0.txt: 11811
 temp/11812-0.txt: 11812
 
