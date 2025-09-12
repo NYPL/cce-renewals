@@ -1,4 +1,4 @@
-#!/usr/bin/env python3 -u
+#!/usr/bin/env python3
 
 # Take tab delimited-files produced by unnest.py and parse and
 # "unroll" the entries. "Unrolling" means to take a row that really
