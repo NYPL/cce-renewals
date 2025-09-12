@@ -368,6 +368,11 @@ def state_blank(status, data):
                    'entry': [],
                    'entry_type': 'ENTRY'}}
 
+    # Checking this in state_start() doesn't work in 1973+ files,
+    # so check it here too.
+    if re.match(r'\*\*\* END', data):
+        raise StopIteration()
+
     # Same indent level...
     contents = re.match(nodent(status['indent']), data)
     if contents:
