@@ -165,3 +165,13 @@ This pipeline requires:
 - `python` 3.5 or greater with `dateutil`, `lxml` installed
 - `patch`
 - `unzip`
+
+On a Debian/Ubuntu Linux system, this should work:
+
+```
+sudo apt-get update
+sudo apt-get install -y git make wget python3 python3-dateutil python3-lxml patch unzip
+git clone https://github.com/tangledhelix/cce-renewals.git
+cd cce-renewals/data
+make
+```
