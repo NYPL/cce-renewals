@@ -165,5 +165,6 @@ This pipline requires:
 
 - `make`
 - `wget`
-- `python` 3.5 or greater 
+- `python` 3.5 or greater with `dateutil`, `lxml` installed
 - `patch`
+- `unzip`
